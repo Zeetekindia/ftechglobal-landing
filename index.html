@@ -13,10 +13,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       text-align: center;
       padding: 20px;
+      padding-top: 100px;
     }
 
     .top-contact {
@@ -37,7 +38,7 @@
     .logo {
       width: 150px;
       height: auto;
-      margin-top: 80px;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
 
@@ -66,51 +67,69 @@
     a.button:hover {
       background: #0ea5e9;
     }
-  </style> 
-  .services {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #1e293b;
-  border-radius: 12px;
-  max-width: 600px;
-}
-.services h2 {
-  color: #38bdf8;
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-.services ul {
-  list-style-type: none;
-  padding: 0;
-}
-.services li {
-  margin: 10px 0;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
 
+    .services {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1e293b;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .services h2 {
+      color: #38bdf8;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .services ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .services li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .services h2 {
+        font-size: 1.5rem;
+      }
+
+      .services li {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="top-contact">
     📞 Contact: +91-8789567363
   </div>
 
-  <!-- Replace the path below based on your actual image location in GitHub repo -->
   <img src="flogo.jpeg" alt="Ftech Global Logo" class="logo" />
 
   <h1>🚀 Ftech Global</h1>
-  <p>We're launching soon! Stay tuned for something amazing.</p> 
+  <p>We're launching soon! Stay tuned for something amazing.</p>
+
   <section class="services">
-  <h2>💼 Our Services</h2>
-  <ul>
-    <li>🌐 Website Development</li>
-    <li>📱 Digital Marketing</li>
-    <li>🧑‍💻 Software Development</li>
-    <li>📊 SEO & Google Ads</li>
-    <li>📄 GST Registration & ITR Filing</li>
-    <li>🎯 Startup Consultancy</li>
-  </ul>
-</section>
+    <h2>💼 Our Services</h2>
+    <ul>
+      <li>🌐 Website Development</li>
+      <li>📱 Digital Marketing</li>
+      <li>🧑‍💻 Software Development</li>
+      <li>📊 SEO & Google Ads</li>
+      <li>📄 GST Registration & ITR Filing</li>
+      <li>🎯 Startup Consultancy</li>
+    </ul>
+  </section>
 
   <a class="button" href="https://wa.me/918789567363" target="_blank">📞 Contact Us on WhatsApp</a>
 </body>
