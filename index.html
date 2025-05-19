@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ftech Global - Coming Soon</title>
   <style>
-    body
-    {<div class="top-contact" style="background:#333; color:#fff; padding:8px 20px; text-align:right; font-family: Arial, sans-serif;">
-  📞 Contact: +91-9876543210
-</div>
-
+    body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #0f172a;
@@ -22,9 +18,24 @@
       text-align: center;
       padding: 20px;
     }
+    .top-contact {
+      background: #333;
+      color: #fff;
+      padding: 8px 20px;
+      text-align: right;
+      font-family: Arial, sans-serif;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      font-weight: bold;
+      z-index: 1000;
+    }
     h1 {
       font-size: 3rem;
       color: #38bdf8;
+      margin-top: 60px; /* thoda gap dena fixed top-contact ke neeche */
     }
     p {
       font-size: 1.2rem;
@@ -46,6 +57,10 @@
   </style>
 </head>
 <body>
+  <div class="top-contact">
+    📞 Contact: +91-9876543210
+  </div>
+
   <h1>🚀 Ftech Global</h1>
   <p>We're launching soon! Stay tuned for something amazing.</p>
   <a class="button" href="https://wa.me/918789567363" target="_blank">📞 Contact Us on WhatsApp</a>
