@@ -38,9 +38,9 @@
     /* Styling for the nav bar - NOW DARK */
     nav {
         background-color: #2c3e50; /* Darker blue for nav bar, consistent with blog's top bar */
-        padding: 10px 20px; /* Reduced vertical padding for compact look */
+        padding: 15px 20px; /* Reverted padding for better spacing after logo removal */
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end; /* Align items to the right as logo is removed */
         align-items: center;
         width: 100%;
         position: fixed;
@@ -51,23 +51,16 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow for depth */
     }
 
-    /* New styles for the circular logo in the nav bar */
-    nav .nav-logo {
-        height: 50px; /* Increased height for the logo */
-        width: 50px; /* Increased width for the logo */
-        border-radius: 50%; /* Makes it circular */
-        object-fit: cover; /* Ensures image covers the area without distortion */
-        margin-right: 15px; /* Space between logo and menu items */
-        border: 2px solid #38bdf8; /* Border matching website accent color */
-    }
+    /* nav .nav-logo styles are now moved to .main-logo */
+    /* Removed from nav scope */
 
-    nav div:last-child {
+    nav div { /* Target the div containing menu items */
         display: flex; /* Ensure links are flexible to align */
         align-items: center; /* Vertically align items */
     }
 
     /* Styling for regular text links in the nav bar */
-    nav div:last-child a:not(.button-link) { /* This targets links that are NOT button-link */
+    nav div a:not(.button-link) { /* This targets links that are NOT button-link */
         margin-right: 20px;
         text-decoration: none;
         color: #f1f5f9; /* Light text color for regular links */
@@ -76,12 +69,12 @@
         transition: color 0.3s ease;
     }
 
-    nav div:last-child a:not(.button-link):hover {
+    nav div a:not(.button-link):hover {
         color: #38bdf8; /* Hover color accent for regular links */
     }
 
     /* Styling for the button-like links (Mobile Recharge Software and IRCTC Agent) */
-    nav div:last-child a.button-link {
+    nav div a.button-link {
         padding: 10px 20px;
         background-color: #00e676; /* Bright green accent for consistency */
         color: #1a2a4b; /* Dark text for contrast on green */
@@ -92,8 +85,20 @@
         margin-left: 10px; /* Add some space between text links and buttons */
     }
 
-    nav div:last-child a.button-link:hover {
+    nav div a.button-link:hover {
         background-color: #00b359; /* Slightly darker green on hover */
+    }
+
+    /* Main Logo Styles - Now larger and outside nav */
+    .main-logo {
+      width: 100px; /* Double the previous size of 50px */
+      height: 100px; /* Double the previous size of 50px */
+      border-radius: 50%; /* Makes it circular */
+      object-fit: cover; /* Ensures image covers the area without distortion */
+      margin-top: 20px; /* Space from the nav bar */
+      margin-bottom: 20px; /* Space from the H1 below */
+      border: 3px solid #38bdf8; /* Slightly thicker border matching website accent color */
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Glowing effect */
     }
 
     h1 {
@@ -182,8 +187,6 @@
   </div>
 
   <nav>
-    <img src="flogo.jpeg" alt="Ftech Global Logo" class="nav-logo" />
-    
     <div>
       <a href="index.html">Home</a> <a href="mobile-recharge-software-ftech-global.html" class="button-link">📱 Mobile Recharge Software</a>
       <a href="irctc-agent-services.html" class="button-link">
@@ -191,6 +194,8 @@
       </a>
     </div>
   </nav>
+
+  <img src="flogo.jpeg" alt="Ftech Global Logo" class="main-logo" />
 
   <h1>🚀 Ftech Global</h1>
   <p>We're launching soon! Stay tuned for something amazing.</p>
