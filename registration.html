@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agent Registration Form</title>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #00b09b, #96c93d);
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
     }
-    .form-box {
+
+    .container {
       background: white;
-      padding: 30px;
+      padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      width: 350px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 500px;
     }
+
     h2 {
       text-align: center;
-      color: green;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: #333;
     }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 15px;
-    }
+
     input, select {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
+      padding: 12px;
+      margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     button {
       width: 100%;
-      padding: 10px;
-      background: green;
+      padding: 12px;
+      background: #00b09b;
       color: white;
+      font-size: 16px;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
-      margin-top: 20px;
       cursor: pointer;
+    }
+
+    button:hover {
+      background: #01937C;
+    }
+
+    label {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="form-box">
-    <h2>Agent Registration Form</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <label>Name</label>
-      <input type="text" name="name" required>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form action="submit_form.php" method="post">
+      <label for="name">Name*</label>
+      <input type="text" id="name" name="name" required>
 
-      <label>Business Name</label>
-      <input type="text" name="business_name" required>
+      <label for="mobile">Mobile*</label>
+      <input type="tel" id="mobile" name="mobile" required>
 
-      <label>Mobile</label>
-      <input type="tel" name="mobile" required>
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" required>
 
-      <label>Email</label>
-      <input type="email" name="email" required>
+      <label for="city">City</label>
+      <input type="text" id="city" name="city">
 
-      <label>City</label>
-      <input type="text" name="city" required>
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" name="pincode">
 
-      <label>Pincode</label>
-      <input type="text" name="pincode" required>
+      <label for="state">State</label>
+      <select name="state" id="state">
+        <option value="">Select State</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+        <option value="Ladakh">Ladakh</option>
+        <option value="Lakshadweep">Lakshadweep</option>
+        <option value="Puducherry">Puducherry</option>
+      </select>
 
-      <label>State</label>
-      <select name="state" required>
-  <option value="">Select State</option>
-  <option value="Andhra Pradesh">Andhra Pradesh</option>
-  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-  <option value="Assam">Assam</option>
-  <option value="Bihar">Bihar</option>
-  <option value="Chhattisgarh">Chhattisgarh</option>
-  <option value="Goa">Goa</option>
-  <option value="Gujarat">Gujarat</option>
-  <option value="Haryana">Haryana</option>
-  <option value="Himachal Pradesh">Himachal Pradesh</option>
-  <option value="Jharkhand">Jharkhand</option>
-  <option value="Karnataka">Karnataka</option>
-  <option value="Kerala">Kerala</option>
-  <option value="Madhya Pradesh">Madhya Pradesh</option>
-  <option value="Maharashtra">Maharashtra</option>
-  <option value="Manipur">Manipur</option>
-  <option value="Meghalaya">Meghalaya</option>
-  <option value="Mizoram">Mizoram</option>
-  <option value="Nagaland">Nagaland</option>
-  <option value="Odisha">Odisha</option>
-  <option value="Punjab">Punjab</option>
-  <option value="Rajasthan">Rajasthan</option>
-  <option value="Sikkim">Sikkim</option>
-  <option value="Tamil Nadu">Tamil Nadu</option>
-  <option value="Telangana">Telangana</option>
-  <option value="Tripura">Tripura</option>
-  <option value="Uttar Pradesh">Uttar Pradesh</option>
-  <option value="Uttarakhand">Uttarakhand</option>
-  <option value="West Bengal">West Bengal</option>
-  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-  <option value="Chandigarh">Chandigarh</option>
-  <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
-  <option value="Delhi">Delhi</option>
-  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-  <option value="Ladakh">Ladakh</option>
-  <option value="Lakshadweep">Lakshadweep</option>
-  <option value="Puducherry">Puducherry</option>
-</select>
-
-
-      <label>Referred By</label>
-      <input type="text" name="referred_by">
-
-      <button type="submit">Submit</button>
+      <button type="submit">Register</button>
     </form>
   </div>
 </body>
