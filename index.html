@@ -17,7 +17,7 @@
       min-height: 100vh;
       text-align: center;
       padding: 20px;
-      padding-top: 250px; /* Increased padding-top to accommodate large fixed logo and nav on desktop */
+      padding-top: 250px; /* Increased padding-top to accommodate large fixed logo and nav */
     }
 
     .top-contact {
@@ -51,18 +51,24 @@
 
     /* Styling for the nav bar (Desktop/Larger screens) */
     nav {
-        background-color: #2c3e50; /* Darker blue for nav bar, consistent with blog's top bar */
+        background-color: #1a2a4b; /* Slightly darker background for a more defined look */
         padding: 15px 20px;
         display: flex;
         justify-content: flex-end; /* Align items to the right */
         align-items: center;
         width: calc(100% - 250px); /* Adjust width to make space for fixed logo on the left */
         position: fixed;
-        top: 100px; /* Positioned to the right of the logo, vertically aligned */
-        left: 230px; /* Positioned to the right of the logo (20px left + 200px width + 10px margin) */
+        top: 60px; /* Adjusted top position to be higher, closer to the contact bar */
+        left: 230px; /* Positioned to the right of the logo */
         box-sizing: border-box;
         z-index: 999;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* More prominent shadow for depth */
+        border-radius: 8px; /* Slightly rounded corners for the nav bar */
+        transition: background-color 0.3s ease; /* Smooth transition on hover/focus */
+    }
+
+    nav:hover {
+      background-color: #2c3e50; /* Darker on hover */
     }
 
     nav div { /* Target the div containing menu items */
@@ -76,28 +82,33 @@
         text-decoration: none;
         color: #f1f5f9; /* Light text color for regular links */
         font-weight: 500;
-        padding: 5px 0;
-        transition: color 0.3s ease;
+        padding: 8px 12px; /* Increased padding for better clickable area */
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     nav div a:not(.button-link):hover {
-        color: #38bdf8; /* Hover color accent for regular links */
+        background-color: #38bdf8; /* Blue background on hover */
+        color: #0f172a; /* Dark text on hover */
     }
 
     /* Styling for the button-like links (Mobile Recharge Software and IRCTC Agent) */
     nav div a.button-link {
-        padding: 10px 20px;
+        padding: 12px 25px; /* Larger padding for buttons */
         background-color: #00e676; /* Bright green accent for consistency */
         color: #1a2a4b; /* Dark text for contrast on green */
-        border-radius: 8px;
+        border-radius: 10px; /* More rounded corners for buttons */
         text-decoration: none;
         font-weight: bold;
-        transition: background-color 0.3s ease;
-        margin-left: 10px; /* Add some space between text links and buttons */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+        margin-left: 15px; /* Increased space between text links and buttons */
+        box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); /* Subtle shadow for buttons */
     }
 
     nav div a.button-link:hover {
         background-color: #00b359; /* Slightly darker green on hover */
+        transform: translateY(-2px); /* Slight lift effect on hover */
+        box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); /* More prominent shadow on hover */
     }
 
     h1 {
@@ -181,6 +192,7 @@
         top: 50px; /* Adjust top position */
         left: 50%; /* Center the logo horizontally */
         transform: translateX(-50%); /* Precisely center it */
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); /* Lighter shadow on mobile */
       }
 
       nav {
@@ -192,6 +204,8 @@
         top: 160px; /* Position below the logo */
         padding: 10px; /* Smaller padding for nav bar */
         box-shadow: none; /* Remove shadow to simplify */
+        border-radius: 0; /* Remove border radius on mobile nav */
+        background-color: #2c3e50; /* Consistent dark background on mobile */
       }
 
       nav div {
@@ -201,13 +215,15 @@
 
       nav div a {
         margin: 5px 0; /* More vertical margin for stacked links */
-        padding: 8px 15px; /* Adjust button padding */
-        width: calc(100% - 20px); /* Full width buttons with padding */
+        padding: 10px 15px; /* Adjust button padding */
+        width: calc(100% - 30px); /* Full width buttons with padding, adjusted to 30px for more inner padding */
         box-sizing: border-box;
       }
 
       nav div a.button-link {
         margin: 5px 0; /* Consistent margin for buttons */
+        padding: 12px 15px; /* Larger padding for mobile buttons */
+        box-shadow: 0 2px 5px rgba(0, 230, 118, 0.3); /* Lighter shadow for mobile buttons */
       }
 
       h1 {
