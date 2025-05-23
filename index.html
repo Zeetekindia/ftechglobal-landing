@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
+      background: #0f172a; /* Main dark background */
       color: #f1f5f9;
       display: flex;
       flex-direction: column;
@@ -17,65 +17,60 @@
       min-height: 100vh;
       text-align: center;
       padding: 20px;
-      padding-top: 100px; /* Adjust padding-top to account for fixed nav and top-contact */
+      padding-top: 100px; /* Adjusted padding-top for fixed headers */
     }
 
     .top-contact {
-      background: #333;
+      background: #1a2a4b; /* Dark background for consistency with other pages */
       color: #fff;
       padding: 8px 20px;
       text-align: right;
       font-family: Arial, sans-serif;
       width: 100%;
       position: fixed;
-      top: 0; /* Positioned at the very top */
+      top: 0;
       left: 0;
       box-sizing: border-box;
       font-weight: bold;
       z-index: 1000;
     }
 
-    /* Adjust padding-top for body to prevent content from being hidden by fixed nav */
-    body {
-        padding-top: 100px; /* Combined height of .top-contact (approx 36px) and nav (approx 60px) */
-    }
-
-    /* Styling for the nav bar */
+    /* Styling for the nav bar - NOW DARK */
     nav {
-        background-color: #f8f9fa; /* Light background for the nav bar */
-        padding: 15px 20px; /* Added horizontal padding */
+        background-color: #2c3e50; /* Darker blue for nav bar, consistent with blog's top bar */
+        padding: 15px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%; /* Full width */
-        position: fixed; /* Fixed position */
+        width: 100%;
+        position: fixed;
         top: 36px; /* Positioned below the top-contact bar */
         left: 0;
-        box-sizing: border-box; /* Include padding in width calculation */
-        z-index: 999; /* Z-index slightly lower than top-contact but higher than content */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional subtle shadow */
+        box-sizing: border-box;
+        z-index: 999;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow for depth */
     }
 
-    nav .logo-text { /* Changed from div to span for text-based logo */
+    nav .logo-text {
         font-weight: bold;
         font-size: 20px;
-        color: #333; /* Color for the logo text */
+        color: #e0e0e0; /* Light text for logo */
     }
 
-    nav div:last-child a { /* Styling for the links in the nav bar */
+    nav div:last-child a {
         margin-right: 20px;
         text-decoration: none;
-        color: #333; /* Default link color */
+        color: #f1f5f9; /* Light text color for links */
         font-weight: 500;
-        padding: 5px 0; /* Add some padding for clickable area */
+        padding: 5px 0;
         transition: color 0.3s ease;
     }
 
     nav div:last-child a:hover {
-        color: #0ea5e9; /* Hover color for links */
+        color: #38bdf8; /* Hover color accent */
     }
 
-    nav div:last-child a.button-link { /* Styling for the button-like link */
+    nav div:last-child a.button-link {
         padding: 10px 20px;
         background-color: #0ea5e9;
         color: white;
@@ -169,7 +164,8 @@
   </div>
 
   <nav>
-    <span class="logo-text">Ftech Global</span> <div>
+    <span class="logo-text">Ftech Global</span>
+    <div>
       <a href="index.html">Home</a>
       <a href="mobile-recharge-software-ftech-global.html">Mobile Recharge Software</a>
       <a href="irctc-agent-services.html" class="button-link">
