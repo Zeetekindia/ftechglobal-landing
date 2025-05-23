@@ -57,20 +57,21 @@
         color: #e0e0e0; /* Light text for logo */
     }
 
-    nav div:last-child a {
+    /* Styling for regular text links in the nav bar */
+    nav div:last-child a:not(.button-link) { /* This targets links that are NOT button-link */
         margin-right: 20px;
         text-decoration: none;
-        color: #f1f5f9; /* Light text color for links */
+        color: #f1f5f9; /* Light text color for regular links */
         font-weight: 500;
         padding: 5px 0;
         transition: color 0.3s ease;
     }
 
-    nav div:last-child a:hover {
-        color: #38bdf8; /* Hover color accent */
+    nav div:last-child a:not(.button-link):hover {
+        color: #38bdf8; /* Hover color accent for regular links */
     }
 
-    /* Styling for the button-like links (including Mobile Recharge Software now) */
+    /* Styling for the button-like links (Mobile Recharge Software and IRCTC Agent) */
     nav div:last-child a.button-link {
         padding: 10px 20px;
         background-color: #00e676; /* Bright green accent for consistency */
@@ -168,8 +169,7 @@
   <nav>
     <span class="logo-text">Ftech Global</span>
     <div>
-      <a href="index.html">Home</a>
-      <a href="mobile-recharge-software-ftech-global.html" class="button-link">Mobile Recharge Software</a>
+      <a href="index.html">Home</a> <a href="mobile-recharge-software-ftech-global.html" class="button-link">📱 Mobile Recharge Software</a>
       <a href="irctc-agent-services.html" class="button-link">
         🚆 Become IRCTC Agent
       </a>
