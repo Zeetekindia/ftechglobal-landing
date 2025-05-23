@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agent Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: green;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Agent Registration Form</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Business Name</label>
+      <input type="text" name="business_name" required>
+
+      <label>Mobile</label>
+      <input type="tel" name="mobile" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>City</label>
+      <input type="text" name="city" required>
+
+      <label>Pincode</label>
+      <input type="text" name="pincode" required>
+
+      <label>State</label>
+      <select name="state" required>
+        <option value="">Select State</option>
+        <option>Bihar</option>
+        <option>Jharkhand</option>
+        <option>Uttar Pradesh</option>
+        <option>Maharashtra</option>
+        <!-- Add more states as needed -->
+      </select>
+
+      <label>Referred By</label>
+      <input type="text" name="referred_by">
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
