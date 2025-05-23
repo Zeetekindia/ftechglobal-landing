@@ -17,7 +17,7 @@
       min-height: 100vh;
       text-align: center;
       padding: 20px;
-      padding-top: 100px;
+      padding-top: 100px; /* Adjust padding-top to account for fixed nav and top-contact */
     }
 
     .top-contact {
@@ -28,11 +28,65 @@
       font-family: Arial, sans-serif;
       width: 100%;
       position: fixed;
-      top: 0;
+      top: 0; /* Positioned at the very top */
       left: 0;
       box-sizing: border-box;
       font-weight: bold;
       z-index: 1000;
+    }
+
+    /* Adjust padding-top for body to prevent content from being hidden by fixed nav */
+    body {
+        padding-top: 100px; /* Combined height of .top-contact (approx 36px) and nav (approx 60px) */
+    }
+
+    /* Styling for the nav bar */
+    nav {
+        background-color: #f8f9fa; /* Light background for the nav bar */
+        padding: 15px 20px; /* Added horizontal padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Full width */
+        position: fixed; /* Fixed position */
+        top: 36px; /* Positioned below the top-contact bar */
+        left: 0;
+        box-sizing: border-box; /* Include padding in width calculation */
+        z-index: 999; /* Z-index slightly lower than top-contact but higher than content */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional subtle shadow */
+    }
+
+    nav .logo-text { /* Changed from div to span for text-based logo */
+        font-weight: bold;
+        font-size: 20px;
+        color: #333; /* Color for the logo text */
+    }
+
+    nav div:last-child a { /* Styling for the links in the nav bar */
+        margin-right: 20px;
+        text-decoration: none;
+        color: #333; /* Default link color */
+        font-weight: 500;
+        padding: 5px 0; /* Add some padding for clickable area */
+        transition: color 0.3s ease;
+    }
+
+    nav div:last-child a:hover {
+        color: #0ea5e9; /* Hover color for links */
+    }
+
+    nav div:last-child a.button-link { /* Styling for the button-like link */
+        padding: 10px 20px;
+        background-color: #0ea5e9;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    nav div:last-child a.button-link:hover {
+        background-color: #007bff;
     }
 
     .logo {
@@ -109,20 +163,20 @@
     }
   </style>
 </head>
-<body> 
-  <nav style="background-color: #f8f9fa; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
-  <div style="font-weight: bold; font-size: 20px;">Ftech Global</div>
-  <div>
-    <a href="index.html" style="margin-right: 20px; text-decoration: none; color: #333;">Home</a>
-    <a href="irctc-agent-services.html" style="padding: 10px 20px; background-color: #0ea5e9; color: white; border-radius: 8px; text-decoration: none;">
-      🚆 Become IRCTC Agent
-    </a>
-  </div>
-</nav>
-
+<body>
   <div class="top-contact">
     📞 Contact: +91-8789567363
   </div>
+
+  <nav>
+    <span class="logo-text">Ftech Global</span> <div>
+      <a href="index.html">Home</a>
+      <a href="mobile-recharge-software-ftech-global.html">Mobile Recharge Software</a>
+      <a href="irctc-agent-services.html" class="button-link">
+        🚆 Become IRCTC Agent
+      </a>
+    </div>
+  </nav>
 
   <img src="flogo.jpeg" alt="Ftech Global Logo" class="logo" />
 
