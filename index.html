@@ -20,115 +20,129 @@
             flex-direction: column;
             min-height: 100vh; /* Ensures content pushes footer to bottom */
             text-align: center; /* Default text align for body content */
+            padding-top: 250px; /* Space for the fixed logo and nav */
         }
 
-        /* Top Contact Info Bar */
         .top-contact-bar {
-            background-color: #2c3e50;
+            background: #1a2a4b;
             color: #fff;
-            padding: 10px 20px;
+            padding: 8px 20px;
             text-align: right;
-            font-size: 0.9em;
+            font-family: Arial, sans-serif;
             width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
             box-sizing: border-box;
             font-weight: bold;
-            z-index: 1000;
+            z-index: 1001; /* Highest z-index */
         }
         .top-contact-bar a {
             color: inherit;
             text-decoration: none;
         }
 
-        /* NEW HEADER STRUCTURE: Logo above Navigation */
-        .page-header {
-            background-color: #283a5e; /* Header background color */
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-            position: sticky; /* Sticky header */
-            top: 0;
-            width: 100%;
-            box-sizing: border-box;
-            z-index: 990;
-            display: flex;
-            flex-direction: column; /* Stack logo area and nav vertically */
-            align-items: center; /* Center items horizontally within header */
-        }
-
-        .header-logo-area {
-            text-align: center;
-            margin-bottom: 15px; /* Space between logo and nav */
-        }
-
-        .header-logo {
-            width: 150px; /* Larger logo size */
-            height: 150px;
+        /* Fixed Top-Left Logo */
+        .fixed-main-logo {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #38bdf8;
             box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
-            display: block; /* Ensures it takes its own line */
-            margin: 0 auto 10px auto; /* Center logo image and add bottom margin */
+            position: fixed;
+            top: 40px; /* Below the top-contact-bar */
+            left: 20px;
+            z-index: 999; /* Below contact bar, above nav */
         }
 
-        .header-logo-text {
-            color: #fff;
-            font-size: 2.2em; /* Larger logo text */
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .header-logo-text span {
-            display: block;
-            font-size: 0.7em;
-            font-weight: normal;
-            color: #b0e0e6;
-        }
-
-        .main-nav {
-            width: 100%; /* Nav takes full width of header */
-        }
-
-        .main-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        /* Fixed Navigation Bar (beside logo) */
+        nav {
+            background-color: #1a2a4b;
+            padding: 15px 20px;
             display: flex;
-            justify-content: center; /* Center the navigation buttons */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            gap: 10px; /* Space between buttons */
+            justify-content: flex-end; /* Align buttons to the right */
+            align-items: center;
+            width: calc(100% - 250px); /* 100% minus logo width (200px) + some margin (50px) */
+            position: fixed;
+            top: 60px; /* Adjust this to align with the logo's vertical center or desired position */
+            left: 230px; /* Positioned to the right of the logo (20px logo margin + 200px logo width + 10px spacing) */
+            box-sizing: border-box;
+            z-index: 998; /* Below logo, above content */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
 
-        .main-nav li {
-            display: inline-block;
+        nav:hover {
+            background-color: #2c3e50;
         }
 
-        .nav-button {
+        nav div {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap; /* Keep items on single line on larger screens */
+            justify-content: flex-end; /* Align buttons to the right */
+            width: 100%;
+        }
+
+        nav div a.button-link {
+            padding: 10px 15px; /* Good padding for buttons */
             background-color: #00e676;
             color: #1a2a4b;
-            padding: 10px 15px; /* Good padding for buttons */
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; /* Space between buttons */
+            box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
             display: flex;
             align-items: center;
             gap: 8px; /* Space between icon and text */
             white-space: nowrap; /* Keep button content on one line */
-            font-size: 0.95em; /* Readable font size for buttons */
+            font-size: 0.9em; /* Slightly smaller font to fit more items */
         }
 
-        .nav-button:hover {
+        nav div a.button-link:hover {
             background-color: #00b359;
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6);
         }
 
-        /* Main content styling */
+        /* Main Content Styling */
         .main-content {
             padding: 40px 20px; /* Padding for content below header */
             max-width: 960px;
             margin: 0 auto;
             flex-grow: 1; /* Allows content to expand */
             box-sizing: border-box;
+        }
+
+        /* Other general styles (H1, P, A.button from original) */
+        h1 {
+            font-size: 3rem;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        a.button {
+            background: #38bdf8;
+            color: #0f172a;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a.button:hover {
+            background: #0ea5e9;
         }
 
         .services {
@@ -161,33 +175,6 @@
             line-height: 1.6;
         }
 
-        /* Other general styles (H1, P, A.button from original) */
-        h1 {
-            font-size: 3rem;
-            color: #38bdf8;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-
-        a.button {
-            background: #38bdf8;
-            color: #0f172a;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        a.button:hover {
-            background: #0ea5e9;
-        }
-
         footer {
             background-color: #1a2a4b;
             color: #a0a0a0;
@@ -200,69 +187,84 @@
             box-sizing: border-box;
         }
 
-        /* --- Media Queries for Responsiveness --- */
+        /* --- Media Queries for responsiveness --- */
 
-        /* Tablet/Smaller Desktop breakpoint */
-        @media (max-width: 1024px) {
-            .header-logo {
-                width: 120px; /* Slightly smaller logo */
+        /* Adjustments for larger screens if buttons are still too wide */
+        @media (min-width: 1400px) { /* Adjust this value if needed */
+            nav {
+                top: 70px; /* Fine-tune vertical alignment with logo */
+            }
+        }
+
+        /* Tablet/Smaller Desktop breakpoint - **THIS IS CRITICAL FOR OVERLAP** */
+        /* When screen is narrower, switch to stacked layout */
+        @media (max-width: 1200px) { /* Adjust this breakpoint if needed */
+            body {
+                padding-top: 200px; /* Space for stacked header (logo + nav) */
+            }
+
+            .fixed-main-logo {
+                width: 120px; /* Smaller logo for tablet */
                 height: 120px;
+                top: 50px;
+                left: 50%; /* Center the logo horizontally */
+                transform: translateX(-50%); /* Adjust for centering */
+                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
             }
-            .header-logo-text {
-                font-size: 1.8em; /* Adjusted text size */
+
+            nav {
+                position: fixed; /* Still fixed */
+                top: 170px; /* Position below the smaller logo */
+                left: 0;
+                width: 100%;
+                flex-direction: column; /* Stack nav items */
+                justify-content: center; /* Center them */
+                align-items: center;
+                padding: 10px;
+                box-shadow: none; /* Remove shadow if desired for stacked nav */
+                border-radius: 0;
+                background-color: #2c3e50; /* Background for stacked nav */
             }
-            .nav-button {
-                padding: 8px 12px; /* Slightly smaller buttons */
-                font-size: 0.8em; /* Smaller font for buttons */
-                gap: 5px;
+
+            nav div {
+                flex-direction: column; /* Stack buttons vertically */
+                width: 100%;
+                justify-content: center;
             }
-            .main-content {
-                padding: 20px; /* Reduced padding */
+
+            nav div a.button-link {
+                margin: 5px 0; /* Vertical margin for stacked buttons */
+                padding: 10px 15px;
+                width: calc(100% - 30px); /* Full width minus padding */
+                box-sizing: border-box;
+                font-size: 0.95em; /* Readable size for tablet buttons */
+                gap: 8px;
             }
         }
 
         /* Mobile breakpoint */
         @media (max-width: 768px) {
+            body {
+                padding-top: 200px; /* Keep similar padding for mobile */
+            }
             .top-contact-bar {
-                padding: 8px 15px;
+                padding: 5px 10px;
             }
-            .page-header {
-                padding: 10px;
+
+            .fixed-main-logo {
+                width: 100px;
+                height: 100px;
+                top: 45px; /* Adjust top for smaller screens */
             }
-            .header-logo {
-                width: 90px; /* Even smaller logo on mobile */
-                height: 90px;
-                margin-bottom: 10px;
-                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+
+            nav {
+                top: 155px; /* Adjust nav top for smaller logo on mobile */
             }
-            .header-logo-text {
-                font-size: 1.4em; /* Smaller logo text on mobile */
-            }
-            .header-logo-text span {
-                font-size: 0.6em;
-            }
-            .main-nav ul {
-                flex-direction: column; /* Stack buttons vertically */
-                gap: 6px;
-            }
-            .nav-button {
-                width: calc(100% - 20px); /* Full width minus padding */
-                text-align: center;
-                justify-content: center; /* Center content in buttons */
-                font-size: 0.85em; /* Good readable size for mobile buttons */
-                padding: 10px 15px;
-                gap: 8px;
-            }
+
             h1 {
                 font-size: 2rem;
             }
             p {
-                font-size: 1rem;
-            }
-            .services h2 {
-                font-size: 1.5rem;
-            }
-            .services li {
                 font-size: 1rem;
             }
         }
@@ -274,25 +276,21 @@
         Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
     </div>
 
-    <header class="page-header">
-        <div class="header-logo-area">
-            <img src="https://www.ftechglobal.com/img/logo.png" alt="Ftechglobal Logo" class="header-logo">
-            <div class="header-logo-text">
-                Ftechglobal
-                <span>Fly fine to the future</span>
-            </div>
+    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Logo" class="fixed-main-logo" />
+
+    <nav>
+        <div>
+            <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
+            <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
+            <a href="irctc-agent-services.html" class="button-link">
+                <i class="fas fa-train"></i> Become IRCTC Agent
+            </a>
+            <a href="Digital Marketing Services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
+            <a href="Startup Consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="nav-button home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="mobile-recharge-software-ftech-global.html" class="nav-button mobile-recharge"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a></li>
-                <li><a href="irctc-agent-services.html" class="nav-button irctc-agent"><i class="fas fa-train"></i> Become IRCTC Agent</a></li>
-                <li><a href="Digital Marketing Services.html" class="nav-button digital-marketing"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a></li>
-                <li><a href="Startup Consultancy.html" class="nav-button startup-consultancy"><i class="fas fa-lightbulb"></i> Startup Consultancy</a></li>
-                <li><a href="registration.html" class="nav-button registration"><i class="fas fa-user-plus"></i> Registration</a></li>
-            </ul>
-        </nav>
-    </header>
+    </nav>
+
     <div class="main-content">
         <h1>🚀 Ftech Global</h1>
         <p>Empowering Your Business with Next-Gen Technology</p>
