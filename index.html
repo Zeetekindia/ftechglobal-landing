@@ -20,7 +20,8 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            padding-top: 150px; /* Space for the fixed logo and nav above content */
+            /* *** REDUCED PADDING-TOP HERE *** */
+            padding-top: 130px; /* Reduced space for the fixed logo and nav above content */
         }
 
         .top-contact-bar {
@@ -35,7 +36,7 @@
             left: 0;
             box-sizing: border-box;
             font-weight: bold;
-            z-index: 1001; /* Highest z-index */
+            z-index: 1001;
         }
         .top-contact-bar a {
             color: inherit;
@@ -43,16 +44,16 @@
         }
 
         .fixed-main-logo {
-            width: 120px; /* LOGO SIZE */
-            height: 120px; /* LOGO SIZE */
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7); /* Adjusted shadow intensity */
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
             position: fixed;
-            top: 40px; /* Below the top-contact-bar */
+            top: 40px;
             left: 20px;
-            z-index: 999; /* Below contact bar, above nav */
+            z-index: 999;
         }
 
         nav {
@@ -61,12 +62,12 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            width: calc(100% - 160px); /* 100% minus logo width (120px) + some margin (40px) */
+            width: calc(100% - 160px);
             position: fixed;
-            top: 65px; /* Adjusted to align better with smaller logo's vertical center */
-            left: 140px; /* Positioned to the right of the smaller logo (20px logo margin + 120px logo width) */
+            top: 65px;
+            left: 140px;
             box-sizing: border-box;
-            z-index: 998; /* Below logo, above content */
+            z-index: 998;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             border-radius: 8px;
             transition: background-color 0.3s ease;
@@ -79,26 +80,26 @@
         nav div {
             display: flex;
             align-items: center;
-            flex-wrap: nowrap; /* Keep items on single line on larger screens */
-            justify-content: flex-end; /* Align buttons to the right */
+            flex-wrap: nowrap;
+            justify-content: flex-end;
             width: 100%;
         }
 
         nav div a.button-link {
-            padding: 8px 12px; /* Slightly reduced padding to help fit */
+            padding: 8px 12px;
             background-color: #00e676;
             color: #1a2a4b;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 8px; /* Space between buttons */
+            margin-left: 8px;
             box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
             display: flex;
             align-items: center;
-            gap: 6px; /* Space between icon and text */
-            white-space: nowrap; /* Keep button content on one line */
-            font-size: 0.85em; /* Slightly smaller font to fit more items */
+            gap: 6px;
+            white-space: nowrap;
+            font-size: 0.85em;
         }
 
         nav div a.button-link:hover {
@@ -109,27 +110,27 @@
 
         /* Main Content Styling */
         .main-content {
-            /* *** ADJUSTED PADDING TOP HERE *** */
-            padding: 10px 20px 40px 20px; /* Reduced top padding, kept bottom/side padding */
-            max-width: 1200px; /* Increased max-width to make content wider */
-            width: 100%; /* Ensure it takes full width up to max-width */
+            /* *** ADJUSTED PADDING TOP HERE (further reduced) *** */
+            padding: 15px 20px 40px 20px; /* Reduced top padding further, kept bottom/side padding */
+            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
-            flex-grow: 1; /* Allows content to expand */
+            flex-grow: 1;
             box-sizing: border-box;
         }
 
         /* Styles for the new homepage image */
         .homepage-services-image {
-            max-width: 60%; /* Adjusted as needed - makes the image responsive and not too wide */
-            height: auto; /* Maintains aspect ratio */
-            display: block; /* Ensures it behaves as a block element */
-            /* *** ADJUSTED MARGIN TOP HERE *** */
+            max-width: 60%;
+            height: auto;
+            display: block;
+            /* *** ADJUSTED MARGIN TOP HERE (reduced) *** */
             margin: 20px auto 40px auto; /* Reduced top margin, kept bottom margin */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Adjusted H1 and P margins within main-content */
+        /* Adjusted H1 and P margins within main-content (refined) */
         .main-content h1 {
             font-size: 3rem;
             color: #38bdf8;
@@ -140,7 +141,7 @@
         .main-content p {
             font-size: 1.2rem;
             margin-top: 5px; /* Reduced top margin */
-            margin-bottom: 25px; /* Increased bottom margin to separate from image */
+            margin-bottom: 25px; /* Space before the image */
         }
 
         a.button {
@@ -252,13 +253,13 @@
             }
 
             .main-content {
-                padding: 10px 10px 40px 10px; /* Adjusted padding for tablets */
+                padding: 15px 10px 40px 10px; /* Adjusted padding for tablets */
                 max-width: 90%;
             }
 
             .homepage-services-image {
-                max-width: 70%; /* Adjusted for tablets */
-                margin-top: 20px; /* Reduced top margin */
+                max-width: 70%;
+                margin-top: 20px;
                 margin-bottom: 30px;
             }
         }
@@ -289,13 +290,13 @@
             }
 
             .main-content {
-                padding: 10px 10px 20px 10px; /* Adjusted padding for mobile */
+                padding: 15px 10px 20px 10px; /* Adjusted padding for mobile */
                 max-width: 95%;
             }
 
             .homepage-services-image {
-                max-width: 90%; /* Adjusted for mobile */
-                margin-top: 15px; /* Reduced top margin */
+                max-width: 90%;
+                margin-top: 15px;
                 margin-bottom: 20px;
             }
 
