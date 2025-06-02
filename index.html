@@ -14,17 +14,18 @@
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             line-height: 1.6;
-            background: #0f172a; /* Dark background */
-            color: #f1f5f9; /* Light text color */
+            /* *** BACKGROUND COLOR CHANGE HERE *** */
+            background: #1F2937; /* Deep Charcoal Gray */
+            color: #f1f5f9; /* Light text color (remains the same) */
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensures content pushes footer to bottom */
-            text-align: center; /* Default text align for body content */
-            padding-top: 150px; /* Space for the fixed logo and nav above content */
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 150px;
         }
 
         .top-contact-bar {
-            background: #1a2a4b;
+            background: #1a2a4b; /* Kept this dark blue for contrast with new body background */
             color: #fff;
             padding: 8px 20px;
             text-align: right;
@@ -35,7 +36,7 @@
             left: 0;
             box-sizing: border-box;
             font-weight: bold;
-            z-index: 1001; /* Highest z-index */
+            z-index: 1001;
         }
         .top-contact-bar a {
             color: inherit;
@@ -44,31 +45,31 @@
 
         /* Fixed Top-Left Logo */
         .fixed-main-logo {
-            width: 120px; /* LOGO SIZE */
-            height: 120px; /* LOGO SIZE */
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7); /* Adjusted shadow intensity */
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
             position: fixed;
-            top: 40px; /* Below the top-contact-bar */
+            top: 40px;
             left: 20px;
-            z-index: 999; /* Below contact bar, above nav */
+            z-index: 999;
         }
 
         /* Fixed Navigation Bar (beside logo) */
         nav {
-            background-color: #1a2a4b;
+            background-color: #1a2a4b; /* Kept this dark blue for contrast with new body background */
             padding: 15px 20px;
             display: flex;
-            justify-content: flex-end; /* Align buttons to the right */
+            justify-content: flex-end;
             align-items: center;
-            width: calc(100% - 160px); /* 100% minus logo width (120px) + some margin (40px) */
+            width: calc(100% - 160px);
             position: fixed;
-            top: 65px; /* Adjusted to align better with smaller logo's vertical center */
-            left: 140px; /* Positioned to the right of the smaller logo (20px logo margin + 120px logo width) */
+            top: 65px;
+            left: 140px;
             box-sizing: border-box;
-            z-index: 998; /* Below logo, above content */
+            z-index: 998;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             border-radius: 8px;
             transition: background-color 0.3s ease;
@@ -81,26 +82,26 @@
         nav div {
             display: flex;
             align-items: center;
-            flex-wrap: nowrap; /* Keep items on single line on larger screens */
-            justify-content: flex-end; /* Align buttons to the right */
+            flex-wrap: nowrap;
+            justify-content: flex-end;
             width: 100%;
         }
 
         nav div a.button-link {
-            padding: 8px 12px; /* Slightly reduced padding to help fit */
+            padding: 8px 12px;
             background-color: #00e676;
             color: #1a2a4b;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 8px; /* Space between buttons */
+            margin-left: 8px;
             box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
             display: flex;
             align-items: center;
-            gap: 6px; /* Space between icon and text */
-            white-space: nowrap; /* Keep button content on one line */
-            font-size: 0.85em; /* Slightly smaller font to fit more items */
+            gap: 6px;
+            white-space: nowrap;
+            font-size: 0.85em;
         }
 
         nav div a.button-link:hover {
@@ -111,12 +112,11 @@
 
         /* Main Content Styling */
         .main-content {
-            padding: 40px 20px; /* Padding for content below header */
-            /* *** CRITICAL ADJUSTMENT HERE *** */
-            max-width: 1200px; /* Increased max-width to make content wider */
-            width: 100%; /* Ensure it takes full width up to max-width */
+            padding: 40px 20px;
+            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
-            flex-grow: 1; /* Allows content to expand */
+            flex-grow: 1;
             box-sizing: border-box;
         }
 
@@ -151,20 +151,20 @@
         .services {
             margin-top: 40px;
             padding: 20px;
-            background-color: #1e293b;
+            /* Background of the services section itself */
+            background-color: #2D3A4B; /* A slightly lighter shade of dark gray/blue for contrast */
             border-radius: 12px;
-            max-width: 100%; /* Ensure services section can fill its parent */
-            /* Removed fixed width from here, it will adapt to .main-content's width */
+            max-width: 100%;
             margin-left: auto;
             margin-right: auto;
-            text-align: left; /* Services section text left-aligned */
+            text-align: left;
         }
 
         .services h2 {
             color: #38bdf8;
             font-size: 2rem;
             margin-bottom: 15px;
-            text-align: center; /* Center services heading */
+            text-align: center;
         }
 
         .services ul {
@@ -179,8 +179,8 @@
         }
 
         .services li strong {
-            color: #00e676; /* Highlight strong text in service list */
-            display: block; /* Make service title a block for better readability */
+            color: #00e676;
+            display: block;
             margin-bottom: 5px;
         }
 
@@ -198,54 +198,52 @@
 
         /* --- Media Queries for responsiveness --- */
 
-        /* Tablet/Smaller Desktop breakpoint - **THIS IS CRITICAL FOR OVERLAP** */
-        /* When screen is narrower, switch to stacked layout */
-        @media (max-width: 1200px) { /* Adjust this breakpoint if needed */
+        /* Tablet/Smaller Desktop breakpoint */
+        @media (max-width: 1200px) {
             body {
-                padding-top: 200px; /* Space for stacked header (logo + nav) */
+                padding-top: 200px;
             }
 
             .fixed-main-logo {
-                width: 120px; /* Maintain smaller logo size for tablet */
+                width: 120px;
                 height: 120px;
                 top: 50px;
-                left: 50%; /* Center the logo horizontally */
-                transform: translateX(-50%); /* Adjust for centering */
+                left: 50%;
+                transform: translateX(-50%);
                 box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
             }
 
             nav {
-                position: fixed; /* Still fixed */
-                top: 170px; /* Position below the smaller logo */
+                position: fixed;
+                top: 170px;
                 left: 0;
                 width: 100%;
-                flex-direction: column; /* Stack nav items */
-                justify-content: center; /* Center them */
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
                 padding: 10px;
-                box-shadow: none; /* Remove shadow if desired for stacked nav */
+                box-shadow: none;
                 border-radius: 0;
-                background-color: #2c3e50; /* Background for stacked nav */
+                background-color: #2c3e50;
             }
 
             nav div {
-                flex-direction: column; /* Stack buttons vertically */
+                flex-direction: column;
                 width: 100%;
                 justify-content: center;
             }
 
             nav div a.button-link {
-                margin: 5px 0; /* Vertical margin for stacked buttons */
+                margin: 5px 0;
                 padding: 10px 15px;
-                width: calc(100% - 30px); /* Full width minus padding */
+                width: calc(100% - 30px);
                 box-sizing: border-box;
-                font-size: 0.95em; /* Readable size for tablet buttons */
+                font-size: 0.95em;
                 gap: 8px;
             }
 
-            /* Main content on tablets should adapt */
             .main-content {
-                max-width: 90%; /* Allow wider content on tablets, but not full screen */
+                max-width: 90%;
                 padding: 20px 10px;
             }
         }
@@ -253,26 +251,26 @@
         /* Mobile breakpoint */
         @media (max-width: 768px) {
             body {
-                padding-top: 150px; /* Adjust padding for smaller screens */
+                padding-top: 150px;
             }
             .top-contact-bar {
                 padding: 5px 10px;
             }
 
             .fixed-main-logo {
-                width: 80px; /* Even smaller logo for mobile */
+                width: 80px;
                 height: 80px;
-                top: 45px; /* Adjust top for smaller screens */
-                left: 50%; /* Re-center for mobile */
+                top: 45px;
+                left: 50%;
                 transform: translateX(-50%);
             }
 
             nav {
-                top: 135px; /* Adjust nav top for smaller logo on mobile */
+                top: 135px;
                 padding: 8px 10px;
             }
             nav div a.button-link {
-                font-size: 0.8em; /* Slightly smaller text for mobile buttons */
+                font-size: 0.8em;
                 padding: 8px 12px;
             }
 
@@ -283,15 +281,14 @@
                 font-size: 1rem;
             }
             .services h2 {
-                font-size: 1.5rem; /* Smaller heading on mobile */
+                font-size: 1.5rem;
             }
             .services li {
-                font-size: 1em; /* Readable list items on mobile */
+                font-size: 1em;
             }
 
-            /* Main content on mobile should adapt */
             .main-content {
-                max-width: 95%; /* Allow content to almost span full width */
+                max-width: 95%;
                 padding: 15px 10px;
             }
         }
