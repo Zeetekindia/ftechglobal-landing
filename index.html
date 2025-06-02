@@ -14,9 +14,9 @@
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             line-height: 1.6;
-            /* *** BACKGROUND COLOR CHANGE HERE *** */
-            background: #1F2937; /* Deep Charcoal Gray */
-            color: #f1f5f9; /* Light text color (remains the same) */
+            /* *** NEW GRADIENT BACKGROUND HERE *** */
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%); /* Deep blue-gray to very dark blue-gray */
+            color: #f1f5f9; /* Light text color (remains the same for readability) */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -45,14 +45,14 @@
 
         /* Fixed Top-Left Logo */
         .fixed-main-logo {
-            width: 120px;
-            height: 120px;
+            width: 120px; /* LOGO SIZE */
+            height: 120px; /* LOGO SIZE */
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7); /* Adjusted shadow intensity */
             position: fixed;
-            top: 40px;
+            top: 40px; /* Below the top-contact-bar */
             left: 20px;
             z-index: 999;
         }
@@ -147,12 +147,11 @@
             background: #0ea5e9;
         }
 
-        /* Services Section Styling (with new content) */
+        /* Services Section Styling */
         .services {
             margin-top: 40px;
             padding: 20px;
-            /* Background of the services section itself */
-            background-color: #2D3A4B; /* A slightly lighter shade of dark gray/blue for contrast */
+            background-color: #2D3A4B; /* Kept this slightly lighter dark background for internal sections */
             border-radius: 12px;
             max-width: 100%;
             margin-left: auto;
