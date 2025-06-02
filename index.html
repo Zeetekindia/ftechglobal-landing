@@ -10,116 +10,136 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
+        /* General Body Styles */
         body {
-            margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: #f1f5f9;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0; /* Remove top padding as header will handle it */
+            background-color: #0f172a; /* Dark background */
+            color: #f1f5f9; /* Light text color */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            padding-top: 250px; /* Default padding for content below fixed header */
+            min-height: 100vh; /* Ensures content pushes footer to bottom */
+            text-align: center; /* Adjust if main content should not be centered */
         }
 
-        .top-contact {
-            background: #1a2a4b;
+        /* Top Contact Info Bar (from previous versions) */
+        .top-contact-bar {
+            background-color: #2c3e50; /* Slightly lighter dark blue */
             color: #fff;
-            padding: 8px 20px;
+            padding: 10px 20px;
             text-align: right;
-            font-family: Arial, sans-serif;
+            font-size: 0.9em;
             width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
             box-sizing: border-box;
             font-weight: bold;
             z-index: 1000;
         }
-        .top-contact a {
-            color: inherit;
+        .top-contact-bar a {
+            color: #fff;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        /* Container for Fixed Header Elements (Logo + Nav) */
-        .fixed-header-container {
-            position: fixed;
-            top: 40px; /* Below the top-contact bar */
-            left: 0;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Space out logo and nav */
-            padding: 10px 20px; /* Padding for the entire fixed header area */
-            box-sizing: border-box;
-            z-index: 999;
-            /* No background here, background will be on nav for its rounded corners */
-        }
-
-        .fixed-main-logo {
-            width: 180px; /* Slightly reduced width for more space */
-            height: 180px; /* Adjusted height */
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #38bdf8;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
-            /* Remove fixed positioning from here, it's now in .fixed-header-container */
-            flex-shrink: 0; /* Prevent logo from shrinking */
-        }
-
-        nav {
-            background-color: #1a2a4b;
+        /* Main Header & Navigation Styles (Adopted from mobile-recharge-software-ftech-global.html) */
+        .main-header {
+            background-color: #283a5e; /* Darker blue */
             padding: 15px 20px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            flex-grow: 1; /* Allow nav to take remaining space */
-            margin-left: 20px; /* Space between logo and nav */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            position: sticky; /* Sticky header - sticks to top when scrolling */
+            top: 0; /* Sticks to the very top */
+            width: 100%;
             box-sizing: border-box;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            max-width: calc(100% - 200px - 40px); /* Adjust max-width based on logo and padding */
+            z-index: 990; /* Below top-contact-bar but above content */
         }
 
-        nav:hover {
-            background-color: #2c3e50;
-        }
-
-        nav div {
+        .logo-area {
             display: flex;
             align-items: center;
-            flex-wrap: nowrap; /* Keep items on single line on larger screens */
-            justify-content: flex-end; /* Align buttons to the right */
-            width: 100%;
+            flex-shrink: 0; /* Prevent logo area from shrinking */
         }
 
-        nav div a.button-link {
-            padding: 10px 15px; /* Further reduced padding to fit more items */
+        .logo {
+            width: 60px; /* Standard size */
+            height: 60px; /* Standard size */
+            margin-right: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px rgba(0, 230, 118, 0.7), 0 0 20px 10px rgba(0, 230, 118, 0.3);
+            background: linear-gradient(45deg, #FF5722, #00E676, #2196F3, #9C27B0);
+            animation: rotateLogo 5s linear infinite;
+        }
+
+        @keyframes rotateLogo {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.2;
+            white-space: nowrap; /* Keep logo text on one line */
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.7em;
+            font-weight: normal;
+            color: #b0e0e6;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: flex-end; /* Align buttons to the right */
+        }
+
+        .main-nav li {
+            display: inline-block;
+        }
+
+        .nav-button {
             background-color: #00e676;
             color: #1a2a4b;
-            border-radius: 10px;
+            padding: 8px 12px; /* Slightly reduced padding */
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 8px; /* Further reduced margin between buttons */
-            box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
             display: flex;
             align-items: center;
-            gap: 5px; /* Further reduced gap between icon and text */
-            white-space: nowrap;
-            font-size: 0.9em; /* Slightly smaller font for buttons */
+            gap: 5px; /* Reduced gap between icon and text */
+            white-space: nowrap; /* Keep button content on one line */
+            font-size: 0.85em; /* Slightly smaller font for more fit */
         }
 
-        nav div a.button-link:hover {
+        .nav-button:hover {
             background-color: #00b359;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6);
         }
 
+        /* Main content container (from your previous index.html) */
+        .container {
+            max-width: 960px;
+            margin: 40px auto 20px auto; /* Adjust top margin for spacing below header */
+            padding: 20px;
+            background-color: #1e293b; /* Adjusted background to match your services section style */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-grow: 1;
+        }
+
+
+        /* Headings (from your previous index.html) */
         h1 {
             font-size: 3rem;
             color: #38bdf8;
@@ -149,10 +169,12 @@
         .services {
             margin-top: 40px;
             padding: 20px;
-            background-color: #1e293b;
+            background-color: #1e293b; /* Kept original service background */
             border-radius: 12px;
             max-width: 600px;
             width: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .services h2 {
@@ -179,83 +201,67 @@
             padding: 20px;
             font-size: 0.85em;
             border-top: 1px solid #334a70;
-            margin-top: auto;
+            margin-top: 30px;
             width: 100%;
             box-sizing: border-box;
         }
 
         /* --- Media Queries for responsiveness --- */
 
-        /* Tablet/Smaller Desktop breakpoint */
-        @media (max-width: 1200px) { /* Adjust this breakpoint as needed based on your testing */
-            .fixed-main-logo {
-                width: 150px; /* Even smaller logo */
-                height: 150px;
-            }
-            nav {
-                margin-left: 15px;
-                max-width: calc(100% - 150px - 30px); /* Adjust max-width based on smaller logo */
-            }
-            nav div a.button-link {
-                padding: 8px 12px; /* Even smaller padding */
-                margin-left: 6px;
+        /* Tablets and Smaller Desktops (769px to 1024px, adjust as needed) */
+        @media (max-width: 1024px) {
+            .nav-button {
+                padding: 7px 10px; /* Slightly smaller buttons */
+                font-size: 0.8em; /* Even smaller font */
                 gap: 4px;
-                font-size: 0.85em; /* Smaller font size */
+            }
+            .logo-text {
+                font-size: 1.5em; /* Smaller logo text */
             }
         }
 
-        /* Mobile breakpoint */
+
+        /* Mobile breakpoint (up to 768px) */
         @media (max-width: 768px) {
             body {
-                padding-top: 250px; /* Keep enough space for stacked header on mobile */
+                padding-top: 0; /* Remove top padding from body, header is responsive */
             }
 
-            .top-contact {
-                padding: 5px 10px;
-            }
-
-            .fixed-header-container {
+            .main-header {
                 flex-direction: column; /* Stack logo and nav vertically */
                 align-items: center; /* Center items when stacked */
-                top: 40px;
                 padding: 10px;
             }
 
-            .fixed-main-logo {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 15px; /* Space below logo */
-                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            .logo-area {
+                margin-bottom: 15px; /* Space below logo when stacked */
             }
 
-            nav {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                left: 0;
-                top: auto; /* Remove specific top position */
-                position: static; /* Let it flow normally within its container */
-                margin-left: 0; /* Remove left margin */
-                padding: 10px;
-                box-shadow: none; /* Remove shadow when stacked */
-                border-radius: 0;
-                background-color: #2c3e50; /* Adjust background for stacked nav */
-                max-width: 100%; /* Take full width */
+            .logo {
+                width: 50px; /* Smaller logo on mobile */
+                height: 50px;
+                margin-right: 10px;
+                box-shadow: 0 0 10px 5px rgba(0, 230, 118, 0.7), 0 0 15px 8px rgba(0, 230, 118, 0.3);
             }
 
-            nav div {
+            .logo-text {
+                font-size: 1.5em; /* Keep logo text readable */
+            }
+
+            .main-nav ul {
                 flex-direction: column; /* Stack buttons vertically */
                 width: 100%;
-                justify-content: center; /* Center buttons when stacked */
+                gap: 8px; /* Space between stacked buttons */
+                justify-content: center; /* Center stacked buttons */
             }
 
-            nav div a.button-link {
-                margin: 5px 0; /* Vertical margin for stacked buttons */
+            .nav-button {
+                width: calc(100% - 20px); /* Full width minus padding */
+                text-align: center;
+                justify-content: center; /* Center content in buttons */
+                font-size: 0.9em; /* Good readable size for mobile buttons */
                 padding: 10px 15px;
-                width: calc(100% - 30px); /* Full width minus padding */
-                box-sizing: border-box;
-                font-size: 1em; /* Reset font size for mobile for readability */
+                gap: 8px;
             }
 
             h1 {
@@ -265,56 +271,52 @@
             p {
                 font-size: 1rem;
             }
-
-            .services h2 {
-                font-size: 1.5rem;
-            }
-
-            .services li {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="top-contact">
-        📞 Contact: <a href="tel:+918789567363">+91-8789567363</a>
+
+    <div class="top-contact-bar">
+        Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
     </div>
 
-    <div class="fixed-header-container">
-        <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Logo" class="fixed-main-logo" />
-
-        <nav>
-            <div>
-                <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
-                <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
-                <a href="irctc-agent-services.html" class="button-link">
-                    <i class="fas fa-train"></i> Become IRCTC Agent
-                </a>
-                <a href="Digital Marketing Services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
-                <a href="Startup Consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
-                <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="https://www.ftechglobal.com/img/logo.png" alt="Ftechglobal Logo" class="logo">
+            <div class="logo-text">
+                Ftechglobal
+                <span>Fly fine to the future</span>
             </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="nav-button home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="mobile-recharge-software-ftech-global.html" class="nav-button mobile-recharge"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a></li>
+                <li><a href="irctc-agent-services.html" class="nav-button irctc-agent"><i class="fas fa-train"></i> Become IRCTC Agent</a></li>
+                <li><a href="Digital Marketing Services.html" class="nav-button digital-marketing"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a></li>
+                <li><a href="Startup Consultancy.html" class="nav-button startup-consultancy"><i class="fas fa-lightbulb"></i> Startup Consultancy</a></li>
+                <li><a href="registration.html" class="nav-button registration"><i class="fas fa-user-plus"></i> Registration</a></li>
+            </ul>
         </nav>
+    </header>
+    <div class="container">
+        <h1>🚀 Ftech Global</h1>
+        <p>Empowering Your Business with Next-Gen Technology</p>
+
+        <section class="services">
+            <h2>💼 Our Services</h2>
+            <ul>
+                <li>🌐 Website Development</li>
+                <li>📱 Digital Marketing</li>
+                <li>🧑‍💻 Software Development</li>
+                <li>📊 SEO & Google Ads</li>
+                <li>📄 GST Registration & ITR Filing</li>
+                <li>🎯 Startup Consultancy</li>
+            </ul>
+        </section>
+
+        <a class="button" href="https://wa.me/918789567363" target="_blank">📞 Contact Us on WhatsApp</a>
     </div>
-
-    <h1>🚀 Ftech Global</h1>
-    <p>Empowering Your Business with Next-Gen Technology</p>
-
-    <section class="services">
-        <h2>💼 Our Services</h2>
-        <ul>
-            <li>🌐 Website Development</li>
-            <li>📱 Digital Marketing</li>
-            <li>🧑‍💻 Software Development</li>
-            <li>📊 SEO & Google Ads</li>
-            <li>📄 GST Registration & ITR Filing</li>
-            <li>🎯 Startup Consultancy</li>
-        </ul>
-    </section>
-
-    <a class="button" href="https://wa.me/918789567363" target="_blank">📞 Contact Us on WhatsApp</a>
-
     <footer>
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
         <div style="text-align:center; margin-top: 20px;">
