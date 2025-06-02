@@ -20,8 +20,8 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            /* *** REDUCED PADDING-TOP HERE *** */
-            padding-top: 130px; /* Reduced space for the fixed logo and nav above content */
+            /* Default padding for desktop/larger screens */
+            padding-top: 130px;
         }
 
         .top-contact-bar {
@@ -29,7 +29,7 @@
             color: #fff;
             padding: 8px 20px;
             text-align: right;
-            font-family: Arial, sans-serif;
+            font-size: 0.9em;
             width: 100%;
             position: fixed;
             top: 0;
@@ -108,10 +108,8 @@
             box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6);
         }
 
-        /* Main Content Styling */
         .main-content {
-            /* *** ADJUSTED PADDING TOP HERE (further reduced) *** */
-            padding: 15px 20px 40px 20px; /* Reduced top padding further, kept bottom/side padding */
+            padding: 15px 20px 40px 20px;
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
@@ -119,29 +117,26 @@
             box-sizing: border-box;
         }
 
-        /* Styles for the new homepage image */
         .homepage-services-image {
             max-width: 60%;
             height: auto;
             display: block;
-            /* *** ADJUSTED MARGIN TOP HERE (reduced) *** */
-            margin: 20px auto 40px auto; /* Reduced top margin, kept bottom margin */
+            margin: 20px auto 40px auto;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Adjusted H1 and P margins within main-content (refined) */
-        .main-content h1 {
+        h1 {
             font-size: 3rem;
             color: #38bdf8;
-            margin-top: 15px; /* Added a small top margin for spacing */
-            margin-bottom: 5px; /* Reduced bottom margin */
+            margin-top: 15px;
+            margin-bottom: 5px;
         }
 
-        .main-content p {
+        p {
             font-size: 1.2rem;
-            margin-top: 5px; /* Reduced top margin */
-            margin-bottom: 25px; /* Space before the image */
+            margin-top: 5px;
+            margin-bottom: 25px;
         }
 
         a.button {
@@ -159,7 +154,6 @@
             background: #0ea5e9;
         }
 
-        /* Services Section Styling */
         .services {
             margin-top: 40px;
             padding: 20px;
@@ -253,7 +247,7 @@
             }
 
             .main-content {
-                padding: 15px 10px 40px 10px; /* Adjusted padding for tablets */
+                padding: 15px 10px 40px 10px;
                 max-width: 90%;
             }
 
@@ -264,9 +258,11 @@
             }
         }
 
+        /* Mobile breakpoint */
         @media (max-width: 768px) {
+            /* *** CRITICAL ADJUSTMENT HERE FOR MOBILE PADDING-TOP *** */
             body {
-                padding-top: 150px;
+                padding-top: 220px; /* Increased padding-top for mobile to clear fixed header/nav */
             }
             .top-contact-bar {
                 padding: 5px 10px;
@@ -281,7 +277,7 @@
             }
 
             nav {
-                top: 135px;
+                top: 135px; /* Still positions nav below logo */
                 padding: 8px 10px;
             }
             nav div a.button-link {
@@ -290,7 +286,7 @@
             }
 
             .main-content {
-                padding: 15px 10px 20px 10px; /* Adjusted padding for mobile */
+                padding: 15px 10px 20px 10px;
                 max-width: 95%;
             }
 
