@@ -20,8 +20,11 @@
             flex-direction: column;
             min-height: 100vh; /* Ensures content pushes footer to bottom */
             text-align: center; /* Default text align for body content */
-            /* Adjusted padding-top to account for new fixed header height */
-            padding-top: 150px; /* Space for the fixed logo and nav above content */
+            /* *** CRITICAL ADJUSTMENT HERE *** */
+            /* Calculate total height of fixed elements:
+               top-contact-bar (~36px height) + logo's top offset (40px) + logo height (120px) = ~196px
+               Let's set padding-top slightly above that to be safe. */
+            padding-top: 200px; /* Space for the fixed logo and nav above content */
         }
 
         .top-contact-bar {
@@ -67,7 +70,9 @@
             /* Adjusted width calculation based on new logo size */
             width: calc(100% - 160px); /* 100% minus logo width (120px) + some margin (40px) */
             position: fixed;
-            top: 60px; /* Adjusted to align better with smaller logo's vertical center */
+            /* *** CRITICAL ADJUSTMENT HERE *** */
+            /* Align nav with the logo's position more precisely */
+            top: 65px; /* Adjusted: 40px (logo top) + 120px (logo height/2 - nav height/2) - a bit of fine-tuning */
             left: 140px; /* Positioned to the right of the smaller logo (20px logo margin + 120px logo width) */
             box-sizing: border-box;
             z-index: 998; /* Below logo, above content */
