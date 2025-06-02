@@ -109,7 +109,8 @@
 
         /* Main Content Styling */
         .main-content {
-            padding: 40px 20px; /* Padding for content below header */
+            /* *** ADJUSTED PADDING TOP HERE *** */
+            padding: 10px 20px 40px 20px; /* Reduced top padding, kept bottom/side padding */
             max-width: 1200px; /* Increased max-width to make content wider */
             width: 100%; /* Ensure it takes full width up to max-width */
             margin: 0 auto;
@@ -119,23 +120,27 @@
 
         /* Styles for the new homepage image */
         .homepage-services-image {
-            max-width: 60%; /* Reduced from 80% */
-            height: auto;
-            display: block;
-            margin: 0 auto 40px auto;
+            max-width: 60%; /* Adjusted as needed - makes the image responsive and not too wide */
+            height: auto; /* Maintains aspect ratio */
+            display: block; /* Ensures it behaves as a block element */
+            /* *** ADJUSTED MARGIN TOP HERE *** */
+            margin: 20px auto 40px auto; /* Reduced top margin, kept bottom margin */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        h1 {
+        /* Adjusted H1 and P margins within main-content */
+        .main-content h1 {
             font-size: 3rem;
             color: #38bdf8;
-            margin-bottom: 15px;
+            margin-top: 15px; /* Added a small top margin for spacing */
+            margin-bottom: 5px; /* Reduced bottom margin */
         }
 
-        p {
+        .main-content p {
             font-size: 1.2rem;
-            margin-bottom: 15px;
+            margin-top: 5px; /* Reduced top margin */
+            margin-bottom: 25px; /* Increased bottom margin to separate from image */
         }
 
         a.button {
@@ -157,7 +162,7 @@
         .services {
             margin-top: 40px;
             padding: 20px;
-            background-color: #2D3A4B; /* Slightly lighter dark background for internal sections */
+            background-color: #2D3A4B;
             border-radius: 12px;
             max-width: 100%;
             margin-left: auto;
@@ -203,24 +208,23 @@
 
         /* --- Media Queries for responsiveness --- */
 
-        /* Tablet/Smaller Desktop breakpoint */
         @media (max-width: 1200px) {
             body {
                 padding-top: 200px; /* Space for stacked header (logo + nav) */
             }
 
             .fixed-main-logo {
-                width: 120px; /* Maintain smaller logo size for tablet */
+                width: 120px;
                 height: 120px;
                 top: 50px;
-                left: 50%; /* Center the logo horizontally */
-                transform: translateX(-50%); /* Adjust for centering */
+                left: 50%;
+                transform: translateX(-50%);
                 box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
             }
 
             nav {
                 position: fixed;
-                top: 170px; /* Position below the smaller logo */
+                top: 170px;
                 left: 0;
                 width: 100%;
                 flex-direction: column;
@@ -248,17 +252,17 @@
             }
 
             .main-content {
+                padding: 10px 10px 40px 10px; /* Adjusted padding for tablets */
                 max-width: 90%;
-                padding: 20px 10px;
             }
 
             .homepage-services-image {
                 max-width: 70%; /* Adjusted for tablets */
+                margin-top: 20px; /* Reduced top margin */
                 margin-bottom: 30px;
             }
         }
 
-        /* Mobile breakpoint */
         @media (max-width: 768px) {
             body {
                 padding-top: 150px;
@@ -284,27 +288,32 @@
                 padding: 8px 12px;
             }
 
+            .main-content {
+                padding: 10px 10px 20px 10px; /* Adjusted padding for mobile */
+                max-width: 95%;
+            }
+
+            .homepage-services-image {
+                max-width: 90%; /* Adjusted for mobile */
+                margin-top: 15px; /* Reduced top margin */
+                margin-bottom: 20px;
+            }
+
             h1 {
                 font-size: 2rem;
+                margin-top: 10px;
+                margin-bottom: 5px;
             }
             p {
                 font-size: 1rem;
+                margin-top: 5px;
+                margin-bottom: 15px;
             }
             .services h2 {
                 font-size: 1.5rem;
             }
             .services li {
                 font-size: 1em;
-            }
-
-            .main-content {
-                max-width: 95%;
-                padding: 15px 10px;
-            }
-
-            .homepage-services-image {
-                max-width: 90%; /* Adjusted for mobile */
-                margin-bottom: 20px;
             }
         }
     </style>
