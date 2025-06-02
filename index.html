@@ -20,11 +20,7 @@
             flex-direction: column;
             min-height: 100vh; /* Ensures content pushes footer to bottom */
             text-align: center; /* Default text align for body content */
-            /* *** CRITICAL ADJUSTMENT HERE *** */
-            /* Calculate total height of fixed elements:
-               top-contact-bar (~36px height) + logo's top offset (40px) + logo height (120px) = ~196px
-               Let's set padding-top slightly above that to be safe. */
-            padding-top: 200px; /* Space for the fixed logo and nav above content */
+            padding-top: 150px; /* Space for the fixed logo and nav above content */
         }
 
         .top-contact-bar {
@@ -67,12 +63,9 @@
             display: flex;
             justify-content: flex-end; /* Align buttons to the right */
             align-items: center;
-            /* Adjusted width calculation based on new logo size */
             width: calc(100% - 160px); /* 100% minus logo width (120px) + some margin (40px) */
             position: fixed;
-            /* *** CRITICAL ADJUSTMENT HERE *** */
-            /* Align nav with the logo's position more precisely */
-            top: 65px; /* Adjusted: 40px (logo top) + 120px (logo height/2 - nav height/2) - a bit of fine-tuning */
+            top: 65px; /* Adjusted to align better with smaller logo's vertical center */
             left: 140px; /* Positioned to the right of the smaller logo (20px logo margin + 120px logo width) */
             box-sizing: border-box;
             z-index: 998; /* Below logo, above content */
@@ -119,7 +112,9 @@
         /* Main Content Styling */
         .main-content {
             padding: 40px 20px; /* Padding for content below header */
-            max-width: 960px;
+            /* *** CRITICAL ADJUSTMENT HERE *** */
+            max-width: 1200px; /* Increased max-width to make content wider */
+            width: 100%; /* Ensure it takes full width up to max-width */
             margin: 0 auto;
             flex-grow: 1; /* Allows content to expand */
             box-sizing: border-box;
@@ -158,8 +153,8 @@
             padding: 20px;
             background-color: #1e293b;
             border-radius: 12px;
-            max-width: 600px;
-            width: 100%;
+            max-width: 100%; /* Ensure services section can fill its parent */
+            /* Removed fixed width from here, it will adapt to .main-content's width */
             margin-left: auto;
             margin-right: auto;
             text-align: left; /* Services section text left-aligned */
@@ -247,6 +242,12 @@
                 font-size: 0.95em; /* Readable size for tablet buttons */
                 gap: 8px;
             }
+
+            /* Main content on tablets should adapt */
+            .main-content {
+                max-width: 90%; /* Allow wider content on tablets, but not full screen */
+                padding: 20px 10px;
+            }
         }
 
         /* Mobile breakpoint */
@@ -280,6 +281,18 @@
             }
             p {
                 font-size: 1rem;
+            }
+            .services h2 {
+                font-size: 1.5rem; /* Smaller heading on mobile */
+            }
+            .services li {
+                font-size: 1em; /* Readable list items on mobile */
+            }
+
+            /* Main content on mobile should adapt */
+            .main-content {
+                max-width: 95%; /* Allow content to almost span full width */
+                padding: 15px 10px;
             }
         }
     </style>
