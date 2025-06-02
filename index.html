@@ -20,7 +20,8 @@
             flex-direction: column;
             min-height: 100vh; /* Ensures content pushes footer to bottom */
             text-align: center; /* Default text align for body content */
-            padding-top: 250px; /* Space for the fixed logo and nav */
+            /* Adjusted padding-top to account for new fixed header height */
+            padding-top: 150px; /* Space for the fixed logo and nav above content */
         }
 
         .top-contact-bar {
@@ -44,12 +45,12 @@
 
         /* Fixed Top-Left Logo */
         .fixed-main-logo {
-            width: 200px;
-            height: 200px;
+            width: 120px; /* **LOGO SIZE REDUCED** */
+            height: 120px; /* **LOGO SIZE REDUCED** */
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #38bdf8;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7); /* Adjusted shadow intensity */
             position: fixed;
             top: 40px; /* Below the top-contact-bar */
             left: 20px;
@@ -63,10 +64,11 @@
             display: flex;
             justify-content: flex-end; /* Align buttons to the right */
             align-items: center;
-            width: calc(100% - 250px); /* 100% minus logo width (200px) + some margin (50px) */
+            /* Adjusted width calculation based on new logo size */
+            width: calc(100% - 160px); /* 100% minus logo width (120px) + some margin (40px) */
             position: fixed;
-            top: 60px; /* Adjust this to align with the logo's vertical center or desired position */
-            left: 230px; /* Positioned to the right of the logo (20px logo margin + 200px logo width + 10px spacing) */
+            top: 60px; /* Adjusted to align better with smaller logo's vertical center */
+            left: 140px; /* Positioned to the right of the smaller logo (20px logo margin + 120px logo width) */
             box-sizing: border-box;
             z-index: 998; /* Below logo, above content */
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -87,7 +89,7 @@
         }
 
         nav div a.button-link {
-            padding: 10px 15px; /* Good padding for buttons */
+            padding: 8px 12px; /* Slightly reduced padding to help fit */
             background-color: #00e676;
             color: #1a2a4b;
             border-radius: 10px;
@@ -98,9 +100,9 @@
             box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
             display: flex;
             align-items: center;
-            gap: 8px; /* Space between icon and text */
+            gap: 6px; /* Space between icon and text */
             white-space: nowrap; /* Keep button content on one line */
-            font-size: 0.9em; /* Slightly smaller font to fit more items */
+            font-size: 0.85em; /* Slightly smaller font to fit more items */
         }
 
         nav div a.button-link:hover {
@@ -189,13 +191,6 @@
 
         /* --- Media Queries for responsiveness --- */
 
-        /* Adjustments for larger screens if buttons are still too wide */
-        @media (min-width: 1400px) { /* Adjust this value if needed */
-            nav {
-                top: 70px; /* Fine-tune vertical alignment with logo */
-            }
-        }
-
         /* Tablet/Smaller Desktop breakpoint - **THIS IS CRITICAL FOR OVERLAP** */
         /* When screen is narrower, switch to stacked layout */
         @media (max-width: 1200px) { /* Adjust this breakpoint if needed */
@@ -204,7 +199,7 @@
             }
 
             .fixed-main-logo {
-                width: 120px; /* Smaller logo for tablet */
+                width: 120px; /* Maintain smaller logo size for tablet */
                 height: 120px;
                 top: 50px;
                 left: 50%; /* Center the logo horizontally */
@@ -245,20 +240,27 @@
         /* Mobile breakpoint */
         @media (max-width: 768px) {
             body {
-                padding-top: 200px; /* Keep similar padding for mobile */
+                padding-top: 150px; /* Adjust padding for smaller screens */
             }
             .top-contact-bar {
                 padding: 5px 10px;
             }
 
             .fixed-main-logo {
-                width: 100px;
-                height: 100px;
+                width: 80px; /* Even smaller logo for mobile */
+                height: 80px;
                 top: 45px; /* Adjust top for smaller screens */
+                left: 50%; /* Re-center for mobile */
+                transform: translateX(-50%);
             }
 
             nav {
-                top: 155px; /* Adjust nav top for smaller logo on mobile */
+                top: 135px; /* Adjust nav top for smaller logo on mobile */
+                padding: 8px 10px;
+            }
+            nav div a.button-link {
+                font-size: 0.8em; /* Slightly smaller text for mobile buttons */
+                padding: 8px 12px;
             }
 
             h1 {
