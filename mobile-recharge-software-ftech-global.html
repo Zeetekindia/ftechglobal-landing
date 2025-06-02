@@ -7,6 +7,8 @@
     <meta name="description" content="Discover FTECH GLOBAL's cutting-edge mobile recharge software. Boost revenue, manage retailers, and offer multi-operator recharges & bill payments. Contact 8789567363.">
     <meta name="keywords" content="Mobile Recharge Software, Recharge Software, Online Recharge Software, Best Mobile Recharge Software, Recharge API, Multi Recharge Software, White Label Recharge Software, Bill Payment Software, DTH Recharge Software, Start Recharge Business, B2B Recharge Software, Retailer Recharge Software, Distributor Recharge Software, FTECH GLOBAL, Jio Recharge, Airtel Recharge, Vodafone Idea Recharge, BSNL Recharge, Electricity Bill Payment, Gas Bill Payment, Fastag Recharge, Affordable Mobile Recharge Software, High Commission Recharge Software">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         /* General Body Styles - Mimicking Dark Homepage Feel */
         body {
@@ -35,6 +37,122 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        /* Header & Navigation Styles (as per the design) */
+        .main-header {
+            background-color: #283a5e; /* Darker blue, similar to your .container */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px; /* Adjust as needed */
+            height: 60px; /* Adjust as needed */
+            margin-right: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px rgba(0, 230, 118, 0.7), 0 0 20px 10px rgba(0, 230, 118, 0.3);
+            background: linear-gradient(45deg, #FF5722, #00E676, #2196F3, #9C27B0);
+            animation: rotateLogo 5s linear infinite; /* Example animation */
+        }
+
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.7em;
+            font-weight: normal;
+            color: #b0e0e6; /* Lighter blue for tagline */
+        }
+
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px; /* Space between buttons */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: flex-end; /* Align buttons to the right */
+        }
+
+        .main-nav li {
+            display: inline-block;
+        }
+
+        .nav-button {
+            background-color: #00e676; /* Bright green background for buttons */
+            color: #1a2a4b; /* Dark text for buttons */
+            padding: 10px 20px;
+            border-radius: 8px; /* Rounded corners */
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+            white-space: nowrap; /* Prevent text wrapping inside buttons */
+        }
+
+        .nav-button i {
+            font-size: 1.1em;
+        }
+
+        .nav-button:hover {
+            background-color: #00b359; /* Darker green on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                gap: 10px;
+                justify-content: center; /* Center buttons when stacked */
+            }
+
+            .nav-button {
+                width: calc(100% - 20px); /* Adjust for padding */
+                text-align: center;
+                justify-content: center; /* Center content in buttons */
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
         }
 
         /* Main Content Container */
@@ -179,6 +297,23 @@
         Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
     </div>
 
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="https://www.ftechglobal.com/img/logo.png" alt="Ftechglobal Logo" class="logo">
+            <div class="logo-text">
+                Ftechglobal
+                <span>Fly fine to the future</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="nav-button home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="mobile-recharge-software-ftech-global.html" class="nav-button mobile-recharge"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a></li>
+                <li><a href="irctc-agent-services.html" class="nav-button irctc-agent"><i class="fas fa-train"></i> Become IRCTC Agent</a></li>
+                <li><a href="registration.html" class="nav-button registration"><i class="fas fa-user-plus"></i> Registration</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <h1><strong>Unlock Profit: The Best Mobile Recharge Software for Your Business – Powered by FTECH GLOBAL</strong></h1>
 
