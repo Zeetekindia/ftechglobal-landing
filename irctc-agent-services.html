@@ -1,118 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn how to become an IRCTC authorized agent and earn by booking train tickets. Explore benefits, registration steps, and key services." />
-  <meta name="keywords" content="IRCTC agent, e-ticket services, train ticket booking, IRCTC agent registration, railway ticket agent, become IRCTC authorized agent, earn money from train tickets" />
-  <meta name="author" content="Ftech Global" />
-  <title>Become an IRCTC Authorized Agent | Ftech Global</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f8fafc;
-      color: #0f172a;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn how to become an IRCTC authorized agent and earn by booking train tickets. Explore benefits, registration steps, and key services." />
+    <meta name="keywords" content="IRCTC agent, e-ticket services, train ticket booking, IRCTC agent registration, railway ticket agent, become IRCTC authorized agent, earn money from train tickets" />
+    <meta name="author" content="Ftech Global" />
+    <title>Become an IRCTC Authorized Agent | Ftech Global</title>
 
-    header {
-      background: #0f172a;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+    <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    h1, h2 {
-      color: #0ea5e9;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            /* New background for this page, consistent with index.html's dark theme */
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
+            color: #f1f5f9; /* Light text color for dark background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center; /* Main content alignment */
+            /* Adjusted padding-top to account for fixed header */
+            padding-top: 150px; /* Space for the fixed logo and nav above content */
+        }
 
-    a {
-      color: #0ea5e9;
-      text-decoration: none;
-    }
+        /* --- Header Elements (from index.html) --- */
+        .top-contact-bar {
+            background: #1a2a4b;
+            color: #fff;
+            padding: 8px 20px;
+            text-align: right;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            font-weight: bold;
+            z-index: 1001;
+        }
+        .top-contact-bar a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        .fixed-main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            position: fixed;
+            top: 40px;
+            left: 20px;
+            z-index: 999;
+        }
 
-    footer {
-      background: #0f172a;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 40px;
-    }
-  </style>
+        nav {
+            background-color: #1a2a4b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: calc(100% - 160px);
+            position: fixed;
+            top: 65px;
+            left: 140px;
+            box-sizing: border-box;
+            z-index: 998;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav:hover {
+            background-color: #2c3e50;
+        }
+
+        nav div {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        nav div a.button-link {
+            padding: 8px 12px;
+            background-color: #00e676;
+            color: #1a2a4b;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px;
+            box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+            font-size: 0.85em;
+        }
+
+        nav div a.button-link:hover {
+            background-color: #00b359;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6);
+        }
+        /* --- End Header Elements --- */
+
+        /* Main Content Container (from original irctc-agent-services.html, adjusted) */
+        .container {
+            max-width: 800px; /* Kept original max-width for content readability */
+            margin: 40px auto; /* Add top margin to separate from fixed header */
+            padding: 20px;
+            background-color: #2D3A4B; /* Consistent background with other sections */
+            border-radius: 8px; /* Consistent border-radius */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Consistent shadow */
+            text-align: left; /* Aligned text to left as in original */
+        }
+
+        h1, h2 {
+            color: #38bdf8; /* Adjusted to your primary blue accent color */
+            text-align: center; /* Center headings for consistency */
+        }
+
+        a {
+            color: #00e676; /* Adjusted link color to green accent for consistency */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling for list items for better visibility */
+        ul li {
+            list-style-type: disc; /* Keep disc bullet */
+            margin-left: 20px; /* Indent list items */
+            margin-bottom: 8px; /* Space between list items */
+        }
+        ol li {
+            margin-bottom: 8px; /* Space between ordered list items */
+        }
+
+
+        footer {
+            background: #1a2a4b;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* Push footer to bottom */
+            font-size: 0.85em;
+            border-top: 1px solid #334a70;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* --- Media Queries for responsiveness --- */
+
+        /* Tablet/Smaller Desktop breakpoint */
+        @media (max-width: 1200px) {
+            body {
+                padding-top: 200px; /* Space for stacked header (logo + nav) */
+            }
+
+            .fixed-main-logo {
+                width: 120px;
+                height: 120px;
+                top: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            }
+
+            nav {
+                position: fixed;
+                top: 170px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                box-shadow: none;
+                border-radius: 0;
+                background-color: #2c3e50;
+            }
+
+            nav div {
+                flex-direction: column;
+                width: 100%;
+                justify-content: center;
+            }
+
+            nav div a.button-link {
+                margin: 5px 0;
+                padding: 10px 15px;
+                width: calc(100% - 30px);
+                box-sizing: border-box;
+                font-size: 0.95em;
+                gap: 8px;
+            }
+
+            .container {
+                max-width: 90%; /* Adjust content width for tablets */
+                padding: 20px 10px;
+                margin-top: 20px; /* Adjust top margin for container */
+            }
+
+            h1, h2 {
+                font-size: 1.8em; /* Slightly smaller headings */
+            }
+        }
+
+        /* Mobile breakpoint */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 220px; /* Increased padding-top for mobile to clear fixed header/nav */
+            }
+            .top-contact-bar {
+                padding: 5px 10px;
+            }
+
+            .fixed-main-logo {
+                width: 80px;
+                height: 80px;
+                top: 45px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            nav {
+                top: 135px;
+                padding: 8px 10px;
+            }
+            nav div a.button-link {
+                font-size: 0.8em;
+                padding: 8px 12px;
+            }
+
+            .container {
+                max-width: 95%; /* Adjust content width for mobile */
+                padding: 15px 10px;
+                margin-top: 10px; /* Adjust top margin for container */
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.95rem; /* Smaller paragraph text */
+            }
+            ul li, ol li {
+                font-size: 0.95rem; /* Smaller list text */
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Become an IRCTC Authorized Agent</h1>
-  <p>Earn Money by Booking Train Tickets Legally with IRCTC Authorization</p>
-</header>
+    <div class="top-contact-bar">
+        Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+    </div>
 
-<div class="container">
-  <h2>Why Become an IRCTC Authorized Agent?</h2>
-  <p>
-    With more than 23 million passengers traveling daily on Indian Railways, there's a massive opportunity for individuals and businesses to earn through official train ticket booking services. As an IRCTC authorized e-ticket agent, you can legally book railway tickets for others and charge a commission per transaction.
-  </p>
+    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Logo" class="fixed-main-logo" />
 
-  <h2>What Is an IRCTC Agent?</h2>
-  <p>
-    An IRCTC agent is officially appointed and authorized to book railway e-tickets using a special agent login provided by IRCTC. Unlike regular users, agents can book unlimited tickets daily, offer customer support, and access additional business tools.
-  </p>
+    <nav>
+        <div>
+            <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
+            <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
+            <li><a href="irctc-agent-services.html" class="button-link active-page"><i class="fas fa-train"></i> Become IRCTC Agent</a></li>
+            <a href="Digital Marketing Services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
+            <a href="Startup Consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
+        </div>
+    </nav>
 
-  <h2>Key Benefits</h2>
-  <ul>
-    <li>✅ Unlimited train ticket bookings daily</li>
-    <li>✅ Earn commission on every ticket booked</li>
-    <li>✅ Get an authorized IRCTC certificate and agent ID</li>
-    <li>✅ Legal and verified booking system</li>
-    <li>✅ Branding support and digital panel access</li>
-  </ul>
+    <div class="container">
+        <h1>Become an IRCTC Authorized Agent</h1>
+        <p>
+            Earn Money by Booking Train Tickets Legally with IRCTC Authorization
+        </p>
 
-  <h2>How to Become an IRCTC Authorized Agent</h2>
-  <p>Follow these steps to register:</p>
-  <ol>
-    <li>Visit IRCTC Agent Registration Page</a></li>
-    <li>Fill out the online registration form</li>
-    <li>Upload your KYC documents and photograph</li>
-    <li>Pay the one-time registration and service fee</li>
-    <li>Get your official IRCTC agent ID and login credentials</li>
-  </ol>
+        <h2>Why Become an IRCTC Authorized Agent?</h2>
+        <p>
+            With more than 23 million passengers traveling daily on Indian Railways, there's a massive opportunity for individuals and businesses to earn through official train ticket booking services. As an IRCTC authorized e-ticket agent, you can legally book railway tickets for others and charge a commission per transaction.
+        </p>
 
-  <h2>Extra Services Offered</h2>
-  <p>Along with ticket booking, agents can earn extra by offering:</p>
-  <ul>
-    <li>🚀 Bus and Flight ticket bookings</li>
-    <li>💳 Recharge and bill payment services</li>
-    <li>📄 PAN card registration</li>
-    <li>📑 GST and ITR filing assistance</li>
-    <li>🎯 Travel and tour packages</li>
-  </ul>
+        <h2>What Is an IRCTC Agent?</h2>
+        <p>
+            An IRCTC agent is officially appointed and authorized to book railway e-tickets using a special agent login provided by IRCTC. Unlike regular users, agents can book unlimited tickets daily, offer customer support, and access additional business tools.
+        </p>
 
-  <h2>Why Choose Ftech Global?</h2>
-  <p>
-    At <strong>Ftech Global</strong>, we provide easy onboarding, full agent support, and a smooth dashboard to help you earn more. Whether you are in a city or a village, we help you start your own booking business with confidence.
-  </p>
+        <h2>Key Benefits</h2>
+        <ul>
+            <li>✅ Unlimited train ticket bookings daily</li>
+            <li>✅ Earn commission on every ticket booked</li>
+            <li>✅ Get an authorized IRCTC certificate and agent ID</li>
+            <li>✅ Legal and verified booking system</li>
+            <li>✅ Branding support and digital panel access</li>
+        </ul>
 
-  <p>
-    <strong>Ready to Start?</strong><br>
-    Contact us on WhatsApp at <a href="https://wa.me/918789567363" target="_blank">+91-8789567363</a> to get your IRCTC Agent Login today!
-  </p>
-</div>
+        <h2>How to Become an IRCTC Authorized Agent</h2>
+        <p>Follow these steps to register:</p>
+        <ol>
+            <li>Visit IRCTC Agent Registration Page</li>
+            <li>Fill out the online registration form</li>
+            <li>Upload your KYC documents and photograph</li>
+            <li>Pay the one-time registration and service fee</li>
+            <li>Get your official IRCTC agent ID and login credentials</li>
+        </ol>
 
-<footer>
-  <p>© 2025 Ftech Global. All rights reserved. | IRCTC Agent Services are provided by a Principal Agent. (This website is not affiliated with IRCTC.) </p>
-</footer>
+        <h2>Extra Services Offered</h2>
+        <p>Along with ticket booking, agents can earn extra by offering:</p>
+        <ul>
+            <li>🚀 Bus and Flight ticket bookings</li>
+            <li>💳 Recharge and bill payment services</li>
+            <li>📄 PAN card registration</li>
+            <li>📑 GST and ITR filing assistance</li>
+            <li>🎯 Travel and tour packages</li>
+        </ul>
+
+        <h2>Why Choose Ftech Global?</h2>
+        <p>
+            At <strong>Ftech Global</strong>, we provide easy onboarding, full agent support, and a smooth dashboard to help you earn more. Whether you are in a city or a village, we help you start your own booking business with confidence.
+        </p>
+
+        <p>
+            <strong>Ready to Start?</strong><br>
+            Contact us on WhatsApp at <a href="https://wa.me/918789567363" target="_blank">+91-8789567363</a> to get your IRCTC Agent Login today!
+        </p>
+    </div>
+
+    <footer>
+        <p>© 2025 Ftech Global. All rights reserved. | IRCTC Agent Services are provided by a Principal Agent. (This website is not affiliated with IRCTC.) </p>
+    </footer>
 
 </body>
 </html>
