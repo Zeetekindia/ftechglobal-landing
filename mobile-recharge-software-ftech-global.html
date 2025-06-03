@@ -44,7 +44,7 @@
             background-color: #283a5e; /* Darker blue, similar to your .container */
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Keeps logo and nav at ends */
             align-items: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
             position: relative;
@@ -54,6 +54,8 @@
         .logo-area {
             display: flex;
             align-items: center;
+            /* Flex-shrink prevents logo from shrinking too much if nav is wide */
+            flex-shrink: 0; 
         }
 
         .logo {
@@ -89,15 +91,21 @@
             color: #b0e0e6; /* Lighter blue for tagline */
         }
 
+        .main-nav {
+            /* Allow main-nav to grow, but content inside will control its width */
+            flex-grow: 1; 
+            display: flex; /* Make nav itself a flex container */
+            justify-content: flex-end; /* Push nav content to the right */
+        }
+
         .main-nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Make it a flex container */
-            /* Removed flex-wrap: wrap; to force single line */
+            display: flex; /* Make ul a flex container for buttons */
+            flex-wrap: nowrap; /* Prevent buttons from wrapping on desktop */
             gap: 15px; /* Space between buttons */
-            justify-content: flex-end; /* Align buttons to the right */
-            white-space: nowrap; /* Prevents wrapping of the entire ul */
+            /* Removed justify-content from here as main-nav handles it */
         }
 
         .main-nav li {
@@ -124,20 +132,24 @@
         }
 
         /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) { /* Adjusted breakpoint for menu wrapping */
             .main-header {
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 10px;
             }
 
+            .main-nav {
+                width: 100%; /* Make nav take full width when stacked */
+                justify-content: center; /* Center the stacked buttons */
+                margin-top: 15px; /* Space between logo and stacked nav */
+            }
+
             .main-nav ul {
                 flex-direction: column; /* Stack vertically on small screens */
-                width: 100%;
-                margin-top: 15px;
+                width: 100%; /* Make ul take full width of its parent nav */
                 gap: 10px;
-                justify-content: center; /* Center buttons when stacked */
-                white-space: normal; /* Allow wrapping again for stacked buttons */
+                flex-wrap: wrap; /* Allow wrapping of buttons if needed on smaller widths, though column makes it less likely */
             }
 
             .nav-button {
@@ -149,7 +161,7 @@
             .logo-area {
                 width: 100%;
                 justify-content: center;
-                margin-bottom: 10px;
+                margin-bottom: 0; /* No extra margin when stacking */
             }
         }
 
