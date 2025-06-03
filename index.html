@@ -125,13 +125,14 @@
             border: 2px solid #38bdf8;
         }
 
+        /* UPDATED H1 STYLING */
         h1 {
             font-size: 3.2rem; 
-            color: #38bdf8;
+            color: #FF9933; /* Saffron/Kesariya color */
             margin-top: 15px;
             margin-bottom: 10px; 
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); 
+            text-shadow: 0 0 15px rgba(255, 153, 51, 0.6); /* Saffron glow for exposure */
         }
 
         .main-content > p:first-of-type {
@@ -257,33 +258,30 @@
             box-sizing: border-box;
         }
 
-        /* --- Social Media Icons --- */
         .social-media-icons {
-            margin-bottom: 20px; /* Space below icons, before copyright */
+            margin-bottom: 20px; 
             text-align: center; 
         }
         .social-media-icons a {
             display: inline-block;
             width: 40px; 
             height: 40px; 
-            line-height: 40px; /* Vertically center icon if it's text-based */
-            background-color: #4CAF50; /* Green background from image example */
-            color: #ffffff; /* White icon */
-            margin: 0 6px; /* Spacing between icons */
-            border-radius: 5px; /* Slightly rounded corners */
-            font-size: 20px; /* Icon size */
+            line-height: 40px; 
+            background-color: #4CAF50; 
+            color: #ffffff; 
+            margin: 0 6px; 
+            border-radius: 5px; 
+            font-size: 20px; 
             text-align: center;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        .social-media-icons a i { /* Ensure icon is centered if line-height doesn't catch it */
+        .social-media-icons a i {
              vertical-align: middle;
         }
         .social-media-icons a:hover {
-            background-color: #3E8E41; /* Darker green on hover */
-            transform: translateY(-3px); /* Slight lift effect */
+            background-color: #3E8E41; 
+            transform: translateY(-3px); 
         }
-        /* --- End of Social Media Icons --- */
-
 
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) {
@@ -305,7 +303,13 @@
             nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
             .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
             .homepage-services-image { max-width: 90%; }
-            h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; }
+            
+            /* UPDATED H1 STYLING for mobile if needed, though it inherits the new color */
+            h1 { 
+                font-size: 2.2rem; /* Original mobile size, new color will apply */
+                margin-top: 10px; 
+                margin-bottom: 5px; 
+            } 
             
             body p { 
                  font-size: 1rem; 
@@ -327,7 +331,7 @@
             .services li strong i { font-size: 1.3rem; margin-right: 10px; }
             a.button, .contact-whatsapp-button { padding: 10px 20px; font-size: 0.9rem; }
             
-            .social-media-icons a { /* Adjust social icon size for mobile */
+            .social-media-icons a { 
                 width: 35px;
                 height: 35px;
                 line-height: 35px;
@@ -405,6 +409,7 @@
             <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
+
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
         <div style="text-align:center; margin-top: 20px;">
             <a href="https://www.hitwebcounter.com" target="_blank">
