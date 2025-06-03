@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ftech Global Solutions | Web Development, SEO & Digital Marketing in Patna</title>
-    <meta name="description" content="Ftech Global Solutions in Patna offers expert website development, SEO services, digital marketing, custom software development, and startup consultancy. Grow your business with our technology solutions.">
+    <title>Ftech Global Solutions | Expert Web Development, SEO & Digital Marketing Services</title>
+    <meta name="description" content="Ftech Global Solutions offers expert website development, SEO services, digital marketing, custom software solutions, and startup consultancy across India and globally. Grow your business with our technology solutions.">
     
     <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -13,13 +13,13 @@
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%); /* Deep blue-gray to very dark blue-gray */
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
             color: #f1f5f9;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            padding-top: 130px; /* Default padding for desktop/larger screens */
+            padding-top: 130px;
         }
 
         .top-contact-bar {
@@ -119,8 +119,7 @@
             max-width: 60%;
             height: auto;
             display: block;
-            /* margin: 20px auto 40px auto; OLD MARGIN - will be overridden or adjusted */
-            margin: 40px auto 20px auto; /* Adjusted margin for when it's below services */
+            margin: 40px auto 20px auto;
             border-radius: 10px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             border: 2px solid #38bdf8;
@@ -135,8 +134,7 @@
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); 
         }
 
-        /* Style for the main tagline paragraph */
-        .main-content > p:first-of-type { /* This targets the tagline */
+        .main-content > p:first-of-type {
             font-size: 1.3rem; 
             color: #e2e8f0; 
             margin-top: 5px;
@@ -144,12 +142,11 @@
             font-style: italic;
         }
         
-        p { /* General paragraph styling - affects service descriptions if not overridden */
+        p {
             font-size: 1.2rem;
             margin-top: 5px;
-            margin-bottom: 25px; /* Original general P margin */
+            margin-bottom: 25px;
         }
-
 
         a.button, .contact-whatsapp-button { 
             background: #00e676; 
@@ -185,12 +182,21 @@
         }
 
         .services h2 {
-            color: #38bdf8;
+            color: #38bdf8; /* Heading text color */
             font-size: 2.5rem; 
             margin-bottom: 30px; 
             text-align: center;
             font-weight: 600;
+            display: flex; /* For icon alignment */
+            align-items: center; /* For icon alignment */
+            justify-content: center; /* For icon alignment */
         }
+        /* Icon in Services H2 - now yellow */
+        .services h2 i {
+            margin-right: 10px;
+            color: #FFC107; /* Yellow color for the cog icon */
+        }
+
 
         .services ul {
             list-style-type: none;
@@ -206,9 +212,9 @@
             border-radius: 10px; 
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #00e676; 
-            display: flex; /* Added for better structure if content varies */
-            flex-direction: column; /* Ensures content stacks vertically */
+            border-left: 5px solid #00e676; /* Green accent border */
+            display: flex;
+            flex-direction: column;
         }
 
         .services li:hover {
@@ -217,29 +223,30 @@
         }
 
         .services li strong {
-            color: #00e676; 
+            color: #00e676; /* Green text for service titles */
             font-size: 1.4rem; 
             display: flex; 
             align-items: center;
             margin-bottom: 12px; 
             font-weight: 600;
         }
+        /* Icons in service titles - now yellow */
         .services li strong i {
             margin-right: 12px; 
             font-size: 1.5rem; 
             width: 30px; 
             text-align: center;
+            color: #FFC107; /* Yellow color for service item icons */
         }
 
         .services li p { 
             font-size: 1.05rem; 
             color: #cbd5e1; 
             line-height: 1.7;
-            margin-top: 0; /* Reset margin from general p */
-            margin-bottom: 0; /* Reset margin from general p, card provides spacing */
-            flex-grow: 1; /* Allows paragraph to take available space in flex column */
+            margin-top: 0;
+            margin-bottom: 0;
+            flex-grow: 1;
         }
-
 
         footer {
             background-color: #1a2a4b;
@@ -255,128 +262,34 @@
 
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) {
-            body {
-                padding-top: 200px; 
-            }
-            .fixed-main-logo {
-                width: 120px;
-                height: 120px;
-                top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
-                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-            }
-            nav {
-                position: fixed;
-                top: 170px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 10px;
-                box-shadow: none;
-                border-radius: 0;
-                background-color: #2c3e50;
-            }
-            nav div {
-                flex-direction: column;
-                width: 100%;
-                justify-content: center;
-            }
-            nav div a.button-link {
-                margin: 5px 0;
-                padding: 10px 15px;
-                width: calc(100% - 30px);
-                box-sizing: border-box;
-                font-size: 0.95em;
-                gap: 8px;
-            }
-            .main-content {
-                padding: 15px 10px 40px 10px;
-                max-width: 90%;
-            }
-            .homepage-services-image { /* Image on tablet */
-                max-width: 70%;
-                /* margin-top: 20px; OLD */
-                /* margin-bottom: 30px; OLD */
-            }
-            .services ul { 
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
-            }
+            body { padding-top: 200px; }
+            .fixed-main-logo { width: 120px; height: 120px; top: 50px; left: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+            nav { position: fixed; top: 170px; left: 0; width: 100%; flex-direction: column; justify-content: center; align-items: center; padding: 10px; box-shadow: none; border-radius: 0; background-color: #2c3e50; }
+            nav div { flex-direction: column; width: 100%; justify-content: center; }
+            nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
+            .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
+            .homepage-services-image { max-width: 70%; }
+            .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         }
 
-        /* Mobile breakpoint */
         @media (max-width: 768px) {
-            body {
-                padding-top: 220px;
-            }
-            .top-contact-bar {
-                padding: 5px 10px;
-            }
-            .fixed-main-logo {
-                width: 80px;
-                height: 80px;
-                top: 45px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            nav {
-                top: 135px;
-                padding: 8px 10px;
-            }
-            nav div a.button-link {
-                font-size: 0.8em;
-                padding: 8px 12px;
-            }
-            .main-content {
-                padding: 15px 10px 20px 10px;
-                max-width: 95%;
-            }
-            .homepage-services-image { /* Image on mobile */
-                max-width: 90%;
-                /* margin-top: 15px; OLD */
-                /* margin-bottom: 20px; OLD */
-            }
-            h1 {
-                font-size: 2.2rem; 
-                margin-top: 10px;
-                margin-bottom: 5px;
-            }
-            .main-content > p:first-of-type { 
-                font-size: 1.1rem;
-                margin-bottom: 25px;
-            }
-            p { 
-                font-size: 1rem;
-                /* margin-top: 5px; This would apply to service P too, handled by .services li p */
-                /* margin-bottom: 15px; This would apply to service P too, handled by .services li p */
-            }
-            .services h2 {
-                font-size: 1.8rem; 
-            }
-            .services ul { 
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            .services li {
-                padding: 20px; 
-            }
-            .services li strong {
-                font-size: 1.2rem; 
-            }
-            .services li strong i {
-                font-size: 1.3rem; 
-                margin-right: 10px;
-            }
-            .services li p {
-                font-size: 0.95rem; 
-            }
-            a.button, .contact-whatsapp-button { 
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
+            body { padding-top: 220px; }
+            .top-contact-bar { padding: 5px 10px; }
+            .fixed-main-logo { width: 80px; height: 80px; top: 45px; left: 50%; transform: translateX(-50%); }
+            nav { top: 135px; padding: 8px 10px; }
+            nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
+            .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
+            .homepage-services-image { max-width: 90%; }
+            h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; }
+            .main-content > p:first-of-type { font-size: 1.1rem; margin-bottom: 25px; }
+            p { font-size: 1rem; }
+            .services h2 { font-size: 1.8rem; }
+            .services ul { grid-template-columns: 1fr; gap: 15px; }
+            .services li { padding: 20px; }
+            .services li strong { font-size: 1.2rem; }
+            .services li strong i { font-size: 1.3rem; margin-right: 10px; }
+            .services li p { font-size: 0.95rem; }
+            a.button, .contact-whatsapp-button { padding: 10px 20px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -386,7 +299,7 @@
         Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
     </div>
 
-    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo - Patna" class="fixed-main-logo" /> <nav>
+    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" /> <nav>
         <div>
             <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
             <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
@@ -400,51 +313,40 @@
     </nav>
 
     <div class="main-content">
-        <h1>🚀 Ftech Global Solutions: IT & Digital Marketing in Patna</h1>
-        <p>Empowering Your Business Growth with Next-Gen Technology & Expert Digital Strategies</p>
+        <h1>🚀 Ftech Global Solutions: Premier IT & Digital Marketing Services</h1>
+        <p>Empowering Business Growth Worldwide with Next-Gen Technology & Expert Digital Strategies</p>
 
         <section class="services">
-            <h2><i class="fas fa-cogs" style="margin-right:10px; color: #00e676;"></i>Our Expert Services: Driving Your Business Success</h2>
+            <h2><i class="fas fa-cogs"></i>Our Expert Services: Driving Your Business Success Globally</h2>
             <ul>
                 <li>
                     <strong><i class="fas fa-laptop-code"></i>Expert Website Development:</strong>
-                    <p>Launch your online presence with stunning, <strong>responsive web design</strong> and high-performance websites from Ftech Global, a leading <strong>website development company in Patna</strong>. We specialize in <strong>custom web design</strong>, robust <strong>e-commerce solutions</strong>, and <strong>SEO-optimized sites</strong> designed to convert visitors into loyal customers. Partner with us for professional <strong>web development services</strong> that truly represent your brand.</p>
+                    <p>Launch your online presence with stunning, <strong>responsive web design</strong> and high-performance websites from Ftech Global, a leading <strong>website development company</strong>. We specialize in <strong>custom web design</strong>, robust <strong>e-commerce solutions</strong>, and <strong>SEO-optimized sites</strong> designed to convert visitors into loyal customers. Partner with us for professional <strong>web development services in India</strong> and worldwide.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-bullhorn"></i>Comprehensive Digital Marketing:</strong>
-                    <p>Elevate your brand's online visibility and drive targeted traffic with our <strong>comprehensive digital marketing strategies</strong>. As a results-driven <strong>digital marketing agency in Patna</strong>, our services include expert <strong>SEO services</strong>, engaging <strong>social media marketing (SMM)</strong>, strategic <strong>content marketing</strong>, effective email campaigns, and targeted <strong>PPC advertising (Google Ads)</strong> to ensure maximum reach and ROI for your business.</p>
+                    <p>Elevate your brand's online visibility and drive targeted traffic with our <strong>comprehensive digital marketing strategies</strong>. As a results-driven <strong>digital marketing agency</strong>, our services include expert <strong>SEO services</strong>, engaging <strong>social media marketing (SMM)</strong>, strategic <strong>content marketing</strong>, effective email campaigns, and targeted <strong>PPC advertising (Google Ads)</strong> to ensure maximum reach and ROI for your business globally.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-code-branch"></i>Bespoke Software Development:</strong>
-                    <p>Transform your business operations with <strong>bespoke software development solutions</strong> from Ftech Global. We specialize in <strong>custom software development</strong>, user-friendly <strong>mobile app development (Android/iOS)</strong>, powerful CRM systems, efficient ERP solutions, and specialized tools designed to streamline workflows, enhance productivity, and solve your unique business challenges. Get innovative <strong>software solutions in India</strong>.</p>
+                    <p>Transform your business operations with <strong>bespoke software development solutions</strong> from Ftech Global. We specialize in <strong>custom software development</strong>, user-friendly <strong>mobile app development (Android/iOS)</strong>, powerful CRM systems, efficient ERP solutions, and specialized tools designed to streamline workflows, enhance productivity, and solve unique business challenges for clients across <strong>India and internationally</strong>.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-search-dollar"></i>Advanced SEO & Google Ads:</strong>
-                    <p>Dominate search engine rankings and attract high-intent customers with our <strong>advanced SEO services</strong> and expert <strong>Google Ads management</strong>. Our dedicated <strong>SEO specialists in Patna</strong> and Google Ads professionals optimize your online presence for top SERP results, driving targeted <strong>organic traffic</strong> and maximizing your ROI through effective <strong>PPC campaigns</strong> and comprehensive <strong>local SEO strategies</strong>.</p>
+                    <p>Dominate search engine rankings and attract high-intent customers with our <strong>advanced SEO services</strong> and expert <strong>Google Ads management</strong>. Our dedicated <strong>SEO specialists</strong> and Google Ads professionals optimize your online presence for top SERP results, driving targeted <strong>organic traffic</strong> and maximizing your ROI through effective <strong>PPC campaigns</strong> and comprehensive <strong>local and global SEO strategies</strong>.</p>
                 </li>
                 <li>
-                    <strong><i class="fas fa-file-invoice-dollar"></i>Seamless GST & ITR Filing:</strong>
-                    <p>Navigate complex Indian tax regulations with ease through our <strong>seamless GST registration services</strong> and <strong>ITR filing assistance</strong>. Ftech Global provides expert help for hassle-free <strong>online GST registration in Patna</strong>, timely GST return filing, and accurate <strong>Income Tax Return (ITR) e-filing</strong> for individuals and businesses, ensuring full compliance.</p>
+                    <strong><i class="fas fa-file-invoice-dollar"></i>Seamless GST & ITR Filing (India):</strong>
+                    <p>Navigate complex Indian tax regulations with ease through our <strong>seamless GST registration services</strong> and <strong>ITR filing assistance</strong>. Ftech Global provides expert help for hassle-free <strong>online GST registration</strong>, timely GST return filing, and accurate <strong>Income Tax Return (ITR) e-filing</strong> for individuals and businesses within India, ensuring full compliance.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-rocket"></i>Strategic Startup Consultancy:</strong>
-                    <p>Turn your innovative ideas into successful ventures with our <strong>strategic startup consultancy services in India</strong>. Our experienced <strong>startup consultants in Patna</strong> offer comprehensive guidance from <strong>business plan development</strong> and in-depth market analysis to effective funding strategies, navigating legal compliance for startups, and implementing <strong>growth hacking techniques</strong> to empower new businesses to thrive.</p>
+                    <p>Turn your innovative ideas into successful ventures with our <strong>strategic startup consultancy services</strong>. Our experienced <strong>startup consultants</strong> offer comprehensive guidance from <strong>business plan development</strong> and in-depth market analysis to effective funding strategies, navigating legal compliance, and implementing <strong>growth hacking techniques</strong> to empower new businesses to thrive in <strong>India and global markets</strong>.</p>
                 </li>
             </ul>
         </section>
 
-        <img src="Homepageimage1.webp" alt="Ftech Global Services Overview - Web, SEO, Software" class="homepage-services-image"> <a class="contact-whatsapp-button" href="https://wa.me/918789567363" target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
+        <img src="Homepageimage1.webp" alt="Ftech Global Services Overview - Web, SEO, Software Solutions" class="homepage-services-image"> <a class="contact-whatsapp-button" href="https://wa.me/918789567363" target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
     </div>
     <footer>
-        &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
-        <div style="text-align:center; margin-top: 20px;">
-            <a href="https://www.hitwebcounter.com" target="_blank">
-                <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
-                     title="Counter Widget"
-                     alt="Visit counter For Websites"
-                     border="0" />
-            </a>
-        </div>
-    </footer>
-</body>
-</html>
+        &copy; <script
