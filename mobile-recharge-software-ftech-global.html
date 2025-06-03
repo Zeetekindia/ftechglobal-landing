@@ -54,8 +54,7 @@
         .logo-area {
             display: flex;
             align-items: center;
-            /* Flex-shrink prevents logo from shrinking too much if nav is wide */
-            flex-shrink: 0; 
+            flex-shrink: 0; /* Prevents logo area from shrinking */
         }
 
         .logo {
@@ -92,10 +91,8 @@
         }
 
         .main-nav {
-            /* Allow main-nav to grow, but content inside will control its width */
-            flex-grow: 1; 
-            display: flex; /* Make nav itself a flex container */
-            justify-content: flex-end; /* Push nav content to the right */
+            /* No flex-grow here */
+            margin-left: auto; /* Pushes the entire navigation block to the right */
         }
 
         .main-nav ul {
@@ -103,9 +100,9 @@
             margin: 0;
             padding: 0;
             display: flex; /* Make ul a flex container for buttons */
-            flex-wrap: nowrap; /* Prevent buttons from wrapping on desktop */
+            flex-wrap: nowrap; /* Prevents buttons from wrapping on desktop */
             gap: 15px; /* Space between buttons */
-            /* Removed justify-content from here as main-nav handles it */
+            /* Removed justify-content from here as margin-left: auto on main-nav handles alignment */
         }
 
         .main-nav li {
@@ -141,7 +138,7 @@
 
             .main-nav {
                 width: 100%; /* Make nav take full width when stacked */
-                justify-content: center; /* Center the stacked buttons */
+                margin-left: 0; /* Remove auto margin when stacked */
                 margin-top: 15px; /* Space between logo and stacked nav */
             }
 
@@ -150,6 +147,7 @@
                 width: 100%; /* Make ul take full width of its parent nav */
                 gap: 10px;
                 flex-wrap: wrap; /* Allow wrapping of buttons if needed on smaller widths, though column makes it less likely */
+                justify-content: center; /* Center the stacked buttons */
             }
 
             .nav-button {
