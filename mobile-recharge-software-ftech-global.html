@@ -54,7 +54,7 @@
         .logo-area {
             display: flex;
             align-items: center;
-            flex-shrink: 0; /* Prevents logo area from shrinking */
+            flex-shrink: 0; /* Prevents logo area from shrinking too much */
         }
 
         .logo {
@@ -92,9 +92,9 @@
 
         /* Main Navigation Container */
         .main-nav {
-            display: flex; /* Make the <nav> element a flex container */
-            justify-content: flex-end; /* Align its content (the <ul>) to the right */
-            margin-left: auto; /* Pushes the entire navigation block to the right, next to the logo */
+            /* This ensures the nav element only takes up the space its content needs */
+            flex: 0 0 auto; 
+            /* No margin-left: auto here for desktop, as main-header's space-between handles positioning */
         }
 
         .main-nav ul {
@@ -104,7 +104,7 @@
             display: flex; /* Make <ul> a flex container for its <li> buttons */
             flex-wrap: nowrap; /* Crucial: Prevents buttons from wrapping on desktop */
             gap: 15px; /* Space between buttons */
-            /* Removed justify-content from here as its parent .main-nav now handles alignment */
+            /* No justify-content here, as ul is inside a compact nav */
         }
 
         .main-nav li {
@@ -126,7 +126,7 @@
         }
 
         .nav-button:hover {
-            background-            background-color: #00b359; /* Darker green on hover */
+            background-color: #00b359; /* Darker green on hover */
             transform: translateY(-2px); /* Slight lift effect */
         }
 
@@ -140,9 +140,10 @@
 
             .main-nav {
                 width: 100%; /* Make nav take full width when stacked */
-                margin-left: 0; /* Remove auto margin when stacked */
+                flex: auto; /* Allow nav to flex freely when stacked */
                 margin-top: 15px; /* Space between logo and stacked nav */
-                justify-content: center; /* Center the entire nav block when stacked */
+                display: flex; /* Ensure it's a flex container for centering */
+                justify-content: center; /* Center the nav block when stacked */
             }
 
             .main-nav ul {
