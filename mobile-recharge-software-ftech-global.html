@@ -90,23 +90,25 @@
             color: #b0e0e6; /* Lighter blue for tagline */
         }
 
+        /* Main Navigation Container */
         .main-nav {
-            /* No flex-grow here */
-            margin-left: auto; /* Pushes the entire navigation block to the right */
+            display: flex; /* Make the <nav> element a flex container */
+            justify-content: flex-end; /* Align its content (the <ul>) to the right */
+            margin-left: auto; /* Pushes the entire navigation block to the right, next to the logo */
         }
 
         .main-nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Make ul a flex container for buttons */
-            flex-wrap: nowrap; /* Prevents buttons from wrapping on desktop */
+            display: flex; /* Make <ul> a flex container for its <li> buttons */
+            flex-wrap: nowrap; /* Crucial: Prevents buttons from wrapping on desktop */
             gap: 15px; /* Space between buttons */
-            /* Removed justify-content from here as margin-left: auto on main-nav handles alignment */
+            /* Removed justify-content from here as its parent .main-nav now handles alignment */
         }
 
         .main-nav li {
-            display: inline-block; /* Keep list items inline */
+            display: inline-block; /* Keep list items inline (though flex handles this for its direct children) */
         }
 
         .nav-button {
@@ -124,7 +126,7 @@
         }
 
         .nav-button:hover {
-            background-color: #00b359; /* Darker green on hover */
+            background-            background-color: #00b359; /* Darker green on hover */
             transform: translateY(-2px); /* Slight lift effect */
         }
 
@@ -140,6 +142,7 @@
                 width: 100%; /* Make nav take full width when stacked */
                 margin-left: 0; /* Remove auto margin when stacked */
                 margin-top: 15px; /* Space between logo and stacked nav */
+                justify-content: center; /* Center the entire nav block when stacked */
             }
 
             .main-nav ul {
