@@ -94,9 +94,10 @@
             margin: 0;
             padding: 0;
             display: flex; /* Make it a flex container */
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            /* Removed flex-wrap: wrap; to force single line */
             gap: 15px; /* Space between buttons */
             justify-content: flex-end; /* Align buttons to the right */
+            white-space: nowrap; /* Prevents wrapping of the entire ul */
         }
 
         .main-nav li {
@@ -117,10 +118,6 @@
             white-space: nowrap; /* Prevent text wrapping inside buttons */
         }
 
-        .nav-button i {
-            font-size: 1.1em;
-        }
-
         .nav-button:hover {
             background-color: #00b359; /* Darker green on hover */
             transform: translateY(-2px); /* Slight lift effect */
@@ -135,11 +132,12 @@
             }
 
             .main-nav ul {
-                flex-direction: column;
+                flex-direction: column; /* Stack vertically on small screens */
                 width: 100%;
                 margin-top: 15px;
                 gap: 10px;
                 justify-content: center; /* Center buttons when stacked */
+                white-space: normal; /* Allow wrapping again for stacked buttons */
             }
 
             .nav-button {
@@ -382,7 +380,7 @@
 
         <h2>Ready to Revolutionize Your Business with the Best Mobile Recharge Software?</h2>
 
-        <p>The future of business is digital, and a powerful <strong>mobile recharge software</strong> is your gateway to success. Don't let this unparalleled opportunity to grow your revenue and establish your market presence pass you by.</p>
+        <p>The future of business is digital, and a powerful <strong>mobile recharge software</strong> is your gateway to success. Don't let this unparalleled opportunity to grow your revenue and establish your market presence pass by.</p>
 
         <p style="text-align: center;"><strong>Partner with FTECH GLOBAL today and transform your business!</strong></p>
 
@@ -441,7 +439,7 @@
         </div>
 
     </div>
-    <div style="text-align: center; margin-top: 20px;">
+    <div style="text-align: center; margin-top: 20px; padding-bottom: 10px;">
         <a href="https://www.hitwebcounter.com" target="_blank">
             <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
                  title="Counter Widget"
