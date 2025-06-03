@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ftech Global Solutions - Future Technology Solutions</title>
-
     <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
         body {
             margin: 0;
@@ -20,8 +17,7 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
-            /* Default padding for desktop/larger screens */
-            padding-top: 130px;
+            padding-top: 130px; /* Default padding for desktop/larger screens */
         }
 
         .top-contact-bar {
@@ -123,71 +119,122 @@
             display: block;
             margin: 20px auto 40px auto;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+            border: 2px solid #38bdf8; /* Added border */
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem; /* Slightly larger */
             color: #38bdf8;
             margin-top: 15px;
-            margin-bottom: 5px;
+            margin-bottom: 10px; /* Increased bottom margin */
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.4); /* Subtle glow */
         }
 
+        /* Style for the main tagline paragraph */
+        .main-content > p:first-of-type {
+            font-size: 1.3rem; /* Slightly larger */
+            color: #e2e8f0; /* Lighter for better contrast on gradient */
+            margin-top: 5px;
+            margin-bottom: 35px; /* Increased bottom margin */
+            font-style: italic;
+        }
+        
+        /* General paragraph styling - keeping original for service descriptions */
         p {
             font-size: 1.2rem;
             margin-top: 5px;
             margin-bottom: 25px;
         }
 
-        a.button {
-            background: #38bdf8;
-            color: #0f172a;
-            padding: 0.8rem 1.5rem;
+
+        a.button, .contact-whatsapp-button { /* Target both original and new class */
+            background: #00e676; /* Changed to green to match nav buttons */
+            color: #101827; /* Dark text for contrast on green */
+            padding: 12px 25px; /* Slightly larger padding */
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            margin-top: 20px;
-            display: inline-block;
+            margin-top: 30px; /* Increased margin */
+            display: inline-flex; /* For icon alignment */
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4);
         }
 
-        a.button:hover {
-            background: #0ea5e9;
+        a.button:hover, .contact-whatsapp-button:hover { /* Target both original and new class */
+            background: #00c366; /* Darker green on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6);
         }
 
         .services {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #2D3A4B;
-            border-radius: 12px;
+            margin-top: 50px; /* Increased margin */
+            padding: 30px; /* Increased padding */
+            background-color: rgba(45, 58, 75, 0.7); /* Slightly transparent dark blue-gray */
+            border-radius: 15px; /* More rounded */
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
             text-align: left;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* Softer, larger shadow */
         }
 
         .services h2 {
             color: #38bdf8;
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem; /* Larger */
+            margin-bottom: 30px; /* Increased margin */
             text-align: center;
+            font-weight: 600;
         }
 
         .services ul {
             list-style-type: none;
             padding: 0;
+            display: grid; /* Using grid for layout */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+            gap: 25px; /* Gap between cards */
         }
 
         .services li {
-            margin: 10px 0;
-            font-size: 1.1rem;
-            line-height: 1.6;
+            background-color: #1B2C40; /* Darker card background */
+            padding: 25px; /* Increased padding */
+            border-radius: 10px; /* Rounded corners for cards */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #00e676; /* Accent border */
+        }
+
+        .services li:hover {
+            transform: translateY(-8px) scale(1.02); /* More pronounced hover effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .services li strong {
-            color: #00e676;
-            display: block;
-            margin-bottom: 5px;
+            color: #00e676; /* Green accent for service titles */
+            font-size: 1.4rem; /* Larger font for titles */
+            display: flex; /* Using flex for icon and text alignment */
+            align-items: center;
+            margin-bottom: 12px; /* Increased margin */
+            font-weight: 600;
         }
+        .services li strong i {
+            margin-right: 12px; /* Space between icon and text */
+            font-size: 1.5rem; /* Icon size */
+            width: 30px; /* Fixed width for alignment */
+            text-align: center;
+        }
+
+        .services li p { /* Targeting paragraphs within service list items */
+            font-size: 1.05rem; /* Slightly smaller for better balance in cards */
+            color: #cbd5e1; /* Lighter text color for readability on dark cards */
+            line-height: 1.7;
+            margin-top: 0;
+            margin-bottom: 0; /* Remove bottom margin as card provides spacing */
+        }
+
 
         footer {
             background-color: #1a2a4b;
@@ -202,12 +249,10 @@
         }
 
         /* --- Media Queries for responsiveness --- */
-
         @media (max-width: 1200px) {
             body {
                 padding-top: 200px; /* Space for stacked header (logo + nav) */
             }
-
             .fixed-main-logo {
                 width: 120px;
                 height: 120px;
@@ -216,7 +261,6 @@
                 transform: translateX(-50%);
                 box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
             }
-
             nav {
                 position: fixed;
                 top: 170px;
@@ -230,13 +274,11 @@
                 border-radius: 0;
                 background-color: #2c3e50;
             }
-
             nav div {
                 flex-direction: column;
                 width: 100%;
                 justify-content: center;
             }
-
             nav div a.button-link {
                 margin: 5px 0;
                 padding: 10px 15px;
@@ -245,29 +287,29 @@
                 font-size: 0.95em;
                 gap: 8px;
             }
-
             .main-content {
                 padding: 15px 10px 40px 10px;
                 max-width: 90%;
             }
-
             .homepage-services-image {
                 max-width: 70%;
                 margin-top: 20px;
                 margin-bottom: 30px;
             }
+            .services ul { /* Adjust grid for tablets */
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
         }
 
         /* Mobile breakpoint */
         @media (max-width: 768px) {
-            /* *** CRITICAL ADJUSTMENT HERE FOR MOBILE PADDING-TOP *** */
             body {
-                padding-top: 220px; /* Increased padding-top for mobile to clear fixed header/nav */
+                padding-top: 220px;
             }
             .top-contact-bar {
                 padding: 5px 10px;
             }
-
             .fixed-main-logo {
                 width: 80px;
                 height: 80px;
@@ -275,42 +317,60 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-
             nav {
-                top: 135px; /* Still positions nav below logo */
+                top: 135px;
                 padding: 8px 10px;
             }
             nav div a.button-link {
                 font-size: 0.8em;
                 padding: 8px 12px;
             }
-
             .main-content {
                 padding: 15px 10px 20px 10px;
                 max-width: 95%;
             }
-
             .homepage-services-image {
                 max-width: 90%;
                 margin-top: 15px;
                 margin-bottom: 20px;
             }
-
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem; /* Adjusted for mobile */
                 margin-top: 10px;
                 margin-bottom: 5px;
             }
-            p {
+            .main-content > p:first-of-type { /* Tagline on mobile */
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+            p { /* General paragraphs on mobile */
                 font-size: 1rem;
                 margin-top: 5px;
                 margin-bottom: 15px;
             }
             .services h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem; /* Adjusted for mobile */
+            }
+            .services ul { /* Single column for services on mobile */
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
             .services li {
-                font-size: 1em;
+                padding: 20px; /* Adjust padding for smaller cards */
+            }
+            .services li strong {
+                font-size: 1.2rem; /* Adjust title size */
+            }
+            .services li strong i {
+                font-size: 1.3rem; /* Adjust icon size */
+                margin-right: 10px;
+            }
+            .services li p {
+                font-size: 0.95rem; /* Adjust description size */
+            }
+            a.button, .contact-whatsapp-button { /* Button on mobile */
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -338,40 +398,40 @@
 
     <div class="main-content">
         <h1>🚀 Ftech Global Solutions</h1>
-          <p>Empowering Your Business with Next-Gen Technology</p>
+        <p>Empowering Your Business with Next-Gen Technology</p>
 
         <img src="Homepageimage1.webp" alt="Ftech Global Services Overview" class="homepage-services-image">
 
         <section class="services">
-            <h2>💼 Our Services: Empowering Your Digital Journey with Ftech Global</h2>
+            <h2><i class="fas fa-cogs" style="margin-right:10px; color: #00e676;"></i>Our Services: Empowering Your Digital Journey</h2>
             <ul>
                 <li>
-                    <strong>🌐 Expert Website Development Services:</strong>
-                    <p>Launch your online presence with stunning, responsive, and high-performance websites. From custom web design to robust e-commerce solutions, we build SEO-optimized sites that convert visitors into customers. Get a professional website that truly represents your brand.</p>
+                    <strong><i class="fas fa-laptop-code"></i>Expert Website Development:</strong>
+                    <p>Launch your online presence with stunning, responsive, and high-performance websites. From custom web design to robust e-commerce solutions, we build SEO-optimized sites that convert visitors into customers.</p>
                 </li>
                 <li>
-                    <strong>📱 Comprehensive Digital Marketing Strategies:</strong>
-                    <p>Elevate your brand's online visibility and drive targeted traffic. Our digital marketing services include SEO, social media marketing, content marketing, email campaigns, and paid advertising to ensure maximum reach and engagement for your business.</p>
+                    <strong><i class="fas fa-bullhorn"></i>Comprehensive Digital Marketing:</strong>
+                    <p>Elevate your brand's online visibility and drive targeted traffic. Our services include SEO, social media marketing, content marketing, email campaigns, and paid advertising for maximum reach.</p>
                 </li>
                 <li>
-                    <strong>🧑‍💻 Bespoke Software Development Solutions:</strong>
-                    <p>Transform your business operations with tailor-made software. We specialize in developing custom software, mobile applications (Android/iOS), CRM, ERP, and specialized tools that streamline workflows, enhance efficiency, and solve unique business challenges.</p>
+                    <strong><i class="fas fa-code-branch"></i>Bespoke Software Development:</strong>
+                    <p>Transform operations with tailor-made software. We specialize in custom software, mobile apps (Android/iOS), CRM, ERP, and tools that streamline workflows and enhance efficiency.</p>
                 </li>
                 <li>
-                    <strong>📊 Advanced SEO & Google Ads Management:</strong>
-                    <p>Dominate search engine rankings and attract high-intent customers. Our SEO experts and Google Ads specialists optimize your online presence for top results, driving organic traffic and maximizing your ROI through effective paid campaigns and local SEO strategies.</p>
+                    <strong><i class="fas fa-search-dollar"></i>Advanced SEO & Google Ads:</strong>
+                    <p>Dominate search rankings and attract high-intent customers. Our experts optimize your online presence for top results, driving organic traffic and maximizing ROI through effective campaigns.</p>
                 </li>
                 <li>
-                    <strong>📄 Seamless GST Registration & ITR Filing:</strong>
-                    <p>Navigate complex tax regulations with ease. We provide expert assistance for hassle-free GST registration, timely GST filing, and accurate Income Tax Return (ITR) filing for individuals and businesses, ensuring compliance and peace of mind.</p>
+                    <strong><i class="fas fa-file-invoice-dollar"></i>Seamless GST & ITR Filing:</strong>
+                    <p>Navigate complex tax regulations with ease. We provide expert assistance for GST registration, timely GST filing, and accurate ITR filing for individuals and businesses, ensuring compliance.</p>
                 </li>
                 <li>
-                    <strong>🎯 Strategic Startup Consultancy & Mentorship:</strong>
-                    <p>Turn your innovative ideas into successful ventures. Our startup consultants offer comprehensive guidance from business plan development and market analysis to funding strategies, legal compliance, and growth hacking, empowering new businesses to thrive.</p>
+                    <strong><i class="fas fa-rocket"></i>Strategic Startup Consultancy:</strong>
+                    <p>Turn innovative ideas into successful ventures. Our consultants offer guidance from business plans and market analysis to funding strategies, legal compliance, and growth hacking.</p>
                 </li>
             </ul>
         </section>
-        <a class="button" href="https://wa.me/918789567363" target="_blank">📞 Contact Us on WhatsApp</a>
+        <a class="contact-whatsapp-button" href="https://wa.me/918789567363" target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
     </div>
     <footer>
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
