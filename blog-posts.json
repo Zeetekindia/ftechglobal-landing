@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Website Development in Patna",
+    "slug": "website-development-patna",
+    "date": "2025-06-04",
+    "summary": "Know how to build a responsive website for your business in Patna.",
+    "image": "images/blog1.jpg",
+    "content": "Full blog content here..."
+  },
+  {
+    "title": "GST Registration Guide for Startups",
+    "slug": "gst-registration-guide",
+    "date": "2025-06-02",
+    "summary": "Step-by-step process to register your business under GST.",
+    "image": "images/blog2.jpg",
+    "content": "Full blog content here..."
+  }
+]
