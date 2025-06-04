@@ -22,45 +22,25 @@
             padding-top: 130px; 
         }
 
-        /* --- Top Contact Bar with Centered Links & Right Aligned Contact --- */
-        .top-contact-bar {
+        .top-contact-bar { /* Original style for top contact bar */
             background: #1a2a4b;
             color: #fff;
             padding: 8px 20px;
+            text-align: right; 
             font-size: 0.9em; 
             width: 100%;
             position: fixed;
             top: 0;
             left: 0;
             box-sizing: border-box;
-            z-index: 1001;
-            display: flex;
-            align-items: center; /* Vertically align items */
-        }
-        .top-bar-links {
-            flex-grow: 1; /* Allows this section to take available middle space */
-            text-align: center; /* Centers the inline-block links within this div */
-        }
-        .top-bar-links a {
-            color: #cbd5e1; 
-            text-decoration: none;
-            margin: 0 10px; /* Spacing around links */
-            font-weight: 400; /* Normal font weight */
-            transition: color 0.3s ease;
-        }
-        .top-bar-links a:hover {
-            color: #00e676; 
-        }
-        .top-bar-contact {
             font-weight: bold; 
-            margin-left: auto; /* Pushes contact info to the very right */
-            flex-shrink: 0; /* Prevents contact info from shrinking if links are too many */
+            z-index: 1001;
         }
-        .top-bar-contact a { 
-            color: #fff; 
+        .top-contact-bar a { 
+            color: inherit; 
             text-decoration: none;
         }
-        /* --- End of Top Contact Bar Styles --- */
+        /* Removed .top-bar-links and specific .top-bar-contact for flex layout as links are moved to footer */
 
         .fixed-main-logo {
             width: 120px;
@@ -110,7 +90,7 @@
         p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; } 
         
         .services { 
-            margin-top: 40px; 
+            margin-top: 40px; /* Space after tagline/intro */
             padding: 30px; background-color: rgba(45, 58, 75, 0.7); border-radius: 15px; 
             max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; 
             box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
@@ -139,15 +119,15 @@
             max-width: 60%; 
             height: auto; 
             display: block; 
-            margin: 40px auto; 
+            margin: 40px auto; /* Space after Services section and before Testimonials */
             border-radius: 10px; 
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
             border: 2px solid #38bdf8; 
         }
         
         .testimonials-section {
-            margin-top: 40px; 
-            margin-bottom: 40px; 
+            margin-top: 40px; /* Space after image */
+            margin-bottom: 40px; /* Space before WhatsApp button */
             padding: 30px 0px; 
             background-color: rgba(27, 44, 64, 0.7); 
             border-radius: 15px;
@@ -239,8 +219,6 @@
             margin-top: 10px; 
             margin-bottom: 20px; 
             padding: 10px 0;
-            /* border-top: 1px solid #334a70; */ /* Optional: Add if you want separator */
-            /* border-bottom: 1px solid #334a70; */ /* Optional: Add if you want separator */
         }
         .footer-nav ul {
             list-style-type: none;
@@ -281,29 +259,17 @@
             
             .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
             .homepage-services-image { max-width: 70%; margin: 30px auto; } 
+            .services { margin-top: 30px; } /* Adjusted margin for tablet */
             .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
             
-            .top-contact-bar { 
-                flex-direction: column; /* Stack on smaller screens */
-                height: auto; 
-                padding: 5px 10px; 
-            }
-            .top-bar-links { 
-                order: 2; /* Links below contact */
-                margin-bottom: 0; 
-                margin-top: 5px; 
-                text-align: center; 
-                width: 100%; 
-                flex-grow: 0; /* Don't grow when stacked */
-            }
+            .top-contact-bar { text-align: center; /* Center content on tablet */ }
+            /* Removed flex from top-contact-bar for tablet if it was causing issues, or keep and adjust flex-direction */
+            /* If .top-bar-links was used:
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
             .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
-            .top-bar-contact { 
-                order: 1; /* Contact on top */
-                text-align: center; 
-                width: 100%; 
-                margin-left: 0; 
-                margin-bottom: 5px; 
-            }
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+            */
 
             .testimonials-section { margin-top: 30px; margin-bottom: 30px; }
             .testimonials-section h2 {font-size: 2rem;}
@@ -312,10 +278,12 @@
 
         @media (max-width: 768px) { 
             body { padding-top: 220px; } 
-            .top-contact-bar { 
-                font-size: 0.8em; 
-            }
-            .top-bar-links a { margin: 0 5px; font-size: 0.8em;} /* Smaller links on mobile */
+            /* .top-contact-bar { font-size: 0.8em; } */ /* No need for specific .top-contact-bar style here if it's simple text-align:right */
+            /* If .top-bar-links was used:
+            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
+            */
+            .top-contact-bar { padding: 5px 10px; font-size: 0.8em; text-align: center; }
+
 
             .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
             nav { top: 135px; padding: 8px 10px; } 
@@ -353,17 +321,8 @@
 <body>
 
     <div class="top-contact-bar">
-        <div class="top-bar-links">
-            <a href="services.html">Our Services</a>
-            <a href="about-us.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
-            <a href="blog.html">Blog</a> 
-        </div>
-        <div class="top-bar-contact">
-            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
-        </div>
+        Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
     </div>
-
     <a href="index.html">
       <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
     </a>
@@ -414,7 +373,6 @@
                 </li>
             </ul>
         </section>
-
         <img src="Homepageimage1.webp" alt="Ftech Global Services Overview" class="homepage-services-image">
 
         <section class="testimonials-section">
@@ -442,7 +400,6 @@
                 </div>
             </div>
         </section>
-
         <a class="contact-whatsapp-button" href="https://wa.me/918789567363" target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
     </div>
 
@@ -465,8 +422,8 @@
                 <li><a href="term-and-condition.html">Term & Condition</a></li> 
             </ul>
         </nav>
-
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+        
         <div style="text-align:center; margin-top: 20px;"> 
             <a href="https://www.hitwebcounter.com" target="_blank">
                 <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
