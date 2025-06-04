@@ -22,7 +22,6 @@
             padding-top: 130px; 
         }
 
-        /* UPDATED TOP CONTACT BAR STYLES FOR CENTERING LINKS */
         .top-contact-bar {
             background: #1a2a4b;
             color: #fff;
@@ -35,18 +34,17 @@
             box-sizing: border-box;
             z-index: 1001;
             display: flex;
-            /* justify-content: space-between; /* Removed to allow centering of links */
             align-items: center;
         }
         .top-bar-links {
-            flex-grow: 1; /* Allows this section to take available space */
-            text-align: center; /* Centers the inline items (links) within this div */
+            flex-grow: 1; 
+            text-align: center; 
         }
         .top-bar-links a {
             color: #cbd5e1; 
             text-decoration: none;
-            margin: 0 10px; /* Even spacing around links */
-            font-weight: 400; /* Normal font weight */
+            margin: 0 10px; 
+            font-weight: 400; 
             transition: color 0.3s ease;
         }
         .top-bar-links a:hover {
@@ -54,15 +52,13 @@
         }
         .top-bar-contact {
             font-weight: bold; 
-            margin-left: auto; /* Pushes contact info to the right */
-            flex-shrink: 0; /* Prevents contact info from shrinking */
+            margin-left: auto; 
+            flex-shrink: 0; 
         }
         .top-bar-contact a { 
             color: #fff; 
             text-decoration: none;
         }
-        /* END OF UPDATED TOP CONTACT BAR STYLES */
-
 
         .fixed-main-logo {
             width: 120px;
@@ -105,12 +101,15 @@
 
 
         .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
-        .homepage-services-image { max-width: 60%; height: auto; display: block; margin: 40px auto 20px auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); border: 2px solid #38bdf8; }
+        .homepage-services-image { max-width: 60%; height: auto; display: block; margin: 20px auto 40px auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); border: 2px solid #38bdf8; }
+        
         h1 { font-size: 3.2rem; color: #FFD700; margin-top: 15px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
         .main-content > p:first-of-type { font-size: 1.3rem; color: #e2e8f0; margin-top: 5px; margin-bottom: 35px; font-style: italic; }
         p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; }
+        
         a.button, .contact-whatsapp-button { background: #00e676; color: #101827; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 30px; display: inline-flex; align-items: center; gap: 8px; transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4); }
         a.button:hover, .contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6); }
+        
         .services { margin-top: 50px; padding: 30px; background-color: rgba(45, 58, 75, 0.7); border-radius: 15px; max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
         .services h2 { color: #38bdf8; font-size: 2.1rem; margin-bottom: 30px; text-align: center; font-weight: 600; display: flex; align-items: center; justify-content: center; }
         .services h2 i { margin-right: 10px; color: #FFC107; }
@@ -120,6 +119,71 @@
         .services li strong { color: #00e676; font-size: 1.4rem; display: flex; align-items: center; margin-bottom: 12px; font-weight: 600; }
         .services li strong i { margin-right: 12px; font-size: 1.5rem; width: 30px; text-align: center; color: #FFC107; }
         .services li p { font-size: 1.05rem; color: #cbd5e1; line-height: 1.7; margin-top: 0; margin-bottom: 0; flex-grow: 1; }
+
+        /* --- Testimonials Section --- */
+        .testimonials-section {
+            margin-top: 50px;
+            padding: 30px 0px; /* Adjusted padding for full-width feel before scroll */
+            background-color: rgba(27, 44, 64, 0.7); 
+            border-radius: 15px;
+            text-align: center;
+            overflow: hidden; /* Hide main scrollbar, inner container will scroll */
+        }
+        .testimonials-section h2 {
+            color: #38bdf8; 
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            padding: 0 20px; /* Add padding if h2 is inside the main padding:0px */
+        }
+        .testimonials-container {
+            display: flex; 
+            overflow-x: auto; 
+            padding: 0px 20px 20px 20px; /* Padding for start/end and scrollbar */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #00e676 #2D3A4B; /* Firefox: thumb track */
+        }
+        .testimonials-container::-webkit-scrollbar { height: 10px; }
+        .testimonials-container::-webkit-scrollbar-track { background: #223042; border-radius: 10px;}
+        .testimonials-container::-webkit-scrollbar-thumb { background-color: #00e676; border-radius: 10px; border: 2px solid #223042;}
+        .testimonials-container::-webkit-scrollbar-thumb:hover { background-color: #00b359;}
+
+        .testimonial-card {
+            min-width: 320px; 
+            max-width: 380px; 
+            background-color: #1B2C40; 
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            margin-right: 25px; 
+            text-align: left;
+            flex-shrink: 0; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .testimonial-card:last-child {
+            margin-right: 0; /* Or same as left padding of container for symmetry */
+        }
+        .testimonial-card .feedback {
+            font-size: 1.05rem;
+            color: #e2e8f0; 
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            border-left: 4px solid #00e676; 
+            padding-left: 15px;
+            flex-grow: 1;
+        }
+        .testimonial-card .client-info {
+            font-size: 1rem;
+            color: #FFD700; 
+            font-weight: bold;
+            text-align: right;
+            margin-top: auto; /* Pushes client info to the bottom of the card */
+        }
+        /* --- End of Testimonials Section --- */
 
         footer {
             background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
@@ -136,12 +200,11 @@
         .social-media-icons a i { vertical-align: middle;}
         .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
         
-        /* Footer Nav - REMOVED (or ensure it's removed if you don't want it in footer) */
 
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) { 
             body { padding-top: 200px; } 
-            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
             nav { 
                 top: 170px; 
                 position: fixed; left: 0; width: 100%; flex-direction: column; 
@@ -155,45 +218,25 @@
             .homepage-services-image { max-width: 70%; }
             .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
             
-            /* UPDATED Top Contact Bar for Tablet */
-            .top-contact-bar { 
-                flex-direction: column; 
-                height: auto; 
-                padding: 5px 10px; 
-            }
-            .top-bar-links { 
-                /* flex-grow: 0; Remove flex-grow if stacking */
-                order: 2; /* Links below contact */
-                margin-bottom: 0; /* No margin if it's the last item */
-                margin-top: 5px; /* Space from contact info */
-                text-align: center; 
-                width: 100%; 
-            }
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
             .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
-            .top-bar-contact { 
-                order: 1; /* Contact on top */
-                text-align: center; 
-                width: 100%; 
-                margin-left: 0; /* Reset margin-left for stacked layout */
-                margin-bottom: 5px; /* Space before links */
-            }
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+
+            .testimonials-section h2 {font-size: 2rem;}
+            .testimonial-card {min-width: 280px; max-width: 320px;}
         }
 
         @media (max-width: 768px) { 
             body { padding-top: 220px; } 
-            .top-contact-bar { 
-                font-size: 0.8em; 
-            }
+            .top-contact-bar { font-size: 0.8em; }
             .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
 
             .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
-            nav { 
-                 top: 135px; 
-                 padding: 8px 10px; 
-            } 
+            nav { top: 135px; padding: 8px 10px; } 
             nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
             .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
-            .homepage-services-image { max-width: 90%; }
+            .homepage-services-image { max-width: 90%; margin-bottom: 30px; } /* Ensure space before testimonials */
             h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; } 
             body p { font-size: 1rem; }
             .services li p { font-size: 0.95rem;}
@@ -205,6 +248,13 @@
             .services li strong i { font-size: 1.3rem; margin-right: 10px; }
             a.button, .contact-whatsapp-button { padding: 10px 20px; font-size: 0.9rem; }
             .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+            
+            .testimonials-section { padding: 20px 0px; }
+            .testimonials-section h2 {font-size: 1.8rem; margin-bottom: 20px;}
+            .testimonials-container { padding: 0px 15px 15px 15px; }
+            .testimonial-card {min-width: 260px; margin-right: 15px; padding: 20px;}
+            .testimonial-card .feedback { font-size: 1rem; }
+            .testimonial-card .client-info { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -215,14 +265,16 @@
             <a href="/services.html">Our Services</a>
             <a href="/about-us.html">About Us</a>
             <a href="/contact.html">Contact Us</a>
-            <a href="/blog.html">Blog</a>
+            <a href="/blog/">Blog</a>
         </div>
         <div class="top-bar-contact">
             Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
         </div>
     </div>
 
-    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
+    <a href="index.html">
+      <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
+    </a>
 
     <nav> 
         <div>
@@ -241,37 +293,62 @@
         <h1>🚀 Ftech Global Solutions: Premier IT & Digital Marketing Services</h1>
         <p>Empowering Business Growth Worldwide with Next-Gen Technology & Expert Digital Strategies</p>
 
+        <img src="Homepageimage1.webp" alt="Ftech Global Services Overview" class="homepage-services-image">
+
+        <section class="testimonials-section">
+            <h2>What Our Clients Say <i class="fas fa-comments" style="color: #FFD700;"></i></h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p class="feedback">"Ftech Global Solutions transformed our online presence! Their web development team is top-notch and delivered a fantastic, responsive website. Highly recommended for their professionalism."</p>
+                    <p class="client-info">- Priya Sharma, Mumbai (Maharashtra)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"The digital marketing strategies implemented by Ftech Global significantly boosted our leads. Their SEO and Google Ads expertise is truly commendable. Great results!"</p>
+                    <p class="client-info">- Rohan Kumar, Bangalore (Karnataka)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"We needed custom software for our logistics business, and Ftech Global delivered a robust and efficient solution. Their team understood our requirements perfectly."</p>
+                    <p class="client-info">- Anjali Das, Kolkata (West Bengal)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"As a startup, their consultancy was invaluable. From business plan to market strategy, Ftech Global guided us at every step. Fantastic support for new ventures!"</p>
+                    <p class="client-info">- Vikram Singh, Delhi (Delhi)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"GST registration and ITR filing were so easy with Ftech Global. They handled everything professionally and ensured we were compliant. Excellent service!"</p>
+                    <p class="client-info">- Sunita Reddy, Hyderabad (Telangana)</p>
+                </div>
+            </div>
+        </section>
         <section class="services">
-            <h2><i class="fas fa-cogs"></i>Our Expert Services: Driving Your Business Success Globally</h2>
+            <h2><i class="fas fa-cogs"></i>Our Services: Empowering Your Digital Journey with Ftech Global</h2>
             <ul>
                 <li>
                     <strong><i class="fas fa-laptop-code"></i>Expert Website Development:</strong>
-                    <p>Launch your online presence with stunning, <strong>responsive web design</strong> and high-performance websites from Ftech Global, a leading <strong>website development company</strong>. We specialize in <strong>custom web design</strong>, robust <strong>e-commerce solutions</strong>, and <strong>SEO-optimized sites</strong> designed to convert visitors into loyal customers. Partner with us for professional <strong>web development services in India</strong> and worldwide.</p>
+                    <p>Launch your online presence with stunning, responsive, and high-performance websites. From custom web design to robust e-commerce solutions, we build SEO-optimized sites that convert visitors into customers.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-bullhorn"></i>Comprehensive Digital Marketing:</strong>
-                    <p>Elevate your brand's online visibility and drive targeted traffic with our <strong>comprehensive digital marketing strategies</strong>. As a results-driven <strong>digital marketing agency</strong>, our services include expert <strong>SEO services</strong>, engaging <strong>social media marketing (SMM)</strong>, strategic <strong>content marketing</strong>, effective email campaigns, and targeted <strong>PPC advertising (Google Ads)</strong> to ensure maximum reach and ROI for your business globally.</p>
+                    <p>Elevate your brand's online visibility and drive targeted traffic. Our services include SEO, social media marketing, content marketing, email campaigns, and paid advertising for maximum reach.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-code-branch"></i>Bespoke Software Development:</strong>
-                    <p>Transform your business operations with <strong>bespoke software development solutions</strong> from Ftech Global. We specialize in <strong>custom software development</strong>, user-friendly <strong>mobile app development (Android/iOS)</strong>, powerful CRM systems, efficient ERP solutions, and specialized tools designed to streamline workflows, enhance productivity, and solve unique business challenges for clients across <strong>India and internationally</strong>.</p>
+                    <p>Transform operations with tailor-made software. We specialize in custom software, mobile apps (Android/iOS), CRM, ERP, and tools that streamline workflows and enhance efficiency.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-search-dollar"></i>Advanced SEO & Google Ads:</strong>
-                    <p>Dominate search engine rankings and attract high-intent customers with our <strong>advanced SEO services</strong> and expert <strong>Google Ads management</strong>. Our dedicated <strong>SEO specialists</strong> and Google Ads professionals optimize your online presence for top SERP results, driving targeted <strong>organic traffic</strong> and maximizing your ROI through effective <strong>PPC campaigns</strong> and comprehensive <strong>local and global SEO strategies</strong>.</p>
+                    <p>Dominate search rankings and attract high-intent customers. Our experts optimize your online presence for top results, driving organic traffic and maximizing ROI through effective campaigns.</p>
                 </li>
                 <li>
-                    <strong><i class="fas fa-file-invoice-dollar"></i>Seamless GST & ITR Filing (India):</strong>
-                    <p>Navigate complex Indian tax regulations with ease through our <strong>seamless GST registration services</strong> and <strong>ITR filing assistance</strong>. Ftech Global provides expert help for hassle-free <strong>online GST registration</strong>, timely GST return filing, and accurate <strong>Income Tax Return (ITR) e-filing</strong> for individuals and businesses within India, ensuring full compliance.</p>
+                    <strong><i class="fas fa-file-invoice-dollar"></i>Seamless GST & ITR Filing:</strong>
+                    <p>Navigate complex tax regulations with ease. We provide expert assistance for GST registration, timely GST filing, and accurate ITR filing for individuals and businesses, ensuring compliance.</p>
                 </li>
                 <li>
                     <strong><i class="fas fa-rocket"></i>Strategic Startup Consultancy:</strong>
-                    <p>Turn your innovative ideas into successful ventures with our <strong>strategic startup consultancy services</strong>. Our experienced <strong>startup consultants</strong> offer comprehensive guidance from <strong>business plan development</strong> and in-depth market analysis to effective funding strategies, navigating legal compliance, and implementing <strong>growth hacking techniques</strong> to empower new businesses to thrive in <strong>India and global markets</strong>.</p>
+                    <p>Turn innovative ideas into successful ventures. Our consultants offer guidance from business plans and market analysis to funding strategies, legal compliance, and growth hacking.</p>
                 </li>
             </ul>
         </section>
-
-        <img src="Homepageimage1.webp" alt="Ftech Global Services Overview - Web, SEO, Software Solutions" class="homepage-services-image">
 
         <a class="contact-whatsapp-button" href="https://wa.me/918789567363" target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
     </div>
