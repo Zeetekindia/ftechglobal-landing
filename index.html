@@ -101,28 +101,27 @@
 
 
         .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
-        .homepage-services-image { max-width: 60%; height: auto; display: block; margin: 20px auto 40px auto; border-radius: 10px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); border: 2px solid #38bdf8; }
         
         h1 { font-size: 3.2rem; color: #FFD700; margin-top: 15px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
         .main-content > p:first-of-type { font-size: 1.3rem; color: #e2e8f0; margin-top: 5px; margin-bottom: 35px; font-style: italic; }
-        p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; }
         
-        a.button, .contact-whatsapp-button { background: #00e676; color: #101827; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 30px; display: inline-flex; align-items: center; gap: 8px; transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4); }
-        a.button:hover, .contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6); }
+        /* This specific p rule was for general paragraphs. We will ensure .services li p and .testimonial-card .feedback override this if needed. */
+        p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; } 
         
-        .services { margin-top: 50px; padding: 30px; background-color: rgba(45, 58, 75, 0.7); border-radius: 15px; max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-        .services h2 { color: #38bdf8; font-size: 2.1rem; margin-bottom: 30px; text-align: center; font-weight: 600; display: flex; align-items: center; justify-content: center; }
-        .services h2 i { margin-right: 10px; color: #FFC107; }
-        .services ul { list-style-type: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .services li { background-color: #1B2C40; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 5px solid #00e676; display: flex; flex-direction: column; }
-        .services li:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); }
-        .services li strong { color: #00e676; font-size: 1.4rem; display: flex; align-items: center; margin-bottom: 12px; font-weight: 600; }
-        .services li strong i { margin-right: 12px; font-size: 1.5rem; width: 30px; text-align: center; color: #FFC107; }
-        .services li p { font-size: 1.05rem; color: #cbd5e1; line-height: 1.7; margin-top: 0; margin-bottom: 0; flex-grow: 1; }
-
+        .homepage-services-image { 
+            max-width: 60%; 
+            height: auto; 
+            display: block; 
+            margin: 20px auto 40px auto; /* Original margin */
+            border-radius: 10px; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+            border: 2px solid #38bdf8; 
+        }
+        
         /* --- Testimonials Section --- */
         .testimonials-section {
-            margin-top: 50px;
+            margin-top: 50px; /* Space after image */
+            margin-bottom: 50px; /* Space before services section */
             padding: 30px 0px; 
             background-color: rgba(27, 44, 64, 0.7); 
             border-radius: 15px;
@@ -166,7 +165,7 @@
         .testimonial-card:last-child {
             margin-right: 0; 
         }
-        .testimonial-card .feedback {
+        .testimonial-card .feedback { /* Specific paragraph styling */
             font-size: 1.05rem;
             color: #e2e8f0; 
             font-style: italic;
@@ -176,14 +175,50 @@
             padding-left: 15px;
             flex-grow: 1;
         }
-        .testimonial-card .client-info {
+        .testimonial-card .client-info { /* This is a P tag, but styled specifically */
             font-size: 1rem;
             color: #FFD700; 
             font-weight: bold;
             text-align: right;
             margin-top: auto; 
+            margin-bottom: 0; /* Override general P margin */
         }
         /* --- End of Testimonials Section --- */
+
+        .services { 
+            /* margin-top: 50px; /* This will be after testimonials now */
+            padding: 30px; background-color: rgba(45, 58, 75, 0.7); border-radius: 15px; 
+            max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+        }
+        .services h2 { 
+            color: #38bdf8; font-size: 2.1rem; margin-bottom: 30px; text-align: center; 
+            font-weight: 600; display: flex; align-items: center; justify-content: center; 
+        }
+        .services h2 i { margin-right: 10px; color: #FFC107; }
+        .services ul { list-style-type: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .services li { 
+            background-color: #1B2C40; padding: 25px; border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            border-left: 5px solid #00e676; display: flex; flex-direction: column; 
+        }
+        .services li:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); }
+        .services li strong { color: #00e676; font-size: 1.4rem; display: flex; align-items: center; margin-bottom: 12px; font-weight: 600; }
+        .services li strong i { margin-right: 12px; font-size: 1.5rem; width: 30px; text-align: center; color: #FFC107; }
+        .services li p { /* Specific paragraph styling */
+            font-size: 1.05rem; color: #cbd5e1; line-height: 1.7; 
+            margin-top: 0; margin-bottom: 0; flex-grow: 1; 
+        }
+        
+        a.button, .contact-whatsapp-button { 
+            background: #00e676; color: #101827; padding: 12px 25px; text-decoration: none; 
+            border-radius: 8px; font-weight: bold; margin-top: 40px; /* More space above button */
+            display: inline-flex; align-items: center; gap: 8px; 
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+            box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4); 
+        }
+        a.button:hover, .contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6); }
 
         footer {
             background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
@@ -238,9 +273,13 @@
             .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
             .homepage-services-image { max-width: 90%; margin-bottom: 30px; } 
             h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; } 
-            body p { font-size: 1rem; }
-            .services li p { font-size: 0.95rem;}
+            body p { font-size: 1rem; } /* General p for mobile */
+            .services li p { font-size: 0.95rem;} /* Specific for service card p */
+            .testimonial-card .feedback { font-size: 1rem; } /* Specific for testimonial feedback p */
+            .testimonial-card .client-info { font-size: 0.9rem; } /* Specific for testimonial client p */
             .main-content > p:first-of-type { font-size: 1.1rem; margin-bottom: 25px; }
+
+
             .services h2 { font-size: 1.6rem; }
             .services ul { grid-template-columns: 1fr; gap: 15px; }
             .services li { padding: 20px; }
@@ -253,8 +292,6 @@
             .testimonials-section h2 {font-size: 1.8rem; margin-bottom: 20px;}
             .testimonials-container { padding: 0px 15px 15px 15px; }
             .testimonial-card {min-width: 260px; margin-right: 15px; padding: 20px;}
-            .testimonial-card .feedback { font-size: 1rem; }
-            .testimonial-card .client-info { font-size: 0.9rem; }
         }
     </style>
 </head>
