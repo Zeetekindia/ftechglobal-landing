@@ -1,44 +1,56 @@
-<!-- File: blog.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Blog - FTech Global</title>
-  <meta name="description" content="Explore digital marketing, website development, GST registration tips and more on our blog." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog - FTech Global</title>
+  <meta name="description" content="Read our latest blogs on website development, digital marketing, GST, ITR and more.">
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    .post { border: 1px solid #ddd; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; }
-    .post h2 { margin-top: 0; color: #d35400; }
-    .post img { max-width: 100%; height: auto; border-radius: 8px; }
-    .read-more { color: #2980b9; text-decoration: none; font-weight: bold; }
+    .blog-card {
+      border: 1px solid #ddd;
+      padding: 16px;
+      margin-bottom: 24px;
+      border-radius: 8px;
+    }
+    .blog-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .read-more {
+      background: orange;
+      color: #fff;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Our Latest Blog Posts</h1>
-  <div id="blog-container">Loading blog posts...</div>
+  <h1 style="text-align:center;">📚 Latest Blogs from FTech Global</h1>
+  <div id="blog-container" class="container" style="max-width:800px; margin:auto;"></div>
 
   <script>
-    fetch('blog-posts.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('blog-container');
-        container.innerHTML = '';
-        data.forEach(post => {
-          const postDiv = document.createElement('div');
-          postDiv.className = 'post';
-          postDiv.innerHTML = `
-            <img src="${post.image}" alt="${post.title}" />
-            <h2>${post.title}</h2>
-            <p><small>${post.date}</small></p>
-            <p>${post.summary}</p>
-            <a class="read-more" href="#">Read More</a>
+    fetch("blog-posts.json")
+      .then(response => response.json())
+      .then(posts => {
+        const container = document.getElementById("blog-container");
+        posts.forEach(post => {
+          const blogHTML = `
+            <div class="blog-card">
+              <h2>${post.title}</h2>
+              <p><em>${post.date}</em></p>
+              <img src="${post.image}" alt="${post.title}" />
+              <p>${post.summary}</p>
+              <a class="read-more" href="post.html?slug=${post.slug}">Read More</a>
+            </div>
           `;
-          container.appendChild(postDiv);
+          container.innerHTML += blogHTML;
         });
       });
   </script>
 </body>
 </html>
-
