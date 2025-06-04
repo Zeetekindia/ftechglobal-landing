@@ -10,97 +10,192 @@
     <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* ==== PASTE ALL CSS FROM INDEX.HTML HERE ==== */
+        /* ==== COMMON CSS FROM INDEX.HTML ==== */
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            /* ... other common body styles from index.html ... */
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
+            color: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* text-align: center; /* Homepage specific, remove for inner pages if content is left-aligned */
             padding-top: 130px; 
         }
-        /* ... all common .top-contact-bar, .fixed-main-logo, nav.main-nav, .main-content (basic structure), footer, .social-media-icons, nav.footer-nav styles ... */
-        /* ... all testimonial, services section styles (though services section might not be on this page, its styles won't harm) ... */
 
-        /* ==== STYLES SPECIFIC TO MOBILE RECHARGE PAGE CONTENT ==== */
-        /* Original body styles for this page were different, let's adapt */
-        /* The .main-content div will be the primary container for this page's unique content */
-        
-        .mobile-recharge-page-content { /* New class for specific styling */
-             /* Styles from old .container can go here or be adapted */
-            max-width: 960px; /* From old .container */
-            margin: 0 auto; /* Center it within .main-content if .main-content is full width */
-            padding: 20px;  /* From old .container */
-            background-color: #283a5e; /* From old .container */
-            border-radius: 8px; /* From old .container */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* From old .container */
-            text-align: left; /* Content pages are usually left-aligned */
+        .top-contact-bar {
+            background: #1a2a4b;
+            color: #fff;
+            padding: 8px 20px;
+            font-size: 0.9em; 
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            align-items: center; 
+        }
+        .top-bar-links {
+            flex-grow: 1; 
+            text-align: center; 
+        }
+        .top-bar-links a {
+            color: #cbd5e1; 
+            text-decoration: none;
+            margin: 0 10px; 
+            font-weight: 400; 
+            transition: color 0.3s ease;
+        }
+        .top-bar-links a:hover {
+            color: #00e676; 
+        }
+        .top-bar-contact {
+            font-weight: bold; 
+            margin-left: auto; 
+            flex-shrink: 0; 
+        }
+        .top-bar-contact a { 
+            color: #fff; 
+            text-decoration: none;
         }
 
-        .mobile-recharge-page-content h1 { /* Specific H1 for this page */
+        .fixed-main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            position: fixed;
+            top: 40px; 
+            left: 20px;
+            z-index: 999;
+        }
+
+        nav.main-nav { 
+            background-color: #1a2a4b;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: calc(100% - 160px);
+            position: fixed;
+            top: 65px; 
+            left: 140px;
+            box-sizing: border-box;
+            z-index: 998;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        nav.main-nav:hover { background-color: #2c3e50; }
+        nav.main-nav div { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+        nav.main-nav div a.button-link {
+            padding: 8px 12px; background-color: #00e676; color: #1a2a4b; border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
+            align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
+        }
+        nav.main-nav div a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
+
+        /* Basic .main-content styling for structure */
+        .main-content { 
+            padding: 20px; /* Consistent padding for all pages */
+            max-width: 1000px; /* Max width for content pages */
+            width: 90%; /* Responsive width */
+            margin: 0 auto; 
+            flex-grow: 1; 
+            box-sizing: border-box;
+            background-color: rgba(27, 44, 64, 0.5); /* Default content area background */
+            border-radius: 10px;
+            margin-bottom: 30px; /* Space before footer */
+            text-align: left; /* Most content pages are left-aligned */
+        }
+        /* Homepage specific .main-content might override this if needed, or use a more specific class for homepage */
+        /* For index.html, .main-content had max-width:1200px and no background-color */
+        /* To keep index.html as is, we can add a specific class to inner page .main-content */
+
+        /* ==== STYLES SPECIFIC TO MOBILE RECHARGE PAGE CONTENT (from your original file) ==== */
+        /* These will apply when content is inside a div with class .mobile-recharge-page-content */
+        /* Ensure this div is within the main .main-content div */
+        
+        /* We use '.main-content .mobile-recharge-content-wrapper' to make these styles specific */
+        .mobile-recharge-content-wrapper {
+            /* This div will hold the original .container content */
+             background-color: #283a5e; /* Original .container background */
+             padding: 20px; /* Original .container padding */
+             border-radius: 8px; /* Original .container radius */
+             box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Original .container shadow */
+        }
+        .mobile-recharge-content-wrapper h1 {
             color: #00e676; 
             text-align: center;
             padding-bottom: 15px;
             border-bottom: 2px solid #00b359; 
             margin-bottom: 30px;
-            font-size: 2.5em; /* From old h1 */
+            font-size: 2.5em; 
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
-        .mobile-recharge-page-content h2 { /* Specific H2 for this page */
+        .mobile-recharge-content-wrapper h2 {
             color: #4CAF50; 
             margin-top: 35px;
             padding-bottom: 8px;
             border-bottom: 1px dashed #5cb85c; 
-            font-size: 1.8em; /* From old h2 */
+            font-size: 1.8em; 
         }
-        .mobile-recharge-page-content h3 { /* Specific H3 for this page */
+        .mobile-recharge-content-wrapper h3 {
             color: #FFC107; 
-            font-size: 1.4em; /* From old h3 */
+            font-size: 1.4em; 
         }
-        .mobile-recharge-page-content p { /* Specific p for this page */
+        .mobile-recharge-content-wrapper p {
             margin-bottom: 15px;
             line-height: 1.7;
-            font-size: 1.1em; /* From old p */
+            font-size: 1.1em; 
             color: #d0d0d0; 
         }
-        .mobile-recharge-page-content ul { /* Specific ul for this page */
+        .mobile-recharge-content-wrapper ul {
             list-style-type: disc;
             margin-left: 25px;
             margin-bottom: 20px;
             color: #d0d0d0;
         }
-        .mobile-recharge-page-content ul li { /* Specific li for this page */
+        .mobile-recharge-content-wrapper ul li {
             margin-bottom: 8px;
             font-size: 1.05em;
         }
-        .mobile-recharge-page-content ul li strong {
+        .mobile-recharge-content-wrapper ul li strong {
             color: #00e676; 
         }
-        .mobile-recharge-page-content .highlight-section { /* From old page */
+        .mobile-recharge-content-wrapper .highlight-section {
             background-color: #384d7a; 
             padding: 25px;
             border-radius: 8px;
             margin-top: 30px;
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
         }
-        .mobile-recharge-page-content .highlight-section h2 {
+        .mobile-recharge-content-wrapper .highlight-section h2 {
             color: #FFD700; 
             border-bottom-color: #FFD700;
         }
-        .mobile-recharge-page-content .highlight-section ul li strong {
+        .mobile-recharge-content-wrapper .highlight-section ul li strong {
             color: #FFD700;
         }
-        .mobile-recharge-page-content .keywords-section { /* From old page */
+        .mobile-recharge-content-wrapper .keywords-section {
             margin-top: 40px;
             padding: 20px;
             border-top: 1px solid #334a70; 
             background-color: #2c3e50; 
             border-radius: 8px;
         }
-        .mobile-recharge-page-content .keywords-section h3 {
+        .mobile-recharge-content-wrapper .keywords-section h3 {
             text-align: center;
             color: #fff; 
             margin-bottom: 20px;
         }
-        .mobile-recharge-page-content .keywords-section ul {
+        .mobile-recharge-content-wrapper .keywords-section ul {
             list-style-type: none; 
             padding: 0;
             display: flex;
@@ -109,7 +204,7 @@
             justify-content: center; 
             margin-left: 0; 
         }
-        .mobile-recharge-page-content .keywords-section li {
+        .mobile-recharge-content-wrapper .keywords-section li {
             background-color: #00e676; 
             border: 1px solid #00b359;
             padding: 8px 15px;
@@ -119,39 +214,109 @@
             color: #1a2a4b; 
             font-weight: bold;
         }
-        .mobile-recharge-page-content .keywords-section li strong {
+        .mobile-recharge-content-wrapper .keywords-section li strong {
             color: #1a2a4b; 
         }
-        .mobile-recharge-page-content .contact-info { /* From old page */
+        .mobile-recharge-content-wrapper .contact-info {
              margin-top: 30px; text-align: center;
         }
-        .mobile-recharge-page-content .contact-info p {
+        .mobile-recharge-content-wrapper .contact-info p {
             font-size: 1.1em; color: #e0e0e0;
         }
-         .mobile-recharge-page-content .contact-info a {
+         .mobile-recharge-content-wrapper .contact-info a {
             color: #00e676; font-weight: bold;
         }
+        /* ==== END OF MOBILE RECHARGE SPECIFIC STYLES ==== */
 
-        /* ==== END OF STYLES SPECIFIC TO MOBILE RECHARGE PAGE ==== */
 
-        /* ==== ALL MEDIA QUERIES FROM INDEX.HTML HERE ==== */
-        /* They will apply to header, footer, and can be extended for .mobile-recharge-page-content if needed */
-        @media (max-width: 1200px) { /* Tablet view */
+        /* --- Footer --- */
+        footer {
+            background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
+            font-size: 0.85em; border-top: 1px solid #334a70; margin-top: auto; 
+            width: 100%; box-sizing: border-box; position: relative; 
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: #4CAF50; color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
+        
+        nav.footer-nav { 
+            margin-top: 10px; 
+            margin-bottom: 20px; 
+            padding: 10px 0;
+        }
+        nav.footer-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+        nav.footer-nav li {
+            margin: 5px 12px; 
+        }
+        nav.footer-nav a {
+            color: #cbd5e1; 
+            text-decoration: none;
+            font-size: 0.9em; 
+            transition: color 0.3s ease;
+        }
+        nav.footer-nav a:hover {
+            color: #00e676; 
+            text-decoration: underline;
+        }
+        
+
+        /* --- Media Queries for responsiveness (Common ones from index.html) --- */
+        @media (max-width: 1200px) { 
             body { padding-top: 200px; } 
-            /* ... all other common responsive styles from index.html ... */
-            .mobile-recharge-page-content h1 { font-size: 2.2em; }
-            .mobile-recharge-page-content h2 { font-size: 1.6em; }
-            .mobile-recharge-page-content p { font-size: 1em; }
-        }
-        @media (max-width: 768px) { /* Mobile view */
-            body { padding-top: 220px; } 
-            /* ... all other common responsive styles from index.html ... */
-            .mobile-recharge-page-content h1 { font-size: 1.8em; }
-            .mobile-recharge-page-content h2 { font-size: 1.4em; }
-            .mobile-recharge-page-content p { font-size: 0.95em; }
-        }
-        /* ... other media queries from index.html ... */
+            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
+            nav.main-nav { 
+                top: 170px; 
+                position: fixed; left: 0; width: 100%; flex-direction: column; 
+                justify-content: center; align-items: center; padding: 10px; 
+                box-shadow: none; border-radius: 0; background-color: #2c3e50; 
+            }
+            nav.main-nav div { flex-direction: column; width: 100%; justify-content: center; }
+            nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
+            
+            .main-content { width: 95%; /* Common for inner pages */ } 
+            .mobile-recharge-content-wrapper h1 { font-size: 2.2em; } /* Specific adjustment */
+            .mobile-recharge-content-wrapper h2 { font-size: 1.6em; } /* Specific adjustment */
+            .mobile-recharge-content-wrapper p { font-size: 1em; } /* Specific adjustment */
 
+
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; flex-grow:0; }
+            .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+        }
+
+        @media (max-width: 768px) { 
+            body { padding-top: 220px; } 
+            .top-contact-bar { font-size: 0.8em; }
+            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
+
+            .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
+            nav.main-nav { top: 135px; padding: 8px 10px; } 
+            nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
+            
+            .mobile-recharge-content-wrapper h1 { font-size: 1.8em; } /* Specific adjustment */
+            .mobile-recharge-content-wrapper h2 { font-size: 1.4em; } /* Specific adjustment */
+            .mobile-recharge-content-wrapper p { font-size: 0.95em; } /* Specific adjustment */
+            .mobile-recharge-content-wrapper ul { margin-left: 20px;} /* Specific adjustment */
+
+            .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+            
+            nav.footer-nav ul { flex-direction: column; } 
+            nav.footer-nav li { margin: 8px 0; } 
+        }
     </style>
 </head>
 <body>
@@ -181,7 +346,8 @@
         </div>
     </nav>
     <div class="main-content">
-        <div class="mobile-recharge-page-content"> <h1><strong>Unlock Profit: The Best Mobile Recharge Software for Your Business – Powered by FTECH GLOBAL</strong></h1>
+        <div class="mobile-recharge-content-wrapper"> 
+            <h1><strong>Unlock Profit: The Best Mobile Recharge Software for Your Business – Powered by FTECH GLOBAL</strong></h1>
 
             <p>In today's hyper-connected world, instant digital payments are not just a convenience; they're an expectation. For businesses looking to expand revenue streams, attract more customers, and streamline operations, investing in the <strong>best mobile recharge software</strong> is no longer optional – it's essential. If you're searching for a robust, reliable, and highly profitable <strong>recharge software solution</strong>, look no further than <strong>FTECH GLOBAL</strong>.</p>
 
@@ -245,6 +411,45 @@
                 <ul>
                     <li><strong>Mobile Recharge Software</strong></li>
                     <li><strong>Online Recharge Software</strong></li>
+                    <li><strong>Recharge Software</strong></li>
+                    <li><strong>Multi Recharge Software</strong></li>
+                    <li><strong>Best Mobile Recharge Software</strong></li>
+                    <li><strong>Recharge Portal</strong></li>
+                    <li><strong>Start Mobile Recharge Business</strong></li>
+                    <li><strong>Recharge API</strong></li>
+                    <li><strong>White Label Recharge Software</strong></li>
+                    <li><strong>B2B Recharge Software</strong></li>
+                    <li><strong>Mobile Recharge Distributorship</strong></li>
+                    <li><strong>Mobile Recharge Dealership</strong></li>
+                    <li><strong>Bill Payment Software</strong></li>
+                    <li><strong>DTH Recharge Software</strong></li>
+                    <li><strong>Utility Bill Payment Software</strong></li>
+                    <li><strong>Jio Recharge</strong></li>
+                    <li><strong>Airtel Recharge</strong></li>
+                    <li><strong>Vodafone Idea Recharge</strong></li>
+                    <li><strong>BSNL Recharge</strong></li>
+                    <li><strong>Online Mobile Recharge</strong></li>
+                    <li><strong>Electricity Bill Payment Online</strong></li>
+                    <li><strong>Gas Bill Payment Online</strong></li>
+                    <li><strong>DTH Recharge Online</strong></li>
+                    <li><strong>Fastag Recharge</strong></li>
+                    <li><strong>How to start mobile recharge business</strong></li>
+                    <li><strong>Affordable mobile recharge software</strong></li>
+                    <li><strong>Mobile recharge software with high commission</strong></li>
+                    <li><strong>Features of mobile recharge software</strong></li>
+                    <li><strong>Best online recharge portal for retailers</strong></li>
+                    <li><strong>Recharge business plan</strong></li>
+                    <li><strong>Mobile recharge software price</strong></li>
+                    <li><strong>Benefits of mobile recharge software</strong></li>
+                    <li><strong>Which software is best for multi recharge</strong></li>
+                    <li><strong>Recharge solution</strong></li>
+                    <li><strong>Payment gateway integration</strong></li>
+                    <li><strong>FTECH GLOBAL Recharge</strong></li>
+                    <li><strong>FTECH GLOBAL Software</strong></li>
+                    <li><strong>Recharge app development</strong></li>
+                    <li><strong>Online payment system</strong></li>
+                    <li><strong>Prepaid recharge software</strong></li>
+                    <li><strong>Postpaid bill payment</strong></li>
                     <li><strong>Wallet system for recharge</strong></li>
                 </ul>
             </div>
@@ -254,7 +459,7 @@
                 <p><strong>Company Name: FTECH GLOBAL</strong></p>
                 <p><strong>Contact Number: <a href="tel:+918789567363">8789567363</a></strong></p>
             </div>
-            </div> </div> <footer>
+        </div> </div> <footer>
         <div class="social-media-icons">
             <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a> 
