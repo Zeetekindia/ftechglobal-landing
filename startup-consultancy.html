@@ -9,211 +9,163 @@
     <meta name="author" content="Ftech Global" />
 
     <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
+        /* ==== COMMON CSS FROM INDEX.HTML ==== */
         body {
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
             margin: 0;
-            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%); /* Consistent gradient background */
-            color: #f1f5f9; /* Light text color */
+            font-family: 'Segoe UI', sans-serif; /* Consistent font */
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
+            color: #f1f5f9;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            text-align: center;
-            padding-top: 150px; /* Space for fixed header */
+            /* text-align: center; /* Removed for inner pages */
+            padding-top: 130px; 
         }
 
-        /* --- Header Elements (from index.html) --- */
         .top-contact-bar {
-            background: #1a2a4b;
-            color: #fff;
-            padding: 8px 20px;
-            text-align: right;
-            font-family: Arial, sans-serif;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-sizing: border-box;
-            font-weight: bold;
-            z-index: 1001;
+            background: #1a2a4b; color: #fff; padding: 8px 20px; font-size: 0.9em; 
+            width: 100%; position: fixed; top: 0; left: 0; box-sizing: border-box; 
+            z-index: 1001; display: flex; align-items: center; 
         }
-        .top-contact-bar a {
-            color: inherit;
-            text-decoration: none;
+        .top-bar-links { flex-grow: 1; text-align: center; }
+        .top-bar-links a {
+            color: #cbd5e1; text-decoration: none; margin: 0 10px; 
+            font-weight: 400; transition: color 0.3s ease;
         }
+        .top-bar-links a:hover { color: #00e676; }
+        .top-bar-contact { font-weight: bold; margin-left: auto; flex-shrink: 0; }
+        .top-bar-contact a { color: #fff; text-decoration: none; }
 
         .fixed-main-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #38bdf8;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
-            position: fixed;
-            top: 40px;
-            left: 20px;
-            z-index: 999;
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            position: fixed; top: 40px; left: 20px; z-index: 999;
         }
 
-        nav {
-            background-color: #1a2a4b;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            width: calc(100% - 160px);
-            position: fixed;
-            top: 65px;
-            left: 140px;
+        nav.main-nav { /* Added .main-nav class */
+            background-color: #1a2a4b; padding: 15px 20px; display: flex;
+            justify-content: flex-end; align-items: center; width: calc(100% - 160px);
+            position: fixed; top: 65px; left: 140px; box-sizing: border-box;
+            z-index: 998; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px; transition: background-color 0.3s ease;
+        }
+        nav.main-nav:hover { background-color: #2c3e50; }
+        nav.main-nav div { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+        nav.main-nav div a.button-link {
+            padding: 8px 12px; background-color: #00e676; color: #1a2a4b; border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
+            align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
+        }
+        nav.main-nav div a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
+
+        .main-content { 
+            padding: 20px; 
+            max-width: 1000px; 
+            width: 90%; 
+            margin: 20px auto; 
+            flex-grow: 1; 
             box-sizing: border-box;
-            z-index: 998;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav:hover {
-            background-color: #2c3e50;
-        }
-
-        nav div {
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            justify-content: flex-end;
-            width: 100%;
-        }
-
-        nav div a.button-link {
-            padding: 8px 12px;
-            background-color: #00e676;
-            color: #1a2a4b;
+            background-color: rgba(27, 44, 64, 0.5); 
             border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 8px;
-            box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-            font-size: 0.85em;
+            margin-bottom: 30px; 
+            text-align: left; 
+        }
+        
+        /* ==== STYLES SPECIFIC TO STARTUP CONSULTANCY PAGE CONTENT ==== */
+        /* Prefixing original .page-container styles with .startup-consultancy-page-content */
+        .startup-consultancy-page-content { /* New wrapper class */
+            background-color: #2D3A4B; /* Original .page-container background */
+            padding: 20px; /* Original .page-container padding */
+            border-radius: 8px; /* Original .page-container radius */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Original .page-container shadow */
         }
 
-        nav div a.button-link:hover {
-            background-color: #00b359;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6);
-        }
-        /* --- End Header Elements --- */
-
-        /* Main content container for this page */
-        .page-container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #2D3A4B; /* Consistent background for main sections */
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            text-align: left; /* Left-align content within the container */
-        }
-
-        h1 {
+        .startup-consultancy-page-content h1 {
             color: #38bdf8;
             text-align: center;
-            font-size: 2.8em;
+            font-size: 2.8em; /* From original h1 */
             margin-bottom: 20px;
+            border-bottom: 2px solid #FFD700; /* Gold accent for H1 */
+            padding-bottom: 10px;
         }
-
-        h2 {
-            color: #00e676; /* Green accent for subheadings */
-            font-size: 1.8em;
+        .startup-consultancy-page-content h2 {
+            color: #00e676; 
+            font-size: 1.8em; /* From original h2 */
             margin-top: 30px;
             margin-bottom: 15px;
-            border-bottom: 1px solid #00b359; /* Subtle green line */
+            border-bottom: 1px solid #00b359; 
             padding-bottom: 5px;
-            text-align: left; /* Keep left aligned for content flow */
         }
-        h3 {
-            color: #FFD700; /* Gold accent for smaller headings */
-            font-size: 1.4em;
-            margin-top: 25px;
+        .startup-consultancy-page-content h3 {
+            color: #FFD700; 
+            font-size: 1.5em; /* Adjusted from original h3, more prominent */
+            margin-top: 0; /* Reset for use in service-box */
             margin-bottom: 10px;
-            text-align: left;
+            text-align: center; /* Center service box titles */
         }
-
-        p {
+        .startup-consultancy-page-content p {
             margin-bottom: 15px;
-            font-size: 1.05em;
+            font-size: 1.05em; /* From original p */
+            color: #f1f5f9; 
+            line-height: 1.7;
         }
-
-        ul {
-            list-style-type: none; /* No default bullets */
+        .startup-consultancy-page-content ul {
+            list-style-type: none; 
             padding: 0;
             margin-bottom: 20px;
         }
-        ul li {
+        .startup-consultancy-page-content ul li {
             margin-bottom: 10px;
-            font-size: 1em;
-            padding-left: 25px; /* Space for custom bullet */
+            font-size: 1em; /* From original li */
+            padding-left: 25px; 
             position: relative;
         }
-        ul li::before {
-            content: "\f00c"; /* Font Awesome check-mark icon */
+        .startup-consultancy-page-content ul li::before {
+            content: "\f00c"; 
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
-            color: #00e676; /* Green bullet */
+            color: #00e676; 
             position: absolute;
             left: 0;
-            top: 0;
+            top: 1px; /* Adjust alignment */
         }
-
-        .service-grid {
+        .startup-consultancy-page-content .service-grid { /* From original page */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for services */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 25px;
             margin-top: 30px;
             margin-bottom: 40px;
         }
-
-        .service-box {
-            background-color: #1a2a4b; /* Slightly darker background for service boxes */
+        .startup-consultancy-page-content .service-box { /* From original page */
+            background-color: #1a2a4b; 
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .service-box:hover {
+        .startup-consultancy-page-content .service-box:hover {
             transform: translateY(-7px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
-
-        .service-box .fas, .service-box .far, .service-box .fab {
+        .startup-consultancy-page-content .service-box .fas, 
+        .startup-consultancy-page-content .service-box .far, 
+        .startup-consultancy-page-content .service-box .fab { /* From original page */
             font-size: 3.5em;
-            color: #38bdf8; /* Blue accent for service icons */
+            color: #38bdf8; 
             margin-bottom: 15px;
         }
-
-        .service-box h3 {
-            color: #FFC107; /* Gold accent for service titles */
-            margin-top: 0;
-            text-align: center;
-            font-size: 1.5em;
-        }
-        .service-box p {
+        /* .service-box h3 is styled above */
+        .startup-consultancy-page-content .service-box p { /* From original page */
             font-size: 0.95em;
             color: #d0d0d0;
             margin-bottom: 0;
         }
-
-        .cta-section {
+        .startup-consultancy-page-content .cta-section { /* From original page */
             background-color: #1a2a4b;
             padding: 30px;
             border-radius: 10px;
@@ -221,250 +173,230 @@
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
-
-        .cta-section h2 {
+        .startup-consultancy-page-content .cta-section h2 {
             color: #00e676;
             margin-bottom: 20px;
             border-bottom: none;
             padding-bottom: 0;
-            text-align: center;
+             text-align: center; 
         }
-
-        .cta-button {
+        .startup-consultancy-page-content .cta-button { /* From original page */
             display: inline-block;
             background-color: #00e676;
             color: #1a2a4b;
             padding: 15px 30px;
-            border-radius: 50px; /* Pill shape */
+            border-radius: 50px; 
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1em;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 5px 15px rgba(0, 230, 118, 0.4);
         }
-
-        .cta-button:hover {
+        .startup-consultancy-page-content .cta-button:hover {
             background-color: #00b359;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 230, 118, 0.6);
         }
+        /* ==== END OF STARTUP CONSULTANCY SPECIFIC STYLES ==== */
 
+        /* --- Footer --- */
         footer {
-            background: #1a2a4b;
-            color: #fff;
-            text-align: center;
+            background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
+            font-size: 0.85em; border-top: 1px solid #334a70; margin-top: auto; 
+            width: 100%; box-sizing: border-box; position: relative; 
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: #4CAF50; color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
+        
+        nav.footer-nav { 
+            margin-top: 10px; 
+            margin-bottom: 20px; 
             padding: 10px 0;
-            margin-top: 40px; /* Space above footer */
-            font-size: 0.85em;
-            border-top: 1px solid #334a70;
-            width: 100%;
-            box-sizing: border-box;
         }
-        footer div {
-            margin-top: 15px; /* Space for counter */
+        nav.footer-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
         }
+        nav.footer-nav li {
+            margin: 5px 12px; 
+        }
+        nav.footer-nav a {
+            color: #cbd5e1; 
+            text-decoration: none;
+            font-size: 0.9em; 
+            transition: color 0.3s ease;
+        }
+        nav.footer-nav a:hover {
+            color: #00e676; 
+            text-decoration: underline;
+        }
+        
+        /* --- Media Queries for responsiveness (Common ones from index.html) --- */
+        @media (max-width: 1200px) { 
+            body { padding-top: 200px; } 
+            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
+            nav.main-nav { 
+                top: 170px; 
+                position: fixed; left: 0; width: 100%; flex-direction: column; 
+                justify-content: center; align-items: center; padding: 10px; 
+                box-shadow: none; border-radius: 0; background-color: #2c3e50; 
+            }
+            nav.main-nav div { flex-direction: column; width: 100%; justify-content: center; }
+            nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
+            
+            .main-content { width: 95%; } 
+            .startup-consultancy-page-content h1 { font-size: 2.2em; }
+            .startup-consultancy-page-content h2 { font-size: 1.6em; }
+            .startup-consultancy-page-content h3 { font-size: 1.3em; } /* Adjusted for tablet */
+            .startup-consultancy-page-content p { font-size: 1em; }
+            .startup-consultancy-page-content .service-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));}
 
 
-        /* --- Media Queries for responsiveness --- */
-
-        @media (max-width: 1200px) {
-            body {
-                padding-top: 200px;
-            }
-
-            .fixed-main-logo {
-                width: 120px;
-                height: 120px;
-                top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
-                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-            }
-
-            nav {
-                position: fixed;
-                top: 170px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 10px;
-                box-shadow: none;
-                border-radius: 0;
-                background-color: #2c3e50;
-            }
-
-            nav div {
-                flex-direction: column;
-                width: 100%;
-                justify-content: center;
-            }
-
-            nav div a.button-link {
-                margin: 5px 0;
-                padding: 10px 15px;
-                width: calc(100% - 30px);
-                box-sizing: border-box;
-                font-size: 0.95em;
-                gap: 8px;
-            }
-
-            .page-container {
-                max-width: 90%;
-                padding: 20px 10px;
-                margin-top: 20px;
-            }
-
-            h1 {
-                font-size: 2.2em;
-            }
-            h2 {
-                font-size: 1.6em;
-            }
-            h3 {
-                font-size: 1.2em;
-            }
-            .service-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid for smaller screens */
-            }
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; flex-grow:0; }
+            .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding-top: 220px;
-            }
-            .top-contact-bar {
-                padding: 5px 10px;
-            }
+        @media (max-width: 768px) { 
+            body { padding-top: 220px; } 
+            .top-contact-bar { font-size: 0.8em; }
+            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
 
-            .fixed-main-logo {
-                width: 80px;
-                height: 80px;
-                top: 45px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+            .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
+            nav.main-nav { top: 135px; padding: 8px 10px; } 
+            nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
+            
+            .startup-consultancy-page-content h1 { font-size: 1.8em; } 
+            .startup-consultancy-page-content h2 { font-size: 1.4em; }
+            .startup-consultancy-page-content h3 { font-size: 1.2em; } /* Adjusted for mobile */
+            .startup-consultancy-page-content p, .startup-consultancy-page-content ul li { font-size: 0.9rem; }
+            .startup-consultancy-page-content .service-grid { grid-template-columns: 1fr; }
 
-            nav {
-                top: 135px;
-                padding: 8px 10px;
-            }
-            nav div a.button-link {
-                font-size: 0.8em;
-                padding: 8px 12px;
-            }
 
-            .page-container {
-                max-width: 95%;
-                padding: 15px 10px;
-                margin-top: 10px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-            h3 {
-                font-size: 1.1rem;
-            }
-            p {
-                font-size: 0.9rem;
-            }
-            ul li, ol li {
-                font-size: 0.9rem;
-            }
-
-            .service-grid {
-                grid-template-columns: 1fr; /* Stack columns on mobile */
-            }
+            .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+            
+            nav.footer-nav ul { flex-direction: column; } 
+            nav.footer-nav li { margin: 8px 0; } 
         }
     </style>
 </head>
 <body>
 
     <div class="top-contact-bar">
-        Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        <div class="top-bar-links">
+            <a href="services.html">Our Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="blog.html">Blog</a> 
+        </div>
+        <div class="top-bar-contact">
+            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        </div>
     </div>
-
-    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Logo" class="fixed-main-logo" />
-
-    <nav>
+    <a href="index.html">
+      <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
+    </a>
+    <nav class="main-nav"> 
         <div>
             <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
             <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
             <a href="irctc-agent-services.html" class="button-link"><i class="fas fa-train"></i> Become IRCTC Agent</a>
             <a href="digital-marketing-services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
-            <a href="startup-consultancy.html" class="button-link active-page"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="startup-consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
             <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
         </div>
     </nav>
+    <div class="main-content">
+        <div class="startup-consultancy-page-content"> 
+            <h1>Expert <strong>Startup Consultancy Services</strong> in India & Global Business Setup</h1>
+            <p>
+                Are you an aspiring entrepreneur with a groundbreaking idea, or a new business looking to solidify your foundation? <strong>Ftech Global</strong> offers comprehensive <strong>Startup Consultancy Services</strong> designed to guide you through every stage, from conceptualization to sustainable growth. We empower startups across India and assist with global business setup.
+            </p>
 
-    <div class="page-container">
-        <h1>Expert <strong>Startup Consultancy Services</strong> in India & Global Business Setup</h1>
-        <p>
-            Are you an aspiring entrepreneur with a groundbreaking idea, or a new business looking to solidify your foundation? <strong>Ftech Global</strong> offers comprehensive <strong>Startup Consultancy Services</strong> designed to guide you through every stage, from conceptualization to sustainable growth. We empower startups across India and assist with global business setup.
-        </p>
+            <h2>Our Holistic Approach to <strong>Startup Business Consulting</strong></h2>
+            <p>
+                Launching a startup involves numerous complexities, from legal compliances to market penetration. Our seasoned <strong>startup consultants</strong> provide tailored strategies and actionable insights, ensuring your venture is built for success and navigates the competitive landscape effectively.
+            </p>
 
-        <h2>Our Holistic Approach to <strong>Startup Business Consulting</strong></h2>
-        <p>
-            Launching a startup involves numerous complexities, from legal compliances to market penetration. Our seasoned <strong>startup consultants</strong> provide tailored strategies and actionable insights, ensuring your venture is built for success and navigates the competitive landscape effectively.
-        </p>
+            <div class="service-grid">
+                <div class="service-box">
+                    <i class="fas fa-building"></i>
+                    <h3><strong>New Company Registration & Formation</strong></h3>
+                    <p>We provide seamless assistance for <strong>Pvt Ltd Company Registration</strong>, LLP Registration, One Person Company (OPC), Partnership, and Proprietorship setup in India. Our experts handle all documentation and compliance for efficient <strong>Company Formation India</strong>.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3><strong>GST & ITR Filing for Startups</strong></h3>
+                    <p>Ensure tax compliance from day one. Our services include hassle-free <strong>GST Registration for Startups</strong>, regular GST Filing, and accurate **ITR Filing for Startups** (Income Tax Return). We also assist with ROC Filings and other statutory compliances.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3><strong>Website & Digital Presence Consultancy</strong></h3>
+                    <p>Establish a powerful online footprint with our <strong>Website Consultancy for Startups</strong>. We guide you from selecting the right platform to developing a responsive, SEO-optimized website, combined with effective Digital Marketing strategies to reach your target audience.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Strategic Business Planning & Funding Guidance</h3>
+                    <p>Develop a robust Business Plan that attracts investors. We offer comprehensive market research, financial modeling, and expert **Startup Funding Guidance** to help you secure capital and chart a clear path for growth and sustainability.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Technology & Software Solutions for Startups</h3>
+                    <p>Leverage technology for efficiency and innovation. We provide consultation and development for custom software solutions, mobile applications (Android/iOS), CRM, ERP, and specialized tools tailored to your startup's unique operational needs.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Legal & Compliance Support</h3>
+                    <p>Navigate the legal landscape with confidence. Our services include guidance on Intellectual Property (IP) protection, contract drafting, Trade License assistance, and ensuring overall **Startup Legal Compliance** to safeguard your business.</p>
+                </div>
+            </div>
 
-        <div class="service-grid">
-            <div class="service-box">
-                <i class="fas fa-building"></i>
-                <h3><strong>New Company Registration & Formation</strong></h3>
-                <p>We provide seamless assistance for <strong>Pvt Ltd Company Registration</strong>, LLP Registration, One Person Company (OPC), Partnership, and Proprietorship setup in India. Our experts handle all documentation and compliance for efficient <strong>Company Formation India</strong>.</p>
+            <h2>Why Choose Ftech Global for Your Startup Journey?</h2>
+            <ul>
+                <li><strong>End-to-End Support:</strong> From concept to launch and beyond, we provide comprehensive guidance.</li>
+                <li><strong>Experienced Mentors:</strong> Our team comprises seasoned entrepreneurs and industry experts.</li>
+                <li><strong>Tailored Solutions:</strong> Every startup is unique; our strategies are customized to your specific needs and goals.</li>
+                <li><strong>Transparent Process:</strong> Clear communication and honest advice throughout your entrepreneurial journey.</li>
+                <li><strong>Global & Local Expertise:</strong> We understand both the nuances of the Indian market and international expansion.</li>
+            </ul>
+
+            <div class="cta-section">
+                <h2>Ready to Build Your Dream Business?</h2>
+                <p>Don't leave your startup's success to chance. Partner with Ftech Global for expert **Startup Business Consulting** and turn your vision into a thriving reality.</p>
+                <a href="https://wa.me/918789567363" target="_blank" class="cta-button"><i class="fab fa-whatsapp"></i> Get Your Free Startup Consultation!</a>
             </div>
-            <div class="service-box">
-                <i class="fas fa-file-invoice-dollar"></i>
-                <h3><strong>GST & ITR Filing for Startups</strong></h3>
-                <p>Ensure tax compliance from day one. Our services include hassle-free <strong>GST Registration for Startups</strong>, regular GST Filing, and accurate **ITR Filing for Startups** (Income Tax Return). We also assist with ROC Filings and other statutory compliances.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-laptop-code"></i>
-                <h3><strong>Website & Digital Presence Consultancy</strong></h3>
-                <p>Establish a powerful online footprint with our <strong>Website Consultancy for Startups</strong>. We guide you from selecting the right platform to developing a responsive, SEO-optimized website, combined with effective Digital Marketing strategies to reach your target audience.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-chart-line"></i>
-                <h3>Strategic Business Planning & Funding Guidance</h3>
-                <p>Develop a robust Business Plan that attracts investors. We offer comprehensive market research, financial modeling, and expert **Startup Funding Guidance** to help you secure capital and chart a clear path for growth and sustainability.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Technology & Software Solutions for Startups</h3>
-                <p>Leverage technology for efficiency and innovation. We provide consultation and development for custom software solutions, mobile applications (Android/iOS), CRM, ERP, and specialized tools tailored to your startup's unique operational needs.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-gavel"></i>
-                <h3>Legal & Compliance Support</h3>
-                <p>Navigate the legal landscape with confidence. Our services include guidance on Intellectual Property (IP) protection, contract drafting, Trade License assistance, and ensuring overall **Startup Legal Compliance** to safeguard your business.</p>
-            </div>
+            </div> </div> <footer>
+        <div class="social-media-icons">
+            <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="YOUR_YOUTUBE_CHANNEL_URL" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-
-        <h2>Why Choose Ftech Global for Your Startup Journey?</h2>
-        <ul>
-            <li><strong>End-to-End Support:</strong> From concept to launch and beyond, we provide comprehensive guidance.</li>
-            <li><strong>Experienced Mentors:</strong> Our team comprises seasoned entrepreneurs and industry experts.</li>
-            <li><strong>Tailored Solutions:</strong> Every startup is unique; our strategies are customized to your specific needs and goals.</li>
-            <li><strong>Transparent Process:</strong> Clear communication and honest advice throughout your entrepreneurial journey.</li>
-            <li><strong>Global & Local Expertise:</strong> We understand both the nuances of the Indian market and international expansion.</li>
-        </ul>
-
-        <div class="cta-section">
-            <h2>Ready to Build Your Dream Business?</h2>
-            <p>Don't leave your startup's success to chance. Partner with Ftech Global for expert **Startup Business Consulting** and turn your vision into a thriving reality.</p>
-            <a href="https://wa.me/918789567363" target="_blank" class="cta-button"><i class="fab fa-whatsapp"></i> Get Your Free Startup Consultation!</a>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> Ftech Global. All rights reserved.</p>
-        <div style="text-align:center; margin-top: 20px;">
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li> 
+                <li><a href="term-and-condition.html">Term & Condition</a></li> 
+            </ul>
+        </nav>
+        &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+        <div style="text-align:center; margin-top: 20px;"> 
             <a href="https://www.hitwebcounter.com" target="_blank">
                 <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
                      title="Counter Widget"
@@ -473,6 +405,5 @@
             </a>
         </div>
     </footer>
-
-</body>
+    </body>
 </html>
