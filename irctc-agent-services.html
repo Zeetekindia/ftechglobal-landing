@@ -3,45 +3,63 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Learn how to become an IRCTC authorized agent and earn by booking train tickets. Explore benefits, registration steps, and key services." />
-    <meta name="keywords" content="IRCTC agent, e-ticket services, train ticket booking, IRCTC agent registration, railway ticket agent, become IRCTC authorized agent, earn money from train tickets" />
+    <meta name="description" content="Learn how to become an IRCTC authorized agent and earn by booking train tickets. Explore benefits, registration steps, and key services with Ftech Global." />
+    <meta name="keywords" content="IRCTC agent, e-ticket services, train ticket booking, IRCTC agent registration, railway ticket agent, become IRCTC authorized agent, earn money from train tickets, Ftech Global IRCTC" />
     <meta name="author" content="Ftech Global" />
     <title>Become an IRCTC Authorized Agent | Ftech Global</title>
 
     <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
+        /* ==== COMMON CSS FROM INDEX.HTML ==== */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
+            font-family: 'Segoe UI', sans-serif; /* Changed from Arial to Segoe UI for consistency */
+            line-height: 1.6;
             background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
             color: #f1f5f9;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            text-align: center;
-            padding-top: 150px;
+            /* text-align: center; /* Removed for inner pages where content is left-aligned */
+            padding-top: 130px; 
         }
 
         .top-contact-bar {
             background: #1a2a4b;
             color: #fff;
             padding: 8px 20px;
-            text-align: right;
-            font-family: Arial, sans-serif;
+            font-size: 0.9em; 
             width: 100%;
             position: fixed;
             top: 0;
             left: 0;
             box-sizing: border-box;
-            font-weight: bold;
             z-index: 1001;
+            display: flex;
+            align-items: center; 
         }
-        .top-contact-bar a {
-            color: inherit;
+        .top-bar-links {
+            flex-grow: 1; 
+            text-align: center; 
+        }
+        .top-bar-links a {
+            color: #cbd5e1; 
+            text-decoration: none;
+            margin: 0 10px; 
+            font-weight: 400; 
+            transition: color 0.3s ease;
+        }
+        .top-bar-links a:hover {
+            color: #00e676; 
+        }
+        .top-bar-contact {
+            font-weight: bold; 
+            margin-left: auto; 
+            flex-shrink: 0; 
+        }
+        .top-bar-contact a { 
+            color: #fff; 
             text-decoration: none;
         }
 
@@ -53,12 +71,12 @@
             border: 3px solid #38bdf8;
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
             position: fixed;
-            top: 40px;
+            top: 40px; 
             left: 20px;
             z-index: 999;
         }
 
-        nav {
+        nav.main-nav { /* Added .main-nav class for specificity */
             background-color: #1a2a4b;
             padding: 15px 20px;
             display: flex;
@@ -66,7 +84,7 @@
             align-items: center;
             width: calc(100% - 160px);
             position: fixed;
-            top: 65px;
+            top: 65px; 
             left: 140px;
             box-sizing: border-box;
             z-index: 998;
@@ -74,269 +92,282 @@
             border-radius: 8px;
             transition: background-color 0.3s ease;
         }
-
-        nav:hover {
-            background-color: #2c3e50;
+        nav.main-nav:hover { background-color: #2c3e50; }
+        nav.main-nav div { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+        nav.main-nav div a.button-link {
+            padding: 8px 12px; background-color: #00e676; color: #1a2a4b; border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
+            align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
         }
+        nav.main-nav div a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
 
-        nav div {
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            justify-content: flex-end;
-            width: 100%;
-        }
-
-        nav div a.button-link {
-            padding: 8px 12px;
-            background-color: #00e676;
-            color: #1a2a4b;
+        /* Basic .main-content styling for structure */
+        .main-content { 
+            padding: 20px; 
+            max-width: 1000px; 
+            width: 90%; 
+            margin: 20px auto; /* Added top margin for inner pages */
+            flex-grow: 1; 
+            box-sizing: border-box;
+            background-color: rgba(27, 44, 64, 0.5); 
             border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 8px;
-            box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-            font-size: 0.85em;
+            margin-bottom: 30px; 
+            text-align: left; 
+        }
+        
+        /* ==== STYLES SPECIFIC TO IRCTC PAGE CONTENT ==== */
+        /* Prefixing original .container styles with .irctc-page-content */
+        .irctc-page-content { /* New wrapper class for this page's specific content styling */
+             background-color: #2D3A4B; /* Original .container background */
+             padding: 20px; /* Original .container padding */
+             border-radius: 8px; /* Original .container radius */
+             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Original .container shadow */
+             /* text-align: left; is handled by .main-content now */
         }
 
-        nav div a.button-link:hover {
-            background-color: #00b359;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6);
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #2D3A4B;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            text-align: left;
-        }
-
-        h1, h2 {
+        .irctc-page-content h1, 
+        .irctc-page-content h2 {
             color: #38bdf8;
-            text-align: center;
+            text-align: center; /* From original styles */
+            margin-bottom: 20px; /* Added consistent margin */
+        }
+        .irctc-page-content h1 {
+            font-size: 2.2em; /* Adjusted from original general h1 */
+             border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        .irctc-page-content h2 {
+            font-size: 1.7em; /* Adjusted from original general h2 */
+            margin-top: 30px;
         }
 
-        a {
+        .irctc-page-content a { /* Specific to links within IRCTC content */
             color: #00e676;
             text-decoration: none;
         }
-
-        a:hover {
+        .irctc-page-content a:hover {
             text-decoration: underline;
         }
-
-        ul li {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 8px;
-        }
-        ol li {
-            margin-bottom: 8px;
+        .irctc-page-content p { /* Specific paragraph styling for this page */
+            color: #f1f5f9; /* Consistent with body text */
+            margin-bottom: 15px; /* From original */
+            line-height: 1.7; /* Slightly more for readability */
         }
 
+        .irctc-page-content ul {
+            padding-left: 20px; /* Ensure bullets are visible */
+        }
+        .irctc-page-content ul li {
+            list-style-type: disc; /* Explicitly set disc */
+            margin-left: 20px; /* From original */
+            margin-bottom: 10px; /* Increased spacing */
+            color: #e0e0e0;
+        }
+        .irctc-page-content ol {
+            padding-left: 20px; /* Ensure numbers are visible */
+        }
+        .irctc-page-content ol li {
+            margin-bottom: 10px; /* Increased spacing */
+            color: #e0e0e0;
+        }
+        .irctc-page-content strong { /* Bolding within content */
+            color: #FFD700; /* Gold for emphasis */
+        }
+        /* ==== END OF IRCTC SPECIFIC STYLES ==== */
 
+
+        /* --- Footer --- */
         footer {
-            background: #1a2a4b;
-            color: #fff;
-            text-align: center;
+            background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
+            font-size: 0.85em; border-top: 1px solid #334a70; margin-top: auto; 
+            width: 100%; box-sizing: border-box; position: relative; 
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: #4CAF50; color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
+        
+        nav.footer-nav { 
+            margin-top: 10px; 
+            margin-bottom: 20px; 
             padding: 10px 0;
-            margin-top: auto;
-            font-size: 0.85em;
-            border-top: 1px solid #334a70;
-            width: 100%;
-            box-sizing: border-box;
+        }
+        nav.footer-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+        nav.footer-nav li {
+            margin: 5px 12px; 
+        }
+        nav.footer-nav a {
+            color: #cbd5e1; 
+            text-decoration: none;
+            font-size: 0.9em; 
+            transition: color 0.3s ease;
+        }
+        nav.footer-nav a:hover {
+            color: #00e676; 
+            text-decoration: underline;
+        }
+        
+
+        /* --- Media Queries for responsiveness (Common ones from index.html) --- */
+        @media (max-width: 1200px) { 
+            body { padding-top: 200px; } 
+            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
+            nav.main-nav { 
+                top: 170px; 
+                position: fixed; left: 0; width: 100%; flex-direction: column; 
+                justify-content: center; align-items: center; padding: 10px; 
+                box-shadow: none; border-radius: 0; background-color: #2c3e50; 
+            }
+            nav.main-nav div { flex-direction: column; width: 100%; justify-content: center; }
+            nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
+            
+            .main-content { width: 95%; } 
+            .irctc-page-content h1 { font-size: 1.8em; }
+            .irctc-page-content h2 { font-size: 1.5em; }
+            .irctc-page-content p, .irctc-page-content li { font-size: 1rem; }
+
+
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; flex-grow:0; }
+            .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
         }
 
-        /* --- Media Queries for responsiveness --- */
+        @media (max-width: 768px) { 
+            body { padding-top: 220px; } 
+            .top-contact-bar { font-size: 0.8em; }
+            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
 
-        @media (max-width: 1200px) {
-            body {
-                padding-top: 200px;
-            }
+            .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
+            nav.main-nav { top: 135px; padding: 8px 10px; } 
+            nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
+            
+            .irctc-page-content h1 { font-size: 1.6em; } 
+            .irctc-page-content h2 { font-size: 1.3em; }
+            .irctc-page-content p, .irctc-page-content li { font-size: 0.9rem; }
 
-            .fixed-main-logo {
-                width: 120px;
-                height: 120px;
-                top: 50px;
-                left: 50%;
-                transform: translateX(-50%);
-                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-            }
-
-            nav {
-                position: fixed;
-                top: 170px;
-                left: 0;
-                width: 100%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 10px;
-                box-shadow: none;
-                border-radius: 0;
-                background-color: #2c3e50;
-            }
-
-            nav div {
-                flex-direction: column;
-                width: 100%;
-                justify-content: center;
-            }
-
-            nav div a.button-link {
-                margin: 5px 0;
-                padding: 10px 15px;
-                width: calc(100% - 30px);
-                box-sizing: border-box;
-                font-size: 0.95em;
-                gap: 8px;
-            }
-
-            .container {
-                max-width: 90%;
-                padding: 20px 10px;
-                margin-top: 20px;
-            }
-
-            h1, h2 {
-                font-size: 1.8em;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding-top: 220px;
-            }
-            .top-contact-bar {
-                padding: 5px 10px;
-            }
-
-            .fixed-main-logo {
-                width: 80px;
-                height: 80px;
-                top: 45px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            nav {
-                top: 135px;
-                padding: 8px 10px;
-            }
-            nav div a.button-link {
-                font-size: 0.8em;
-                padding: 8px 12px;
-            }
-
-            .container {
-                max-width: 95%;
-                padding: 15px 10px;
-                margin-top: 10px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            p {
-                font-size: 0.95rem;
-            }
-            ul li, ol li {
-                font-size: 0.95rem;
-            }
+            .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+            
+            nav.footer-nav ul { flex-direction: column; } 
+            nav.footer-nav li { margin: 8px 0; } 
         }
     </style>
 </head>
 <body>
 
     <div class="top-contact-bar">
-        Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        <div class="top-bar-links">
+            <a href="services.html">Our Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="blog.html">Blog</a> 
+        </div>
+        <div class="top-bar-contact">
+            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        </div>
     </div>
-
-    <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Logo" class="fixed-main-logo" />
-
-    <nav>
+    <a href="index.html">
+      <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
+    </a>
+    <nav class="main-nav"> 
         <div>
             <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
             <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
-            <li><a href="irctc-agent-services.html" class="button-link active-page"><i class="fas fa-train"></i> Become IRCTC Agent</a></li>
+            <a href="irctc-agent-services.html" class="button-link"><i class="fas fa-train"></i> Become IRCTC Agent</a>
             <a href="digital-marketing-services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
-            <a href="Startup Consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="startup-consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
             <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
         </div>
     </nav>
+    <div class="main-content">
+        <div class="irctc-page-content"> 
+            <h1>Become an <strong>IRCTC Authorized Agent</strong> | Start Your <strong>Railway Ticket Agent Registration</strong></h1>
+            <p>
+                Earn Money by Booking Train Tickets Legally with <strong>IRCTC Authorization</strong>. Whether you're looking for an <strong>IRCTC agent ID kaise lein</strong> or to understand the full <strong>IRCTC agent registration process</strong>, Ftech Global is here to help.
+            </p>
 
-    <div class="container">
-        <h1>Become an <strong>IRCTC Authorized Agent</strong> | Start Your <strong>Railway Ticket Agent Registration</strong></h1>
-        <p>
-            Earn Money by Booking Train Tickets Legally with <strong>IRCTC Authorization</strong>. Whether you're looking for an <strong>IRCTC agent ID kaise lein</strong> or to understand the full <strong>IRCTC agent registration process</strong>, Ftech Global is here to help.
-        </p>
+            <h2>Why Become an <strong>IRCTC Authorized Agent</strong> with Ftech Global?</h2>
+            <p>
+                With more than 23 million passengers traveling daily on Indian Railways, there's a massive opportunity for individuals and businesses to earn through official train ticket booking services. As an <strong>IRCTC authorized e-ticket agent</strong>, you can legally book railway tickets for others and charge an attractive <strong>IRCTC agent commission</strong> per transaction.
+            </p>
 
-        <h2>Why Become an <strong>IRCTC Authorized Agent</strong> with Ftech Global?</h2>
-        <p>
-            With more than 23 million passengers traveling daily on Indian Railways, there's a massive opportunity for individuals and businesses to earn through official train ticket booking services. As an <strong>IRCTC authorized e-ticket agent</strong>, you can legally book railway tickets for others and charge an attractive <strong>IRCTC agent commission</strong> per transaction.
-        </p>
+            <h2>What Is an <strong>IRCTC Agent</strong>?</h2>
+            <p>
+                An <strong>IRCTC agent</strong> is officially appointed and authorized to book railway e-tickets using a special <strong>IRCTC agent login</strong> provided by IRCTC. Unlike regular users, agents can book unlimited tickets daily, offer customer support, and access additional business tools. If you're searching for an "<strong>IRCTC agent near me</strong>" or a "<strong>Railway ticket booking agent Patna</strong>," we support your local business setup.
+            </p>
 
-        <h2>What Is an <strong>IRCTC Agent</strong>?</h2>
-        <p>
-            An <strong>IRCTC agent</strong> is officially appointed and authorized to book railway e-tickets using a special <strong>IRCTC agent login</strong> provided by IRCTC. Unlike regular users, agents can book unlimited tickets daily, offer customer support, and access additional business tools. If you're searching for an "<strong>IRCTC agent near me</strong>" or a "<strong>Railway ticket booking agent Patna</strong>," we support your local business setup.
-        </p>
+            <h2>Key Benefits of <strong>IRCTC Agent Registration</strong></h2>
+            <ul>
+                <li>✅ Unlimited train ticket bookings daily</li>
+                <li>✅ Earn commission on every ticket booked</li>
+                <li>✅ Get an authorized <strong>IRCTC certificate</strong> and <strong>IRCTC agent ID</strong></li>
+                <li>✅ Legal and verified booking system</li>
+                <li>✅ Branding support and digital panel access</li>
+            </ul>
 
-        <h2>Key Benefits of <strong>IRCTC Agent Registration</strong></h2>
-        <ul>
-            <li>✅ Unlimited train ticket bookings daily</li>
-            <li>✅ Earn commission on every ticket booked</li>
-            <li>✅ Get an authorized <strong>IRCTC certificate</strong> and <strong>IRCTC agent ID</strong></li>
-            <li>✅ Legal and verified booking system</li>
-            <li>✅ Branding support and digital panel access</li>
-        </ul>
+            <h2>How to Become an <strong>IRCTC Authorized Agent</strong>: Your <strong>IRCTC Agent Registration Process</strong></h2>
+            <p>Follow these steps to complete your <strong>IRCTC agent registration</strong>:</p>
+            <ol>
+                <li>Visit the <a href="contact.html" target="_blank">IRCTC Agent Registration Page with Ftech Global</a> (we guide you through the <strong>IRCTC agent apply online</strong> steps)</li>
+                <li>Fill out the online registration form</li>
+                <li>Upload your KYC documents and photograph</li>
+                <li>Pay the one-time <strong>IRCTC agent registration fee</strong> and service fee</li>
+                <li>Receive your official <strong>IRCTC agent ID</strong> and <strong>IRCTC agent login</strong> credentials</li>
+            </ol>
 
-        <h2>How to Become an <strong>IRCTC Authorized Agent</strong>: Your <strong>IRCTC Agent Registration Process</strong></h2>
-        <p>Follow these steps to complete your <strong>IRCTC agent registration</strong>:</p>
-        <ol>
-            <li>Visit the <a href="#" target="_blank">IRCTC Agent Registration Page</a> (we guide you through the <strong>IRCTC agent apply online</strong> steps)</li>
-            <li>Fill out the online registration form</li>
-            <li>Upload your KYC documents and photograph</li>
-            <li>Pay the one-time <strong>IRCTC agent registration fee</strong> and service fee</li>
-            <li>Receive your official <strong>IRCTC agent ID</strong> and <strong>IRCTC agent login</strong> credentials</li>
-        </ol>
+            <h2>Extra Services Offered by a <strong>Railway Ticket Agent</strong></h2>
+            <p>Along with ticket booking, as a certified <strong>IRCTC agent</strong>, you can earn extra by offering:</p>
+            <ul>
+                <li>🚀 Bus and Flight ticket bookings</li>
+                <li>💳 Recharge and bill payment services</li>
+                <li>📄 PAN card registration</li>
+                <li>📑 GST and ITR filing assistance</li>
+                <li>🎯 Travel and tour packages</li>
+            </ul>
 
-        <h2>Extra Services Offered by a <strong>Railway Ticket Agent</strong></h2>
-        <p>Along with ticket booking, as a certified <strong>IRCTC agent</strong>, you can earn extra by offering:</p>
-        <ul>
-            <li>🚀 Bus and Flight ticket bookings</li>
-            <li>💳 Recharge and bill payment services</li>
-            <li>📄 PAN card registration</li>
-            <li>📑 GST and ITR filing assistance</li>
-            <li>🎯 Travel and tour packages</li>
-        </ul>
+            <h2>Why Choose <strong>Ftech Global</strong> for Your <strong>IRCTC Agent License Apply</strong>?</h2>
+            <p>
+                At <strong>Ftech Global</strong>, we provide easy onboarding, full agent support, and a smooth dashboard to help you earn more. Whether you are in a city or a village, we help you start your own booking business with confidence. We also guide you on aspects like <strong>IRCTC agent DSC dongle</strong> requirements and choosing the right <strong>IRCTC agent PSP provider</strong>.
+            </p>
 
-        <h2>Why Choose <strong>Ftech Global</strong> for Your <strong>IRCTC Agent License Apply</strong>?</h2>
-        <p>
-            At <strong>Ftech Global</strong>, we provide easy onboarding, full agent support, and a smooth dashboard to help you earn more. Whether you are in a city or a village, we help you start your own booking business with confidence. We also guide you on aspects like <strong>IRCTC agent DSC dongle</strong> requirements and choosing the right <strong>IRCTC agent PSP provider</strong>.
-        </p>
-
-        <p>
-            <strong>Ready to Start?</strong><br>
-            Contact us on WhatsApp at <a href="https://wa.me/918789567363" target="_blank">+91-8789567363</a> to get your <strong>IRCTC Agent Login</strong> today and learn "<strong>IRCTC agent kaise bane</strong>" effectively!
-        </p>
-    </div>
-
-    <footer>
-        <p>© <script>document.write(new Date().getFullYear())</script> Ftech Global. All rights reserved. | IRCTC Agent Services are provided by a Principal Agent. (This website is not affiliated with IRCTC.) </p>
-        <div style="text-align:center; margin-top: 20px;">
-            <a href="https://www.hitwebcounter.com" target="_blank">
+            <p>
+                <strong>Ready to Start?</strong><br>
+                Contact us on WhatsApp at <a href="https://wa.me/918789567363" target="_blank">+91-8789567363</a> to get your <strong>IRCTC Agent Login</strong> today and learn "<strong>IRCTC agent kaise bane</strong>" effectively!
+            </p>
+            </div> </div> <footer>
+        <div class="social-media-icons">
+            <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="YOUR_YOUTUBE_CHANNEL_URL" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li> 
+                <li><a href="term-and-condition.html">Term & Condition</a></li> 
+            </ul>
+        </nav>
+        &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+        <div style="text-align:center; margin-top: 20px;"> 
+             <a href="https://www.hitwebcounter.com" target="_blank">
                 <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
                      title="Counter Widget"
                      alt="Visit counter For Websites"
@@ -344,6 +375,5 @@
             </a>
         </div>
     </footer>
-
-</body>
+    </body>
 </html>
