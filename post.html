@@ -1,1 +1,11 @@
+fetch('blog-posts.json')
+  .then(response => response.json())
+  .then(posts => {
+    const post = posts.find(p => p.slug === slug);
+    if (post) {
+      // show content
+    } else {
+      document.getElementById('post-content').innerHTML = "<p>Blog not found.</p>";
+    }
+  });
 
