@@ -78,44 +78,53 @@
         .irctc-agent-page-content { 
             padding: 15px; 
         }
-        /* STYLES FOR PAGE SUB-MENU (Desired Look) */
+        /* STYLES FOR PAGE SUB-MENU (Button Look) */
         .page-submenu {
-            padding: 8px 0; 
-            margin-bottom: 20px; 
-            text-align: left; 
-            /* border-bottom: 1px solid #334a70; /* Optional: subtle separator */
+            padding: 10px 0; 
+            margin-bottom: 25px; 
+            text-align: center; 
         }
         .page-submenu ul {
             list-style-type: none;
             padding: 0; 
             margin: 0; 
-            display: flex; 
+            display: inline-flex; /* Changed to inline-flex for centering via parent */
             flex-wrap: wrap; 
             align-items: center;
-            justify-content: flex-start; 
+            justify-content: center; /* Center items in the flex line */
+            gap: 10px; /* Space between buttons */
         }
         .page-submenu li {
-            margin-right: 20px; 
+            margin: 0; 
             padding: 0; 
             list-style-type: none !important; 
         }
         .page-submenu li::before { 
             content: none !important; 
         }
-        .page-submenu li:last-child {
-            margin-right: 0;
-        }
         .page-submenu a {
-            color: #FFD700; 
+            display: inline-block;
+            background-color: #38bdf8; /* Light Blue */
+            color: #101827; /* Dark text */
+            padding: 8px 15px; 
+            border-radius: 6px; 
             text-decoration: none;
-            font-size: 0.95em; 
-            font-weight: 500;
-            padding: 5px 0; 
-            transition: color 0.3s ease;
+            font-size: 0.9em; 
+            font-weight: bold; 
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         .page-submenu a:hover {
-            color: #00e676; 
-            text-decoration: underline; 
+            background-color: #0ea5e9; /* Darker blue */
+            color: #ffffff; 
+            text-decoration: none; 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .page-submenu a.active-sublink { 
+            background-color: #0ea5e9; 
+            color: #ffffff;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
         }
         /* End of Sub-Menu Styles */
 
@@ -125,7 +134,7 @@
             text-align: center;
             padding-bottom: 10px;
             margin-bottom: 20px; 
-            margin-top: 0; 
+            margin-top: 10px; /* Adjusted due to submenu padding */
             border-bottom: 2px solid #FFD700; 
         }
         .irctc-agent-page-content h2 {
@@ -175,10 +184,10 @@
         .irctc-agent-page-content strong {
             color: #FFC107; 
         }
-        .irctc-agent-page-content a:not(.cta-button) { 
+        .irctc-agent-page-content a:not(.cta-button):not(.page-submenu a) { /* Exclude submenu links from this rule */
             color: #00e676;
         }
-        .irctc-agent-page-content a:not(.cta-button):hover {
+        .irctc-agent-page-content a:not(.cta-button):not(.page-submenu a):hover {
             text-decoration: underline;
         }
         .irctc-agent-page-content .cta-button {
@@ -256,7 +265,9 @@
             nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
             
             .main-content { width: 95%; } 
-            .page-submenu { margin-left: 0; margin-right: 0; padding: 8px 10px; } 
+            .page-submenu { margin-bottom: 20px; } 
+            .page-submenu ul { gap: 8px; }
+            .page-submenu a { font-size: 0.85em; padding: 6px 12px;}
             .irctc-agent-page-content h1 { font-size: 2em; }
             .irctc-agent-page-content h2 { font-size: 1.5em; }
             .irctc-agent-page-content p, .irctc-agent-page-content li { font-size: 1rem; }
@@ -277,13 +288,11 @@
             nav.main-nav { top: 135px; padding: 8px 10px; } 
             nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
             
-            .page-submenu { padding: 8px 5px; margin-bottom: 15px; }
-            .page-submenu ul { justify-content: center; } /* Center links on mobile if they fit, or make them stack */
-            .page-submenu li { margin: 0 10px;} /* Adjust margin for mobile */
-            /* If links need to stack on very small screens:
-            .page-submenu ul { flex-direction: column; align-items: flex-start; }
-            .page-submenu li { margin-right: 0; margin-bottom: 5px; }
-            */
+            .page-submenu { margin-bottom: 15px; }
+            .page-submenu ul { flex-direction: column; gap: 8px; align-items: stretch; }
+            .page-submenu li { margin-right: 0; width: 100%;}
+            .page-submenu a { font-size: 0.9em; text-align: center; width: auto;} /* Let it take natural width */
+            
             .irctc-agent-page-content h1 { font-size: 1.6em; } 
             .irctc-agent-page-content h2 { font-size: 1.3em; }
             .irctc-agent-page-content p, .irctc-agent-page-content li { font-size: 0.9rem; }
