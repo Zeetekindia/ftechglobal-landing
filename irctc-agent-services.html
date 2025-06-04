@@ -1,3 +1,19 @@
+<nav class="page-submenu">
+                <ul>
+                    <li><a href="how-to-irctc-agent-sign-up.html">How to Become IRCTC Agent</a></li>
+                    <li><a href="irctc-agent-registration.html">IRCTC Agent Registration</a></li>
+                    </ul>
+            </nav>
+            <h1>Become an <strong>IRCTC Authorized Agent</strong> | Start Your <strong>Railway Ticket Agent Registration</strong></h1>
+            ```
+
+**CSS mein koi badlav ki zaroorat nahi hai** kyunki sub-menu ki styling pehle se hi set hai aur woh naye link par bhi apply ho jayegi.
+
+**Poora `irctc-agent-services.html` Code (Updated Sub-Menu ke Saath):**
+
+Main aapko `irctc-agent-services.html` ka poora code de raha hoon jisme yeh naya link sub-menu mein add kiya gaya hai. Kripya dhyaan dein ki aapko common CSS (body, header, footer, etc.) `index.html` se copy karke is file ke `<style>` section mein daalni hogi, uske baad page-specific CSS aur sub-menu CSS aayegi.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +90,7 @@
             text-align: left; 
         }
         
-        /* ==== STYLES SPECIFIC TO IRCTC AGENT SIGNUP PAGE ==== */
+        /* ==== STYLES SPECIFIC TO IRCTC AGENT PAGE (Content part) ==== */
         .irctc-agent-page-content { 
             padding: 15px; 
         }
@@ -98,10 +114,10 @@
         .page-submenu li {
             margin-right: 15px; 
             padding: 0; 
-            list-style-type: none !important; /* Ensure no bullets from general ul li */
+            list-style-type: none !important; 
         }
         .page-submenu li::before { 
-            content: none !important; /* Ensure no custom bullets from general ul li */
+            content: none !important; 
         }
         .page-submenu li:last-child {
             margin-right: 0;
@@ -120,21 +136,20 @@
             background-color: #FFD700; 
             text-decoration: none;
         }
-         .page-submenu a.active-sublink { /* Example for active link */
+         .page-submenu a.active-sublink { 
             color: #101827;
             background-color: #FFD700;
             font-weight: bold;
         }
-
+        /* End of Sub-Menu Styles */
 
         .irctc-agent-page-content h1 {
-            font-size: 2.2em; /* Adjusted for sub-menu presence */
+            font-size: 2.2em; 
             color: #FFD700; 
             text-align: center;
-            /* border-bottom: 2px solid #FFD700; /* Optional if H1 doesn't need a border */
             padding-bottom: 10px;
-            margin-bottom: 20px; /* Reduced margin */
-            margin-top: 0; /* No extra margin after submenu */
+            margin-bottom: 20px; 
+            margin-top: 0; 
         }
         .irctc-agent-page-content h2 {
             font-size: 1.7em;
@@ -151,19 +166,18 @@
             margin-bottom: 10px;
         }
         .irctc-agent-page-content p, 
-        .irctc-agent-page-content li { /* General li for this page, excluding submenu li */
+        .irctc-agent-page-content li { 
             font-size: 1.05rem;
             color: #e0e0e0;
             margin-bottom: 12px;
             line-height: 1.7;
         }
-        /* Explicitly style UL/OL within .irctc-agent-page-content if needed */
         .irctc-agent-page-content > ul, 
-        .irctc-agent-page-content > ol { /* Target direct children ul/ol or more specific selectors */
+        .irctc-agent-page-content > ol { 
             padding-left: 25px; 
             margin-bottom: 20px;
         }
-         .irctc-agent-page-content > ul li { /* Only apply custom bullet to direct content lists */
+         .irctc-agent-page-content > ul li { 
             list-style-type: none !important; 
             padding-left: 25px !important;
             position: relative;
@@ -184,7 +198,7 @@
         .irctc-agent-page-content strong {
             color: #FFC107; 
         }
-        .irctc-agent-page-content a:not(.cta-button) { /* Links within content, excluding CTA */
+        .irctc-agent-page-content a:not(.cta-button) { 
             color: #00e676;
         }
         .irctc-agent-page-content a:not(.cta-button):hover {
@@ -194,7 +208,7 @@
             display: inline-block;
             background-color: #FF9933; 
             color: #101827;
-            padding: 10px 20px; /* Slightly smaller CTA for inner page */
+            padding: 10px 20px; 
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
@@ -206,7 +220,7 @@
             background-color: #E68A00; 
             transform: translateY(-2px);
         }
-        /* ==== END OF IRCTC AGENT SIGNUP SPECIFIC STYLES ==== */
+        /* ==== END OF IRCTC AGENT PAGE SPECIFIC STYLES ==== */
 
         /* --- Footer --- */
         footer {
@@ -265,7 +279,7 @@
             nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
             
             .main-content { width: 95%; } 
-            .page-submenu { margin-left: -15px; margin-right: -15px; border-radius: 0; } /* Adjust submenu on tablet */
+            .page-submenu { margin-left: -15px; margin-right: -15px; border-radius: 0; } 
             .irctc-agent-page-content h1 { font-size: 2em; }
             .irctc-agent-page-content h2 { font-size: 1.5em; }
             .irctc-agent-page-content p, .irctc-agent-page-content li { font-size: 1rem; }
@@ -332,6 +346,7 @@
             <nav class="page-submenu">
                 <ul>
                     <li><a href="how-to-irctc-agent-sign-up.html">How to Become IRCTC Agent</a></li>
+                    <li><a href="irctc-agent-registration.html">IRCTC Agent Registration</a></li>
                     </ul>
             </nav>
             <h1>Become an <strong>IRCTC Authorized Agent</strong> | Start Your <strong>Railway Ticket Agent Registration</strong></h1>
