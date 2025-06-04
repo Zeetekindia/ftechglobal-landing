@@ -255,6 +255,7 @@
             margin-top: 30px;
             width: 100%;
             box-sizing: border-box;
+            position: relative; /* Ensuring footer itself is normally positioned */
         }
 
         .social-media-icons {
@@ -282,10 +283,10 @@
             transform: translateY(-3px); 
         }
 
-        /* --- Footer Navigation Menu --- */
         .footer-nav {
-            margin-top: 20px; /* Space above this menu if social icons are not present or if needed */
-            margin-bottom: 20px; /* Space below this menu, before copyright */
+            /* position: static; /* Default, ensures it stays in normal flow */
+            margin-top: 20px; 
+            margin-bottom: 20px; 
         }
         .footer-nav ul {
             list-style-type: none;
@@ -293,28 +294,27 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            flex-wrap: wrap; 
         }
         .footer-nav li {
-            margin: 5px 15px; /* Spacing around each list item */
+            margin: 5px 15px; 
         }
         .footer-nav a {
-            color: #cbd5e1; /* Lighter gray, distinct from copyright */
+            color: #cbd5e1; 
             text-decoration: none;
-            font-size: 0.95em; /* Slightly larger than copyright */
+            font-size: 0.95em; 
             transition: color 0.3s ease;
         }
         .footer-nav a:hover {
-            color: #ffffff; /* White on hover */
+            color: #ffffff; 
             text-decoration: underline;
         }
-        /* --- End of Footer Navigation Menu --- */
 
 
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) {
             body { padding-top: 200px; }
-            /* ... other styles ... */
+            .fixed-main-logo { width: 120px; height: 120px; top: 50px; left: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
             nav { /* Main navigation adjustments */
                 position: fixed; top: 170px; left: 0; width: 100%; flex-direction: column; 
                 justify-content: center; align-items: center; padding: 10px; 
@@ -323,7 +323,6 @@
             nav div { flex-direction: column; width: 100%; justify-content: center; }
             nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
             
-            .fixed-main-logo { width: 120px; height: 120px; top: 50px; left: 50%; transform: translateX(-50%); box-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
             .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
             .homepage-services-image { max-width: 70%; }
             .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -361,8 +360,8 @@
                 width: 35px; height: 35px; line-height: 35px;
                 font-size: 18px; margin: 0 4px;
             }
-            .footer-nav ul { flex-direction: column; /* Stack links vertically on small screens */ }
-            .footer-nav li { margin: 8px 0; /* Adjust spacing for vertical layout */ }
+            .footer-nav ul { flex-direction: column; }
+            .footer-nav li { margin: 8px 0; }
         }
     </style>
 </head>
@@ -374,7 +373,8 @@
 
     <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
 
-    <nav> <div>
+    <nav> 
+        <div>
             <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
             <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
             <a href="irctc-agent-services.html" class="button-link">
@@ -442,8 +442,10 @@
                 <li><a href="/blog/">Blog</a></li>
             </ul>
         </nav>
+
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
-        <div style="text-align:center; margin-top: 20px;"> <a href="https://www.hitwebcounter.com" target="_blank">
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="https://www.hitwebcounter.com" target="_blank">
                 <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
                      title="Counter Widget"
                      alt="Visit counter For Websites"
