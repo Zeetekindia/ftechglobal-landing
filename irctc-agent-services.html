@@ -106,7 +106,7 @@
             margin-right: 0;
         }
         .page-submenu a {
-            color: #FFD700; /* Gold color */
+            color: #FFD700; 
             text-decoration: none;
             font-size: 0.95em; 
             font-weight: 500;
@@ -126,7 +126,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px; 
             margin-top: 0; 
-            border-bottom: 2px solid #FFD700; /* Keep H1 border if desired */
+            border-bottom: 2px solid #FFD700; 
         }
         .irctc-agent-page-content h2 {
             font-size: 1.7em;
@@ -256,7 +256,7 @@
             nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
             
             .main-content { width: 95%; } 
-            .page-submenu { margin-left: 0; margin-right: 0; padding: 8px 10px; /* Adjust padding for content area */ } 
+            .page-submenu { margin-left: 0; margin-right: 0; padding: 8px 10px; } 
             .irctc-agent-page-content h1 { font-size: 2em; }
             .irctc-agent-page-content h2 { font-size: 1.5em; }
             .irctc-agent-page-content p, .irctc-agent-page-content li { font-size: 1rem; }
@@ -278,10 +278,12 @@
             nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
             
             .page-submenu { padding: 8px 5px; margin-bottom: 15px; }
-            .page-submenu ul { justify-content: center; } /* Center single link on mobile */
-            .page-submenu li { margin-right: 0;} /* No margin if only one link */
-            .page-submenu a { font-size: 0.85em; }
-
+            .page-submenu ul { justify-content: center; } /* Center links on mobile if they fit, or make them stack */
+            .page-submenu li { margin: 0 10px;} /* Adjust margin for mobile */
+            /* If links need to stack on very small screens:
+            .page-submenu ul { flex-direction: column; align-items: flex-start; }
+            .page-submenu li { margin-right: 0; margin-bottom: 5px; }
+            */
             .irctc-agent-page-content h1 { font-size: 1.6em; } 
             .irctc-agent-page-content h2 { font-size: 1.3em; }
             .irctc-agent-page-content p, .irctc-agent-page-content li { font-size: 0.9rem; }
@@ -325,6 +327,7 @@
             <nav class="page-submenu">
                 <ul>
                     <li><a href="how-to-irctc-agent-sign-up.html">How to Become IRCTC Agent</a></li>
+                    <li><a href="irctc-agent-registration.html">IRCTC Agent Registration</a></li>
                 </ul>
             </nav>
             <h1>Become an <strong>IRCTC Authorized Agent</strong> | Start Your <strong>Railway Ticket Agent Registration</strong></h1>
