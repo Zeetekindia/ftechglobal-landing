@@ -99,6 +99,7 @@
         }
         nav div a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
 
+
         .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
         
         h1 { font-size: 3.2rem; color: #FFD700; margin-top: 15px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
@@ -107,7 +108,7 @@
         p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; } 
         
         .services { 
-            margin-top: 40px; /* Original margin-top for services, if it was the first content block after image */
+            margin-top: 40px; 
             padding: 30px; background-color: rgba(45, 58, 75, 0.7); border-radius: 15px; 
             max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; 
             box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
@@ -136,17 +137,15 @@
             max-width: 60%; 
             height: auto; 
             display: block; 
-            margin: 40px auto; /* Adjusted margin to be consistent */
+            margin: 40px auto; 
             border-radius: 10px; 
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
             border: 2px solid #38bdf8; 
         }
         
-        /* --- Testimonials Section --- */
         .testimonials-section {
-            margin-top: 40px; /* Space after image */
-            margin-bottom: 40px; /* Space before WhatsApp button (if services were removed, which they are not) */
-                                 /* Or space before the next section if services were to be after testimonials */
+            margin-top: 40px; 
+            margin-bottom: 40px; 
             padding: 30px 0px; 
             background-color: rgba(27, 44, 64, 0.7); 
             border-radius: 15px;
@@ -208,7 +207,6 @@
             margin-top: auto; 
             margin-bottom: 0; 
         }
-        /* --- End of Testimonials Section --- */
         
         a.button, .contact-whatsapp-button { 
             background: #00e676; color: #101827; padding: 12px 25px; text-decoration: none; 
@@ -234,6 +232,34 @@
         .social-media-icons a i { vertical-align: middle;}
         .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
         
+        /* --- Footer Navigation Menu --- */
+        .footer-nav {
+            margin-top: 10px; /* Adjusted space from social icons */
+            margin-bottom: 20px; 
+        }
+        .footer-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+        }
+        .footer-nav li {
+            margin: 5px 12px; 
+        }
+        .footer-nav a {
+            color: #cbd5e1; 
+            text-decoration: none;
+            font-size: 0.9em; 
+            transition: color 0.3s ease;
+        }
+        .footer-nav a:hover {
+            color: #00e676; 
+            text-decoration: underline;
+        }
+        /* --- End of Footer Navigation Menu --- */
+        
 
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) { 
@@ -249,7 +275,7 @@
             nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
             
             .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
-            .homepage-services-image { max-width: 70%; margin: 30px auto; } /* Adjusted margin */
+            .homepage-services-image { max-width: 70%; margin: 30px auto; } 
             .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
             
             .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
@@ -294,6 +320,9 @@
             .testimonials-section h2 {font-size: 1.8rem; margin-bottom: 20px;}
             .testimonials-container { padding: 0px 15px 15px 15px; }
             .testimonial-card {min-width: 260px; margin-right: 15px; padding: 20px;}
+
+            .footer-nav ul { flex-direction: column; }
+            .footer-nav li { margin: 8px 0; } 
         }
     </style>
 </head>
@@ -301,10 +330,10 @@
 
     <div class="top-contact-bar">
         <div class="top-bar-links">
-            <a href="/services.html">Our Services</a>
-            <a href="/about-us.html">About Us</a>
-            <a href="/contact.html">Contact Us</a>
-            <a href="/blog.html">Blog</a> 
+            <a href="services.html">Our Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="blog.html">Blog</a> 
         </div>
         <div class="top-bar-contact">
             Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
@@ -400,9 +429,17 @@
             <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
 
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li> <li><a href="term-and-condition.html">Term & Condition</a></li> 
+            </ul>
+        </nav>
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
-        <div style="text-align:center; margin-top: 20px;">
-            <a href="https://www.hitwebcounter.com" target="_blank">
+        <div style="text-align:center; margin-top: 20px;"> <a href="https://www.hitwebcounter.com" target="_blank">
                 <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
                      title="Counter Widget"
                      alt="Visit counter For Websites"
