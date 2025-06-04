@@ -22,7 +22,6 @@
             padding-top: 130px; 
         }
 
-        /* --- Top Contact Bar with Centered Links & Right Aligned Contact --- */
         .top-contact-bar {
             background: #1a2a4b;
             color: #fff;
@@ -60,7 +59,6 @@
             color: #fff; 
             text-decoration: none;
         }
-        /* --- End of Top Contact Bar Styles --- */
 
         .fixed-main-logo {
             width: 120px;
@@ -104,7 +102,17 @@
 
         .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
         
-        h1 { font-size: 3.2rem; color: #FFD700; margin-top: 15px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+        /* UPDATED H1 STYLING with new Luminous Green color */
+        h1 { 
+            font-size: 3.2rem; 
+            color: #76FF03; /* Luminous Green color */
+            margin-top: 15px; 
+            margin-bottom: 10px; 
+            font-weight: 700; 
+            text-shadow: 0 0 15px rgba(118, 255, 3, 0.6); /* Luminous Green glow */
+        }
+        /* END OF UPDATED H1 STYLING */
+
         .main-content > p:first-of-type { font-size: 1.3rem; color: #e2e8f0; margin-top: 5px; margin-bottom: 35px; font-style: italic; }
         
         p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; } 
@@ -263,7 +271,7 @@
         
 
         /* --- Media Queries for responsiveness --- */
-        @media (max-width: 1200px) { /* Tablet view */
+        @media (max-width: 1200px) { 
             body { padding-top: 200px; } 
             .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
             nav.main-nav { 
@@ -307,7 +315,7 @@
             .testimonial-card {min-width: 280px; max-width: 320px;}
         }
 
-        @media (max-width: 768px) { /* Mobile view */
+        @media (max-width: 768px) { 
             body { padding-top: 220px; } 
             .top-contact-bar { 
                 font-size: 0.8em; 
@@ -319,7 +327,12 @@
             nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
             .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
             .homepage-services-image { max-width: 90%; margin: 20px auto 30px auto; } 
-            h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; } 
+            
+            h1 { /* H1 on mobile */
+                font-size: 2.2rem; /* Original mobile size, new color will apply */
+                margin-top: 10px; 
+                margin-bottom: 5px; 
+            } 
             
             .main-content > p { font-size: 1rem; } 
             .main-content > p:first-of-type { font-size: 1.1rem; margin-bottom: 25px; } 
