@@ -22,6 +22,7 @@
             padding-top: 130px; 
         }
 
+        /* UPDATED TOP CONTACT BAR STYLES FOR CENTERING LINKS */
         .top-contact-bar {
             background: #1a2a4b;
             color: #fff;
@@ -34,33 +35,34 @@
             box-sizing: border-box;
             z-index: 1001;
             display: flex;
-            justify-content: space-between; 
+            /* justify-content: space-between; /* Removed to allow centering of links */
             align-items: center;
         }
         .top-bar-links {
-            /* Links will be on the left */
+            flex-grow: 1; /* Allows this section to take available space */
+            text-align: center; /* Centers the inline items (links) within this div */
         }
         .top-bar-links a {
             color: #cbd5e1; 
             text-decoration: none;
-            margin-right: 15px; 
+            margin: 0 10px; /* Even spacing around links */
             font-weight: 400; /* Normal font weight */
-            /* font-size inherits from .top-contact-bar or can be set, e.g., 1em */
             transition: color 0.3s ease;
-        }
-        .top-bar-links a:last-child {
-            margin-right: 0;
         }
         .top-bar-links a:hover {
             color: #00e676; 
         }
         .top-bar-contact {
-             font-weight: bold; 
+            font-weight: bold; 
+            margin-left: auto; /* Pushes contact info to the right */
+            flex-shrink: 0; /* Prevents contact info from shrinking */
         }
         .top-bar-contact a { 
             color: #fff; 
             text-decoration: none;
         }
+        /* END OF UPDATED TOP CONTACT BAR STYLES */
+
 
         .fixed-main-logo {
             width: 120px;
@@ -134,13 +136,7 @@
         .social-media-icons a i { vertical-align: middle;}
         .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
         
-        /* Footer Nav is REMOVED from here if you don't want it in footer */
-        /* .footer-nav { margin-top: 20px; margin-bottom: 20px; }
-        .footer-nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-        .footer-nav li { margin: 5px 15px; }
-        .footer-nav a { color: #cbd5e1; text-decoration: none; font-size: 0.95em; transition: color 0.3s ease; }
-        .footer-nav a:hover { color: #ffffff; text-decoration: underline; }
-        */
+        /* Footer Nav - REMOVED (or ensure it's removed if you don't want it in footer) */
 
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) { 
@@ -159,27 +155,36 @@
             .homepage-services-image { max-width: 70%; }
             .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
             
+            /* UPDATED Top Contact Bar for Tablet */
             .top-contact-bar { 
-                flex-direction: column; /* Stack links and contact on smaller screens */
-                height: auto; /* Allow height to adjust */
+                flex-direction: column; 
+                height: auto; 
                 padding: 5px 10px; 
             }
             .top-bar-links { 
-                margin-bottom: 5px; /* Space between links and contact when stacked */
-                text-align: center; /* Center links when stacked */
-                width: 100%; /* Take full width when stacked */
+                /* flex-grow: 0; Remove flex-grow if stacking */
+                order: 2; /* Links below contact */
+                margin-bottom: 0; /* No margin if it's the last item */
+                margin-top: 5px; /* Space from contact info */
+                text-align: center; 
+                width: 100%; 
             }
             .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
-            .top-bar-contact { text-align: center; width: 100%; /* Take full width */ }
+            .top-bar-contact { 
+                order: 1; /* Contact on top */
+                text-align: center; 
+                width: 100%; 
+                margin-left: 0; /* Reset margin-left for stacked layout */
+                margin-bottom: 5px; /* Space before links */
+            }
         }
 
         @media (max-width: 768px) { 
             body { padding-top: 220px; } 
             .top-contact-bar { 
                 font-size: 0.8em; 
-                /* flex-direction and height already set for tablet, will inherit */
             }
-            .top-bar-links a { margin: 0 5px; font-size: 0.8em;} /* Further reduce size/margin if needed */
+            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
 
             .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
             nav { 
@@ -200,10 +205,6 @@
             .services li strong i { font-size: 1.3rem; margin-right: 10px; }
             a.button, .contact-whatsapp-button { padding: 10px 20px; font-size: 0.9rem; }
             .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
-            /* If footer-nav was still active and needed mobile styling:
-            .footer-nav ul { flex-direction: column; }
-            .footer-nav li { margin: 8px 0; } 
-            */
         }
     </style>
 </head>
@@ -220,6 +221,7 @@
             Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
         </div>
     </div>
+
     <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
 
     <nav> 
