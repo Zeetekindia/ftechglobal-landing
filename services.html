@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Our IT & Digital Marketing Services | Ftech Global Solutions - Web, SEO, Software</title>
+    <meta name="description" content="Explore a comprehensive range of IT and digital marketing services by Ftech Global Solutions, India. We offer expert web development, custom software, SEO, Google Ads, startup consultancy, and more to drive your business growth globally.">
+    
+    <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Paste ALL CSS from your index.html or about-us.html <style> section here */
+        /* For brevity, I'm showing only key common styles and Services page specific adjustments. */
+        /* YOU NEED ALL COMMON STYLES FOR HEADER, FOOTER, BODY, ETC. */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
+            color: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 130px; 
+        }
 
+        .top-contact-bar {
+            background: #1a2a4b; color: #fff; padding: 8px 20px; font-size: 0.9em; 
+            width: 100%; position: fixed; top: 0; left: 0; box-sizing: border-box; 
+            z-index: 1001; display: flex; justify-content: space-between; align-items: center;
+        }
+        .top-bar-links a {
+            color: #cbd5e1; text-decoration: none; margin-right: 15px; 
+            font-weight: 400; transition: color 0.3s ease;
+        }
+        .top-bar-links a:last-child { margin-right: 0; }
+        .top-bar-links a:hover { color: #00e676; }
+        .top-bar-contact { font-weight: bold; margin-left: auto; flex-shrink: 0; }
+        .top-bar-contact a { color: #fff; text-decoration: none; }
+
+        .fixed-main-logo {
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            position: fixed; top: 40px; left: 20px; z-index: 999;
+        }
+
+        nav { /* Main navigation */
+            background-color: #1a2a4b; padding: 15px 20px; display: flex;
+            justify-content: flex-end; align-items: center; width: calc(100% - 160px);
+            position: fixed; top: 65px; left: 140px; box-sizing: border-box;
+            z-index: 998; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px; transition: background-color 0.3s ease;
+        }
+        nav:hover { background-color: #2c3e50; }
+        nav div { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+        nav div a.button-link {
+            padding: 8px 12px; background-color: #00e676; color: #1a2a4b; border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
+            align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
+        }
+        nav div a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
+
+        .main-content { 
+            padding: 20px; 
+            max-width: 1000px; 
+            width: 90%; 
+            margin: 0 auto; 
+            flex-grow: 1; 
+            box-sizing: border-box;
+            text-align: left; 
+            background-color: rgba(27, 44, 64, 0.5); 
+            border-radius: 10px;
+            margin-bottom: 30px; 
+        }
+
+        .main-content h1, .main-content h2, .main-content h3 {
+            color: #38bdf8; 
+            margin-top: 25px;
+            margin-bottom: 15px;
+            /* text-align: center; /* Center main heading if desired */
+        }
+        .main-content h1 { /* Main page heading */
+            font-size: 2.5rem; 
+            color: #FFD700; 
+            text-align: center;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+         .main-content h2 { /* Service section headings */
+            font-size: 1.8rem;
+            color: #00e676; /* Green for service titles */
+            /* border-bottom: 2px solid #00e676; */
+            padding-bottom: 5px;
+            /* display: inline-block; */
+            text-align: left; 
+            margin-top: 30px; /* More space above H2 */
+        }
+        .main-content h2::before { /* Optional: decorative element */
+            content: "✓ "; /* Checkmark or other icon/symbol */
+            color: #FFD700; /* Gold checkmark */
+            margin-right: 8px;
+        }
+
+        .main-content p {
+            font-size: 1.1rem; 
+            color: #e2e8f0; 
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .main-content ul {
+            list-style-type: none; /* Remove default bullets */
+            margin-left: 0; 
+            padding-left: 0; /* Remove default padding */
+            margin-bottom: 20px;
+        }
+        .main-content li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #cdd3da;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+        }
+        .main-content li::before { /* Custom bullet point */
+            content: "➤"; /* Arrow or other symbol */
+            color: #38bdf8; /* Blue arrow */
+            position: absolute;
+            left: 0;
+            top: 1px; /* Adjust vertical alignment */
+        }
+
+        .main-content strong { /* Make text within <strong> tags in service list items more prominent */
+            color: #f1f5f9; /* Brighter white or light color */
+            font-weight: 600;
+        }
+
+        .main-content a { 
+            color: #00e676; 
+            text-decoration: none;
+        }
+        .main-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styling (should be identical to index.html) */
+        footer {
+            background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
+            font-size: 0.85em; border-top: 1px solid #334a70; margin-top: auto;
+            width: 100%; box-sizing: border-box; position: relative; 
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: #4CAF50; color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
+        
+        /* Media Queries (should include all from index.html, then specific overrides if needed) */
+        @media (max-width: 1200px) { 
+            body { padding-top: 200px; } 
+            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
+            nav { 
+                top: 170px; position: fixed; left: 0; width: 100%; flex-direction: column; 
+                justify-content: center; align-items: center; padding: 10px; 
+                box-shadow: none; border-radius: 0; background-color: #2c3e50; 
+            }
+            nav div { flex-direction: column; width: 100%; justify-content: center; }
+            nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
+            
+            .main-content { width: 95%; padding: 15px; } 
+            .main-content h1 { font-size: 2.2rem; }
+            .main-content h2 { font-size: 1.6rem; }
+            .main-content p { font-size: 1rem; }
+
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
+            .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+        }
+
+        @media (max-width: 768px) { 
+            body { padding-top: 220px; } 
+            .top-contact-bar { font-size: 0.8em; }
+            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
+
+            .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
+            nav { top: 135px; padding: 8px 10px; } 
+            nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
+            
+            .main-content h1 { font-size: 1.8rem; } 
+            .main-content h2 { font-size: 1.4rem; }
+            .main-content p { font-size: 0.95rem; }
+            .main-content ul { margin-left: 0px; padding-left: 20px; } /* Adjust list padding for custom bullet */
+            .main-content li { font-size: 0.9rem; padding-left: 22px; } /* Adjust li padding for custom bullet */
+            .main-content li::before { top: 0; } /* Adjust custom bullet vertical alignment */
+
+
+            .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-contact-bar">
+        <div class="top-bar-links">
+            <a href="/services.html">Our Services</a>
+            <a href="/about-us.html">About Us</a>
+            <a href="/contact.html">Contact Us</a>
+            <a href="/blog/">Blog</a>
+        </div>
+        <div class="top-bar-contact">
+            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        </div>
+    </div>
+
+    <a href="index.html">
+      <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
+    </a>
+
+    <nav> 
+        <div>
+            <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
+            <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
+            <a href="irctc-agent-services.html" class="button-link">
+                <i class="fas fa-train"></i> Become IRCTC Agent
+            </a>
+            <a href="digital-marketing-services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
+            <a href="startup-consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h1>Our Comprehensive Services: Solutions Tailored for Your Success</h1>
+
+        <p>At Ftech Global Solutions, we offer a diverse portfolio of technology and digital marketing services designed to meet the unique challenges and goals of your business. Whether you're a startup, a growing enterprise, or an established organization, our expert solutions are crafted to deliver tangible results and a significant return on investment. Explore our core services below:</p>
+
+        <section id="web-development">
+            <h2>Expert Website Development Services</h2>
+            <p>Your website is your digital storefront. We build visually stunning, highly functional, and <strong>responsive websites</strong> that offer an exceptional user experience across all devices.</p>
+            <ul>
+                <li><strong>Custom Web Design & Development:</strong> Tailored designs that reflect your brand identity and business objectives.</li>
+                <li><strong>E-commerce Solutions:</strong> Robust and scalable online stores with secure payment gateway integration and inventory management.</li>
+                <li><strong>Content Management Systems (CMS):</strong> Easy-to-manage websites built on popular platforms like WordPress, enabling you to update content effortlessly.</li>
+                <li><strong>Website Maintenance & Support:</strong> Ongoing support to ensure your website runs smoothly, securely, and stays up-to-date.</li>
+                <li><strong>SEO-Optimized Structure:</strong> Websites built with search engine optimization best practices from the ground up for better visibility.</li>
+            </ul>
+        </section>
+
+        <section id="software-development">
+            <h2>Bespoke Software Development Solutions</h2>
+            <p>Streamline your operations and enhance productivity with our <strong>custom software development services</strong>. We create solutions that perfectly align with your business processes.</p>
+            <ul>
+                <li><strong>Custom Application Development:</strong> Tailor-made desktop, web, and cloud applications to address specific business needs.</li>
+                <li><strong>Mobile App Development (Android & iOS):</strong> Engaging and intuitive mobile apps that extend your reach and connect with customers on the go.</li>
+                <li><strong>CRM & ERP Solutions:</strong> Custom or integrated Customer Relationship Management (CRM) and Enterprise Resource Planning (ERP) systems to optimize your workflows.</li>
+                <li><strong>API Development & Integration:</strong> Seamless integration of third-party services and APIs to enhance your software's functionality.</li>
+            </ul>
+        </section>
+
+        <section id="digital-marketing">
+            <h2>Comprehensive Digital Marketing Strategies</h2>
+            <p>Amplify your online presence and connect with your target audience through our data-driven <strong>digital marketing services</strong>.</p>
+            <ul>
+                <li><strong>Search Engine Optimization (SEO):</strong> Improve your website's ranking on search engines like Google with our proven on-page, off-page, and technical SEO techniques. We focus on driving organic traffic and increasing your visibility for relevant keywords.</li>
+                <li><strong>Pay-Per-Click (PPC) Advertising / Google Ads Management:</strong> Maximize your ROI with targeted Google Ads campaigns, expertly managed by our certified professionals. We handle keyword research, ad creation, bid management, and performance tracking.</li>
+                <li><strong>Social Media Marketing (SMM):</strong> Build brand awareness, engage your audience, and drive conversions through effective strategies on platforms like Facebook, Instagram, LinkedIn, and X (Twitter).</li>
+                <li><strong>Content Marketing:</strong> High-quality, engaging, and SEO-friendly content creation (blogs, articles, infographics) that establishes your authority and attracts your target audience.</li>
+                <li><strong>Email Marketing:</strong> Nurture leads and retain customers with personalized email marketing campaigns.</li>
+            </ul>
+        </section>
+
+        <section id="startup-consultancy">
+            <h2>Strategic Startup Consultancy & Mentorship</h2>
+            <p>Turn your innovative ideas into thriving businesses with our <strong>expert startup consultancy services</strong>. We provide end-to-end guidance for new ventures.</p>
+            <ul>
+                <li><strong>Business Plan Development:</strong> Crafting comprehensive and investor-ready business plans.</li>
+                <li><strong>Market Research & Analysis:</strong> Identifying market opportunities, target audience, and competitive landscape.</li>
+                <li><strong>Funding Assistance & Pitch Deck Creation:</strong> Helping startups prepare for and connect with potential investors.</li>
+                <li><strong>Legal & Compliance Guidance:</strong> Assisting with company registration and other legal formalities in India.</li>
+                <li><strong>Growth Hacking Strategies:</strong> Implementing innovative and cost-effective strategies for rapid growth.</li>
+            </ul>
+        </section>
+
+        <section id="finance-compliance">
+            <h2>Financial & Compliance Services (India)</h2>
+            <p>Navigate the complexities of financial regulations with our reliable support services.</p>
+            <ul>
+                <li><strong>GST Registration & Filing:</strong> Hassle-free Goods and Services Tax (GST) registration and timely return filing.</li>
+                <li><strong>Income Tax Return (ITR) Filing:</strong> Accurate ITR e-filing services for individuals and businesses.</li>
+                <li><strong>Other Registrations:</strong> Assistance with various business registrations required in India.</li>
+            </ul>
+        </section>
+        
+        <section id="why-us">
+            <h2>Why Partner with Ftech Global Solutions?</h2>
+            <ul>
+                <li><strong>Holistic Approach:</strong> We offer a 360-degree view of your digital and technological needs.</li>
+                <li><strong>Tailored Solutions:</strong> We don't believe in one-size-fits-all; our services are customized for you.</li>
+                <li><strong>Experienced Professionals:</strong> Our team is our greatest asset, bringing years of experience and passion.</li>
+                <li><strong>Transparent Communication:</strong> We keep you informed at every step of the project.</li>
+                <li><strong>Focus on ROI:</strong> Our ultimate goal is to help your business grow and achieve a positive return on your investment.</li>
+            </ul>
+        </section>
+
+        <p style="text-align: center; font-size: 1.2rem; margin-top: 30px;">Ready to elevate your business to new heights?<br>
+        <a href="contact.html" style="display: inline-block; margin-top:10px; background-color: #00e676; color: #101827; padding: 10px 20px; border-radius: 5px; font-weight: bold;">Get in Touch with Our Experts Today!</a></p>
+    </div>
+    <footer>
+        <div class="social-media-icons">
+            <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="YOUR_YOUTUBE_CHANNEL_URL" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
+                     title="Counter Widget"
+                     alt="Visit counter For Websites"
+                     border="0" />
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
