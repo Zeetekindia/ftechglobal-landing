@@ -4,7 +4,7 @@
     "slug": "website-development-patna",
     "date": "2025-06-04",
     "summary": "Learn how to create a professional website for your business in Patna with FTech Global.",
-    "image": "images/blog1.jpg",
+    "image": "https://raw.githubusercontent.com/Zeetekindia/image/main/start-website-india.png",
     "content": "Website development is the foundation of your online business. At FTech Global, we offer fast, SEO-friendly websites for startups and SMEs in Bihar."
   },
   {
@@ -38,5 +38,14 @@
     "summary": "Google My Business listing boosts your online presence and helps customers find you easily.",
     "image": "images/blog5.jpg",
     "content": "With a Google Business Profile, your company appears on maps, search results, and helps build trust. FTech Global sets it up professionally for your brand."
-  }
+  } 
+  {
+  "title": "How to Start a Website in India",
+  "slug": "start-website-india",
+  "date": "2025-06-04",
+  "summary": "Learn how to create a professional website for your business in India.",
+  "image": "https://raw.githubusercontent.com/Zeetekindia/image/main/start-website-india.png",
+  "content": "Starting a website in India involves choosing a domain, selecting a hosting provider, and designing your site. This guide walks you through each step."
+}
+
 ]
