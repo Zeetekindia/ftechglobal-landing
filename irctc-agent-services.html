@@ -11,7 +11,7 @@
     <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* ==== PASTE ALL COMMON CSS FROM INDEX.HTML HERE ==== */
+        /* ==== COMMON CSS FROM INDEX.HTML (Assumed to be similar to previous full codes) ==== */
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif; 
@@ -88,11 +88,11 @@
             list-style-type: none;
             padding: 0; 
             margin: 0; 
-            display: inline-flex; /* Changed to inline-flex for centering via parent */
+            display: inline-flex; 
             flex-wrap: wrap; 
             align-items: center;
-            justify-content: center; /* Center items in the flex line */
-            gap: 10px; /* Space between buttons */
+            justify-content: center; 
+            gap: 10px; 
         }
         .page-submenu li {
             margin: 0; 
@@ -104,8 +104,8 @@
         }
         .page-submenu a {
             display: inline-block;
-            background-color: #38bdf8; /* Light Blue */
-            color: #101827; /* Dark text */
+            background-color: #38bdf8; 
+            color: #101827; 
             padding: 8px 15px; 
             border-radius: 6px; 
             text-decoration: none;
@@ -113,9 +113,10 @@
             font-weight: bold; 
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            white-space: nowrap; /* Prevent button text from wrapping */
         }
         .page-submenu a:hover {
-            background-color: #0ea5e9; /* Darker blue */
+            background-color: #0ea5e9; 
             color: #ffffff; 
             text-decoration: none; 
             transform: translateY(-2px);
@@ -134,7 +135,7 @@
             text-align: center;
             padding-bottom: 10px;
             margin-bottom: 20px; 
-            margin-top: 10px; /* Adjusted due to submenu padding */
+            margin-top: 10px; 
             border-bottom: 2px solid #FFD700; 
         }
         .irctc-agent-page-content h2 {
@@ -184,7 +185,7 @@
         .irctc-agent-page-content strong {
             color: #FFC107; 
         }
-        .irctc-agent-page-content a:not(.cta-button):not(.page-submenu a) { /* Exclude submenu links from this rule */
+        .irctc-agent-page-content a:not(.cta-button):not(.page-submenu a) { 
             color: #00e676;
         }
         .irctc-agent-page-content a:not(.cta-button):not(.page-submenu a):hover {
@@ -291,7 +292,7 @@
             .page-submenu { margin-bottom: 15px; }
             .page-submenu ul { flex-direction: column; gap: 8px; align-items: stretch; }
             .page-submenu li { margin-right: 0; width: 100%;}
-            .page-submenu a { font-size: 0.9em; text-align: center; width: auto;} /* Let it take natural width */
+            .page-submenu a { font-size: 0.9em; text-align: center; width: auto;} 
             
             .irctc-agent-page-content h1 { font-size: 1.6em; } 
             .irctc-agent-page-content h2 { font-size: 1.3em; }
@@ -335,8 +336,10 @@
             
             <nav class="page-submenu">
                 <ul>
-                    <li><a href="how-to-irctc-agent-sign-up.html">How to Become IRCTC Agent</a></li>
-                    <li><a href="irctc-agent-registration.html">IRCTC Agent Registration</a></li>
+                    <li><a href="how-to-irctc-agent-sign-up.html">How to Become IRCTC Agent (Old)</a></li>
+                    <li><a href="irctc-agent-registration.html">IRCTC Agent Registration (Old)</a></li>
+                    <li><a href="how-to-become-irctc-agent.html">Start IRCTC E-Ticket Business</a></li>
+                    <li><a href="irctc-agent-kaise-bane.html">IRCTC एजेंट कैसे बनें?</a></li>
                 </ul>
             </nav>
             <h1>Become an <strong>IRCTC Authorized Agent</strong> | Start Your <strong>Railway Ticket Agent Registration</strong></h1>
