@@ -2,25 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog Post - FTech Global</title>
-  <meta name="description" content="Read detailed blog post on FTech Global."/>
   <style>
-    body { max-width: 800px; margin: auto; padding: 20px; font-family: Arial, sans-serif; }
-    h1 { color: #333; }
-    img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
-    p.date { color: gray; font-style: italic; }
-    a.back-link { display: inline-block; margin-top: 20px; color: orange; text-decoration: none; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .date {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <a href="blog.html" class="back-link">← Back to Blogs</a>
+
   <div id="post-content">
-    <p>Loading blog post...</p>
+    <p>Loading...</p>
   </div>
 
   <script>
-    // Function to get URL query params
+    // Function to get query params
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);
@@ -28,27 +53,31 @@
 
     const slug = getQueryParam('slug');
 
-    fetch('blog-posts.json')
-      .then(response => response.json())
-      .then(posts => {
-        const post = posts.find(p => p.slug === slug);
-        const container = document.getElementById('post-content');
-
-        if (post) {
-          container.innerHTML = `
-            <h1>${post.title}</h1>
-            <p class="date">${post.date}</p>
-            <img src="${post.image}" alt="${post.title}" />
-            <p>${post.content}</p>
-          `;
-        } else {
-          container.innerHTML = "<p>Sorry, the blog post was not found.</p>";
-        }
-      })
-      .catch(err => {
-        document.getElementById('post-content').innerHTML = "<p>Error loading blog post.</p>";
-        console.error(err);
-      });
+    if (!slug) {
+      document.getElementById('post-content').innerHTML = "<p>Invalid blog post.</p>";
+    } else {
+      fetch('blog-posts.json')
+        .then(response => response.json())
+        .then(posts => {
+          const post = posts.find(p => p.slug === slug);
+          if (post) {
+            document.getElementById('post-content').innerHTML = `
+              <h1>${post.title}</h1>
+              <div class="date">${post.date}</div>
+              <img src="${post.image}" alt="${post.title}" />
+              <p>${post.content}</p>
+              <a href="blog.html" class="back">← Back to Blog List</a>
+            `;
+          } else {
+            document.getElementById('post-content').innerHTML = "<p>Blog not found.</p>";
+          }
+        })
+        .catch(error => {
+          document.getElementById('post-content').innerHTML = "<p>Error loading blog.</p>";
+          console.error(error);
+        });
+    }
   </script>
+
 </body>
 </html>
