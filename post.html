@@ -3,64 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog Post - FTech Global</title>
-  <meta name="description" content="Read full blog post from FTech Global on website development, IRCTC agent registration, GST filing, and more.">
+  <title>FTech Blog - Read Full Post</title>
+  <meta name="description" content="Read full blog post from FTech Global on digital marketing, website development, GST, IRCTC agent registration and more.">
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
+    .post-container {
       max-width: 800px;
       margin: auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
     }
-    img {
-      max-width: 100%;
+    .post-container img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin-bottom: 20px;
       border-radius: 8px;
-      margin: 20px 0;
     }
-    h1 {
-      color: #333;
-    }
-    .post-date {
-      color: #777;
-      font-size: 14px;
+    .post-container h1 {
+      font-size: 28px;
       margin-bottom: 10px;
+    }
+    .post-container p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      background: orange;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div id="post-content">
+
+  <div class="post-container" id="post-content">
     <p>Loading blog post...</p>
   </div>
 
   <script>
-    // Step 1: Get the slug from the URL
+    // Extract slug from URL
     const params = new URLSearchParams(window.location.search);
-    const slug = params.get("slug");
+    const slug = params.get('slug');
 
-    // Step 2: Fetch the blog-posts.json file
     fetch('blog-posts.json')
       .then(response => response.json())
       .then(posts => {
-        // Step 3: Find the blog post with the matching slug
         const post = posts.find(p => p.slug === slug);
+        const container = document.getElementById('post-content');
         if (post) {
-          // Step 4: Show the blog content
-          document.getElementById("post-content").innerHTML = `
+          container.innerHTML = `
             <h1>${post.title}</h1>
-            <p class="post-date">${post.date}</p>
+            <p><em>${post.date}</em></p>
             <img src="${post.image}" alt="${post.title}">
-            <div>${post.content}</div>
+            <p>${post.content}</p>
+            <a class="back-link" href="blog.html">← Back to Blog</a>
           `;
         } else {
-          // If no blog post is found
-          document.getElementById("post-content").innerHTML = "<p>Blog not found.</p>";
+          container.innerHTML = "<h2>Blog not found.</h2>";
         }
       })
       .catch(error => {
-        console.error("Error loading blog post:", error);
-        document.getElementById("post-content").innerHTML = "<p>There was an error loading the blog post.</p>";
+        document.getElementById('post-content').innerHTML = "<p>Error loading blog post.</p>";
+        console.error("Error fetching blog:", error);
       });
   </script>
+
 </body>
 </html>
