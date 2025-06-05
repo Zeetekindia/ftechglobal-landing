@@ -1,56 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog - FTech Global</title>
-  <meta name="description" content="Read our latest blogs on website development, digital marketing, GST, ITR and more.">
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .blog-card {
-      border: 1px solid #ddd;
-      padding: 16px;
-      margin-bottom: 24px;
-      border-radius: 8px;
-    }
-    .blog-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-    .read-more {
-      background: orange;
-      color: #fff;
-      padding: 8px 12px;
-      text-decoration: none;
-      border-radius: 4px;
-      display: inline-block;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <h1 style="text-align:center;">📚 Latest Blogs from FTech Global</h1>
-  <div id="blog-container" class="container" style="max-width:800px; margin:auto;"></div>
-
-  <script>
-    fetch("blog-posts.json")
-      .then(response => response.json())
-      .then(posts => {
-        const container = document.getElementById("blog-container");
-        posts.forEach(post => {
-          const blogHTML = `
-            <div class="blog-card">
-              <h2>${post.title}</h2>
-              <p><em>${post.date}</em></p>
-              <img src="${post.image}" alt="${post.title}" />
-              <p>${post.summary}</p>
-              <a class="read-more" href="post.html?slug=${post.slug}">Read More</a>
-            </div>
-          `;
-          container.innerHTML += blogHTML;
-        });
-      });
-  </script>
-</body>
-</html>
+[
+  {
+    "title": "How to Create a Responsive Website in 2025",
+    "slug": "create-responsive-website-2025",
+    "date": "2025-05-01",
+    "summary": "Learn step-by-step how to create a fully responsive website using HTML, CSS, and JavaScript in 2025.",
+    "image": "images/responsive-website.jpg"
+  },
+  {
+    "title": "Top 10 Digital Marketing Tips for Small Businesses",
+    "slug": "digital-marketing-tips-small-business",
+    "date": "2025-04-20",
+    "summary": "Discover the most effective digital marketing strategies to grow your small business online.",
+    "image": "images/digital-marketing-tips.jpg"
+  },
+  {
+    "title": "GST Registration Process Made Easy",
+    "slug": "gst-registration-process",
+    "date": "2025-04-10",
+    "summary": "A simple guide to help you complete your GST registration without any hassle.",
+    "image": "images/gst-registration.jpg"
+  },
+  {
+    "title": "How to File Your ITR Online",
+    "slug": "file-itr-online",
+    "date": "2025-03-30",
+    "summary": "Step-by-step tutorial on filing your Income Tax Return online efficiently and safely.",
+    "image": "images/file-itr.jpg"
+  },
+  {
+    "title": "Benefits of Software Development for Startups",
+    "slug": "benefits-software-development-startups",
+    "date": "2025-03-15",
+    "summary": "Understand why software development is crucial for startups to succeed in today’s market.",
+    "image": "images/software-development.jpg"
+  },
+  {
+    "title": "How to Choose the Right Website Development Company",
+    "slug": "choose-right-website-company",
+    "date": "2025-02-28",
+    "summary": "Tips and tricks to select the best web development company for your business needs.",
+    "image": "images/choose-website-company.jpg"
+  },
+  {
+    "title": "IRCTC Agent कैसे बनें? – पूरी प्रक्रिया और फायदे",
+    "slug": "irctc-agent-kaise-bane-hindi",
+    "date": "2025-06-05",
+    "summary": "IRCTC एजेंट बनने के लिए स्टेप-बाय-स्टेप रजिस्ट्रेशन प्रक्रिया और इस बिजनेस के फायदे।",
+    "image": "images/irctc-agent-hindi.jpg"
+  },
+  {
+    "title": "How to Become an IRCTC Agent? Complete Registration Process & Benefits",
+    "slug": "how-to-become-irctc-agent-english",
+    "date": "2025-06-05",
+    "summary": "Step-by-step guide to register as an IRCTC agent along with the benefits of this business.",
+    "image": "images/irctc-agent-english.jpg"
+  }
+]
