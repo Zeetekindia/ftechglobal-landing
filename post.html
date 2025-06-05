@@ -2,82 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog Post - FTech Global</title>
+  <meta name="description" content="Read full blog post from FTech Global on website development, IRCTC agent registration, GST filing, and more.">
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
+      padding: 20px;
       max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .date {
-      color: #666;
-      font-size: 0.9em;
-      margin-bottom: 20px;
+      margin: auto;
     }
     img {
       max-width: 100%;
       border-radius: 8px;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
-    p {
-      line-height: 1.6;
-      font-size: 1.1em;
+    h1 {
+      color: #333;
     }
-    a.back {
-      display: inline-block;
-      margin-top: 30px;
-      color: orange;
-      text-decoration: none;
-      font-weight: bold;
+    .post-date {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-
   <div id="post-content">
-    <p>Loading...</p>
+    <p>Loading blog post...</p>
   </div>
 
   <script>
-    // Function to get query params
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
+    // Step 1: Get the slug from the URL
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
 
-    const slug = getQueryParam('slug');
-
-    if (!slug) {
-      document.getElementById('post-content').innerHTML = "<p>Invalid blog post.</p>";
-    } else {
-      fetch('blog-posts.json')
-        .then(response => response.json())
-        .then(posts => {
-          const post = posts.find(p => p.slug === slug);
-          if (post) {
-            document.getElementById('post-content').innerHTML = `
-              <h1>${post.title}</h1>
-              <div class="date">${post.date}</div>
-              <img src="${post.image}" alt="${post.title}" />
-              <p>${post.content}</p>
-              <a href="blog.html" class="back">← Back to Blog List</a>
-            `;
-          } else {
-            document.getElementById('post-content').innerHTML = "<p>Blog not found.</p>";
-          }
-        })
-        .catch(error => {
-          document.getElementById('post-content').innerHTML = "<p>Error loading blog.</p>";
-          console.error(error);
-        });
-    }
+    // Step 2: Fetch the blog-posts.json file
+    fetch('blog-posts.json')
+      .then(response => response.json())
+      .then(posts => {
+        // Step 3: Find the blog post with the matching slug
+        const post = posts.find(p => p.slug === slug);
+        if (post) {
+          // Step 4: Show the blog content
+          document.getElementById("post-content").innerHTML = `
+            <h1>${post.title}</h1>
+            <p class="post-date">${post.date}</p>
+            <img src="${post.image}" alt="${post.title}">
+            <div>${post.content}</div>
+          `;
+        } else {
+          // If no blog post is found
+          document.getElementById("post-content").innerHTML = "<p>Blog not found.</p>";
+        }
+      })
+      .catch(error => {
+        console.error("Error loading blog post:", error);
+        document.getElementById("post-content").innerHTML = "<p>There was an error loading the blog post.</p>";
+      });
   </script>
-
 </body>
 </html>
