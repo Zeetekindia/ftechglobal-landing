@@ -90,29 +90,28 @@
             transition: background-color 0.3s ease;
         }
         nav.main-nav:hover { background-color: #2c3e50; }
-        nav.main-nav div { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
-        nav.main-nav div a.button-link {
+        .main-nav-links { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+        .main-nav-links a.button-link {
             padding: 8px 12px; background-color: #00e676; color: #1a2a4b; border-radius: 10px;
             text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
             margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
             align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
         }
-        nav.main-nav div a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
+        .main-nav-links a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
 
-
+        .hamburger-menu {
+            display: none; /* Hidden on desktop */
+            background: none;
+            border: none;
+            color: #00e676;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1002; /* Above everything */
+        }
+        
         .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
         
-        /* UPDATED H1 STYLING with new Luminous Green color */
-        h1 { 
-            font-size: 3.2rem; 
-            color: #76FF03; /* Luminous Green color */
-            margin-top: 15px; 
-            margin-bottom: 10px; 
-            font-weight: 700; 
-            text-shadow: 0 0 15px rgba(118, 255, 3, 0.6); /* Luminous Green glow */
-        }
-        /* END OF UPDATED H1 STYLING */
-
+        h1 { font-size: 3.2rem; color: #76FF03; margin-top: 15px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 0 15px rgba(118, 255, 3, 0.6); }
         .main-content > p:first-of-type { font-size: 1.3rem; color: #e2e8f0; margin-top: 5px; margin-bottom: 35px; font-style: italic; }
         
         p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; } 
@@ -271,68 +270,101 @@
         
 
         /* --- Media Queries for responsiveness --- */
-        @media (max-width: 1200px) { 
-            body { padding-top: 200px; } 
-            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
-            nav.main-nav { 
-                top: 170px; 
-                position: fixed; left: 0; width: 100%; flex-direction: column; 
-                justify-content: center; align-items: center; padding: 10px; 
-                box-shadow: none; border-radius: 0; background-color: #2c3e50; 
-            }
-            nav.main-nav div { flex-direction: column; width: 100%; justify-content: center; }
-            nav.main-nav div a.button-link { margin: 5px 0; padding: 10px 15px; width: calc(100% - 30px); box-sizing: border-box; font-size: 0.95em; gap: 8px; }
+        @media (max-width: 1200px) { /* Tablet view */
+            body { padding-top: 175px; } 
             
+            .fixed-main-logo { 
+                top: 50px; 
+                width: 120px; 
+                height: 120px; 
+                left: 50%; 
+                transform: translateX(-50%); 
+            }
+            
+            /* --- Mobile Navigation Adjustments --- */
+            .hamburger-menu {
+                display: block;
+                position: fixed;
+                top: 50px;
+                right: 20px;
+                z-index: 1003; /* Above everything */
+            }
+
+            nav.main-nav {
+                /* Hide the desktop nav bar container on mobile */
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+                width: auto;
+                height: auto;
+                position: static; /* Let it not be fixed anymore */
+            }
+
+            .main-nav-links {
+                display: none; /* Hide link container by default */
+                position: fixed;
+                top: 0;
+                left: -100%; /* Start off-screen */
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #1a2a4b;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+                transition: left 0.3s ease-in-out;
+                z-index: 1002;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .main-nav-links.active {
+                display: flex;
+                left: 0; /* Slide in */
+            }
+
+            .main-nav-links a.button-link { 
+                margin: 10px 0; 
+                padding: 15px; 
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+                font-size: 1.1em;
+            }
+            /* --- End Mobile Navigation Adjustments --- */
+
             .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
             .homepage-services-image { max-width: 70%; margin: 30px auto; } 
             .services { margin-top: 30px; }
             .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
             
-            .top-contact-bar { 
-                flex-direction: column; 
-                height: auto; 
-                padding: 5px 10px; 
-            }
-            .top-bar-links { 
-                order: 2; 
-                margin-bottom: 0; 
-                margin-top: 5px; 
-                text-align: center; 
-                width: 100%; 
-                flex-grow: 0; 
-            }
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
             .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
-            .top-bar-contact { 
-                order: 1; 
-                text-align: center; 
-                width: 100%; 
-                margin-left: 0; 
-                margin-bottom: 5px; 
-            }
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
 
             .testimonials-section { margin-top: 30px; margin-bottom: 30px; }
             .testimonials-section h2 {font-size: 2rem;}
             .testimonial-card {min-width: 280px; max-width: 320px;}
         }
 
-        @media (max-width: 768px) { 
-            body { padding-top: 220px; } 
-            .top-contact-bar { 
-                font-size: 0.8em; 
-            }
-            .top-bar-links a { margin: 0 5px; font-size: 0.8em;}
+        @media (max-width: 768px) { /* Mobile view */
+            body { padding-top: 140px; } 
+            .top-contact-bar { font-size: 0.8em; }
 
             .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
-            nav.main-nav { top: 135px; padding: 8px 10px; } 
-            nav.main-nav div a.button-link { font-size: 0.8em; padding: 8px 12px; }
+            
+            .hamburger-menu {
+                top: 55px;
+                right: 15px;
+                font-size: 1.3rem;
+            }
+
             .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
             .homepage-services-image { max-width: 90%; margin: 20px auto 30px auto; } 
             
-            h1 { /* H1 on mobile */
-                font-size: 2.2rem; /* Original mobile size, new color will apply */
-                margin-top: 10px; 
-                margin-bottom: 5px; 
-            } 
+            h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; } 
             
             .main-content > p { font-size: 1rem; } 
             .main-content > p:first-of-type { font-size: 1.1rem; margin-bottom: 25px; } 
@@ -378,7 +410,11 @@
     </a>
 
     <nav class="main-nav"> 
-        <div>
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="main-nav-links" id="main-nav-links">
             <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
             <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
             <a href="irctc-agent-services.html" class="button-link">
@@ -389,7 +425,6 @@
             <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
         </div>
     </nav>
-
     <div class="main-content">
         <h1>🚀 Ftech Global Solutions: Premier IT & Digital Marketing Services</h1>
         <p>Empowering Business Growth Worldwide with Next-Gen Technology & Expert Digital Strategies</p>
@@ -472,6 +507,7 @@
                 <li><a href="term-and-condition.html">Term & Condition</a></li> 
             </ul>
         </nav>
+
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
         
         <div style="text-align:center; margin-top: 20px;"> 
@@ -483,6 +519,17 @@
             </a>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mainNavLinks = document.getElementById('main-nav-links');
 
+            if (hamburgerMenu && mainNavLinks) {
+                hamburgerMenu.addEventListener('click', function () {
+                    mainNavLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
