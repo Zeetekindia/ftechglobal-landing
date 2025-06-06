@@ -100,13 +100,13 @@
         .main-nav-links a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
 
         .hamburger-menu {
-            display: none; /* Hidden on desktop */
+            display: none; 
             background: none;
             border: none;
             color: #00e676;
             font-size: 2rem;
             cursor: pointer;
-            z-index: 1002; /* Above everything */
+            z-index: 1002; 
         }
         
         .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
@@ -267,8 +267,13 @@
             color: #00e676; 
             text-decoration: underline;
         }
-        
 
+        .crafted-by { /* NEW CSS for crafted by line */
+            font-size: 0.9em;
+            color: #a0a0a0;
+            margin: 20px 0 15px 0; /* Adjusted margins */
+        }
+        
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) { /* Tablet view */
             body { padding-top: 175px; } 
@@ -281,30 +286,28 @@
                 transform: translateX(-50%); 
             }
             
-            /* --- Mobile Navigation Adjustments --- */
             .hamburger-menu {
                 display: block;
                 position: fixed;
                 top: 50px;
                 right: 20px;
-                z-index: 1003; /* Above everything */
+                z-index: 1003; 
             }
 
             nav.main-nav {
-                /* Hide the desktop nav bar container on mobile */
                 background-color: transparent;
                 box-shadow: none;
                 padding: 0;
                 width: auto;
                 height: auto;
-                position: static; /* Let it not be fixed anymore */
+                position: static; 
             }
 
             .main-nav-links {
-                display: none; /* Hide link container by default */
+                display: none; 
                 position: fixed;
                 top: 0;
-                left: -100%; /* Start off-screen */
+                left: -100%; 
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
@@ -318,21 +321,19 @@
                 padding: 20px;
                 box-sizing: border-box;
             }
-
             .main-nav-links.active {
                 display: flex;
-                left: 0; /* Slide in */
+                left: 0; 
             }
 
-            .main-nav-links a.button-link { 
-                margin: 10px 0; 
+            nav.main-nav div a.button-link { 
+                margin: 10px auto; 
                 padding: 15px; 
                 width: 90%;
                 text-align: center;
                 justify-content: center;
                 font-size: 1.1em;
             }
-            /* --- End Mobile Navigation Adjustments --- */
 
             .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
             .homepage-services-image { max-width: 70%; margin: 30px auto; } 
@@ -350,20 +351,33 @@
         }
 
         @media (max-width: 768px) { /* Mobile view */
-            body { padding-top: 140px; } 
-            .top-contact-bar { font-size: 0.8em; }
+            /* UPDATED: Increased padding-top to prevent overlap */
+            body { 
+                padding-top: 150px; 
+            } 
+            .top-contact-bar { 
+                font-size: 0.8em; 
+                /* Height will be auto as it's stacked */
+            }
 
-            .fixed-main-logo { top: 45px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
+            .fixed-main-logo { 
+                top: 55px; /* Position it below the top bar */
+                width: 80px; 
+                height: 80px; 
+                left: 50%; 
+                transform: translateX(-50%); 
+            }
             
             .hamburger-menu {
-                top: 55px;
+                top: 60px; /* Aligned better with logo */
                 right: 15px;
                 font-size: 1.3rem;
             }
 
-            .main-content { padding: 15px 10px 20px 10px; max-width: 95%; }
-            .homepage-services-image { max-width: 90%; margin: 20px auto 30px auto; } 
-            
+            .main-content {
+                margin-top: 15px; /* Add space between logo and content */
+            }
+
             h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; } 
             
             .main-content > p { font-size: 1rem; } 
@@ -413,7 +427,6 @@
         <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
         </button>
-
         <div class="main-nav-links" id="main-nav-links">
             <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
             <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
@@ -507,6 +520,8 @@
                 <li><a href="term-and-condition.html">Term & Condition</a></li> 
             </ul>
         </nav>
+        
+        <p class="crafted-by">Crafted in India ❤️</p>
 
         &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
         
@@ -531,5 +546,6 @@
             }
         });
     </script>
+
 </body>
 </html>
