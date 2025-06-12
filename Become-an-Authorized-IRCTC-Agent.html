@@ -1,1 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become an Authorized IRCTC Agent – Your Gateway to Unlimited Travel Bookings</title>
+    <meta name="description" content="Unlock your earning potential by becoming a certified IRCTC agent. Learn about unlimited bookings, high commissions, low investment, and advanced technology for seamless travel services.">
+    <meta name="keywords" content="IRCTC agent registration, become IRCTC agent, IRCTC authorized agent, IRCTC agent login, unlimited e-ticket booking, IRCTC agent commission, low investment travel business, online travel agent, train ticket booking, travel agency, IRCTC agent benefits, Tatkal booking, B2B IRCTC, travel business opportunity">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap');
 
+        :root {
+            --primary-color: #FF6B6B; /* Vibrant Red */
+            --secondary-color: #4ECDC4; /* Teal */
+            --accent-color: #45B7D1; /* Sky Blue */
+            --dark-bg: #2C3E50; /* Dark Blue-Gray */
+            --light-bg: #ECF0F1; /* Light Gray */
+            --text-color: #34495E; /* Dark Grayish Blue */
+            --white: #FFFFFF;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+      .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--dark-bg);
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav.logo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 70%);
+            transform: rotate(45deg);
+            animation: backgroundAnimation 20s infinite linear;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { transform: rotate(0deg) scale(1); opacity: 0.5; }
+            50% { transform: rotate(180deg) scale(1.1); opacity: 0.7; }
+            100% { transform: rotate(360deg) scale(1); opacity: 0.5; }
+        }
+
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px var(--shadow-dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 60px 20px;
+            margin-bottom: 30px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            color: var(--accent-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            background-color: var(--light-bg);
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 5px;
+            font-size: 1.05em;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+
+        ul li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+      .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+      .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+      .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+      .grid-item {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow-light);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+      .grid-item:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px var(--shadow-dark);
+        }
+
+      .grid-item h4 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+      .grid-item:hover h4 {
+            color: var(--white);
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+          .cta-button {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+          .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">YourCompany</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#why-choose">IRCTC Agent</a></li>
+            <li><a href="mobile-recharge-software.html">Mobile Recharge</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Unlock Your Earning Potential: Become a Certified IRCTC Agent Today!</h1>
+            <p>Are you looking for a flexible and rewarding business opportunity in the booming travel sector? Become an authorized IRCTC agent and leverage the power of India's largest railway network.</p>
+            <a href="#registration-process" class="cta-button">Start Your Journey Now!</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="why-choose">
+            <h2>Why Choose to Be an IRCTC Agent?</h2>
+            <p>Becoming an IRCTC agent opens doors to a world of opportunities and significant benefits:</p>
+            <ul>
+                <li><strong>Unlimited Booking Capacity:</strong> Book an unlimited number of e-tickets, including General, Tatkal, Waiting List (WL), and RAC tickets, without restrictions. This means limitless business potential.</li>
+                <li><strong>Lucrative Commission Structure:</strong> Earn high commissions on every ticket booking (₹20 for non-AC, ₹40 for AC per PNR), with potential monthly earnings exceeding ₹85,000+.</li>
+                <li><strong>Low Capital Investment:</strong> Starting your IRCTC agent business requires minimal initial investment, often just a one-time application fee. No hidden charges or monthly fees.</li>
+                <li><strong>Diverse Service Portfolio:</strong> Expand your offerings beyond train tickets to include flights, buses, hotels, tour packages, mobile & DTH recharges, money transfers, and insurance.</li>
+                <li><strong>Flexibility & Convenience:</strong> Work at your own pace and schedule. With OTP-based login, book tickets from any device – mobile, laptop, or desktop.</li>
+                <li><strong>Official Recognition & Trust:</strong> Issue authorized tickets with your agency details printed on them, building trust and credibility. No separate trade license required for railway agency services.</li>
+            </ul>
+        </section>
+
+        <section id="registration-process">
+            <h2>How to Become an IRCTC Agent: A Simple Process</h2>
+            <p>The path to becoming an authorized IRCTC agent is straightforward and designed for ease:</p>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h4>1. Fill Online Registration Form</h4>
+                    <p>Complete the comprehensive IRCTC agent registration form online.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>2. Pay Charges</h4>
+                    <p>Submit the required registration fees securely online.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>3. Upload Documents</h4>
+                    <p>Provide necessary documents like PAN Card, Aadhaar Card (with updated mobile number and email ID), office address proof, and residential address proof. Ensure PAN/Aadhaar are not linked to personal IRCTC IDs.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>4. Document Verification</h4>
+                    <p>Your submitted documents will undergo verification by IRCTC.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>5. Receive ID & Pass</h4>
+                    <p>Upon successful verification, you will receive your unique IRCTC agent ID and password.</p>
+                <div class="grid-item">
+                    <h4>6. Successful Login & Activation</h4>
+                    <p>Your OTP-based login account can be activated the same day, allowing you to start booking tickets swiftly.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px;">We provide comprehensive online training and dedicated customer support via WhatsApp, call, and email to guide you through every step.</p>
+        </section>
+
+        <section id="advanced-technology">
+            <h2>Advanced Technology & Features for Seamless Operations</h2>
+            <p>Our platform is built with cutting-edge technology to ensure a smooth and efficient booking experience:</p>
+            <ul>
+                <li><strong>Dedicated Agent Portal:</strong> Gain special access to a user-friendly, dedicated portal designed for efficient ticket booking and management.</li>
+                <li><strong>B2B & ICS Login Options:</strong> Utilize different login types, including B2B (for Principal Service Provider portals) and ICS (for direct IRCTC portal access), offering operational flexibility.</li>
+                <li><strong>Real-time Wallet Deductions:</strong> Ticket fares are swiftly deducted from your wallet, ensuring faster ticket creation and instant booking confirmations.</li>
+                <li><strong>Digital Certificate Validity:</strong> Your digital certificate, essential for secure transactions, is typically valid for two years and renewable annually.</li>
+                <li><strong>Automated Processes:</strong> Benefit from automated systems that streamline booking, cancellation, and refund processes, enhancing efficiency.</li>
+                <li><strong>Robust Security:</strong> Our platform ensures secure transactions with features like OTP-based logins and adherence to industry-standard security protocols.</li>
+            </ul>
+        </section>
+
+        <section id="our-commitment">
+            <h2>Our Commitment to Your Success (SEO & Visibility)</h2>
+            <p>We understand that your success hinges on visibility. Our website is meticulously optimized to ensure you find us easily and get all the information you need:</p>
+            <ul>
+                <li><strong>Comprehensive Keyword Strategy:</strong> We target a wide range of keywords, from "IRCTC agent registration" and "how to become IRCTC agent online" to "IRCTC agent commission" and "benefits of IRCTC agent," ensuring that individuals searching for these opportunities find our platform.</li>
+                <li><strong>Rich & Authoritative Content:</strong> Our content provides in-depth answers to all your questions, covering eligibility, required documents, fees, benefits, and operational details. We regularly update our information to ensure accuracy and relevance.</li>
+                <li><strong>User-Friendly Experience (UX):</strong> Our website is designed for intuitive navigation, fast loading times, and mobile-friendliness, ensuring a seamless experience whether you're on a desktop or a smartphone. Clear Calls to Action (CTAs) guide you effortlessly through the registration process.</li>
+                <li><strong>Technical SEO Excellence:</strong> We employ robust technical SEO practices, including page speed optimization, responsive web design, and structured data markup (schema) for enhanced search engine visibility. Our site architecture is clean, with strategic internal linking to help you find related information easily.</li>
+                <li><strong>Trust & Credibility:</strong> We emphasize transparency and display clear contact information and verification details, building trust and demonstrating our authority in the IRCTC agent services domain.</li>
+            </ul>
+        </section>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="#registration-process" class="cta-button">Ready to Start Your Journey? Register Now!</a>
+        </div>
+    </main>
+
+    <footer id="contact-us">
+        <div class="container">
+            <p>&copy; 2025 Your Company Name. All rights reserved. | Empowering Digital Solutions for a Connected World.</p>
+        </div>
+    </footer>
+</body>
+</html>
