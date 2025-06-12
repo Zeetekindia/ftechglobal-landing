@@ -6,28 +6,52 @@
     <title>Cutting-Edge Mobile Recharge Software Development – Powering Your Digital Payment Business</title>
     <meta name="description" content="Develop advanced mobile recharge software with multi-service integration, robust features, and cutting-edge technology. Power your digital payment business with our scalable and secure solutions.">
     <meta name="keywords" content="mobile recharge software development, multi-recharge software, online recharge portal, B2B mobile recharge software, B2C mobile recharge software, white label recharge software, mobile recharge API integration, digital payment platform, fintech solution, DTH recharge software, utility bill payment software, secure payment gateway, scalable software, Node.js, React Native, MongoDB, API integration, payment business">
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="vjmityY08RMPolLNj6X3Fg" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MM99EXSN"></script>
+    <script>
+      window.dataLayer = window.dataLayer ||;
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y0MM99EXSN');
+    </script>
+    <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap');
 
         :root {
+            /* Original content colors */
             --primary-color: #00BFFF; /* Deep Sky Blue */
             --secondary-color: #FFD700; /* Gold */
             --accent-color: #32CD32; /* Lime Green */
-            --dark-bg: #1A2B3C; /* Dark Blue-Gray */
-            --light-bg: #F8F9FA; /* Off-White */
-            --text-color: #333333; /* Dark Gray */
+            --light-bg-content: #F8F9FA; /* Off-White for content sections */
+            --text-color-content: #333333; /* Dark Gray for content text */
             --white: #FFFFFF;
             --shadow-light: rgba(0, 0, 0, 0.1);
             --shadow-dark: rgba(0, 0, 0, 0.25);
+
+            /* Ftech Global theme colors */
+            --ftech-dark-blue-bg: #1B2C40;
+            --ftech-darker-blue-bg: #101827;
+            --ftech-light-text: #f1f5f9;
+            --ftech-light-gray-text: #cbd5e1;
+            --ftech-green-accent: #00e676;
+            --ftech-blue-accent: #38bdf8;
+            --ftech-gold-accent: #FFC107;
+            --ftech-dark-nav-bg: #1a2a4b;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            font-family: 'Segoe UI', sans-serif; /* Ftech Global font */
             line-height: 1.6;
+            background: linear-gradient(135deg, var(--ftech-dark-blue-bg) 0%, var(--ftech-darker-blue-bg) 100%); /* Ftech Global background */
+            color: var(--ftech-light-text); /* Ftech Global text color */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 130px; /* Space for fixed header elements */
             overflow-x: hidden;
         }
 
@@ -37,6 +61,108 @@
             padding: 20px;
         }
 
+        /* Top Contact Bar (from ftechglobal.com) */
+       .top-contact-bar {
+            background: var(--ftech-dark-nav-bg);
+            color: var(--white);
+            padding: 8px 20px;
+            font-size: 0.9em;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+        }
+       .top-bar-links {
+            flex-grow: 1;
+            text-align: center;
+        }
+       .top-bar-links a {
+            color: var(--ftech-light-gray-text);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+       .top-bar-links a:hover {
+            color: var(--ftech-green-accent);
+        }
+       .top-bar-contact {
+            font-weight: bold;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+       .top-bar-contact a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Fixed Main Logo (from ftechglobal.com) */
+       .fixed-main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--ftech-blue-accent);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            position: fixed;
+            top: 40px;
+            left: 20px;
+            z-index: 999;
+        }
+
+        /* Main Navigation (from ftechglobal.com) */
+        nav.main-nav {
+            background-color: var(--ftech-dark-nav-bg);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: calc(100% - 160px);
+            position: fixed;
+            top: 65px;
+            left: 140px;
+            box-sizing: border-box;
+            z-index: 998;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        nav.main-nav:hover { background-color: #2c3e50; }
+       .main-nav-links { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+       .main-nav-links a.button-link {
+            padding: 8px 12px; background-color: var(--ftech-green-accent); color: var(--ftech-dark-nav-bg); border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
+            align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
+        }
+       .main-nav-links a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
+
+       .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ftech-green-accent);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        /* Main Content Wrapper (from ftechglobal.com, adjusted) */
+       .main-content-wrapper {
+            padding: 15px 20px 40px 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            flex-grow: 1;
+            box-sizing: border-box;
+            text-align: left; /* Override body center alignment for content */
+        }
+
+        /* My original header styling, adjusted for new background */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: var(--white);
@@ -45,6 +171,8 @@
             box-shadow: 0 6px 20px var(--shadow-dark);
             position: relative;
             overflow: hidden;
+            border-radius: 12px; /* Added for consistency with sections */
+            margin-top: 30px; /* Space below fixed header */
         }
 
         header::before {
@@ -82,13 +210,16 @@
             z-index: 1;
         }
 
+        /* My original section styling */
         section {
             padding: 70px 20px;
             margin-bottom: 40px;
-            background-color: var(--white);
+            background-color: var(--white); /* Explicitly white background */
+            color: var(--text-color-content); /* Explicitly dark text color */
             border-radius: 12px;
             box-shadow: 0 4px 15px var(--shadow-light);
             transition: transform 0.4s ease-in-out;
+            text-align: left; /* Ensure text aligns left within sections */
         }
 
         section:hover {
@@ -125,6 +256,7 @@
         p {
             margin-bottom: 18px;
             font-size: 1.15em;
+            color: var(--text-color-content); /* Ensure paragraph text is dark */
         }
 
         ul {
@@ -134,7 +266,7 @@
         }
 
         ul li {
-            background-color: var(--light-bg);
+            background-color: var(--light-bg-content);
             margin-bottom: 12px;
             padding: 18px 25px;
             border-left: 6px solid var(--secondary-color);
@@ -143,6 +275,7 @@
             display: flex;
             align-items: flex-start;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            color: var(--text-color-content); /* Ensure list item text is dark */
         }
 
         ul li::before {
@@ -182,13 +315,14 @@
         }
 
        .grid-item {
-            background-color: var(--light-bg);
+            background-color: var(--light-bg-content);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 3px 12px var(--shadow-light);
             text-align: center;
             transition: all 0.4s ease;
             border-top: 5px solid var(--primary-color);
+            color: var(--text-color-content); /* Ensure grid item text is dark */
         }
 
        .grid-item:hover {
@@ -213,139 +347,354 @@
             font-size: 1em;
         }
 
+        /* Footer (from ftechglobal.com) */
         footer {
-            background-color: var(--dark-bg);
-            color: var(--white);
+            background-color: var(--ftech-dark-nav-bg);
+            color: #a0a0a0; /* Ftech Global footer text color */
             text-align: center;
-            padding: 50px 20px;
-            margin-top: 60px;
-            font-size: 0.95em;
+            padding: 20px;
+            font-size: 0.85em;
+            border-top: 1px solid #334a70;
+            margin-top: auto;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+       .social-media-icons { margin-bottom: 20px; text-align: center; }
+       .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px;
+            background-color: #4CAF50; color: #ffffff; margin: 0 6px;
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+       .social-media-icons a i { vertical-align: middle;}
+       .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
+
+        nav.footer-nav {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+        }
+        nav.footer-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav.footer-nav li {
+            margin: 5px 12px;
+        }
+        nav.footer-nav a {
+            color: var(--ftech-light-gray-text);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+        nav.footer-nav a:hover {
+            color: var(--ftech-green-accent);
+            text-decoration: underline;
         }
 
-        /* Responsive Design */
+       .crafted-by { /* NEW CSS for crafted by line */
+            font-size: 0.9em;
+            color: #a0a0a0;
+            margin: 20px 0 15px 0;
+        }
+
+        /* Responsive Design (adjusted for new header/footer) */
+        @media (max-width: 1200px) {
+            body { padding-top: 175px; }
+
+           .fixed-main-logo {
+                top: 50px;
+                width: 120px;
+                height: 120px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+           .hamburger-menu {
+                display: block;
+                position: fixed;
+                top: 50px;
+                right: 20px;
+                z-index: 1003;
+            }
+
+            nav.main-nav {
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+                width: auto;
+                height: auto;
+                position: static;
+            }
+
+           .main-nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--ftech-dark-nav-bg);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+                transition: left 0.3s ease-in-out;
+                z-index: 1002;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+           .main-nav-links.active {
+                display: flex;
+                left: 0;
+            }
+
+            nav.main-nav div a.button-link {
+                margin: 10px auto;
+                padding: 15px;
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+                font-size: 1.1em;
+            }
+
+           .main-content-wrapper { padding: 15px 10px 40px 10px; max-width: 90%; }
+           .homepage-services-image { max-width: 70%; margin: 30px auto; }
+           .services { margin-top: 30px; }
+           .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+           .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+           .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
+           .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+           .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+
+            section { padding: 40px 20px; }
+            h2 { font-size: 2em; }
+            h3 { font-size: 1.5em; }
+            p { font-size: 1em; }
+            ul li { font-size: 1em; padding: 12px 15px; }
+           .cta-button { font-size: 1em; padding: 12px 25px; }
+           .grid-container { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.8em;
+            body { padding-top: 150px; }
+           .top-contact-bar { font-size: 0.8em; }
+
+           .fixed-main-logo {
+                top: 55px;
+                width: 80px;
+                height: 80px;
+                left: 50%;
+                transform: translateX(-50%);
             }
-            header p {
-                font-size: 1.1em;
+
+           .hamburger-menu {
+                top: 60px;
+                right: 15px;
+                font-size: 1.3rem;
             }
-            h2 {
-                font-size: 2.2em;
-            }
-            h3 {
-                font-size: 1.7em;
-            }
-           .cta-button {
-                font-size: 1.1em;
-                padding: 15px 30px;
-            }
-           .grid-container {
-                grid-template-columns: 1fr;
-            }
+
+           .main-content-wrapper { margin-top: 15px; }
+
+            header h1 { font-size: 2.2em; margin-top: 10px; margin-bottom: 5px; }
+            header p { font-size: 1.1em; }
+
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.3em; }
+            p { font-size: 0.95em; }
+            ul li { font-size: 0.95em; }
+           .cta-button { font-size: 0.9em; padding: 10px 20px; }
+           .grid-item h4 { font-size: 1.2em; }
+           .grid-item p { font-size: 0.9em; }
+
+           .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+
+            nav.footer-nav ul { flex-direction: column; }
+            nav.footer-nav li { margin: 8px 0; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Build Your Digital Empire: Advanced Mobile Recharge Software Solutions</h1>
-            <p>We specialize in developing state-of-the-art multi-recharge software solutions that empower businesses, retailers, and entrepreneurs to offer seamless digital payment services.</p>
-            <a href="#contact-us" class="cta-button">Get a Free Consultation</a>
+
+    <div class="top-contact-bar">
+        <div class="top-bar-links">
+            <a href="#">Our Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Blog</a>
         </div>
-    </header>
+        <div class="top-bar-contact">
+            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        </div>
+    </div>
+    <a href="index.html">
+      <img src="ftechglobal_logo_half_size.jpeg" alt="Your Company Logo" class="fixed-main-logo" />
+    </a>
 
-    <main class="container">
-        <section id="why-invest">
-            <h2>Why Invest in Our Mobile Recharge Software?</h2>
-            <p>Our mobile recharge software is designed to be a comprehensive digital payment platform, offering unparalleled advantages:</p>
-            <ul>
-                <li><strong>High Demand & Business Growth:</strong> Mobile recharges and bill payments are daily necessities, ensuring constant demand and immense potential for business growth.</li>
-                <li><strong>Multi-Service Integration:</strong> Go beyond mobile! Our software supports DTH, data card, and utility bill payments (electricity, gas, landline), making it a one-stop solution.</li>
-                <li><strong>Multiple Revenue Streams:</strong> Earn lucrative commissions on every transaction. Our customizable commission settings allow you to define and manage earnings across your network.</li>
-                <li><strong>Scalability & Cost-Effectiveness:</strong> Built for growth, our solutions handle increasing user loads and transactions efficiently, ensuring your business can expand without compromise.</li>
-                <li><strong>Financial Inclusion:</strong> Empower rural shopkeepers and underserved communities by enabling them to act as digital service providers, bridging the digital payment gap.</li>
-                <li><strong>Streamlined Operations & Customer Convenience:</strong> Automate processes, ensure real-time transaction processing, and provide instant refunds for failed recharges, leading to high customer satisfaction.</li>
-            </ul>
-        </section>
+    <nav class="main-nav">
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-nav-links" id="main-nav-links">
+            <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
+            <a href="irctc-agent-services.html" class="button-link">
+                <i class="fas fa-train"></i> Become IRCTC Agent
+            </a>
+            <a href="digital-marketing-services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
+            <a href="startup-consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
+        </div>
+    </nav>
 
-        <section id="key-features">
-            <h2>Key Features of Our Advanced Mobile Recharge Software</h2>
-            <p>Our software is packed with powerful features designed for maximum efficiency and user satisfaction:</p>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h4>User-Friendly Admin & Member Panels</h4>
-                    <p>Intuitive dashboards for administrators, distributors, retailers, and customers, ensuring ease of use and full control.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Customizable Commission Settings</h4>
-                    <p>Full authority for the admin to define and change commission structures for all channel members.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Multi-API Switching</h4>
-                    <p>Seamless integration with multiple telecom, BBPS, and payment gateway APIs, allowing for operator-wise switching for optimal service.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Instant Fund Reversal</h4>
-                    <p>Immediate refunds for failed recharges, enhancing user trust and experience.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Comprehensive Wallet Management</h4>
-                    <p>Detailed recharge and wallet transaction history, along with secure wallet transfer facilities for all users.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Advanced Reporting & Analytics</h4>
-                    <p>Instant search results, proper reporting modules, and daily/monthly earning calculations with export options.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Offline SMS Functionality</h4>
-                    <p>Enable recharges, balance inquiries, and other actions via SMS, catering to areas with limited internet connectivity.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>White-Label & Customization</h4>
-                    <p>Fully customizable white-label solutions, allowing you to brand the software as your own and tailor features to specific needs.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>Mobile App Integration</h4>
-                    <p>A fully functional Android mobile app included, allowing users to manage all work on the go and hosted on your Play Store account.</p>
-                </div>
+    <div class="main-content-wrapper">
+        <header>
+            <div class="container">
+                <h1>Build Your Digital Empire: Advanced Mobile Recharge Software Solutions</h1>
+                <p>We specialize in developing state-of-the-art multi-recharge software solutions that empower businesses, retailers, and entrepreneurs to offer seamless digital payment services.</p>
+                <a href="#contact-us" class="cta-button">Get a Free Consultation</a>
             </div>
-        </section>
+        </header>
 
-        <section id="tech-stack">
-            <h2>Our Advanced Technology Stack</h2>
-            <p>We leverage cutting-edge technologies to build robust, scalable, and secure mobile recharge software:</p>
-            <ul>
-                <li><strong>Front-End:</strong> Utilizing modern frameworks like <strong>React Native, Flutter, or Ionic</strong> for cross-platform mobile app development, ensuring a seamless user experience.</li>
-                <li><strong>Back-End:</strong> Employing scalable and efficient technologies such as <strong>Node.js, Python (with Django or Flask), or Ruby on Rails</strong> for robust server-side logic and API management.</li>
-                <li><strong>Databases:</strong> Implementing reliable database systems like <strong>MongoDB, MySQL, or PostgreSQL</strong> for efficient data storage and retrieval.</li>
-                <li><strong>API Integration:</strong> Expertise in integrating various APIs, including Telecom APIs, BBPS APIs, and Payment Gateway APIs, for automated and smooth transactions.</li>
-                <li><strong>Security Protocols:</strong> Implementing robust security measures like <strong>SSL/TLS encryption, Multi-Factor Authentication (MFA)</strong>, and regular security audits to ensure data privacy and secure transactions.</li>
-                <li><strong>Scalability & Maintainability:</strong> Our modular design ensures the software can handle increasing user loads and transactions, while clean, organized code makes future updates and maintenance simple.</li>
-            </ul>
-        </section>
+        <main class="container">
+            <section id="why-invest">
+                <h2>Why Invest in Our Mobile Recharge Software?</h2>
+                <p>Our mobile recharge software is designed to be a comprehensive digital payment platform, offering unparalleled advantages:</p>
+                <ul>
+                    <li><strong>High Demand & Business Growth:</strong> Mobile recharges and bill payments are daily necessities, ensuring constant demand and immense potential for business growth.</li>
+                    <li><strong>Multi-Service Integration:</strong> Go beyond mobile! Our software supports DTH, data card, and utility bill payments (electricity, gas, landline), making it a one-stop solution.</li>
+                    <li><strong>Multiple Revenue Streams:</strong> Earn lucrative commissions on every transaction. Our customizable commission settings allow you to define and manage earnings across your network.</li>
+                    <li><strong>Scalability & Cost-Effectiveness:</strong> Built for growth, our solutions handle increasing user loads and transactions efficiently, ensuring your business can expand without compromise.</li>
+                    <li><strong>Financial Inclusion:</strong> Empower rural shopkeepers and underserved communities by enabling them to act as digital service providers, bridging the digital payment gap.</li>
+                    <li><strong>Streamlined Operations & Customer Convenience:</strong> Automate processes, ensure real-time transaction processing, and provide instant refunds for failed recharges, leading to high customer satisfaction.</li>
+                </ul>
+            </section>
 
-        <section id="market-leadership">
-            <h2>Achieving Market Leadership (SEO & Visibility)</h2>
-            <p>We ensure our solutions, and your business, stand out in the digital marketplace:</p>
-            <ul>
-                <li><strong>Targeted Keyword Strategy:</strong> We optimize for high-value keywords like "mobile recharge software," "multi-recharge software," "recharge software development," "white label recharge software," and "mobile recharge API integration" to attract businesses and entrepreneurs.</li>
-                <li><strong>In-Depth Content:</strong> Our website provides comprehensive, expert-level content detailing every aspect of mobile recharge software, from its features and benefits to the underlying technology and business models.</li>
-                <li><strong>Technical SEO Excellence:</strong> We prioritize page speed optimization, mobile-first design, and structured data (schema markup) for enhanced visibility in search engine results. Our site architecture is clean, with strategic internal linking to improve crawlability and user experience.</li>
-                <li><strong>User Experience (UX) Focus:</strong> Our design emphasizes quick recharge flows, clear UI/UX, and accessibility. We avoid intrusive pop-ups and focus on intuitive user journeys to ensure high engagement and low bounce rates.</li>
-                <li><strong>Authority & Trust:</strong> We highlight our expertise in fintech solutions and demonstrate our commitment to secure and reliable platforms, building trust with potential clients.</li>
-            </ul>
-        </section>
+            <section id="key-features">
+                <h2>Key Features of Our Advanced Mobile Recharge Software</h2>
+                <p>Our software is packed with powerful features designed for maximum efficiency and user satisfaction:</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h4>User-Friendly Admin & Member Panels</h4>
+                        <p>Intuitive dashboards for administrators, distributors, retailers, and customers, ensuring ease of use and full control.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Customizable Commission Settings</h4>
+                        <p>Full authority for the admin to define and change commission structures for all channel members.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Multi-API Switching</h4>
+                        <p>Seamless integration with multiple telecom, BBPS, and payment gateway APIs, allowing for operator-wise switching for optimal service.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Instant Fund Reversal</h4>
+                        <p>Immediate refunds for failed recharges, enhancing user trust and experience.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Comprehensive Wallet Management</h4>
+                        <p>Detailed recharge and wallet transaction history, along with secure wallet transfer facilities for all users.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Advanced Reporting & Analytics</h4>
+                        <p>Instant search results, proper reporting modules, and daily/monthly earning calculations with export options.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Offline SMS Functionality</h4>
+                        <p>Enable recharges, balance inquiries, and other actions via SMS, catering to areas with limited internet connectivity.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>White-Label & Customization</h4>
+                        <p>Fully customizable white-label solutions, allowing you to brand the software as your own and tailor features to specific needs.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Mobile App Integration</h4>
+                        <p>A fully functional Android mobile app included, allowing users to manage all work on the go and hosted on your Play Store account.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="#contact-us" class="cta-button">Ready to Build Your Recharge Business?</a>
+            <section id="tech-stack">
+                <h2>Our Advanced Technology Stack</h2>
+                <p>We leverage cutting-edge technologies to build robust, scalable, and secure mobile recharge software:</p>
+                <ul>
+                    <li><strong>Front-End:</strong> Utilizing modern frameworks like <strong>React Native, Flutter, or Ionic</strong> for cross-platform mobile app development, ensuring a seamless user experience.</li>
+                    <li><strong>Back-End:</strong> Employing scalable and efficient technologies such as <strong>Node.js, Python (with Django or Flask), or Ruby on Rails</strong> for robust server-side logic and API management.</li>
+                    <li><strong>Databases:</strong> Implementing reliable database systems like <strong>MongoDB, MySQL, or PostgreSQL</strong> for efficient data storage and retrieval.</li>
+                    <li><strong>API Integration:</strong> Expertise in integrating various APIs, including Telecom APIs, BBPS APIs, and Payment Gateway APIs, for automated and smooth transactions.</li>
+                    <li><strong>Security Protocols:</strong> Implementing robust security measures like <strong>SSL/TLS encryption, Multi-Factor Authentication (MFA)</strong>, and regular security audits to ensure data privacy and secure transactions.</li>
+                    <li><strong>Scalability & Maintainability:</strong> Our modular design ensures the software can handle increasing user loads and transactions, while clean, organized code makes future updates and maintenance simple.</li>
+                </ul>
+            </section>
+
+            <section id="market-leadership">
+                <h2>Achieving Market Leadership (SEO & Visibility)</h2>
+                <p>We ensure our solutions, and your business, stand out in the digital marketplace:</p>
+                <ul>
+                    <li><strong>Targeted Keyword Strategy:</strong> We optimize for high-value keywords like "mobile recharge software," "multi-recharge software," "recharge software development," "white label recharge software," and "mobile recharge API integration" to attract businesses and entrepreneurs.</li>
+                    <li><strong>In-Depth Content:</strong> Our website provides comprehensive, expert-level content detailing every aspect of mobile recharge software, from its features and benefits to the underlying technology and business models.</li>
+                    <li><strong>Technical SEO Excellence:</strong> We prioritize page speed optimization, mobile-first design, and structured data (schema markup) for enhanced visibility in search engine results. Our site architecture is clean, with strategic internal linking to improve crawlability and user experience.</li>
+                    <li><strong>User Experience (UX) Focus:</strong> Our design emphasizes quick recharge flows, clear UI/UX, and accessibility. We avoid intrusive pop-ups and focus on intuitive user journeys to ensure high engagement and low bounce rates.</li>
+                    <li><strong>Authority & Trust:</strong> We highlight our expertise in fintech solutions and demonstrate our commitment to secure and reliable platforms, building trust with potential clients.</li>
+                </ul>
+            </section>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#contact-us" class="cta-button">Ready to Build Your Recharge Business?</a>
+            </div>
+        </main>
+    </div>
+
+    <footer id="contact-us">
+        <div class="social-media-icons">
+            <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="YOUR_YOUTUBE_CHANNEL_URL" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Company Name. All rights reserved. | Powering the Future of Digital Payments.</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="term-and-condition.html">Term & Condition</a></li>
+            </ul>
+        </nav>
+
+        <p class="crafted-by">Crafted in India ❤️</p>
+
+        &copy; <script>document.write(new Date().getFullYear())</script> Your Company Name. All rights reserved.
+
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
+                     title="Counter Widget"
+                     alt="Visit counter For Websites"
+                     border="0" />
+            </a>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mainNavLinks = document.getElementById('main-nav-links');
+
+            if (hamburgerMenu && mainNavLinks) {
+                hamburgerMenu.addEventListener('click', function () {
+                    mainNavLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
