@@ -94,10 +94,22 @@
             font-weight: bold;
             margin-left: auto;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between phone and email */
         }
        .top-bar-contact a {
             color: var(--white);
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+       .top-bar-contact a:hover {
+            color: var(--ftech-green-accent);
+        }
+       .top-bar-contact.whatsapp-icon {
+            color: #25D366; /* WhatsApp green */
+            font-size: 1.2em;
+            margin-left: 5px;
         }
 
         /* Fixed Main Logo (from ftechglobal.com) */
@@ -532,6 +544,8 @@
         </div>
         <div class="top-bar-contact">
             Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+            <a href="mailto:info@ftechglobal.com"><strong>info@ftechglobal.com</strong></a>
+            <a href="https://wa.me/918789567363" target="_blank" title="WhatsApp Us"><i class="fab fa-whatsapp whatsapp-icon"></i></a>
         </div>
     </div>
     <a href="index.html">
@@ -663,11 +677,11 @@
         <nav class="footer-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="term-and-condition.html">Term & Condition</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Term & Condition</a></li>
             </ul>
         </nav>
 
