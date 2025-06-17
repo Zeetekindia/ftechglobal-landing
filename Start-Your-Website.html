@@ -1,142 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Website in ₹1999 - FTech Global</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fb;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #0066ff, #00c6ff);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2em;
-      margin: 10px 0 20px;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #fff;
-      color: #0066ff;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    .testimonials, .portfolio {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .testimonial, .portfolio-item {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .offer {
-      background: #fff8e1;
-      border-left: 5px solid #ffa000;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 40px;
-    }
-    .contact {
-      text-align: center;
-      background: #e3f2fd;
-      padding: 30px;
-    }
-    .contact h3 {
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #0066ff;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-    img.button-img {
-      width: 160px;
-      margin: 10px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sirf ₹1999 Me - FTech Global</title>
+    <meta name="description" content="FTech Global offers professional website development starting at just ₹1999. Get your business online in 5 days. Serving Patna, Ranchi, and all of Bihar & Jharkhand.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: #0d2c54;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .hero-section .subtext {
+            font-size: 1.4em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons .btn {
+            text-decoration: none;
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-buttons .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-call {
+            background-color: #FFA500;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card {
+            background: #f9f9f9;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 320px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-card h4 {
+            color: #0056b3;
+            margin-top: 15px;
+        }
+
+        .social-proof {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-proof img {
+            max-width: 250px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 60px 20px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-card h3 {
+            margin: 20px 0 10px;
+        }
+
+        .portfolio-card a {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Offer Section */
+        .offer-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .offer-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .offer-item {
+            background: #e0f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #0d2c54;
+        }
+
+        .offer-box {
+            background: #FFA500;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(255, 165, 0, 0.4);
+        }
+
+        .offer-box p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .offer-box h3 {
+            font-size: 2.8em;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .offer-box .strike {
+            text-decoration: line-through;
+            opacity: 0.8;
+            font-size: 0.6em;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0d2c54;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer h2 {
+            color: #fff;
+            font-size: 2em;
+        }
+
+        .footer p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .footer a {
+            color: #FFA500;
+            text-decoration: none;
+        }
+
+        .footer .copyright {
+            margin-top: 30px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1, .hero-section h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .cta-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 80%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Website Banwaye ₹1999 Se</h1>
-  <p>Static | Dynamic | E-commerce - Sirf 5 Din Me Ready</p>
-  <div class="cta-buttons">
-    <a href="tel:8789567363">📞 Call Now</a>
-    <a href="https://wa.me/918789567363">💬 WhatsApp Now</a>
-  </div>
-</header>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Website Banwaye Sirf ₹1999 Se – 5 Din Me Ready!</h1>
+            <p class="subtext">Static, Dynamic ya E-Commerce – Sab Kuch Milega Ek Jagah.</p>
+            <div class="cta-buttons">
+                <a href="tel:8789567363" class="btn btn-call">📞 Call Now - 8789567363</a>
+                <a href="https://wa.me/918789567363?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20website%20offer." target="_blank" class="btn btn-whatsapp">💬 WhatsApp Now - 8789567363</a>
+            </div>
+        </div>
+    </header>
 
-<section>
-  <h2>✅ ₹1999 Me Kya-Kya Milega?</h2>
-  <div class="offer">
-    <ul>
-      <li>✅ Mobile Friendly Website</li>
-      <li>✅ Hosting + SSL Free</li>
-      <li>✅ Google Me Dikhega</li>
-      <li>✅ Logo + Contact Form</li>
-      <li>✅ Fast Delivery in 5 Days</li>
-    </ul>
-  </div>
-</section>
+    <section class="trust-section">
+        <div class="container">
+            <h2>Hamare Happy Clients Kya Kehte Hain</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <img src="images/client1.jpg" alt="Client Rahul Kumar">
+                    <p>"FTech Global ने मेरी दुकान के लिए बहुत ही शानदार वेबसाइट बनाई है। अब मुझे ऑनलाइन ऑर्डर भी मिलते हैं।"</p>
+                    <h4>- राहुल कुमार, पटना</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/client2.jpg" alt="Client Sneha Singh">
+                    <p>"इनकी सर्विस बहुत तेज़ और प्रोफेशनल है। 5 दिन में वेबसाइट तैयार करके दी। बहुत बहुत धन्यवाद!"</p>
+                    <h4>- स्नेहा सिंह, रांची</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="images/client3.jpg" alt="Another Client">
+                    <p>"Best service in low price. Fully satisfied with their work. Highly recommended for startups."</p>
+                    <h4>- अमन वर्मा, जमशेदपुर</h4>
+                </div>
+            </div>
+             <div class="social-proof">
+                <img src="images/whatsapp-review.jpg" alt="WhatsApp Review Screenshot">
+                <img src="images/facebook-comment.jpg" alt="Facebook Comment Screenshot">
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>🗣 Client Testimonials</h2>
-  <div class="testimonials">
-    <div class="testimonial">"Bahut hi fast aur professional service. Thanks FTech!" – Ravi, Patna</div>
-    <div class="testimonial">"₹1999 me itni service? Mind blowing!" – Pooja, Gaya</div>
-    <div class="testimonial">"Mujhe 3 din me meri website mil gayi!" – Aamir, Ranchi</div>
-    <div class="testimonial">"WhatsApp support se kaam aur easy ho gaya" – Ankit, Munger</div>
-    <div class="testimonial">"Maine pehle socha scam hoga, but bilkul genuine team!" – Suman, Bhagalpur</div>
-  </div>
-</section>
+    <section class="portfolio-section">
+        <div class="container">
+            <h2>Hamare Kaam Ki Jhalkiyan</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="images/portfolio1.jpg" alt="Portfolio Website 1">
+                    <h3>Sharma Electronics</h3>
+                    <a href="#" target="_blank">Live Dekhein →</a>
+                </div>
+                <div class="portfolio-card">
+                    <img src="images/portfolio2.jpg" alt="Portfolio Website 2">
+                    <h3>Gupta Kirana Store</h3>
+                    <a href="#" target="_blank">Live Dekhein →</a>
+                </div>
+                <div class="portfolio-card">
+                    <img src="images/portfolio3.jpg" alt="Portfolio Website 3">
+                    <h3>Patna Legal Services</h3>
+                    <a href="#" target="_blank">Live Dekhein →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>🌐 Portfolio (Live Websites)</h2>
-  <div class="portfolio">
-    <div class="portfolio-item">www.flyraja.in</div>
-    <div class="portfolio-item">www.bihartourismguide.com</div>
-    <div class="portfolio-item">www.startupbazaar.in</div>
-    <div class="portfolio-item">www.apnapatna.com</div>
-    <div class="portfolio-item">www.tarakrit.com</div>
-  </div>
-</section>
+    <section class="offer-section">
+        <div class="container">
+            <h2>Kya-Kya Milega ₹1999 Me?</h2>
+            <div class="offer-details">
+                <div class="offer-item">✅ Mobile-friendly Website</div>
+                <div class="offer-item">✅ 1 Saal Hosting + SSL Free</div>
+                <div class="offer-item">✅ Google Me Dikhega (Basic SEO)</div>
+                <div class="offer-item">✅ Business Logo + Contact Form</div>
+                <div class="offer-item">✅ Fast Delivery in 5 Days</div>
+            </div>
+            <div class="offer-box">
+                <p>LIMITED TIME OFFER!</p>
+                <h3><span class="strike">₹10000</span> Ab Sirf ₹1999</h3>
+                <p>Yeh offer jald hi samapt ho jayega. Aaj hi book karein!</p>
+            </div>
+        </div>
+    </section>
 
-<section class="contact">
-  <h3>📞 Call ya WhatsApp Karein</h3>
-  <p>Contact: <strong>8789567363</strong></p>
-  <a href="https://wa.me/918789567363">
-    <img src="https://i.ibb.co/WDYPykV/whatsapp-button.png" alt="WhatsApp Us" class="button-img">
-  </a>
-</section>
-
-<footer>
-  FTech Global © 2025 | Website Banwana Hai? FTech Global Hai Na!
-</footer>
+    <footer class="footer">
+        <div class="container">
+            <h2>Abhi Sampark Karein aur Apni Website Banwayein!</h2>
+            <p>📞 Phone: <a href="tel:8789567363">8789567363</a></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/918789567363?text=Hi%2C%20I%20want%20to%20get%20my%20website%20made." target="_blank">Click to Chat</a></p>
+            <p>📧 Email: <a href="mailto:info@ftechglobal.com">info@ftechglobal.com</a></p>
+            <p class="copyright">© 2024 FTech Global. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
-
