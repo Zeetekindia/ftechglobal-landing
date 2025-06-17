@@ -35,22 +35,51 @@
             margin-bottom: 40px;
         }
 
+        /* Top Navigation Bar */
+        .top-nav {
+            background: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #0056b3;
+        }
+
+        .nav-contact a {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #FFA500;
+            text-decoration: none;
+        }
+        
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+            /* Added background image with a semi-transparent overlay */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
         .hero-section h1 {
             font-size: 3em;
-            color: #0056b3;
+            color: #ffffff; /* Changed color for better readability on image */
             margin-bottom: 10px;
         }
 
         .hero-section .subtext {
             font-size: 1.4em;
-            color: #555;
+            color: #f0f0f0; /* Changed color for better readability */
             margin-bottom: 30px;
         }
 
@@ -258,6 +287,12 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .logo {
+                font-size: 1.4em;
+            }
+            .nav-contact a {
+                font-size: 1em;
+            }
             h1, .hero-section h1 {
                 font-size: 2.2em;
             }
@@ -278,6 +313,13 @@
 </head>
 <body>
 
+    <nav class="top-nav">
+        <div class="logo">Ftech Global Solutions</div>
+        <div class="nav-contact">
+            <a href="tel:8789567363">📞 Call: 8789567363</a>
+        </div>
+    </nav>
+
     <header class="hero-section">
         <div class="container">
             <h1>Website Banwaye Sirf ₹1999 Se – 5 Din Me Ready!</h1>
@@ -294,24 +336,24 @@
             <h2>Hamare Happy Clients Kya Kehte Hain</h2>
             <div class="testimonials">
                 <div class="testimonial-card">
-                    <img src="images/client1.jpg" alt="Client Rahul Kumar">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Rahul Kumar">
                     <p>"FTech Global ने मेरी दुकान के लिए बहुत ही शानदार वेबसाइट बनाई है। अब मुझे ऑनलाइन ऑर्डर भी मिलते हैं।"</p>
                     <h4>- राहुल कुमार, पटना</h4>
                 </div>
                 <div class="testimonial-card">
-                    <img src="images/client2.jpg" alt="Client Sneha Singh">
+                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Sneha Singh">
                     <p>"इनकी सर्विस बहुत तेज़ और प्रोफेशनल है। 5 दिन में वेबसाइट तैयार करके दी। बहुत बहुत धन्यवाद!"</p>
                     <h4>- स्नेहा सिंह, रांची</h4>
                 </div>
                 <div class="testimonial-card">
-                    <img src="images/client3.jpg" alt="Another Client">
+                    <img src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Another Client">
                     <p>"Best service in low price. Fully satisfied with their work. Highly recommended for startups."</p>
                     <h4>- अमन वर्मा, जमशेदपुर</h4>
                 </div>
             </div>
              <div class="social-proof">
-                <img src="images/whatsapp-review.jpg" alt="WhatsApp Review Screenshot">
-                <img src="images/facebook-comment.jpg" alt="Facebook Comment Screenshot">
+                <img src="https://i.ibb.co/6y40Yc6/wa-review-placeholder.png" alt="WhatsApp Review Screenshot">
+                <img src="https://i.ibb.co/yQxGjD4/fb-comment-placeholder.png" alt="Facebook Comment Screenshot">
             </div>
         </div>
     </section>
@@ -321,17 +363,17 @@
             <h2>Hamare Kaam Ki Jhalkiyan</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <img src="images/portfolio1.jpg" alt="Portfolio Website 1">
+                    <img src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Website 1">
                     <h3>Sharma Electronics</h3>
                     <a href="#" target="_blank">Live Dekhein →</a>
                 </div>
                 <div class="portfolio-card">
-                    <img src="images/portfolio2.jpg" alt="Portfolio Website 2">
+                    <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Website 2">
                     <h3>Gupta Kirana Store</h3>
                     <a href="#" target="_blank">Live Dekhein →</a>
                 </div>
                 <div class="portfolio-card">
-                    <img src="images/portfolio3.jpg" alt="Portfolio Website 3">
+                    <img src="https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Website 3">
                     <h3>Patna Legal Services</h3>
                     <a href="#" target="_blank">Live Dekhein →</a>
                 </div>
@@ -363,7 +405,7 @@
             <p>📞 Phone: <a href="tel:8789567363">8789567363</a></p>
             <p>💬 WhatsApp: <a href="https://wa.me/918789567363?text=Hi%2C%20I%20want%20to%20get%20my%20website%20made." target="_blank">Click to Chat</a></p>
             <p>📧 Email: <a href="mailto:info@ftechglobal.com">info@ftechglobal.com</a></p>
-            <p class="copyright">© 2024 FTech Global. All Rights Reserved.</p>
+            <p class="copyright">© 2024 FTech Global Solutions. All Rights Reserved.</p>
         </div>
     </footer>
 
