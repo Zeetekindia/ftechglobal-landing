@@ -36,12 +36,16 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            flex-grow: 1; /* Makes sure content pushes footer down */
         }
 
         .header {
@@ -109,12 +113,11 @@
         .feature-card-content h3 { font-size: 1.2rem; color: var(--primary-blue); margin: 0 0 10px 0; }
         .feature-card-content p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin: 0; }
 
-        /* ===== NEW COLORFUL TESTIMONIALS ===== */
         .testimonials-section {
             padding: 60px 0; background-color: var(--bg-section); border-radius: 15px; overflow: hidden; 
         }
         .testimonials-container {
-            display: grid; /* Changed to grid for easier wrapping */
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             padding: 20px; 
@@ -128,46 +131,26 @@
             overflow: hidden;
             border-top: 5px solid var(--primary-blue);
         }
-        .testimonial-card::before { /* Quote icon */
-            content: '“';
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            font-size: 100px;
-            color: var(--primary-blue);
-            opacity: 0.1;
-            line-height: 1;
+        .testimonial-card::before {
+            content: '“'; position: absolute; top: -10px; left: 15px;
+            font-size: 100px; color: var(--primary-blue); opacity: 0.1; line-height: 1;
         }
         .testimonial-card .feedback { 
             font-size: 1.05rem; color: var(--text-light); font-style: italic;
             margin-bottom: 20px; z-index: 1; position: relative;
         }
         .testimonial-profile {
-            display: flex;
-            align-items: center;
-            margin-top: auto; /* Pushes profile to the bottom */
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            z-index: 1; position: relative;
+            display: flex; align-items: center; margin-top: auto;
+            padding-top: 15px; border-top: 1px solid #eee; z-index: 1; position: relative;
         }
         .testimonial-profile img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-            border: 3px solid var(--primary-blue);
+            width: 60px; height: 60px; border-radius: 50%; object-fit: cover;
+            margin-right: 15px; border: 3px solid var(--primary-blue);
         }
         .testimonial-profile-info h4 {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 700; /* BOLD letter */
-            color: var(--primary-blue); /* Colorful name */
+            margin: 0; font-size: 1.2rem; font-weight: 700; color: var(--primary-blue);
         }
-        .testimonial-profile-info span {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+        .testimonial-profile-info span { font-size: 0.9rem; color: var(--text-light); }
 
         .whatsapp-cta { text-align: center; margin: 60px 0; }
         a.contact-whatsapp-button { 
@@ -178,6 +161,34 @@
         }
         a.contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6); }
 
+        /* ===== FOOTER STYLES ADDED BACK ===== */
+        footer {
+            background-color: var(--text-dark);
+            color: #a0a0a0;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: auto; /* Pushes footer to the bottom */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: rgba(255, 255, 255, 0.1); color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: var(--primary-blue); transform: translateY(-3px); }
+        
+        nav.footer-nav { margin: 10px 0 20px 0; padding: 10px 0; }
+        nav.footer-nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav.footer-nav li { margin: 5px 12px; }
+        nav.footer-nav a { color: #cbd5e1; text-decoration: none; font-size: 0.9em; transition: color 0.3s ease; }
+        nav.footer-nav a:hover { color: var(--accent-green); text-decoration: underline; }
+        .crafted-by { font-size: 0.9em; color: #a0a0a0; margin: 20px 0 15px 0; }
+
+        /* Responsive Styles */
         @media (max-width: 992px) {
             .main-nav-links {
                 display: none; position: absolute; top: 80px; left: 0; width: 100%;
@@ -221,8 +232,8 @@
         </nav>
     </header>
 
-    <main class="container">
-        <div class="main-content">
+    <div class="container">
+        <main class="main-content">
             <h1>🚀 <span class="highlight">Ftech Global Solutions:</span> Premier IT & Digital Marketing</h1>
             <p>Empowering Business Growth Worldwide with Next-Gen Technology & Expert Digital Strategies</p>
 
@@ -310,8 +321,10 @@
             <div class="whatsapp-cta">
                 <a class="contact-whatsapp-button" href="https://wa.me/918789567363?text=Hi! I'm interested in your services." target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
+
+    <footer_placeholder></footer_placeholder>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
