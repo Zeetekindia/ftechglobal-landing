@@ -27,7 +27,6 @@
             --text-light: #5a6a7a;
             --primary-blue: #007BFF;
             --accent-green: #00e676;
-            --accent-yellow: #FFC107;
         }
         
         body {
@@ -61,71 +60,21 @@
             box-sizing: border-box;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 50px;
-            width: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary-blue);
-        }
-
-        .logo-text {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-left: 15px;
-        }
-        
-        .main-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .main-nav-links {
-            display: flex; /* Display links by default on desktop */
-            align-items: center;
-        }
-
-        .main-nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .main-nav-links a:hover {
-            color: var(--primary-blue);
-        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-blue); }
+        .logo-text { font-size: 1.5em; font-weight: 700; color: var(--primary-blue); margin-left: 15px; }
+        .main-nav { display: flex; align-items: center; }
+        .main-nav-links { display: flex; align-items: center; }
+        .main-nav-links a { color: var(--text-dark); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s ease; }
+        .main-nav-links a:hover { color: var(--primary-blue); }
 
         .contact-button {
-            background-color: var(--primary-blue);
-            color: white !important;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-            margin-left: 20px;
+            background-color: var(--primary-blue); color: white !important; padding: 8px 16px;
+            border-radius: 5px; text-decoration: none; font-weight: 500;
+            transition: background-color 0.3s ease; margin-left: 20px;
         }
-        .contact-button:hover {
-            background-color: #0056b3;
-        }
-        
-        .hamburger-menu {
-            display: none;
-            font-size: 1.8rem;
-            background: none;
-            border: none;
-            color: var(--text-dark);
-            cursor: pointer;
-        }
+        .contact-button:hover { background-color: #0056b3; }
+        .hamburger-menu { display: none; font-size: 1.8rem; background: none; border: none; color: var(--text-dark); cursor: pointer; }
         
         h1 { font-size: 3rem; color: var(--text-dark); margin-bottom: 10px; font-weight: 700; text-align: center;}
         h1 .highlight { color: var(--primary-blue); }
@@ -160,42 +109,78 @@
         .feature-card-content h3 { font-size: 1.2rem; color: var(--primary-blue); margin: 0 0 10px 0; }
         .feature-card-content p { font-size: 0.95rem; color: var(--text-light); line-height: 1.6; margin: 0; }
 
+        /* ===== NEW COLORFUL TESTIMONIALS ===== */
         .testimonials-section {
-            margin-top: 40px; padding: 40px 0; background-color: var(--bg-section); border-radius: 15px; overflow: hidden; 
+            padding: 60px 0; background-color: var(--bg-section); border-radius: 15px; overflow: hidden; 
         }
         .testimonials-container {
-            display: flex; overflow-x: auto; padding: 20px; scrollbar-width: thin; scrollbar-color: var(--primary-blue) var(--bg-light); 
+            display: grid; /* Changed to grid for easier wrapping */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px; 
         }
         .testimonial-card {
-            min-width: 320px; background-color: var(--bg-card); padding: 25px; border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); margin: 0 15px 10px 0; text-align: left; flex-shrink: 0;
-            display: flex; flex-direction: column; justify-content: space-between;
+            background-color: var(--bg-card); padding: 30px; border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+            text-align: left;
+            display: flex; flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary-blue);
+        }
+        .testimonial-card::before { /* Quote icon */
+            content: '“';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 100px;
+            color: var(--primary-blue);
+            opacity: 0.1;
+            line-height: 1;
         }
         .testimonial-card .feedback { 
             font-size: 1.05rem; color: var(--text-light); font-style: italic;
-            border-left: 4px solid var(--primary-blue); padding-left: 15px; margin-bottom: 15px; flex-grow: 1;
+            margin-bottom: 20px; z-index: 1; position: relative;
         }
-        .testimonial-card .client-info { 
-            font-size: 1rem; color: var(--primary-blue); font-weight: bold; text-align: right; margin-top: auto; 
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            margin-top: auto; /* Pushes profile to the bottom */
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            z-index: 1; position: relative;
         }
-        
-        .whatsapp-cta { text-align: center; margin-top: 40px; }
-        a.contact-whatsapp-button { 
-            background: var(--accent-green); color: #101827; padding: 12px 25px; text-decoration: none; 
-            border-radius: 8px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; 
-            transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4); 
+        .testimonial-profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--primary-blue);
         }
-        a.contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6); }
+        .testimonial-profile-info h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700; /* BOLD letter */
+            color: var(--primary-blue); /* Colorful name */
+        }
+        .testimonial-profile-info span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
 
-        footer {
-            background-color: var(--text-dark); color: #a0a0a0; text-align: center; padding: 30px 20px;
-            margin-top: 40px; width: 100%; box-sizing: border-box;
+        .whatsapp-cta { text-align: center; margin: 60px 0; }
+        a.contact-whatsapp-button { 
+            background: var(--accent-green); color: #101827; padding: 14px 30px; text-decoration: none; 
+            border-radius: 8px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; 
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4); 
+            font-size: 1.1rem;
         }
-        
+        a.contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6); }
+
         @media (max-width: 992px) {
             .main-nav-links {
-                display: none;
-                position: absolute; top: 80px; left: 0; width: 100%;
+                display: none; position: absolute; top: 80px; left: 0; width: 100%;
                 background-color: var(--bg-card); flex-direction: column; align-items: center;
                 padding: 10px 0; box-shadow: 0 4px 5px rgba(0,0,0,0.1);
             }
@@ -210,7 +195,7 @@
             .header { height: 70px; padding: 0 15px; }
             h1 { font-size: 2rem; }
             h2, .services h2, .feature-section h2, .testimonials-section h2 { font-size: 1.8rem; }
-            .services-grid, .feature-grid { grid-template-columns: 1fr; }
+            .services-grid, .feature-grid, .testimonials-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -291,19 +276,33 @@
                 <div class="testimonials-container">
                     <div class="testimonial-card">
                         <p class="feedback">"Ftech Global Solutions transformed our online presence! Their web development team is top-notch and delivered a fantastic, responsive website. Highly recommended for their professionalism."</p>
-                        <p class="client-info">- Priya Sharma, Mumbai</p>
+                        <div class="testimonial-profile">
+                            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Priya Sharma">
+                            <div class="testimonial-profile-info">
+                                <h4>Priya Sharma</h4>
+                                <span>Mumbai</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="testimonial-card">
-                        <p class="feedback">"The digital marketing strategies by Ftech Global significantly boosted our leads. Their SEO and Google Ads expertise is truly commendable. Great results!"</p>
-                        <p class="client-info">- Rohan Kumar, Bangalore</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="feedback">"We needed custom software, and Ftech Global delivered a robust solution. Their team understood our requirements perfectly and provided great support."</p>
-                        <p class="client-info">- Anjali Das, Kolkata</p>
+                        <p class="feedback">"The digital marketing strategies by Ftech Global significantly boosted our leads. Their SEO expertise is commendable. Great results!"</p>
+                         <div class="testimonial-profile">
+                            <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Rohan Kumar">
+                            <div class="testimonial-profile-info">
+                                <h4>Rohan Kumar</h4>
+                                <span>Bangalore</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="testimonial-card">
                         <p class="feedback">"As a startup, their consultancy was invaluable. From business plan to market strategy, Ftech Global guided us at every step. Fantastic support!"</p>
-                        <p class="client-info">- Vikram Singh, Delhi</p>
+                         <div class="testimonial-profile">
+                            <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Vikram Singh">
+                            <div class="testimonial-profile-info">
+                                <h4>Vikram Singh</h4>
+                                <span>Delhi</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -313,10 +312,6 @@
             </div>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.</p>
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
