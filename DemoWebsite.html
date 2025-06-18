@@ -1,1 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ftech Global Solutions | Expert Web Development, SEO & Digital Marketing Services</title>
+    <meta name="description" content="Ftech Global Solutions offers expert website development, SEO services, digital marketing, custom software solutions, and startup consultancy across India and globally. Grow your business with our technology solutions.">
+    
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="vjmityY08RMPolLNj6X3Fg" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MM99EXSN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Y0MM99EXSN');
+    </script>
+    
+    <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* ===== NEW LIGHT & COLORFUL THEME ===== */
+        
+        /* --- Color Palette --- */
+        :root {
+            --bg-light: #f8f9fa; /* Main background */
+            --bg-section: #eef2f9; /* Contrasting section background */
+            --bg-card: #ffffff;   /* Card background */
+            --text-dark: #2c3e50; /* Main text color */
+            --text-light: #5a6a7a; /* Lighter text color */
+            --primary-blue: #007BFF; /* Primary accent */
+            --accent-green: #00e676; /* CTA and highlight */
+            --accent-yellow: #FFC107; /* Icons and highlights */
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            padding-top: 130px; 
+        }
 
+        .top-contact-bar {
+            background: var(--bg-card);
+            color: var(--text-light);
+            padding: 8px 20px;
+            font-size: 0.9em; 
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            z-index: 1001;
+            display: flex;
+            align-items: center; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .top-bar-links {
+            flex-grow: 1; 
+            text-align: center; 
+        }
+        .top-bar-links a {
+            color: var(--text-dark); 
+            text-decoration: none;
+            margin: 0 10px; 
+            font-weight: 500; 
+            transition: color 0.3s ease;
+        }
+        .top-bar-links a:hover {
+            color: var(--primary-blue); 
+        }
+        .top-bar-contact {
+            font-weight: 600; 
+            margin-left: auto; 
+            flex-shrink: 0; 
+        }
+        .top-bar-contact a { 
+            color: var(--primary-blue); 
+            text-decoration: none;
+        }
+
+        .fixed-main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+            position: fixed;
+            top: 40px; 
+            left: 20px;
+            z-index: 999;
+            background-color: white;
+        }
+
+        nav.main-nav { 
+            background-color: transparent; /* Changed to transparent */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: calc(100% - 160px);
+            position: fixed;
+            top: 65px; 
+            left: 140px;
+            box-sizing: border-box;
+            z-index: 998;
+        }
+
+        .main-nav-links a.button-link {
+            padding: 8px 12px; 
+            background-color: var(--accent-green); 
+            color: #1a2a4b; 
+            border-radius: 10px;
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; 
+            box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); 
+            display: flex;
+            align-items: center; 
+            gap: 6px; 
+            white-space: nowrap; 
+            font-size: 0.85em;
+        }
+        .main-nav-links a.button-link:hover { background-color: #00b359; transform: translateY(-2px); }
+
+        .hamburger-menu {
+            display: none; 
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1002; 
+        }
+        
+        .main-content { padding: 15px 20px 40px 20px; max-width: 1200px; width: 100%; margin: 0 auto; flex-grow: 1; box-sizing: border-box; }
+        
+        h1 { font-size: 3.2rem; color: var(--text-dark); margin-top: 15px; margin-bottom: 10px; font-weight: 700; }
+        h1 .highlight { color: var(--primary-blue); } /* Highlight for keywords */
+        .main-content > p:first-of-type { font-size: 1.3rem; color: var(--text-light); margin-top: 5px; margin-bottom: 35px; }
+        
+        p { font-size: 1.2rem; margin-top: 5px; margin-bottom: 25px; } 
+        
+        .services { 
+            margin-top: 40px; 
+            padding: 30px; 
+            max-width: 100%; margin-left: auto; margin-right: auto; text-align: left; 
+        }
+        .services h2 { 
+            color: var(--text-dark); font-size: 2.1rem; margin-bottom: 30px; text-align: center; 
+            font-weight: 600; display: flex; align-items: center; justify-content: center; 
+        }
+        .services h2 i { margin-right: 10px; color: var(--primary-blue); }
+        .services ul { list-style-type: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .services li { 
+            background-color: var(--bg-card); padding: 25px; border-radius: 10px; 
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            border-left: 5px solid var(--primary-blue); display: flex; flex-direction: column; 
+        }
+        .services li:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+        .services li strong { color: var(--text-dark); font-size: 1.4rem; display: flex; align-items: center; margin-bottom: 12px; font-weight: 600; }
+        .services li strong i { margin-right: 12px; font-size: 1.5rem; width: 30px; text-align: center; color: var(--primary-blue); }
+        .services li p { 
+            font-size: 1.05rem; color: var(--text-light); line-height: 1.7; 
+            margin-top: 0; margin-bottom: 0; flex-grow: 1; 
+        }
+
+        .homepage-services-image { 
+            max-width: 60%; 
+            height: auto; 
+            display: block; 
+            margin: 40px auto; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+            border: 2px solid var(--primary-blue); 
+        }
+        
+        .testimonials-section {
+            margin-top: 40px; 
+            margin-bottom: 40px; 
+            padding: 30px 0px; 
+            background-color: var(--bg-section); 
+            border-radius: 15px;
+            text-align: center;
+            overflow: hidden; 
+        }
+        .testimonials-section h2 {
+            color: var(--text-dark); 
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            padding: 0 20px; 
+        }
+        .testimonials-container {
+            display: flex; 
+            overflow-x: auto; 
+            padding: 0px 20px 20px 20px; 
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: thin; 
+            scrollbar-color: var(--primary-blue) var(--bg-light); 
+        }
+        .testimonials-container::-webkit-scrollbar { height: 10px; }
+        .testimonials-container::-webkit-scrollbar-track { background: var(--bg-light); border-radius: 10px;}
+        .testimonials-container::-webkit-scrollbar-thumb { background-color: var(--primary-blue); border-radius: 10px; border: 2px solid var(--bg-light);}
+
+        .testimonial-card {
+            min-width: 320px; 
+            max-width: 380px; 
+            background-color: var(--bg-card); 
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+            margin-right: 25px; 
+            text-align: left;
+            flex-shrink: 0; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .testimonial-card:last-child {
+            margin-right: 0; 
+        }
+        .testimonial-card .feedback { 
+            font-size: 1.05rem;
+            color: var(--text-light); 
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px; 
+            border-left: 4px solid var(--primary-blue); 
+            padding-left: 15px;
+            flex-grow: 1;
+        }
+        .testimonial-card .client-info { 
+            font-size: 1rem;
+            color: var(--primary-blue); 
+            font-weight: bold;
+            text-align: right;
+            margin-top: auto; 
+            margin-bottom: 0; 
+        }
+        
+        a.contact-whatsapp-button { 
+            background: var(--accent-green); color: #101827; padding: 12px 25px; text-decoration: none; 
+            border-radius: 8px; font-weight: bold; margin-top: 40px; 
+            display: inline-flex; align-items: center; gap: 8px; 
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+            box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4); 
+        }
+        a.contact-whatsapp-button:hover { background: #00c366; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6); }
+
+        footer {
+            background-color: var(--text-dark); color: #a0a0a0; text-align: center; padding: 20px;
+            font-size: 0.85em; border-top: 1px solid #334a70; margin-top: auto;
+            width: 100%; box-sizing: border-box; position: relative; 
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: rgba(255, 255, 255, 0.1); color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: var(--primary-blue); transform: translateY(-3px); }
+        
+        nav.footer-nav { 
+            margin-top: 10px; 
+            margin-bottom: 20px; 
+            padding: 10px 0;
+        }
+        nav.footer-nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav.footer-nav li { margin: 5px 12px; }
+        nav.footer-nav a { color: #cbd5e1; text-decoration: none; font-size: 0.9em; transition: color 0.3s ease; }
+        nav.footer-nav a:hover { color: var(--accent-green); text-decoration: underline; }
+
+        .crafted-by { font-size: 0.9em; color: #a0a0a0; margin: 20px 0 15px 0; }
+        
+        @media (max-width: 1200px) { /* Tablet view */
+            body { padding-top: 175px; } 
+            
+            .fixed-main-logo { 
+                top: 50px; 
+                width: 120px; 
+                height: 120px; 
+                left: 50%; 
+                transform: translateX(-50%); 
+            }
+            
+            .hamburger-menu { display: block; position: fixed; top: 50px; right: 20px; z-index: 1003; }
+            nav.main-nav { background-color: transparent; box-shadow: none; padding: 0; width: auto; height: auto; position: static; }
+            .main-nav-links {
+                display: none; 
+                position: fixed; top: 0; left: -100%; 
+                width: 80%; max-width: 300px; height: 100vh;
+                background-color: var(--bg-card);
+                flex-direction: column; justify-content: center; align-items: center;
+                box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+                transition: left 0.3s ease-in-out;
+                z-index: 1002; padding: 20px; box-sizing: border-box;
+            }
+            .main-nav-links.active { display: flex; left: 0; }
+            nav.main-nav div a.button-link { margin: 10px auto; padding: 15px; width: 90%; text-align: center; justify-content: center; font-size: 1.1em; }
+            .main-content { padding: 15px 10px 40px 10px; max-width: 90%; }
+            .homepage-services-image { max-width: 70%; margin: 30px auto; } 
+            .services ul { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+            
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
+            .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+        }
+
+        @media (max-width: 768px) { /* Mobile view */
+            body { padding-top: 150px; } 
+            .top-contact-bar { font-size: 0.8em; }
+            .fixed-main-logo { top: 55px; width: 80px; height: 80px; left: 50%; transform: translateX(-50%); }
+            
+            .hamburger-menu { top: 60px; right: 15px; font-size: 1.3rem; }
+            .main-content { margin-top: 15px; }
+            h1 { font-size: 2.2rem; margin-top: 10px; margin-bottom: 5px; } 
+            
+            .main-content > p { font-size: 1rem; } 
+            .main-content > p:first-of-type { font-size: 1.1rem; margin-bottom: 25px; } 
+            
+            .services li p { font-size: 0.95rem;} 
+            .testimonial-card .feedback { font-size: 1rem; } 
+            .testimonial-card .client-info { font-size: 0.9rem; } 
+
+            .services h2 { font-size: 1.6rem; }
+            .services ul { grid-template-columns: 1fr; gap: 15px; }
+            .services li { padding: 20px; }
+            .services li strong { font-size: 1.2rem; }
+            .contact-whatsapp-button { padding: 10px 20px; font-size: 0.9rem; margin-top:30px;}
+            .social-media-icons a { width: 35px; height: 35px; line-height: 35px; font-size: 18px; margin: 0 4px; }
+            
+            nav.footer-nav ul { flex-direction: column; } 
+            nav.footer-nav li { margin: 8px 0; } 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-contact-bar">
+        <div class="top-bar-links">
+            <a href="services.html">Our Services</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="blog.html">Blog</a> 
+        </div>
+        <div class="top-bar-contact">
+            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        </div>
+    </div>
+    <a href="index.html">
+        <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" />
+    </a>
+
+    <nav class="main-nav"> 
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-nav-links" id="main-nav-links">
+            <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
+            <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
+            <a href="irctc-agent-services.html" class="button-link">
+                <i class="fas fa-train"></i> Become IRCTC Agent
+            </a>
+            <a href="digital-marketing-services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
+            <a href="startup-consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h1>🚀 <span class="highlight">Ftech Global Solutions:</span> Premier IT & Digital Marketing Services</h1>
+        <p>Empowering Business Growth Worldwide with Next-Gen Technology & Expert Digital Strategies</p>
+
+        <section class="services">
+            <h2><i class="fas fa-cogs"></i>Our Expert Services: Driving Your Business Success Globally</h2>
+            <ul>
+                <li>
+                    <strong><i class="fas fa-laptop-code"></i>Expert Website Development:</strong>
+                    <p>Launch your online presence with stunning, <strong>responsive web design</strong> and high-performance websites from Ftech Global, a leading <strong>website development company</strong>. We specialize in <strong>custom web design</strong>, robust <strong>e-commerce solutions</strong>, and <strong>SEO-optimized sites</strong> designed to convert visitors into loyal customers. Partner with us for professional <strong>web development services in India</strong> and worldwide.</p>
+                </li>
+                <li>
+                    <strong><i class="fas fa-bullhorn"></i>Comprehensive Digital Marketing:</strong>
+                    <p>Elevate your brand's online visibility and drive targeted traffic with our <strong>comprehensive digital marketing strategies</strong>. As a results-driven <strong>digital marketing agency</strong>, our services include expert <strong>SEO services</strong>, engaging <strong>social media marketing (SMM)</strong>, strategic <strong>content marketing</strong>, effective email campaigns, and targeted <strong>PPC advertising (Google Ads)</strong> to ensure maximum reach and ROI for your business globally.</p>
+                </li>
+                <li>
+                    <strong><i class="fas fa-code-branch"></i>Bespoke Software Development:</strong>
+                    <p>Transform your business operations with <strong>bespoke software development solutions</strong> from Ftech Global. We specialize in <strong>custom software development</strong>, user-friendly <strong>mobile app development (Android/iOS)</strong>, powerful CRM systems, efficient ERP solutions, and specialized tools designed to streamline workflows, enhance productivity, and solve unique business challenges for clients across <strong>India and internationally</strong>.</p>
+                </li>
+                <li>
+                    <strong><i class="fas fa-search-dollar"></i>Advanced SEO & Google Ads:</strong>
+                    <p>Dominate search engine rankings and attract high-intent customers with our <strong>advanced SEO services</strong> and expert <strong>Google Ads management</strong>. Our dedicated <strong>SEO specialists</strong> and Google Ads professionals optimize your online presence for top SERP results, driving targeted <strong>organic traffic</strong> and maximizing your ROI through effective <strong>PPC campaigns</strong> and comprehensive <strong>local and global SEO strategies</strong>.</p>
+                </li>
+                <li>
+                    <strong><i class="fas fa-file-invoice-dollar"></i>Seamless GST & ITR Filing (India):</strong>
+                    <p>Navigate complex Indian tax regulations with ease through our <strong>seamless GST registration services</strong> and <strong>ITR filing assistance</strong>. Ftech Global provides expert help for hassle-free <strong>online GST registration</strong>, timely GST return filing, and accurate <strong>Income Tax Return (ITR) e-filing</strong> for individuals and businesses within India, ensuring full compliance.</p>
+                </li>
+                <li>
+                    <strong><i class="fas fa-rocket"></i>Strategic Startup Consultancy:</strong>
+                    <p>Turn your innovative ideas into successful ventures with our <strong>strategic startup consultancy services</strong>. Our experienced <strong>startup consultants</strong> offer comprehensive guidance from <strong>business plan development</strong> and in-depth market analysis to effective funding strategies, navigating legal compliance, and implementing <strong>growth hacking techniques</strong> to empower new businesses to thrive in <strong>India and global markets</strong>.</p>
+                </li>
+            </ul>
+        </section>
+        
+        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Abstract technology background with code" class="homepage-services-image">
+
+        <section class="testimonials-section">
+            <h2>What Our Clients Say <i class="fas fa-comments" style="color: var(--accent-yellow);"></i></h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p class="feedback">"Ftech Global Solutions transformed our online presence! Their web development team is top-notch and delivered a fantastic, responsive website. Highly recommended for their professionalism."</p>
+                    <p class="client-info">- Priya Sharma, Mumbai (Maharashtra)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"The digital marketing strategies implemented by Ftech Global significantly boosted our leads. Their SEO and Google Ads expertise is truly commendable. Great results!"</p>
+                    <p class="client-info">- Rohan Kumar, Bangalore (Karnataka)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"We needed custom software for our logistics business, and Ftech Global delivered a robust and efficient solution. Their team understood our requirements perfectly."</p>
+                    <p class="client-info">- Anjali Das, Kolkata (West Bengal)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"As a startup, their consultancy was invaluable. From business plan to market strategy, Ftech Global guided us at every step. Fantastic support for new ventures!"</p>
+                    <p class="client-info">- Vikram Singh, Delhi (Delhi)</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="feedback">"GST registration and ITR filing were so easy with Ftech Global. They handled everything professionally and ensured we were compliant. Excellent service!"</p>
+                    <p class="client-info">- Sunita Reddy, Hyderabad (Telangana)</p>
+                </div>
+            </div>
+        </section>
+        <a class="contact-whatsapp-button" href="https://wa.me/918789567363" target="_blank"><i class="fab fa-whatsapp"></i> Contact Us on WhatsApp</a>
+    </div>
+
+    <footer>
+        <div class="social-media-icons">
+            <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="YOUR_YOUTUBE_CHANNEL_URL" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li> 
+                <li><a href="term-and-condition.html">Term & Condition</a></li> 
+            </ul>
+        </nav>
+        
+        <p class="crafted-by">Crafted in India ❤️</p>
+
+        &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+        
+        <div style="text-align:center; margin-top: 20px;"> 
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
+                     title="Counter Widget"
+                     alt="Visit counter For Websites"
+                     border="0" />
+            </a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mainNavLinks = document.getElementById('main-nav-links');
+
+            if (hamburgerMenu && mainNavLinks) {
+                hamburgerMenu.addEventListener('click', function () {
+                    mainNavLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
