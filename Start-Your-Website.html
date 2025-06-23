@@ -8,23 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Basic Reset and Global Styles */
-        :root {
-            --primary-color: #0d2c54;
-            --secondary-color: #FFA500;
-            --accent-color: #25D366;
-            --bg-light: #f4f7fc;
-            --white: #ffffff;
-            --text-dark: #333;
-        }
-
+        /* General Body Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.7;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
@@ -35,78 +26,68 @@
 
         h1, h2, h3, h4 {
             font-weight: 700;
-            color: var(--primary-color);
+            color: #0d2c54;
         }
 
         h2 {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-        }
-
-        section {
-            padding: 60px 0;
+            font-size: 2.5em;
+            margin-bottom: 40px;
         }
 
         /* Top Navigation Bar */
         .top-nav {
-            background: var(--white);
-            padding: 15px 25px;
+            background: #ffffff;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo {
-            font-size: 1.7rem;
+            font-size: 1.8em;
             font-weight: 700;
-            color: var(--primary-color);
+            color: #0056b3;
         }
 
         .nav-contact a {
-            font-size: 1.1rem;
+            font-size: 1.2em;
             font-weight: 600;
-            color: var(--secondary-color);
+            color: #FFA500;
             text-decoration: none;
-            transition: color 0.3s;
-        }
-        .nav-contact a:hover {
-            color: var(--primary-color);
         }
         
         /* Hero Section */
         .hero-section {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
             background-size: cover;
             background-position: center;
             text-align: center;
             padding: 100px 20px;
-            color: var(--white);
         }
 
         .hero-section h1 {
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 3em;
+            color: #ffffff;
+            margin-bottom: 10px;
         }
 
         .hero-section .subtext {
-            font-size: 1.4rem;
+            font-size: 1.4em;
             color: #f0f0f0;
             margin-bottom: 30px;
         }
 
         .cta-buttons .btn {
             text-decoration: none;
-            color: var(--white);
+            color: #fff;
             padding: 15px 35px;
             border-radius: 8px;
-            font-size: 1.2rem;
+            font-size: 1.2em;
             font-weight: 600;
             margin: 10px;
             display: inline-block;
@@ -114,21 +95,22 @@
         }
 
         .cta-buttons .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-call {
-            background-color: var(--secondary-color);
+            background-color: #FFA500;
         }
 
         .btn-whatsapp {
-            background-color: var(--accent-color);
+            background-color: #25D366;
         }
 
-        /* Trust Section (Testimonials) */
+        /* Trust Section */
         .trust-section {
-            background-color: var(--white);
+            padding: 60px 20px;
+            background-color: #fff;
         }
 
         .testimonials {
@@ -139,57 +121,50 @@
         }
 
         .testimonial-card {
-            background: #f9fafb;
-            border-left: 5px solid var(--primary-color);
-            padding: 30px;
-            border-radius: 10px;
-            width: 320px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            background: #f9f9f9;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 320px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .testimonial-card img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             object-fit: cover;
-            border: 3px solid #e0e7ff;
         }
 
         .testimonial-card p {
             font-style: italic;
             color: #555;
-            margin: 0;
-            padding: 0;
         }
 
         .testimonial-card h4 {
-            color: var(--primary-color);
-            margin-top: 20px;
+            color: #0056b3;
+            margin-top: 15px;
         }
 
         .social-proof {
             text-align: center;
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         .social-proof img {
-            max-height: 120px;
+            max-width: 250px;
+            margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         /* Portfolio Section */
+        .portfolio-section {
+            padding: 60px 20px;
+        }
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -197,136 +172,132 @@
         }
 
         .portfolio-card {
-            background: var(--white);
-            border-radius: 10px;
+            background: #fff;
+            border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s;
+            transition: transform 0.3s ease;
         }
+
         .portfolio-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
         }
 
         .portfolio-card img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            display: block;
         }
-        .portfolio-card-content {
-            padding: 25px;
-        }
+
         .portfolio-card h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
+            margin: 20px 0 10px;
         }
 
         .portfolio-card a {
             display: inline-block;
-            color: var(--secondary-color);
+            margin-bottom: 20px;
+            color: #0056b3;
             text-decoration: none;
             font-weight: 600;
-        }
-        .portfolio-card a:hover {
-            text-decoration: underline;
         }
 
         /* Offer Section */
         .offer-section {
-            background-color: var(--white);
+            padding: 60px 20px;
+            background-color: #fff;
         }
 
         .offer-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto 40px;
             text-align: center;
         }
 
         .offer-item {
             background: #e0f7fa;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.1em;
             font-weight: 600;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .offer-item::before {
-            content: '✅';
-            margin-right: 5px;
+            color: #0d2c54;
         }
 
         .offer-box {
-            background: linear-gradient(135deg, var(--secondary-color), #ff8c00);
-            color: var(--white);
+            background: #FFA500;
+            color: #fff;
             text-align: center;
-            padding: 40px;
+            padding: 30px;
             border-radius: 10px;
             max-width: 600px;
-            margin: 40px auto 0;
-            box-shadow: 0 8px 30px rgba(255, 165, 0, 0.3);
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(255, 165, 0, 0.4);
         }
 
         .offer-box p {
-            font-size: 1.2rem;
+            font-size: 1.2em;
             margin: 0;
         }
+
         .offer-box h3 {
-            font-size: 2.8rem;
-            color: var(--white);
+            font-size: 2.8em;
+            color: #fff;
             margin: 10px 0;
         }
+
         .offer-box .strike {
             text-decoration: line-through;
             opacity: 0.8;
-            font-size: 1.5rem;
-            margin-right: 15px;
+            font-size: 0.6em;
+            margin-right: 10px;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: #0d2c54;
+            color: #fff;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
+
         .footer h2 {
-            color: var(--white);
-            font-size: 2rem;
+            color: #fff;
+            font-size: 2em;
         }
+
         .footer p {
-            font-size: 1.2rem;
-            margin: 15px 0;
+            font-size: 1.2em;
+            margin: 10px 0;
         }
+
         .footer a {
-            color: var(--secondary-color);
+            color: #FFA500;
             text-decoration: none;
-            font-weight: 600;
         }
-        .footer a:hover {
-            text-decoration: underline;
-        }
+
         .footer .copyright {
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 0.9em;
             opacity: 0.7;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .logo { font-size: 1.4em; }
-            .nav-contact a { font-size: 1em; }
-            h1, .hero-section h1 { font-size: 2.2rem; }
-            h2 { font-size: 2rem; }
+            .logo {
+                font-size: 1.4em;
+            }
+            .nav-contact a {
+                font-size: 1em;
+            }
+            h1, .hero-section h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 2em;
+            }
             .cta-buttons {
                 display: flex;
                 flex-direction: column;
@@ -336,14 +307,13 @@
                 width: 80%;
                 margin-bottom: 15px;
             }
-            .testimonial-card { width: 90%; }
         }
     </style>
 </head>
 <body>
 
     <nav class="top-nav">
-        <div class="logo">FTech Global</div>
+        <div class="logo">Ftech Global Solutions</div>
         <div class="nav-contact">
             <a href="tel:8789567363">📞 Call: 8789567363</a>
         </div>
@@ -351,4 +321,92 @@
 
     <header class="hero-section">
         <div class="container">
-            <h1>Website Banwaye Sirf ₹1999 Se –
+            <h1>Website Banwaye Sirf ₹1999 Se – 5 Din Me Ready!</h1>
+            <p class="subtext">Static, Dynamic ya E-Commerce – Sab Kuch Milega Ek Jagah.</p>
+            <div class="cta-buttons">
+                <a href="tel:8789567363" class="btn btn-call">📞 Call Now - 8789567363</a>
+                <a href="https://wa.me/918789567363?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20website%20offer." target="_blank" class="btn btn-whatsapp">💬 WhatsApp Now - 8789567363</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="trust-section">
+        <div class="container">
+            <h2>Hamare Happy Clients Kya Kehte Hain</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Rahul Kumar">
+                    <p>"FTech Global ने मेरी दुकान के लिए बहुत ही शानदार वेबसाइट बनाई है। अब मुझे ऑनलाइन ऑर्डर भी मिलते हैं।"</p>
+                    <h4>- राहुल कुमार, पटना</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client Sneha Singh">
+                    <p>"इनकी सर्विस बहुत तेज़ और प्रोफेशनल है। 5 दिन में वेबसाइट तैयार करके दी। बहुत बहुत धन्यवाद!"</p>
+                    <h4>- स्नेहा सिंह, रांची</h4>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Another Client">
+                    <p>"Best service in low price. Fully satisfied with their work. Highly recommended for startups."</p>
+                    <h4>- अमन वर्मा, जमशेदपुर</h4>
+                </div>
+            </div>
+             <div class="social-proof">
+                <img src="https://i.ibb.co/6y40Yc6/wa-review-placeholder.png" alt="WhatsApp Review Screenshot">
+                <img src="https://i.ibb.co/yQxGjD4/fb-comment-placeholder.png" alt="Facebook Comment Screenshot">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <div class="container">
+            <h2>Hamare Kaam Ki Jhalkiyan</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img src="https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Website 1">
+                    <h3>Patna Coaching Classes</h3>
+                    <a href="#" target="_blank">Live Dekhein →</a>
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Website 2">
+                    <h3>Ranchi's Kitchen</h3>
+                    <a href="#" target="_blank">Live Dekhein →</a>
+                </div>
+                <div class="portfolio-card">
+                    <img src="https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Website 3">
+                    <h3>Bihar Handicrafts</h3>
+                    <a href="#" target="_blank">Live Dekhein →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer-section">
+        <div class="container">
+            <h2>Kya-Kya Milega ₹1999 Me?</h2>
+            <div class="offer-details">
+                <div class="offer-item">✅ Mobile-friendly Website</div>
+                <div class="offer-item">✅ 1 Saal Hosting + SSL Free</div>
+                <div class="offer-item">✅ Google Me Dikhega (Basic SEO)</div>
+                <div class="offer-item">✅ Business Logo + Contact Form</div>
+                <div class="offer-item">✅ Fast Delivery in 5 Days</div>
+            </div>
+            <div class="offer-box">
+                <p>LIMITED TIME OFFER!</p>
+                <h3><span class="strike">₹10000</span> Ab Sirf ₹1999</h3>
+                <p>Yeh offer jald hi samapt ho jayega. Aaj hi book karein!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h2>Abhi Sampark Karein aur Apni Website Banwayein!</h2>
+            <p>📞 Phone: <a href="tel:8789567363">8789567363</a></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/918789567363?text=Hi%2C%20I%20want%20to%20get%20my%20website%20made." target="_blank">Click to Chat</a></p>
+            <p>📧 Email: <a href="mailto:info@ftechglobal.com">info@ftechglobal.com</a></p>
+            <p class="copyright">© 2024 FTech Global Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
