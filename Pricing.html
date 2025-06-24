@@ -3,108 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refund and Cancellation Policy - Ftech Global</title>
+    <title>Our Services & Pricing - Ftech Global</title>
+    <meta name="description" content="Explore affordable pricing for web development, software solutions, and digital marketing services from Ftech Global. Packages start from just ₹2999.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
+            color: #f1f5f9;
         }
         .container {
-            width: 80%;
-            margin: 20px auto;
-            background: #fff;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        h1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 2.5em;
         }
-        h2 {
-            font-size: 1.8em;
+        .header {
+            margin-bottom: 50px;
         }
-        p, li {
-            font-size: 1.1em;
+        .header h1 {
+            font-size: 2.8rem;
+            color: #FFD700;
             margin-bottom: 10px;
         }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
+        .header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        ol {
-            list-style-type: decimal;
-            margin-left: 20px;
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
         }
-        .note {
-            background-color: #eaf2f8;
-            border-left: 5px solid #c0392b; /* Red border for emphasis */
-            padding: 15px;
-            margin: 20px 0;
+        .pricing-card {
+            background-color: rgba(27, 44, 64, 0.7);
+            border: 1px solid #334a70;
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .note p {
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 230, 118, 0.2);
+        }
+        .pricing-card h2 {
+            font-size: 1.6rem;
+            color: #00e676;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .pricing-card .price {
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #c0392b;
+            color: #38bdf8;
+            margin-bottom: 20px;
         }
-        strong {
-            color: #333;
+        .pricing-card .price span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #cbd5e1;
         }
-        a {
-            color: #3498db;
+        .pricing-card p.description {
+            font-size: 1rem;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            flex-grow: 1;
+        }
+        .pricing-card li {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .pricing-card li i {
+            color: #00e676;
+            margin-right: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #00e676;
+            color: #101827;
+            padding: 12px 25px;
+            border-radius: 5px;
             text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-align: center;
         }
-        a:hover {
-            text-decoration: underline;
+        .cta-button:hover {
+            background-color: #00c366;
+        }
+        .disclaimer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(16, 24, 39, 0.7);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .disclaimer h3 {
+            color: #FFC107;
+            margin-top: 0;
+        }
+        .disclaimer p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Refund, Cancellation, and Delivery Policy</h1>
-        <p><strong>Last updated:</strong> June 24, 2025</p>
-
-        <h2>Refund and Cancellation Policy</h2>
-        
-        <div class="note">
-            <p>Due to the nature of our business as a service provider, “NO REFUND” and “NO CANCELLATION” will be entertained once a payment has been made.</p>
+        <div class="header">
+            <h1>Our Services & Pricing</h1>
+            <p>Transparent pricing for high-quality digital solutions. Choose a plan that fits your needs or contact us for a custom quote.</p>
         </div>
 
-        <p>
-            At Ftech Global, we deal in IT services, digital products, software development, and consultancy. These services require the immediate allocation of company resources, personnel, and time upon purchase. As our products and services are delivered or initiated instantly and are of a digital and non-returnable nature, we adhere to a strict no-refund and no-cancellation policy.
-        </p>
-        <p>
-            We strongly recommend that our customers carefully review our service descriptions, project proposals, and ensure our offerings meet their needs before making a payment.
-        </p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h2>Basic Website Development</h2>
+                <div class="price">₹2,999 <span>/ One-Time</span></div>
+                <p class="description">Perfect for individuals and small businesses to establish a professional online presence with a clean, modern, and mobile-friendly static website.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Up to 5 Pages</li>
+                    <li><i class="fas fa-check-circle"></i>Mobile-Responsive Design</li>
+                    <li><i class="fas fa-check-circle"></i>Basic Contact Form Integration</li>
+                    <li><i class="fas fa-check-circle"></i>Domain & Hosting Assistance</li>
+                    <li><i class="fas fa-check-circle"></i>Fast Turnaround Time</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Get Started</a>
+            </div>
 
-        <h2>Service Delivery Policy</h2>
-        <p>
-            Ftech Global is dedicated to timely service delivery. We deliver our digital services and solutions across India and globally.
-        </p>
-        <ul>
-            <li><strong>Delivery Timeframe:</strong> The delivery timelines for services such as web development, software projects, or digital marketing campaigns will be explicitly mentioned in the official project proposal or service agreement provided to the client.</li>
-            <li><strong>Commencement of Work:</strong> Orders placed will be processed and work will commence within 24-48 business hours of payment confirmation.</li>
-            <li><strong>Unexpected Delays:</strong> At times, there might be unexpected delays in the delivery of your service due to unavoidable technical challenges or client-side dependencies beyond our control. Ftech Global is not liable for such delays but will continuously work to mitigate such instances and requests its users to cooperate.</li>
-            <li><strong>Right to Cancel by Company:</strong> Ftech Global reserves the right to cancel an order at its sole discretion in cases where project requirements are not met by the client or if the project becomes untraceable due to a lack of communication from the client's end. In such cases, any refund, if applicable, will be at the sole discretion of the company.</li>
-        </ul>
+            <div class="pricing-card">
+                <h2>Custom Business Website</h2>
+                <div class="price">₹9,999 <span>/ One-Time</span></div>
+                <p class="description">A dynamic, feature-rich website tailored to your business needs, with a user-friendly Content Management System (CMS) to easily manage your content.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Up to 10 Dynamic Pages</li>
+                    <li><i class="fas fa-check-circle"></i>Custom UI/UX Design</li>
+                    <li><i class="fas fa-check-circle"></i>CMS Integration (e.g., WordPress)</li>
+                    <li><i class="fas fa-check-circle"></i>Basic SEO Setup</li>
+                    <li><i class="fas fa-check-circle"></i>Admin Panel & Training</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Get Started</a>
+            </div>
 
-        <h2>Contact Us</h2>
-        <p>If you have any questions about this policy before making a purchase, please do not hesitate to contact us:</p>
-        <ul>
-            <li><strong>Company:</strong> Ftech Global (M/s Zee Top Up India)</li>
-            <li><strong>Address:</strong> Adharshila Complex 408, 6th Floor, South Gandhi Maidan, Patna - 800001</li>
-            <li><strong>Phone:</strong> <a href="tel:+918789567363">8789567363</a></li>
-            <li><strong>Email:</strong> <a href="mailto:info@ftechglobal.com">info@ftechglobal.com</a></li>
-        </ul>
+            <div class="pricing-card">
+                <h2>Software Development</h2>
+                <div class="price">₹14,999+ <span>/ Starting Price</span></div>
+                <p class="description">Custom software solutions to automate your business processes. We build scalable and secure applications for desktop and web platforms.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Requirement Analysis</li>
+                    <li><i class="fas fa-check-circle"></i>Custom Application Development</li>
+                    <li><i class="fas fa-check-circle"></i>Database Integration</li>
+                    <li><i class="fas fa-check-circle"></i>Testing & Quality Assurance</li>
+                    <li><i class="fas fa-check-circle"></i>Post-Launch Support</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Request a Quote</a>
+            </div>
+
+            <div class="pricing-card">
+                <h2>Digital Marketing Package</h2>
+                <div class="price">₹4,999 <span>/ Month</span></div>
+                <p class="description">A comprehensive monthly package to increase your online visibility and drive traffic. Our strategies help your business grow in the digital landscape.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Search Engine Optimization (SEO)</li>
+                    <li><i class="fas fa-check-circle"></i>Social Media Management (SMM)</li>
+                    <li><i class="fas fa-check-circle"></i>Content Creation & Marketing</li>
+                    <li><i class="fas fa-check-circle"></i>Performance Analysis & Reporting</li>
+                    <li><i class="fas fa-check-circle"></i>Keyword Research & Strategy</li>
+                </ul>
+                <a href="contact.html" class="cta-button">Start Now</a>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <h3>Need a Custom Solution?</h3>
+            <p>The prices listed are for our standard packages. Prices for custom projects may vary based on specific requirements. <br>Please <a href="contact.html" style="color:#38bdf8;">contact us</a> for a detailed and personalized quote.</p>
+        </div>
     </div>
 
 </body>
