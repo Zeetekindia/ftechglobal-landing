@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>E-commerce Website Features | Ftech Global Solutions</title>
+    <meta name="description" content="Explore the powerful features of Ftech Global's e-commerce websites, including responsive design, 5000+ themes, express checkout, SEO tools, and comprehensive store management.">
+    
+    <link rel="icon" type="image/webp" href="Favicon%20-%20Ftechglobal%20services.webp" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* --- Common Styles from Index Page --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1B2C40 0%, #101827 100%);
+            color: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 130px; 
+        }
+
+        .top-contact-bar {
+            background: #1a2a4b; color: #fff; padding: 8px 20px; font-size: 0.9em; 
+            width: 100%; position: fixed; top: 0; left: 0; box-sizing: border-box; 
+            z-index: 1001; display: flex; align-items: center; 
+        }
+        .top-bar-links { flex-grow: 1; text-align: center; }
+        .top-bar-links a { color: #cbd5e1; text-decoration: none; margin: 0 10px; font-weight: 400; transition: color 0.3s ease; }
+        .top-bar-links a:hover { color: #00e676; }
+        .top-bar-contact { font-weight: bold; margin-left: auto; flex-shrink: 0; }
+        .top-bar-contact a { color: #fff; text-decoration: none; }
+
+        .fixed-main-logo {
+            width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+            position: fixed; top: 40px; left: 20px; z-index: 999;
+        }
+
+        nav.main-nav { 
+            background-color: #1a2a4b; padding: 15px 20px; display: flex; justify-content: flex-end; align-items: center;
+            width: calc(100% - 160px); position: fixed; top: 65px; left: 140px; box-sizing: border-box;
+            z-index: 998; box-shadow: 0 4px 10px rgba(0,0,0,0.5); border-radius: 8px; transition: background-color 0.3s ease;
+        }
+        nav.main-nav:hover { background-color: #2c3e50; }
+        .main-nav-links { display: flex; align-items: center; flex-wrap: nowrap; justify-content: flex-end; width: 100%; }
+        .main-nav-links a.button-link {
+            padding: 8px 12px; background-color: #00e676; color: #1a2a4b; border-radius: 10px;
+            text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; box-shadow: 0 4px 8px rgba(0, 230, 118, 0.4); display: flex;
+            align-items: center; gap: 6px; white-space: nowrap; font-size: 0.85em;
+        }
+        .main-nav-links a.button-link:hover { background-color: #00b359; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 230, 118, 0.6); }
+
+        .hamburger-menu {
+            display: none; background: none; border: none; color: #00e676;
+            font-size: 2rem; cursor: pointer; z-index: 1002; 
+        }
+
+        /* --- Landing Page Specific Styles --- */
+        .main-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .hero-section {
+            padding: 60px 20px;
+            border-radius: 15px;
+            background: rgba(45, 58, 75, 0.5);
+            margin-bottom: 50px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #76FF03;
+            text-shadow: 0 0 15px rgba(118, 255, 3, 0.6);
+            margin-bottom: 15px;
+        }
+        .hero-section p {
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .hero-cta {
+            background: #00e676; color: #101827; padding: 15px 35px; text-decoration: none;
+            border-radius: 8px; font-weight: bold;
+            display: inline-flex; align-items: center; gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+        }
+        .hero-cta:hover {
+            background: #00c366;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #00e676;
+            border-radius: 2px;
+        }
+        
+        .key-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+            text-align: left;
+        }
+        .feature-card {
+            background-color: rgba(27, 44, 64, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #00e676;
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #FFC107;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin: 0;
+        }
+        
+        .feature-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px auto 60px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        
+        /* Accordion Styles */
+        .accordion-section {
+            background: rgba(45, 58, 75, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        .accordion-item {
+            background-color: #1B2C40;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: #2c3e50;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #34495e;
+        }
+        .accordion-header h3 {
+            margin: 0;
+            color: #00e676;
+            font-size: 1.3rem;
+        }
+        .accordion-header .icon {
+            font-size: 1.2rem;
+            color: #f1f5f9;
+            transition: transform 0.3s ease;
+        }
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            text-align: left;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .feature-list li {
+            background-color: #101827;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: #cbd5e1;
+            border-left: 3px solid #38bdf8;
+        }
+        .feature-list li strong {
+            color: #f1f5f9;
+        }
+
+        /* --- Common Footer Styles --- */
+        footer {
+            background-color: #1a2a4b; color: #a0a0a0; text-align: center; padding: 20px;
+            font-size: 0.85em; border-top: 1px solid #334a70; margin-top: auto;
+            width: 100%; box-sizing: border-box; position: relative; 
+        }
+        .social-media-icons { margin-bottom: 20px; text-align: center; }
+        .social-media-icons a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; 
+            background-color: #4CAF50; color: #ffffff; margin: 0 6px; 
+            border-radius: 5px; font-size: 20px; text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .social-media-icons a i { vertical-align: middle;}
+        .social-media-icons a:hover { background-color: #3E8E41; transform: translateY(-3px); }
+        
+        nav.footer-nav { margin-top: 10px; margin-bottom: 20px; padding: 10px 0; }
+        nav.footer-nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav.footer-nav li { margin: 5px 12px; }
+        nav.footer-nav a { color: #cbd5e1; text-decoration: none; font-size: 0.9em; transition: color 0.3s ease; }
+        nav.footer-nav a:hover { color: #00e676; text-decoration: underline; }
+
+        /* --- Media Queries --- */
+        @media (max-width: 1200px) {
+            body { padding-top: 175px; } 
+            .fixed-main-logo { top: 50px; width: 120px; height: 120px; left: 50%; transform: translateX(-50%); }
+            .hamburger-menu { display: block; position: fixed; top: 50px; right: 20px; z-index: 1003; }
+            nav.main-nav { background-color: transparent; box-shadow: none; padding: 0; width: auto; height: auto; position: static; }
+            .main-nav-links {
+                display: none; position: fixed; top: 0; left: -100%; width: 80%; max-width: 300px;
+                height: 100vh; background-color: #1a2a4b; flex-direction: column; justify-content: center;
+                align-items: center; box-shadow: 4px 0 10px rgba(0,0,0,0.5); transition: left 0.3s ease-in-out;
+                z-index: 1002; padding: 20px; box-sizing: border-box;
+            }
+            .main-nav-links.active { display: flex; left: 0; }
+            nav.main-nav div a.button-link { 
+                margin: 10px auto; padding: 15px; width: 90%; text-align: center;
+                justify-content: center; font-size: 1.1em;
+            }
+            .top-contact-bar { flex-direction: column; height: auto; padding: 5px 10px; }
+            .top-bar-links { order: 2; margin-bottom: 0; margin-top: 5px; text-align: center; width: 100%; }
+            .top-bar-links a { margin: 0 8px; font-size: 0.85em;}
+            .top-bar-contact { order: 1; text-align: center; width: 100%; margin-left: 0; margin-bottom: 5px; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 150px; } 
+            .fixed-main-logo { top: 55px; width: 80px; height: 80px; }
+            .hamburger-menu { top: 60px; right: 15px; font-size: 1.3rem; }
+            .hero-section h1 { font-size: 2.5rem; }
+            .hero-section p { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            .feature-list { grid-template-columns: 1fr; }
+            nav.footer-nav ul { flex-direction: column; } 
+            nav.footer-nav li { margin: 8px 0; } 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header: Top Bar -->
+    <div class="top-contact-bar">
+        <div class="top-bar-links">
+            <a href="services.html">Our Services</a>
+            <a href="Pricing.html">Pricing</a>
+            <a href="about-us.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="blog.html">Blog</a> 
+        </div>
+        <div class="top-bar-contact">
+            Contact: <a href="tel:+918789567363"><strong>+91-8789567363</strong></a>
+        </div>
+    </div>
+
+    <!-- Header: Logo -->
+    <a href="index.html">
+      <img src="ftechglobal_logo_half_size.jpeg" alt="Ftech Global Solutions Logo" class="fixed-main-logo" onerror="this.onerror=null;this.src='https://placehold.co/120x120/101827/FFFFFF?text=Ftech';">
+    </a>
+
+    <!-- Header: Main Navigation -->
+    <nav class="main-nav"> 
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="main-nav-links" id="main-nav-links">
+            <a href="index.html" class="button-link"><i class="fas fa-home"></i> Home</a>
+            <a href="mobile-recharge-software-ftech-global.html" class="button-link"><i class="fas fa-mobile-alt"></i> Mobile Recharge Software</a>
+            <a href="irctc-agent-services.html" class="button-link"><i class="fas fa-train"></i> Become IRCTC Agent</a>
+            <a href="digital-marketing-services.html" class="button-link"><i class="fas fa-chart-line"></i> SEO & Digital Marketing</a>
+            <a href="startup-consultancy.html" class="button-link"><i class="fas fa-lightbulb"></i> Startup Consultancy</a>
+            <a href="registration.html" class="button-link"><i class="fas fa-user-plus"></i> Registration</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>Build Your E-commerce Empire</h1>
+            <p>Unlock your business potential with a powerful, feature-rich e-commerce website designed to convert visitors into loyal customers. We provide all the tools you need to succeed online.</p>
+            <a href="contact.html" class="hero-cta">
+                <i class="fas fa-rocket"></i> Get Started Today
+            </a>
+        </section>
+
+        <!-- Key Features Section -->
+        <h2 class="section-title">Core Features for Success</h2>
+        <div class="key-features-grid">
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>World Class Mobile Responsive Website</h3>
+                <p>Elevate your website’s visual appeal with our fresh, elegant, and unique responsive designs.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-palette"></i>
+                <h3>5000+ Themes</h3>
+                <p>Discover over 5,000 unique themes to elevate your website's design and match your brand identity.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Express Checkout</h3>
+                <p>Guide customers directly to checkout and reduce cart abandonment, especially for single-product buyers.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-search-dollar"></i>
+                <h3>Powerful SEO Tools</h3>
+                <p>Improve your website’s visibility with tailored SEO strategies designed to attract more users.</p>
+            </div>
+        </div>
+
+        <img src="https://placehold.co/1200x400/2c3e50/FFFFFF?text=Stunning+E-commerce+Website+Layout" alt="A montage of e-commerce website layouts" class="feature-image">
+
+        <!-- All Features Accordion Section -->
+        <section class="accordion-section">
+            <h2 class="section-title">Everything You Need, All in One Place</h2>
+            
+            <div class="accordion">
+                <!-- Website Features -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3><i class="fas fa-desktop"></i> Website</h3>
+                        <div class="icon fas fa-plus"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="feature-list">
+                            <li><strong>Ecommerce Website:</strong> Fully functional online store.</li>
+                            <li><strong>Responsive Mobile Site:</strong> Perfect display on all devices.</li>
+                            <li><strong>Shopping Cart:</strong> With Express Checkout option.</li>
+                            <li><strong>Access to Themes:</strong> Over 5000+ elegant designs.</li>
+                            <li><strong>Custom Domain:</strong> Use your own new or existing domain.</li>
+                            <li><strong>Storage:</strong> Ample storage for your products and data.</li>
+                            <li><strong>8 Regional Languages:</strong> Reach a wider audience.</li>
+                            <li><strong>Customised Enquiry Forms:</strong> Capture leads effectively.</li>
+                            <li><strong>SEO Tools:</strong> Enhance search engine visibility.</li>
+                            <li><strong>Custom Domain Name:</strong> Register a new or use existing.</li>
+                            <li><strong>WhatsApp Chat Integration:</strong> Engage customers directly.</li>
+                            <li><strong>Maps with Directions:</strong> Guide customers to your physical store.</li>
+                            <li><strong>Integrated Social Media:</strong> Connect your store to social channels.</li>
+                            <li><strong>Bandwidth:</strong> High bandwidth for smooth performance.</li>
+                            <li><strong>Number of Pages:</strong> Create as many pages as you need.</li>
+                            <li><strong>Customized Favicon:</strong> Brand your browser tab.</li>
+                            <li><strong>Upload Company Logo:</strong> Personalize your storefront.</li>
+                            <li><strong>Google Analytics Integration:</strong> Track your visitors.</li>
+                            <li><strong>Automated SEO:</strong> Foundational SEO built-in.</li>
+                            <li><strong>API Access:</strong> For custom integrations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Products/Services Features -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3><i class="fas fa-box-open"></i> Products & Services</h3>
+                        <div class="icon fas fa-plus"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="feature-list">
+                            <li><strong>Unlimited Products:</strong> Add/Bulk upload unlimited items.</li>
+                            <li><strong>Unlimited Services:</strong> Showcase all your offerings.</li>
+                            <li><strong>Multiple Images per Product:</strong> Display products from all angles.</li>
+                            <li><strong>Product Variants:</strong> Offer different sizes, colors, etc.</li>
+                            <li><strong>Showcase Size Chart:</strong> Help customers choose correctly.</li>
+                            <li><strong>Sell Packed and Loose:</strong> Flexible selling units.</li>
+                            <li><strong>Sell Product in Bulk:</strong> Cater to wholesale buyers.</li>
+                            <li><strong>Customize Item Listing Page:</strong> Control your product grid.</li>
+                            <li><strong>Customize Item Details Page:</strong> Design your product pages.</li>
+                            <li><strong>Wishlist:</strong> Allow users to save items for later.</li>
+                            <li><strong>Product Reviews & Rating:</strong> Build trust with social proof.</li>
+                            <li><strong>File Attachments:</strong> Provide manuals or extra info.</li>
+                            <li><strong>Synonym Names:</strong> Improve internal search results.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Checkout & Orders Features -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3><i class="fas fa-credit-card"></i> Checkout & Orders</h3>
+                        <div class="icon fas fa-plus"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="feature-list">
+                            <li><strong>Buy Online, Pick up In-store:</strong> Offer flexible fulfillment.</li>
+                            <li><strong>Separate Billing/Delivery Address:</strong> For gifts and convenience.</li>
+                            <li><strong>Show Custom Message:</strong> On checkout or order confirmation.</li>
+                            <li><strong>Capture Note from Customer:</strong> For special instructions.</li>
+                            <li><strong>Discount Rules:</strong> Create complex discount logic.</li>
+                            <li><strong>Coupon Codes:</strong> Run promotional campaigns.</li>
+                            <li><strong>Custom Invoice Design:</strong> Professional, branded invoices.</li>
+                            <li><strong>Custom Invoice Numbering:</strong> Organize your accounting.</li>
+                            <li><strong>Custom Fields for Orders:</strong> Capture extra order information.</li>
+                            <li><strong>Customer Credit:</strong> Offer store credit to customers.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Shipping & General Features -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3><i class="fas fa-shipping-fast"></i> Shipping & General</h3>
+                        <div class="icon fas fa-plus"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="feature-list">
+                            <li><strong>Hyperlocal Delivery Integration:</strong> For local businesses.</li>
+                            <li><strong>Courier Delivery Integration:</strong> Connect with major carriers.</li>
+                            <li><strong>Delivery Boy App:</strong> Manage your own delivery fleet.</li>
+                            <li><strong>Unlimited Inquiry Forms:</strong> Create multiple contact points.</li>
+                            <li><strong>Unlimited Fields per Form:</strong> Get the exact info you need.</li>
+                            <li><strong>File Upload on Form:</strong> For support or custom orders.</li>
+                            <li><strong>Multiple Staff Accounts:</strong> Give your team access.</li>
+                            <li><strong>Advanced Reports:</strong> Gain insights into your business.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Support Features -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3><i class="fas fa-headset"></i> Support</h3>
+                        <div class="icon fas fa-plus"></div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="feature-list">
+                            <li><strong>Help Center Access:</strong> Find answers anytime.</li>
+                            <li><strong>Phone Support:</strong> Speak to our team directly.</li>
+                            <li><strong>Priority Email Support:</strong> Get faster responses.</li>
+                            <li><strong>Premium Customer Support:</strong> Highly dedicated assistance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-media-icons">
+            <a href="YOUR_FACEBOOK_PROFILE_URL" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="YOUR_X_PROFILE_URL" title="X (Twitter)" target="_blank"><i class="fab fa-twitter"></i></a> 
+            <a href="YOUR_YOUTUBE_CHANNEL_URL" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="YOUR_LINKEDIN_PROFILE_URL" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="services.html">Our Services</a></li>
+                <li><a href="Pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="blog.html">Blog</a></li> 
+                <li><a href="term-and-condition.html">Term & Conditions</a></li> 
+                <li><a href="https://www.ftechglobal.com/Refund-and-Cancellation.html">Refund & Cancellation</a></li>
+                <li><a href="https://www.ftechglobal.com/Privacy-Policy-Ftechglobal.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        
+        &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+        
+        <div style="text-align:center; margin-top: 20px;"> 
+            <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
+                     title="Counter Widget"
+                     alt="Visit counter For Websites"
+                     border="0" />
+            </a>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Hamburger Menu Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mainNavLinks = document.getElementById('main-nav-links');
+
+            if (hamburgerMenu && mainNavLinks) {
+                hamburgerMenu.addEventListener('click', function () {
+                    mainNavLinks.classList.toggle('active');
+                });
+            }
+            
+            // Accordion Toggle
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = header.querySelector('.icon');
+
+                header.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+
+                    // Close all other items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('open')) {
+                            otherItem.classList.remove('open');
+                            otherItem.querySelector('.accordion-content').style.maxHeight = '0';
+                            otherItem.querySelector('.accordion-content').style.padding = '0 20px';
+                            otherItem.querySelector('.icon').classList.remove('fa-minus');
+                            otherItem.querySelector('.icon').classList.add('fa-plus');
+                        }
+                    });
+
+                    // Open or close the clicked item
+                    if (isOpen) {
+                        item.classList.remove('open');
+                        content.style.maxHeight = '0';
+                        content.style.padding = '0 20px';
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    } else {
+                        item.classList.add('open');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.style.padding = '20px';
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
