@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchCart - Your All-in-One eCommerce Platform</title>
+    <meta name="description" content="Create and manage your professional online store with our powerful eCommerce website builder. Access 5000+ themes, express checkout, SEO tools, and dedicated support.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-300">
+
+    <header x-data="{ mobileMenuOpen: false }" class="bg-slate-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <svg class="h-8 w-8 text-sky-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875c0-.621.504-1.125 1.125-1.125h12.75c.621 0 1.125.504 1.125 1.125v1.875m-17.25 4.5h14.625c.621 0 1.125-.504 1.125-1.125V11.25c0-4.142-3.358-7.5-7.5-7.5h-1.125c-4.142 0-7.5 3.358-7.5 7.5v7.5c0 .621.504 1.125 1.125 1.125z" />
+                        </svg>
+                        <span class="text-2xl font-bold text-white">LaunchCart</span>
+                    </a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#features" class="text-slate-300 hover:text-sky-400 transition-colors">Features</a>
+                    <a href="#pricing" class="text-slate-300 hover:text-sky-400 transition-colors">Pricing</a>
+                    <a href="#how-it-works" class="text-slate-300 hover:text-sky-400 transition-colors">How It Works</a>
+                    <a href="#testimonials" class="text-slate-300 hover:text-sky-400 transition-colors">Testimonials</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                     <a href="#contact" class="hidden sm:inline-block bg-sky-500 text-white font-semibold px-5 py-2 rounded-lg hover:bg-sky-600 transition-colors">Get Started Free</a>
+                    <div class="md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-slate-300 hover:text-white">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" x-transition class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800">
+                <a href="#features" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Features</a>
+                <a href="#pricing" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Pricing</a>
+                <a href="#how-it-works" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">How It Works</a>
+                <a href="#testimonials" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-700">Testimonials</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="block sm:hidden px-3 py-2 rounded-md text-base font-medium text-white bg-sky-500 hover:bg-sky-600">Get Started Free</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero" class="pt-24 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
+                    Build Your Online Store.
+                    <span class="block bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">In Minutes.</span>
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-400">
+                    The all-in-one platform to launch, manage, and scale your eCommerce business. No coding skills required.
+                </p>
+                <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                    <a href="#pricing" class="bg-sky-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-sky-600 transition-all text-lg transform hover:scale-105">
+                        Start Your 14-Day Free Trial
+                    </a>
+                    <a href="#how-it-works" class="bg-slate-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-slate-600 transition-all text-lg">
+                        See How It Works
+                    </a>
+                </div>
+                <div class="mt-16">
+                     <img src="https://placehold.co/1200x600/1e293b/ffffff?text=Your+Stunning+Website" alt="A beautiful ecommerce website built with LaunchCart" class="rounded-2xl shadow-2xl shadow-sky-500/10 mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 bg-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-sky-400 tracking-wider uppercase">Everything You Need</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-white tracking-tight sm:text-4xl">All-in-One Powerful Platform</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ab?</p>
+                </div>
+
+                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-slate-700 h-12 w-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c.251.047.502.097.752.147m-1.5 0c-.251.047-.502.097-.752.147m3.75 0c.251.047.502.097.752.147m-4.5 0c.251.047.502.097.752.147M12 21v-5.714a2.25 2.25 0 01.659-1.591L19 14.5M12 21c.251.047.502.097.752.147m-1.5 0c-.251.047-.502.097-.752.147m3.75 0c.251.047.502.097.752.147m-4.5 0c.251.047.502.097.752.147M3.75 13.5h16.5m-16.5 0a1.5 1.5 0 01-1.5-1.5v-1.5a1.5 1.5 0 011.5-1.5h16.5a1.5 1.5 0 011.5 1.5v1.5a1.5 1.5 0 01-1.5 1.5m-16.5 0h16.5" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">5000+ Responsive Themes</h3>
+                        </div>
+                        <p class="mt-4 text-slate-400">Choose from thousands of professionally designed, mobile-ready themes to create a stunning storefront.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-slate-700 h-12 w-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0h.75A.75.75 0 015.25 6v.75m0 0v-.75A.75.75 0 015.25 4.5h-.75m0 0H3.75m9 13.5h.008v.008h-.008v-.008zm0 0h.008v.008h-.008v-.008zm0 0h.008v.008h-.008v-.008zm0 0h.008v.008h-.008v-.008zM12 4.5h.008v.008H12V4.5zm0 0h.008v.008H12V4.5zm0 0h.008v.008H12V4.5zm0 0h.008v.008H12V4.5zM15 21h3.75c.621 0 1.125-.504 1.125-1.125V6.375A1.125 1.125 0 0017.625 5.25h-4.5" /></svg>
+                            </div>
+                             <h3 class="text-xl font-bold text-white">Express Checkout</h3>
+                        </div>
+                        <p class="mt-4 text-slate-400">A seamless, secure shopping cart and express checkout experience to maximize conversions.</p>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-slate-700 h-12 w-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.2-5.2" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Built-in SEO Tools</h3>
+                        </div>
+                        <p class="mt-4 text-slate-400">Climb the search rankings with powerful, built-in SEO tools and Google Analytics integration.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-slate-700 h-12 w-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A11.953 11.953 0 0012 13.5c-2.998 0-5.74-1.1-7.843-2.918" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Custom Domain & Hosting</h3>
+                        </div>
+                        <p class="mt-4 text-slate-400">Secure, reliable hosting is included. Use your own custom domain name to build your brand.</p>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-slate-700 h-12 w-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 21z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Payment Gateway Support</h3>
+                        </div>
+                        <p class="mt-4 text-slate-400">Integrate with popular payment gateways to accept payments securely from customers worldwide.</p>
+                    </div>
+
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0 bg-slate-700 h-12 w-12 rounded-lg flex items-center justify-center">
+                                <svg class="h-6 w-6 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.691v4.992" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Advanced Store Management</h3>
+                        </div>
+                        <p class="mt-4 text-slate-400">Manage products, shipping, coupons, invoices, and advanced reports all from one intuitive dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-sky-400 tracking-wider uppercase">Simple & Fast</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Launch Your Store in 3 Easy Steps</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-12 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-sky-500 text-3xl font-bold text-sky-400 mb-6">1</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Choose a Theme</h3>
+                        <p class="text-slate-400">Select a beautiful, mobile-friendly theme from our extensive library that matches your brand.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <div class="flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-sky-500 text-3xl font-bold text-sky-400 mb-6">2</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Add Your Products</h3>
+                        <p class="text-slate-400">Easily add your products, descriptions, and images. Organize them into categories for easy Browse.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <div class="flex items-center justify-center h-20 w-20 rounded-full bg-slate-800 border-2 border-sky-500 text-3xl font-bold text-sky-400 mb-6">3</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Launch & Sell</h3>
+                        <p class="text-slate-400">Connect your custom domain, set up payments, and start selling to customers across the globe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 bg-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">Trusted by Thousands of Entrepreneurs</h2>
+                     <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">See what our customers are saying about their success.</p>
+                </div>
+                <div class="mt-16 grid gap-8 lg:grid-cols-3">
+                    <div class="bg-slate-800 p-8 rounded-2xl">
+                        <blockquote class="text-lg text-slate-300">
+                            <p>"LaunchCart made it incredibly easy to take my retail business online. The themes are beautiful and my sales have doubled in just three months! The support team is also fantastic."</p>
+                        </blockquote>
+                        <figcaption class="mt-6 flex items-center space-x-4">
+                            <img class="h-12 w-12 rounded-full" src="https://placehold.co/48x48/64748b/ffffff?text=SJ" alt="User avatar">
+                            <div>
+                                <div class="font-semibold text-white">Sarah Jones</div>
+                                <div class="text-slate-400">Owner, Bloom & Petal</div>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-2xl">
+                        <blockquote class="text-lg text-slate-300">
+                             <p>"As someone with zero technical skills, I was hesitant to build a website. LaunchCart's platform is so intuitive. I had my store up and running in a single weekend. Highly recommended!"</p>
+                        </blockquote>
+                        <figcaption class="mt-6 flex items-center space-x-4">
+                            <img class="h-12 w-12 rounded-full" src="https://placehold.co/48x48/64748b/ffffff?text=MK" alt="User avatar">
+                            <div>
+                                <div class="font-semibold text-white">Michael Chen</div>
+                                <div class="text-slate-400">Artisan, Crafted Wares</div>
+                            </div>
+                        </figcaption>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-2xl">
+                        <blockquote class="text-lg text-slate-300">
+                            <p>"The SEO tools are a game-changer. My site started ranking on Google for key terms within weeks of launching. The analytics dashboard gives me all the insights I need to grow."</p>
+                        </blockquote>
+                        <figcaption class="mt-6 flex items-center space-x-4">
+                             <img class="h-12 w-12 rounded-full" src="https://placehold.co/48x48/64748b/ffffff?text=AP" alt="User avatar">
+                            <div>
+                                <div class="font-semibold text-white">Anjali Patel</div>
+                                <div class="text-slate-400">Founder, Spice Route</div>
+                            </div>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Simple, Transparent Pricing</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">Choose the plan that's right for your business. No hidden fees.</p>
+                </div>
+                
+                <div class="mt-16 grid lg:grid-cols-3 gap-8">
+                    <div class="border border-slate-700 bg-slate-800/50 rounded-2xl p-8 flex flex-col">
+                        <h3 class="text-2xl font-semibold text-white">Starter</h3>
+                        <p class="mt-2 text-slate-400">For new businesses just getting started.</p>
+                        <div class="mt-6">
+                            <span class="text-5xl font-extrabold text-white">$29</span>
+                            <span class="text-base font-medium text-slate-400">/mo</span>
+                        </div>
+                        <ul class="mt-8 space-y-4 text-left">
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Ecommerce Website Builder</span></li>
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Unlimited Products</span></li>
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Basic SEO Tools</span></li>
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">24/7 Support</span></li>
+                        </ul>
+                        <a href="#" class="mt-8 block w-full bg-slate-600 text-white text-center rounded-lg py-3 font-semibold hover:bg-slate-500 transition-colors">Choose Starter</a>
+                    </div>
+                    
+                    <div class="border-2 border-sky-500 bg-slate-800 rounded-2xl p-8 flex flex-col relative">
+                        <div class="absolute top-0 -translate-y-1/2 bg-sky-500 text-white font-semibold px-4 py-1 rounded-full text-sm">Most Popular</div>
+                        <h3 class="text-2xl font-semibold text-white">Pro</h3>
+                        <p class="mt-2 text-slate-400">For growing businesses that need more power.</p>
+                        <div class="mt-6">
+                            <span class="text-5xl font-extrabold text-white">$79</span>
+                            <span class="text-base font-medium text-slate-400">/mo</span>
+                        </div>
+                        <ul class="mt-8 space-y-4 text-left">
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Everything in Starter, plus:</span></li>
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Advanced SEO & Analytics</span></li>
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Coupon & Invoice Tools</span></li>
+                            <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Social Media Integration</span></li>
+                             <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Priority Support</span></li>
+                        </ul>
+                        <a href="#" class="mt-8 block w-full bg-sky-500 text-white text-center rounded-lg py-3 font-semibold hover:bg-sky-600 transition-colors">Choose Pro</a>
+                    </div>
+
+                    <div class="border border-slate-700 bg-slate-800/50 rounded-2xl p-8 flex flex-col">
+                        <h3 class="text-2xl font-semibold text-white">Business</h3>
+                        <p class="mt-2 text-slate-400">For established businesses and enterprises.</p>
+                        <div class="mt-6">
+                            <span class="text-5xl font-extrabold text-white">$199</span>
+                            <span class="text-base font-medium text-slate-400">/mo</span>
+                        </div>
+                        <ul class="mt-8 space-y-4 text-left">
+                           <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Everything in Pro, plus:</span></li>
+                           <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Advanced Reporting</span></li>
+                           <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Shipping Integrations</span></li>
+                           <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">API Access</span></li>
+                           <li class="flex items-center space-x-3"><svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-slate-300">Dedicated Support Manager</span></li>
+                        </ul>
+                         <a href="#" class="mt-8 block w-full bg-slate-600 text-white text-center rounded-lg py-3 font-semibold hover:bg-slate-500 transition-colors">Choose Business</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-slate-800/50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Ready to Launch?</h2>
+                    <p class="mt-4 text-xl text-slate-400">Have questions or need a custom solution? Get in touch with our expert team.</p>
+                </div>
+                <div class="mt-12">
+                    <form action="#" method="POST" class="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-slate-400 text-left">First name</label>
+                            <div class="mt-1">
+                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="py-3 px-4 block w-full shadow-sm bg-slate-800 border-slate-600 rounded-md focus:ring-sky-500 focus:border-sky-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-slate-400 text-left">Last name</label>
+                            <div class="mt-1">
+                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="py-3 px-4 block w-full shadow-sm bg-slate-800 border-slate-600 rounded-md focus:ring-sky-500 focus:border-sky-500">
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                             <label for="email" class="block text-sm font-medium text-slate-400 text-left">Email</label>
+                             <div class="mt-1">
+                                <input id="email" name="email" type="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm bg-slate-800 border-slate-600 rounded-md focus:ring-sky-500 focus:border-sky-500">
+                            </div>
+                        </div>
+                         <div class="sm:col-span-2">
+                            <label for="message" class="block text-sm font-medium text-slate-400 text-left">Message</label>
+                            <div class="mt-1">
+                                <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm bg-slate-800 border-slate-600 rounded-md focus:ring-sky-500 focus:border-sky-500"></textarea>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-sky-500">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <a href="#" class="flex items-center space-x-2">
+                        <svg class="h-8 w-8 text-sky-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875c0-.621.504-1.125 1.125-1.125h12.75c.621 0 1.125.504 1.125 1.125v1.875m-17.25 4.5h14.625c.621 0 1.125-.504 1.125-1.125V11.25c0-4.142-3.358-7.5-7.5-7.5h-1.125c-4.142 0-7.5 3.358-7.5 7.5v7.5c0 .621.504 1.125 1.125 1.125z" />
+                        </svg>
+                        <span class="text-2xl font-bold text-white">LaunchCart</span>
+                    </a>
+                    <p class="text-slate-400 text-base">The complete platform for starting, running, and growing your eCommerce business.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-slate-400 hover:text-slate-300"><span class="sr-only">Facebook</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-slate-400 hover:text-slate-300"><span class="sr-only">Instagram</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.465c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.58 0 9.22.01 8.134.059c-1.164.053-1.993.224-2.757.517a6.9 6.9 0 00-2.413 1.545 6.9 6.9 0 00-1.545 2.413c-.293.764-.464 1.593-.517 2.757C.01 9.22 0 9.58 0 12s.01 2.78.059 3.866c.053 1.164.224 1.993.517 2.757a6.9 6.9 0 001.545 2.413 6.9 6.9 0 002.413 1.545c.764.293 1.593.464 2.757.517C9.22 23.99 9.58 24 12 24s2.78-.01 3.866-.059c1.164-.053 1.993-.224 2.757-.517a6.9 6.9 0 002.413-1.545 6.9 6.9 0 001.545-2.413c.293-.764.464-1.593.517-2.757C23.99 14.78 24 14.42 24 12s-.01-2.78-.059-3.866c-.053-1.164-.224-1.993-.517-2.757a6.9 6.9 0 00-1.545-2.413 6.9 6.9 0 00-2.413-1.545c-.764-.293-1.593-.464-2.757-.517C14.78.01 14.42 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-slate-400 hover:text-slate-300"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    </div>
+                </div>
+                <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Solutions</h3>
+                        <ul role="list" class="mt-4 space-y-4">
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Website Builder</a></li>
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Themes</a></li>
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">SEO</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Support</h3>
+                        <ul role="list" class="mt-4 space-y-4">
+                            <li><a href="#pricing" class="text-base text-slate-400 hover:text-white">Pricing</a></li>
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Documentation</a></li>
+                            <li><a href="#contact" class="text-base text-slate-400 hover:text-white">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 md:mt-0">
+                        <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Company</h3>
+                        <ul role="list" class="mt-4 space-y-4">
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">About</a></li>
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Blog</a></li>
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Careers</a></li>
+                        </ul>
+                    </div>
+                     <div class="mt-8 md:mt-0">
+                        <h3 class="text-sm font-semibold text-slate-200 tracking-wider uppercase">Legal</h3>
+                        <ul role="list" class="mt-4 space-y-4">
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Privacy</a></li>
+                            <li><a href="#" class="text-base text-slate-400 hover:text-white">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-slate-700 pt-8">
+                <p class="text-base text-slate-400 text-center">&copy; 2025 LaunchCart, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
