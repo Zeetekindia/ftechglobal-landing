@@ -6,7 +6,7 @@
     
     <title>Ftech Global Solutions | Expert Web Development, SEO, Digital Marketing & Startup Consultancy in India</title>
     <meta name="description" content="Ftech Global Solutions offers leading web development, advanced SEO services, comprehensive digital marketing, custom software, and strategic startup consultancy across India and globally. Partner with us for business growth.">
-    <meta name="keywords" content="web development India, SEO services India, digital marketing agency, custom software development, startup consultancy, mobile recharge software, IRCTC agent, GST filing, ITR filing, Ftech Global Solutions, website design, e-commerce solutions, Google Ads, social media marketing">
+    <meta name="keywords" content="web development India, SEO services India, digital marketing agency, custom software development, startup consultancy, mobile recharge software, IRCTC agent, GST filing, ITR filing, Ftech Global Solutions, website design, e-commerce solutions, Google Ads, social media marketing, Patna, Bihar, Delhi, Mumbai, Bangalore, Kolkata, Hyderabad, Chennai, Pune">
     <meta name="author" content="Ftech Global Solutions">
     <link rel="canonical" href="https://www.ftechglobal.com/index.html" /> <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ftechglobal.com/index.html"> <meta property="og:title" content="Ftech Global Solutions | Expert Web Development, SEO & Digital Marketing Services">
@@ -86,7 +86,17 @@
         }
       ],
       "priceRange": "Rs. (or your currency)",
-      "servesCuisine": "IT Services"
+      "servesCuisine": "IT Services",
+      "areaServed": [
+        { "@type": "City", "name": "Patna" },
+        { "@type": "City", "name": "Delhi" },
+        { "@type": "City", "name": "Mumbai" },
+        { "@type": "City", "name": "Bangalore" },
+        { "@type": "City", "name": "Kolkata" },
+        { "@type": "City", "name": "Hyderabad" },
+        { "@type": "City", "name": "Chennai" },
+        { "@type": "City", "name": "Pune" }
+        ]
     }
     </script>
     
@@ -494,6 +504,43 @@
             transform: translateY(-2px);
         }
 
+        /* Style for the service city list */
+        .service-cities {
+            font-size: 0.9em;
+            color: #cbd5e1;
+            margin-top: 10px;
+            text-align: center; /* Center the list */
+        }
+
+        .service-cities strong {
+            display: block; /* Make the heading appear on its own line */
+            margin-bottom: 5px;
+            color: #38bdf8;
+            font-size: 1.05em;
+        }
+
+        .service-cities ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center list items */
+            gap: 5px 10px; /* Space between rows and columns */
+        }
+
+        .service-cities li {
+            display: inline-block; /* Display items in a line */
+            white-space: nowrap; /* Keep city names on one line */
+        }
+
+        .service-cities li:not(:last-child)::after {
+            content: "•"; /* Dot separator */
+            margin-left: 10px;
+            color: #00e676; /* Green dot */
+        }
+
+
         /* --- Media Queries for responsiveness --- */
         @media (max-width: 1200px) { /* Tablet view */
             body { padding-top: 175px; }
@@ -633,7 +680,8 @@
             .footer-column h3,
             .footer-column ul,
             .social-media-icons,
-            .footer-bottom {
+            .footer-bottom,
+            .service-cities { /* Also center the new service cities list */
                 text-align: center; /* Ensure all elements are centered when stacked */
             }
         }
@@ -784,21 +832,37 @@
                     <a href="YOUR_LINKEDIN_PROFILE_URL" title="Ftech Global Solutions on LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     <a href="YOUR_INSTAGRAM_PROFILE_URL" title="Ftech Global Solutions on Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div>
-  <p style="margin-top: 15px;">
-    Contact: 
-    <a href="tel:+918789567363" style="color: #00e676; text-decoration: none;" aria-label="Call Ftech Global Solutions">
-      +91-8789567363
-    </a>
-  </p>
-  <p style="font-size: 0.9em; margin-top: 15px; color: #cbd5e1;">
-    Email: 
-    <a href="mailto:info@ftechglobal.com" style="color: #00e676; text-decoration: none;">
-      info@ftechglobal.com
-    </a>
-  </p>
-</div>
+                <p style="margin-top: 15px;">Contact: <a href="tel:+918789567363" style="color: #00e676; text-decoration: none;" aria-label="Call Ftech Global Solutions">+91-8789567363</a></p>
+                <p style="font-size: 0.9em; margin-top: 5px; color: #cbd5e1;">Email: <a href="mailto:info@ftechglobal.com" style="color: #00e676; text-decoration: none;">info@ftechglobal.com</a></p>
+                <p style="font-size: 0.9em; margin-top: 5px; color: #cbd5e1;">Visit Us: <a href="contact.html" style="color: #00e676; text-decoration: none;" title="Find our office location on Contact Us page">Our Office</a></p>
+            </div>
+        </div>
 
+        <div class="service-cities">
+            <strong>Services Available In:</strong>
+            <ul>
+                <li>Patna</li>
+                <li>Delhi</li>
+                <li>Mumbai</li>
+                <li>Bangalore</li>
+                <li>Kolkata</li>
+                <li>Hyderabad</li>
+                <li>Chennai</li>
+                <li>Pune</li>
+                <li>Ahmedabad</li>
+                <li>Jaipur</li>
+                <li>Surat</li>
+                <li>Lucknow</li>
+                <li>Kanpur</li>
+                <li>Nagpur</li>
+                <li>Visakhapatnam</li>
+                <li>Bhopal</li>
+                <li>Indore</li>
+                <li>Chandigarh</li>
+                <li>Coimbatore</li>
+                <li>Kochi</li>
+                </ul>
+        </div>
 
         <div class="footer-bottom">
             &copy; <span id="current-year"></span> FTECH GLOBAL. All rights reserved.
