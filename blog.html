@@ -450,9 +450,9 @@
         .default-image-block { /* Style for default color block */
             width: 100%;
             height: 100%;
-            /* Customizable Default Image Block Colors */
-            background-color: #00e676; /* Green for first letter */
-            color: #1a2a4b; /* Dark text on green */
+            /* Customizable Default Image Block Colors - These will be set by JS now */
+            background-color: #38bdf8; /* Fallback if JS fails */
+            color: #101827; /* Dark text on generated background */
             
             display: flex;
             justify-content: center;
@@ -729,6 +729,16 @@
                 // Clear any existing content in case of re-rendering
                 container.innerHTML = ''; 
 
+                // Function to generate a consistent hash-based color for the default image block
+                function stringToHslColor(str, s, l) {
+                    let hash = 0;
+                    for (let i = 0; i < str.length; i++) {
+                        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+                    }
+                    const h = hash % 360;
+                    return `hsl(${h}, ${s}%, ${l}%)`;
+                }
+
                 posts.forEach(post => {
                     const blogImageContainer = document.createElement('div');
                     blogImageContainer.classList.add('blog-image-container');
@@ -736,8 +746,17 @@
                     // Determine image source or use default block
                     if (post.image && typeof post.image === 'string' && post.image.trim() !== '') {
                         const img = document.createElement('img');
-                        // Handle image paths: check if absolute or relative (assuming relative are 'assets/images/')
-                        img.src = post.image.startsWith('http') ? post.image : `assets/images/${post.image}`; 
+                        // Handle image paths: check if absolute or relative (assuming relative are 'images/' or 'assets/images/')
+                        // We are adjusting this path handling for flexibility.
+                        // If post.image starts with 'http', it's absolute.
+                        // If it starts with 'images/', assume it's directly in 'images/' relative to blog.html.
+                        // Otherwise, assume it's 'assets/images/'.
+                        img.src = post.image.startsWith('http') 
+                            ? post.image 
+                            : (post.image.startsWith('images/') 
+                               ? `images/${post.image.substring(7)}` // If already has 'images/', just use that base
+                               : `assets/images/${post.image}`); // Default to assets/images/
+                               
                         img.alt = post.title || 'Blog Post Image'; 
                         img.classList.add('blog-image');
                         img.setAttribute('loading', 'lazy'); 
@@ -745,11 +764,16 @@
                         img.setAttribute('height', '200'); 
                         blogImageContainer.appendChild(img);
                     } else {
-                        // Create a default colored block with first letter of title
+                        // Create a default colored block with first letter of title and unique background
                         const defaultImageBlock = document.createElement('div');
                         defaultImageBlock.classList.add('default-image-block');
-                        const firstLetter = post.title ? post.title.charAt(0).toUpperCase() : '?'; // Get first letter or '?'
-                        defaultImageBlock.textContent = firstLetter; 
+                        const firstLetter = post.title ? post.title.charAt(0).toUpperCase() : '?'; 
+                        defaultImageBlock.textContent = firstLetter;
+
+                        // Generate unique color based on blog title
+                        defaultImageBlock.style.backgroundColor = stringToHslColor(post.title || '', 70, 40); // Saturated, medium lightness
+                        defaultImageBlock.style.color = stringToHslColor(post.title || '', 10, 95); // Very light color for text
+
                         blogImageContainer.appendChild(defaultImageBlock);
                     }
 
