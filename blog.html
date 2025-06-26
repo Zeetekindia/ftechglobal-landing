@@ -251,6 +251,7 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        .main-nav-links a.button-link:first-child { margin-top: 100px; } /* Adjust for logo */
         .main-nav-links a.button-link {
              margin: 10px auto; 
              padding: 15px; 
@@ -700,6 +701,11 @@
                 container.innerHTML = ''; 
 
                 posts.forEach(post => {
+                    // Handle missing image property with a default placeholder
+                    const imageUrl = post.image 
+                        ? (post.image.startsWith('http') ? post.image : `assets/images/${post.image}`) 
+                        : 'assets/images/default-blog-placeholder.jpg'; // IMPORTANT: Create this placeholder image!
+
                     const article = document.createElement('article');
                     article.classList.add('blog-card');
                     article.setAttribute('id', post.slug); 
@@ -707,9 +713,8 @@
                     article.setAttribute('aria-labelledby', `blog-title-${post.slug}`);
 
                     const img = document.createElement('img');
-                    // Handle image paths: check if absolute or relative
-                    img.src = post.image.startsWith('http') ? post.image : `assets/images/${post.image}`; // IMPORTANT: Adjust relative path to your actual image folder if needed (e.g., assets/images/blog2.jpg)
-                    img.alt = post.title; 
+                    img.src = imageUrl; 
+                    img.alt = post.title || 'Blog Post Image'; // Fallback alt text
                     img.classList.add('blog-image');
                     img.setAttribute('loading', 'lazy'); 
                     img.setAttribute('width', '320'); // Add width for layout stability
@@ -718,13 +723,14 @@
                     const contentDiv = document.createElement('div');
                     contentDiv.classList.add('blog-content');
 
-                    const title = document.createElement('h3'); // Changed to h3
+                    const title = document.createElement('h3'); 
                     title.setAttribute('id', `blog-title-${post.slug}`);
                     title.textContent = post.title;
 
                     const meta = document.createElement('p');
                     meta.classList.add('blog-meta');
-                    const authorText = post.author ? `<span class="author">${post.author}</span> | ` : 'Published by Ftech Global Team | '; // Default author
+                    // Handle missing author property with a default
+                    const authorText = post.author ? `<span class="author">${post.author}</span> | ` : 'Published by Ftech Global Team | '; 
                     const formattedDate = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                     meta.innerHTML = `${authorText}Published on ${formattedDate}`;
 
@@ -753,7 +759,7 @@
             .catch(error => {
                 console.error('Error fetching blog posts:', error);
                 const container = document.getElementById("blog-posts-container");
-                container.innerHTML = '<p style="text-align:center; color:#FF6347;">Failed to load blog posts. Please try again later.</p>';
+                container.innerHTML = '<p style="text-align:center; color:#FF6347;">Failed to load blog posts. Please check console for details.</p>'; 
             });
     </script>
 </body>
