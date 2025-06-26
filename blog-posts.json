@@ -4,7 +4,7 @@
     "slug": "website-development-patna",
     "date": "2025-06-04",
     "summary": "Learn how to create a professional website for your business in Patna with FTech Global.",
-    "image": "https://raw.githubusercontent.com/Zeetekindia/image/main/start-website-india.png", // Keep this one working
+    "image": "https://raw.githubusercontent.com/Zeetekindia/image/main/start-website-india.png",
     "content": "Website development is the foundation of your online business. At FTech Global, we offer fast, SEO-friendly websites for startups and SMEs in Bihar."
   },
   {
@@ -12,7 +12,7 @@
     "slug": "gst-registration-guide",
     "date": "2025-06-02",
     "summary": "Step-by-step guide to register your business under GST in India.",
-    "image": "", // Force coded image
+    "image": "", 
     "content": "Registering for GST is essential for every growing business. FTech Global helps businesses file for GST easily with expert guidance and quick processing."
   },
   {
@@ -20,7 +20,7 @@
     "slug": "digital-marketing-2025",
     "date": "2025-06-01",
     "summary": "Boost your brand visibility and sales with these proven digital marketing tips.",
-    "image": "", // Force coded image
+    "image": "", 
     "content": "In 2025, content marketing, reels, SEO, and WhatsApp automation are key strategies. Learn how to implement them for your business."
   },
   {
@@ -28,7 +28,7 @@
     "slug": "itr-filing-small-business",
     "date": "2025-05-30",
     "summary": "Know the process and documents required to file your Income Tax Return as a small business.",
-    "image": "", // Force coded image
+    "image": "", 
     "content": "Filing ITR helps you stay compliant and build financial credibility. At FTech Global, we assist in accurate and timely ITR filing for entrepreneurs."
   },
   {
@@ -36,15 +36,15 @@
     "slug": "google-business-profile-benefits",
     "date": "2025-05-28",
     "summary": "Google My Business listing boosts your online presence and helps customers find you easily.",
-    "image": "", // Force coded image
+    "image": "", 
     "content": "With a Google Business Profile, your company appears on maps, search results, and helps build trust. FTech Global sets it up professionally for your brand."
   },
   {
-    "title": "How to Start a Website in India", // This post has the same image as "Website Development in Patna"
+    "title": "How to Start a Website in India",
     "slug": "start-website-india",
     "date": "2025-06-04",
     "summary": "Learn how to create a professional website for your business in India.",
-    "image": "https://raw.githubusercontent.com/Zeetekindia/image/main/start-website-india.png", // Keep this working
+    "image": "https://raw.githubusercontent.com/Zeetekindia/image/main/start-website-india.png",
     "content": "Starting a website in India involves choosing a domain, selecting a hosting provider, and designing your site. This guide walks you through each step."
   },
   {
@@ -52,7 +52,7 @@
     "slug": "irctc-agent-kaise-bane-hindi",
     "date": "2025-06-05",
     "summary": "IRCTC एजेंट बनने का तरीका, दस्तावेज़, शुल्क और प्रोसेस – सब कुछ जानिए इस ब्लॉग में।",
-    "image": "", // Force coded image (was raw.github before)
+    "image": "", 
     "content": "IRCTC एजेंट बनने के लिए आपको अधिकृत एजेंसी से लाइसेंस लेना होता है। इसके लिए आपको आवेदन पत्र, आधार कार्ड, पैन कार्ड, फोटो और एजेंसी शुल्क की आवश्यकता होती है। एजेंट बनने के बाद आप रेलवे टिकट की बुकिंग करके कमीशन कमा सकते हैं। आप CSC, Akbar Travels, PayPoint जैसे चैनल पार्टनर के माध्यम से रजिस्ट्रेशन कर सकते हैं। अधिक जानकारी के लिए [irctctourism.com](https://www.irctctourism.com/TravelAgents) या [registration.csccloud.in](https://registration.csccloud.in/irctc/Default.aspx) पर जाएं।"
   },
   {
@@ -61,7 +61,7 @@
     "author": "FTech Global Team",
     "date": "2025-06-25",
     "summary": "If you're wondering how search engines like Google discover your website pages, the answer lies in two key files — sitemap.xml and robots.txt. These are the hidden heroes of SEO that help boost your visibility and improve ranking over time.",
-    "image": "", // Force coded image (was raw.github before)
+    "image": "", 
     "content": "If you're wondering how search engines like Google discover your website pages, the answer lies in two key files — sitemap.xml and robots.txt. These are the hidden heroes of SEO that help boost your visibility and improve ranking over time.\n\n## 📌 What is a Sitemap?\nA sitemap is a file that lists all important pages of your website, making sure search engines can find and crawl them.\n🔹 Example:\nhttps://www.ftechglobal.com/sitemap.xml\n\n### ✅ Benefits of Sitemap:\n- Faster indexing of new pages\n- Ensures even low-traffic pages are crawled\n- Helps structure your website content for search engines\n\n## 🤖 What is robots.txt?\nThe robots.txt file tells search engine bots which parts of your site they can or cannot crawl.\n🔹 Example:\nhttps://www.ftechglobal.com/robots.txt\n\n### ✅ Benefits of robots.txt:\n- Prevents duplicate content from being indexed\n- Protects admin or confidential pages\n- Tells search engines where to find the sitemap\n\n## 🚀 How They Work Together\nWhen search engines land on your website:\n1. They check robots.txt to see what is allowed.\n2. Then they use the sitemap.xml link inside it to discover your full content.\n3. This helps your website rank better and faster.\n\n## 💡 Pro Tip:\nMake sure your robots.txt includes your sitemap like this:\nUser-agent: *\nAllow: /\nSitemap: https://www.ftechglobal.com/sitemap.xml\n\n## 🏁 Final Words\nIf you want to improve your website SEO without spending extra on ads, setting up your sitemap.xml and robots.txt correctly is one of the simplest and most powerful steps.\n\n**Need help setting it up?**\nFTech Global offers full support for SEO, website setup, and digital marketing. Contact us today!"
   },
   {
@@ -69,7 +69,7 @@
     "slug": "seo-aeo-alternate-2025",
     "date": "2025-06-26",
     "summary": "Discover how AEO, Video SEO, Local SEO, and Programmatic SEO are revolutionizing digital marketing in 2025.",
-    "image": "", // Force coded image (was raw.github before)
+    "image": "", 
     "content": "Aaj ke digital zamaane mein sirf traditional SEO kaafi nahi hai. Search engine algorithms AI-based ho gaye hain, jisme sirf keywords nahi, balki intent, clarity aur direct answers ko priority milti hai. Isi badalte trend ne janam diya hai kuch naye 'Alternate SEO' ya 'Unlernet SEO' models ka – jaise AEO, VSEO, Social SEO, Local SEO, aur Programmatic SEO. Is blog mein hum samjhenge ki kaise ye naye tools aur techniques aapke business ko Google par top par laa sakte hain.\n\n🔁 AEO ka focus hota hai: 'Google ko answer do, audience khud aa jayegi.'\n🎥 Video SEO includes reels, titles, hashtags and subtitles.\n📍 Local SEO optimizes for 'near me' & voice searches.\n🔄 Programmatic SEO auto-generates 100s of service/location pages.\n\nAEO + Video + Programmatic + Local = 2025 ka ultimate SEO formula.\n\nMore details at:\nhttps://www.ftechglobal.com/Why-Small-Businesses-in-Patna-Need-Smart-SEO.html\nhttps://www.ftechglobal.com/Our-Digital-Marketing-Course.html\nhttps://www.ftechglobal.com/Dynamic-Website-Services.html"
   },
   {
@@ -77,7 +77,7 @@
     "slug": "how-to-become-irctc-agent-english",
     "date": "2025-06-05",
     "summary": "Complete English guide on IRCTC agent registration process, eligibility, commission, and business opportunity.",
-    "image": "", // Force coded image (was raw.github before)
+    "image": "", 
     "content": "If you want to become an authorized IRCTC agent, follow these steps:\n\n1. Choose a reliable IRCTC PSP (Principal Service Provider) such as Akbar Travels, PayPoint India, SIOnline, etc.\n2. Complete KYC documents: Aadhar Card, PAN Card, Passport-size photo.\n3. Pay registration fee (₹1,500 – ₹5,000 approx).\n4. Get Digital Certificate (DSC) via the PSP.\n5. Training and login credentials provided after approval.\n\n✅ Benefits:\n- Earn commission on ticket bookings (Rs. 20-40 per ticket).\n- Additional income via travel insurance, hotels, tour packages.\n- Build your identity as a government-authorized travel agent.\n\n💡 For registration help, contact FTech Global – we assist with IRCTC agent sign-up PAN India."
   }
 ]
