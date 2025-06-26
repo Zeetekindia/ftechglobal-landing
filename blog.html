@@ -243,7 +243,7 @@
             max-width: 300px;
             height: 100vh;
             background-color: #1a2a4b;
-            justify-content: center;
+            justify-content: flex-start; /* Align items from the top */
             align-items: center;
             box-shadow: 4px 0 10px rgba(0,0,0,0.5);
             transition: left 0.3s ease-in-out;
@@ -251,15 +251,15 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .main-nav-links a.button-link:first-child { margin-top: 100px; } /* Adjust for logo */
-        .main-nav-links a.button-link {
+        .main-nav-links.active a.button-link {
              margin: 10px auto; 
-             padding: 15px; 
+             padding: 12px; /* Reduced padding for smaller buttons */
              width: 90%;
              text-align: center;
              justify-content: center;
-             font-size: 1.1em;
+             font-size: 0.9em; /* Smaller font size for mobile */
         }
+        .main-nav-links.active a.button-link:first-child { margin-top: 100px; } /* Adjust for logo */
 
         /* Footer styles */
         footer {
@@ -430,11 +430,36 @@
             background-color: rgba(60, 75, 95, 0.95); 
         }
 
-        .blog-image {
+        .blog-image-container {
             width: 100%;
             height: 200px; 
+            overflow: hidden; /* Ensures content inside stays within bounds */
+            display: flex; /* For centering default block */
+            justify-content: center; /* For centering default block */
+            align-items: center; /* For centering default block */
+        }
+
+        .blog-image { /* Style for actual images */
+            width: 100%;
+            height: 100%;
             object-fit: cover; 
             display: block;
+        }
+
+        .default-image-block { /* Style for default color block */
+            width: 100%;
+            height: 100%;
+            background-color: #38bdf8; /* Default color: a shade of blue */
+            color: #101827; /* Text color for the block */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px; /* Add some padding if text is long */
+            box-sizing: border-box; /* Include padding in width/height */
         }
 
         .blog-content {
@@ -532,7 +557,8 @@
             }
             .blog-content h3 { font-size: 1.3rem; }
             .blog-summary { font-size: 0.9em; }
-            .blog-image { height: 180px; } /* Slightly reduce image height on mobile */
+            .blog-image-container { height: 180px; } /* Slightly reduce image height on mobile */
+            .default-image-block { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -603,8 +629,8 @@
                     <li><a href="irctc-agent-services.html" title="How to Become an IRCTC Agent">How to Become IRCTC Agent</a></li>
                     <li><a href="digital-marketing-services.html" title="SEO and Digital Marketing Services">SEO & Digital Marketing</a></li>
                     <li><a href="startup-consultancy.html" title="Startup Consultancy Services">Startup Consultancy</a></li>
-                    <li><a href="#link-to-gst-itr-page" title="How to File GST & ITR">How to File GST & ITR</a></li> 
-                    <li><a href="#link-to-custom-software-page" title="Custom Software Development">Software Development</a></li> 
+                    <li><a href="#link-to-gst-itr-page" title="How to File GST & ITR">How to File GST & ITR</a></li>
+                    <li><a href="#link-to-custom-software-page" title="Custom Software Development">Software Development</a></li>
                 </ul>
             </div>
 
@@ -615,7 +641,7 @@
                     <li><a href="term-and-condition.html" title="Terms and Conditions">Terms & Conditions</a></li>
                     <li><a href="https://www.ftechglobal.com/Refund-and-Cancellation.html" title="Refund and Cancellation Policy">Refund & Cancellation</a></li>
                     <li><a href="https://www.ftechglobal.com/Privacy-Policy-Ftechglobal.html" title="Privacy Policy">Privacy Policy</a></li>
-                    <li><a href="sitemap.html" title="Website Sitemap for Users">Sitemap</a></li> 
+                    <li><a href="sitemap.html" title="Website Sitemap for Users">Sitemap</a></li>
                 </ul>
             </div>
 
@@ -701,25 +727,34 @@
                 container.innerHTML = ''; 
 
                 posts.forEach(post => {
-                    // Handle missing image property with a default placeholder
-                    const imageUrl = post.image 
-                        ? (post.image.startsWith('http') ? post.image : `assets/images/${post.image}`) 
-                        : 'assets/images/default-blog-placeholder.jpg'; // IMPORTANT: Create this placeholder image!
+                    const blogImageContainer = document.createElement('div');
+                    blogImageContainer.classList.add('blog-image-container');
+
+                    // Check if post.image is defined and a valid string
+                    if (post.image && typeof post.image === 'string' && post.image.trim() !== '') {
+                        const img = document.createElement('img');
+                        // Handle image paths: check if absolute or relative
+                        img.src = post.image.startsWith('http') ? post.image : `assets/images/${post.image}`; 
+                        img.alt = post.title || 'Blog Post Image'; // Fallback alt text
+                        img.classList.add('blog-image');
+                        img.setAttribute('loading', 'lazy'); 
+                        img.setAttribute('width', '320'); // Add width for layout stability
+                        img.setAttribute('height', '200'); // Add height for layout stability
+                        blogImageContainer.appendChild(img);
+                    } else {
+                        // Create a default colored block if no image is provided
+                        const defaultImageBlock = document.createElement('div');
+                        defaultImageBlock.classList.add('default-image-block');
+                        defaultImageBlock.textContent = 'FTECH BLOG'; // You can customize this text
+                        blogImageContainer.appendChild(defaultImageBlock);
+                    }
 
                     const article = document.createElement('article');
                     article.classList.add('blog-card');
                     article.setAttribute('id', post.slug); 
                     article.setAttribute('role', 'article');
                     article.setAttribute('aria-labelledby', `blog-title-${post.slug}`);
-
-                    const img = document.createElement('img');
-                    img.src = imageUrl; 
-                    img.alt = post.title || 'Blog Post Image'; // Fallback alt text
-                    img.classList.add('blog-image');
-                    img.setAttribute('loading', 'lazy'); 
-                    img.setAttribute('width', '320'); // Add width for layout stability
-                    img.setAttribute('height', '200'); // Add height for layout stability
-
+                    
                     const contentDiv = document.createElement('div');
                     contentDiv.classList.add('blog-content');
 
@@ -751,7 +786,7 @@
                     contentDiv.appendChild(summary);
                     contentDiv.appendChild(readMoreLink);
 
-                    article.appendChild(img);
+                    article.appendChild(blogImageContainer); // Append the image container
                     article.appendChild(contentDiv);
                     container.appendChild(article);
                 });
