@@ -301,7 +301,7 @@
         }
 
         .footer-column ul {
-            list-style-type: none;
+            list-style: none; /* Changed from list-style-type to list-style */
             padding: 0;
             margin: 0;
             text-align: center; 
@@ -762,6 +762,20 @@
                         img.setAttribute('loading', 'lazy'); 
                         img.setAttribute('width', '320'); 
                         img.setAttribute('height', '200'); 
+
+                        // Add onerror handler for actual images that fail to load
+                        img.onerror = function() {
+                            // If the actual image fails to load, replace it with the default block
+                            blogImageContainer.innerHTML = ''; // Clear the failing img
+                            const defaultImageBlock = document.createElement('div');
+                            defaultImageBlock.classList.add('default-image-block');
+                            const firstLetter = post.title ? post.title.charAt(0).toUpperCase() : '?';
+                            defaultImageBlock.textContent = firstLetter;
+                            defaultImageBlock.style.backgroundColor = stringToHslColor(post.title || '', 70, 40);
+                            defaultImageBlock.style.color = stringToHslColor(post.title || '', 10, 95);
+                            blogImageContainer.appendChild(defaultImageBlock);
+                        };
+
                         blogImageContainer.appendChild(img);
                     } else {
                         // Create a default colored block with first letter of title and unique background
