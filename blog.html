@@ -437,6 +437,7 @@
             display: flex; /* For centering default block */
             justify-content: center; /* For centering default block */
             align-items: center; /* For centering default block */
+            background-color: #2c3e50; /* Background for the container when no image */
         }
 
         .blog-image { /* Style for actual images */
@@ -449,17 +450,19 @@
         .default-image-block { /* Style for default color block */
             width: 100%;
             height: 100%;
-            background-color: #38bdf8; /* Default color: a shade of blue */
-            color: #101827; /* Text color for the block */
+            /* Customizable Default Image Block Colors */
+            background-color: #00e676; /* Green for first letter */
+            color: #1a2a4b; /* Dark text on green */
+            
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 3rem; /* Larger font size for the letter */
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
-            padding: 10px; /* Add some padding if text is long */
-            box-sizing: border-box; /* Include padding in width/height */
+            padding: 10px; 
+            box-sizing: border-box; 
         }
 
         .blog-content {
@@ -558,7 +561,7 @@
             .blog-content h3 { font-size: 1.3rem; }
             .blog-summary { font-size: 0.9em; }
             .blog-image-container { height: 180px; } /* Slightly reduce image height on mobile */
-            .default-image-block { font-size: 1.2rem; }
+            .default-image-block { font-size: 2rem; } /* Slightly smaller font for default block on mobile */
         }
     </style>
 </head>
@@ -690,7 +693,7 @@
             &copy; <span id="current-year"></span> FTECH GLOBAL. All rights reserved.
             <div style="text-align:center; margin-top: 10px;">
                 <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer" aria-label="Website Visitor Counter">
-                    <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
+                    <img src="https://www.hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
                          title="Counter Widget"
                          alt="Visit counter For Websites"
                          border="0" />
@@ -730,22 +733,23 @@
                     const blogImageContainer = document.createElement('div');
                     blogImageContainer.classList.add('blog-image-container');
 
-                    // Check if post.image is defined and a valid string
+                    // Determine image source or use default block
                     if (post.image && typeof post.image === 'string' && post.image.trim() !== '') {
                         const img = document.createElement('img');
-                        // Handle image paths: check if absolute or relative
+                        // Handle image paths: check if absolute or relative (assuming relative are 'assets/images/')
                         img.src = post.image.startsWith('http') ? post.image : `assets/images/${post.image}`; 
-                        img.alt = post.title || 'Blog Post Image'; // Fallback alt text
+                        img.alt = post.title || 'Blog Post Image'; 
                         img.classList.add('blog-image');
                         img.setAttribute('loading', 'lazy'); 
-                        img.setAttribute('width', '320'); // Add width for layout stability
-                        img.setAttribute('height', '200'); // Add height for layout stability
+                        img.setAttribute('width', '320'); 
+                        img.setAttribute('height', '200'); 
                         blogImageContainer.appendChild(img);
                     } else {
-                        // Create a default colored block if no image is provided
+                        // Create a default colored block with first letter of title
                         const defaultImageBlock = document.createElement('div');
                         defaultImageBlock.classList.add('default-image-block');
-                        defaultImageBlock.textContent = 'FTECH BLOG'; // You can customize this text
+                        const firstLetter = post.title ? post.title.charAt(0).toUpperCase() : '?'; // Get first letter or '?'
+                        defaultImageBlock.textContent = firstLetter; 
                         blogImageContainer.appendChild(defaultImageBlock);
                     }
 
@@ -764,7 +768,6 @@
 
                     const meta = document.createElement('p');
                     meta.classList.add('blog-meta');
-                    // Handle missing author property with a default
                     const authorText = post.author ? `<span class="author">${post.author}</span> | ` : 'Published by Ftech Global Team | '; 
                     const formattedDate = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                     meta.innerHTML = `${authorText}Published on ${formattedDate}`;
@@ -786,7 +789,7 @@
                     contentDiv.appendChild(summary);
                     contentDiv.appendChild(readMoreLink);
 
-                    article.appendChild(blogImageContainer); // Append the image container
+                    article.appendChild(blogImageContainer); 
                     article.appendChild(contentDiv);
                     container.appendChild(article);
                 });
