@@ -208,6 +208,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            align-items: flex-start; /* Align content to start */
         }
 
         .feature-card:hover {
@@ -229,6 +230,34 @@
             margin-bottom: 15px;
             flex-grow: 1;
         }
+
+        /* New: Feature Card Icon Styling */
+        .feature-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #38bdf8, #00e676); /* Default gradient */
+            border-radius: 10px; /* Slightly rounded rectangle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2rem;
+            color: #1a2a4b; /* Dark text for contrast */
+            margin-bottom: 15px; /* Space below icon */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        .feature-card-icon i {
+            color: inherit; /* Inherit color from parent div */
+        }
+        /* Optional: Different icon styles */
+        .feature-card:nth-child(even) .feature-card-icon {
+            background: linear-gradient(135deg, #FFC107, #FF5722);
+        }
+        .feature-card:nth-child(3n) .feature-card-icon {
+            background: linear-gradient(90deg, #673AB7, #3F51B5);
+            color: #e2e8f0;
+        }
+
 
         .cta-section {
             background-color: rgba(27, 44, 64, 0.7);
@@ -383,6 +412,7 @@
             .feature-card h3 { font-size: 1.4rem; }
             .feature-card p { font-size: 0.95rem; }
             .auto-gen-image-block { font-size: 2rem; height: 200px; }
+            .feature-card-icon { width: 50px; height: 50px; font-size: 1.8rem; }
         }
 
         @media (max-width: 768px) {
@@ -398,6 +428,7 @@
             .feature-card h3 { font-size: 1.3rem; }
             .feature-card p { font-size: 0.9em; }
             .auto-gen-image-block { font-size: 1.5rem; height: 180px; }
+            .feature-card-icon { width: 45px; height: 45px; font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -456,31 +487,37 @@
             <h2 class="section-title">Our Comprehensive Software Solutions Include:</h2>
             <div class="feature-grid">
                 <div class="feature-card">
+                    <div class="feature-card-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Custom Software Development</h3>
                     <p>Get tailor-made software designed precisely for your unique business processes. We build scalable and robust applications to solve your specific challenges, from inventory management to complex data analysis, for clients **across India and globally**.</p>
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-card-icon"><i class="fas fa-users"></i></div>
                     <h3>Customer Relationship Management (CRM) Systems</h3>
                     <p>Enhance your customer interactions, manage leads effectively, and improve customer retention with our custom CRM solutions, deployable **anywhere in India or worldwide**.</p>
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-card-icon"><i class="fas fa-project-diagram"></i></div>
                     <h3>Enterprise Resource Planning (ERP) Systems</h3>
                     <p>Integrate all your core business processes, from finance and human resources to supply chain and manufacturing, into a unified ERP system for better management and decision-making, supporting operations **nationally and internationally**.</p>
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-card-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Mobile App Development for Business</h3>
                     <p>Extend your reach and provide seamless services to your customers and employees through custom-built mobile applications (Android & iOS). Enhance accessibility and on-the-go productivity **for businesses worldwide**.</p>
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-card-icon"><i class="fas fa-robot"></i></div>
                     <h3>Business Process Automation (BPA)</h3>
                     <p>Automate repetitive tasks and workflows across departments to increase efficiency, reduce manual errors, and free up your team to focus on strategic activities and innovation **for businesses of all sizes, everywhere**.</p>
                 </div>
 
                 <div class="feature-card">
+                    <div class="feature-card-icon"><i class="fas fa-cloud"></i></div>
                     <h3>Cloud Software Solutions</h3>
                     <p>Leverage the power of the cloud with our secure and scalable software solutions. Access your business data and applications anytime, anywhere, ensuring flexibility and continuity **for your global operations**.</p>
                 </div>
@@ -628,7 +665,7 @@
                 currentYearSpan.textContent = new Date().getFullYear();
             }
 
-            // Auto-generated image block styling (for this page)
+            // Auto-generated image block styling (for large blocks)
             const autoGenBlocks = document.querySelectorAll('.auto-gen-image-block');
             autoGenBlocks.forEach((block, index) => {
                 // Apply different styles based on index to vary the look
