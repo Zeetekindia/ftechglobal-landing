@@ -182,7 +182,7 @@
         "@type": "Place",
         "name": "India"
       },
-      "description": "Hassle-free online GST registration, GST return filing, and Income Tax Return (ITR) e-filing for individuals and businesses in India."
+      "description": "Hassle-free online GST registration, GST return filing, and Income Tax Return (ITR) e-filing for businesses and individuals in India."
     }
     </script>
 
@@ -461,8 +461,8 @@
         .footer-column ul li a {
             color: #cbd5e1;
             text-decoration: none;
-            font-size: 0.95em;
             transition: color 0.3s ease;
+            font-size: 0.95em;
         }
 
         .footer-column ul li a:hover {
@@ -663,6 +663,7 @@
 
             .testimonials-section { padding: 20px 0px; margin-top: 30px; margin-bottom: 30px;}
             .testimonials-section h2 {font-size: 1.8rem; margin-bottom: 20px;}
+            .testimonials-container { padding: 0px 15px 15px 15px; }
             .testimonial-card {min-width: 260px; margin-right: 15px; padding: 20px;}
 
             /* Media Queries adjustments for expanded footer */
@@ -779,6 +780,7 @@
                 </div>
                 <div class="testimonial-card">
                     <p class="feedback">"GST registration and ITR filing were so easy with Ftech Global. They handled everything professionally and ensured we were compliant. Excellent service!"</p>
+                    <p class="client-info">- Sunita Reddy, Hyderabad (Telangana)</p>
                 </div>
             </div>
         </section>
@@ -808,9 +810,7 @@
                     <li><a href="irctc-agent-services.html" title="Become an IRCTC Agent">Become IRCTC Agent</a></li>
                     <li><a href="digital-marketing-services.html" title="SEO and Digital Marketing Services">SEO & Digital Marketing</a></li>
                     <li><a href="startup-consultancy.html" title="Startup Consultancy Services">Startup Consultancy</a></li>
-                    <li><a href="#" title="GST and ITR Filing Services">GST & ITR Filing</a></li> 
-                    <li><a href="Business-Software-Solutions.html" title="Business Software Solutions">Software Development</a></li> 
-                </ul>
+                    <li><a href="#" title="GST and ITR Filing Services">GST & ITR Filing</a></li> <li><a href="#" title="Custom Software Development">Software Development</a></li> </ul>
             </div>
 
             <div class="footer-column">
@@ -865,31 +865,31 @@
         </div>
 
         <div class="footer-bottom">
-            &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
+            &copy; <span id="current-year"></span> FTECH GLOBAL. All rights reserved.
             <div style="text-align:center; margin-top: 10px;">
-                <a href="https://www.hitwebcounter.com" target="_blank">
+                <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer" aria-label="Website Visitor Counter">
                     <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
-                     title="Counter Widget"
-                     alt="Visit counter For Websites"
-                     border="0" />
-            </a>
-        </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const mainNavLinks = document.getElementById('main-nav-links');
+                         title="Counter Widget"
+                         alt="Visit counter For Websites"
+                         border="0" />
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mainNavLinks = document.getElementById('main-nav-links');
 
-            if (hamburgerMenu && mainNavLinks) {
-                hamburgerMenu.addEventListener('click', function () {
-                    mainNavLinks.classList.toggle('active');
-                });
-            }
+            if (hamburgerMenu && mainNavLinks) {
+                hamburgerMenu.addEventListener('click', function () {
+                    mainNavLinks.classList.toggle('active');
+                });
+            }
 
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
-
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>
