@@ -182,7 +182,7 @@
         "@type": "Place",
         "name": "India"
       },
-      "description": "Hassle-free online GST registration, GST return filing, and Income Tax Return (ITR) e-filing for businesses and individuals in India."
+      "description": "Hassle-free online GST registration, GST return filing, and Income Tax Return (ITR) e-filing for individuals and businesses in India."
     }
     </script>
 
@@ -461,8 +461,8 @@
         .footer-column ul li a {
             color: #cbd5e1;
             text-decoration: none;
-            transition: color 0.3s ease;
             font-size: 0.95em;
+            transition: color 0.3s ease;
         }
 
         .footer-column ul li a:hover {
@@ -865,31 +865,28 @@
         </div>
 
         <div class="footer-bottom">
-            &copy; <span id="current-year"></span> FTECH GLOBAL. All rights reserved.
+            &copy; <script>document.write(new Date().getFullYear())</script> FTECH GLOBAL. All rights reserved.
             <div style="text-align:center; margin-top: 10px;">
-                <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer" aria-label="Website Visitor Counter">
+                <a href="https://www.hitwebcounter.com" target="_blank">
                     <img src="https://hitwebcounter.com/counter/counter.php?page=20739304&style=0007&nbdigits=5&type=page&initCount=0"
-                         title="Counter Widget"
-                         alt="Visit counter For Websites"
-                         border="0" />
-                </a>
-            </div>
-        </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburgerMenu = document.getElementById('hamburger-menu');
-            const mainNavLinks = document.getElementById('main-nav-links');
+                     title="Counter Widget"
+                     alt="Visit counter For Websites"
+                     border="0" />
+            </a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mainNavLinks = document.getElementById('main-nav-links');
 
-            if (hamburgerMenu && mainNavLinks) {
-                hamburgerMenu.addEventListener('click', function () {
-                    mainNavLinks.classList.toggle('active');
-                });
-            }
+            if (hamburgerMenu && mainNavLinks) {
+                hamburgerMenu.addEventListener('click', function () {
+                    mainNavLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 
-            // Update current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
 </body>
 </html>
